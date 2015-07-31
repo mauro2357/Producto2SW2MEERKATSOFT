@@ -2,7 +2,10 @@
 <<<<<<<=HEAD
 >>>>>>>=origin/master
 eclipse.preferences.version=1
+<<<<<<< HEAD
+=======
 org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=
+>>>>>>> origin/master
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8

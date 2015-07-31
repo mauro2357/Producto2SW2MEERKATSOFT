@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
+<<<<<<< HEAD
+<libraryInfo home="C:\Program Files\Java\jre7" version="1.7.0_65">
+=======
 <libraryInfo home="C:\Eclipse" version="1.8.0_51">
+>>>>>>> origin/master
 <bootpath>
 <entry path="C:\Eclipse\jre\lib\resources.jar"/>
 <entry path="C:\Eclipse\jre\lib\rt.jar"/>
@@ -16,7 +20,11 @@
 <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
 </extensionDirs>
 <endorsedDirs>
+<<<<<<< HEAD
+<entry path="C:\Program Files\Java\jre7\lib\endorsed"/>
+=======
 <entry path="C:\Eclipse\jre\lib\endorsed"/>
+>>>>>>> origin/master
 </endorsedDirs>
 </libraryInfo>
 </libraryInfos>
