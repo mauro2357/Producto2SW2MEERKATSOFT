@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Meerkat_bar">
-        <wb-resource deploy-path="/" source-path="/WebContent"/>
-        <property name="context-root" value="Meerkat_bar"/>
-        <property name="java-output-path" value="/Meerkat_bar/build/classes"/>
-    </wb-module>
-</project-modules>
