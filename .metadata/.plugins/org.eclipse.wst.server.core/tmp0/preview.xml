@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<server port="8080">
-  <module context="prueba" name="prueba" path="C:/Users/seba/workspace/prueba/WebContent" type="j2ee"/>
-</server>
