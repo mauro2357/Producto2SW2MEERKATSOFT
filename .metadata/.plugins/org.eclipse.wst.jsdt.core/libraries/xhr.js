@@ -1,9 +1,5 @@
 /*******************************************************************************
-<<<<<<< HEAD
- * Copyright (c) 2009 IBM Corporation and others.
-=======
  * Copyright (c) 2009, 2011 IBM Corporation and others.
->>>>>>> origin/master
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +21,7 @@
 Window.prototype.createRequest= function(){return new XMLHttpRequest();};
 /**
 * Object XMLHttpRequest
-<<<<<<< HEAD
-* @super Global
 * @type constructor
-* @memberOf Global
-=======
-* @type constructor
->>>>>>> origin/master
 */
 XMLHttpRequest.prototype=new Object();
 function XMLHttpRequest(){};

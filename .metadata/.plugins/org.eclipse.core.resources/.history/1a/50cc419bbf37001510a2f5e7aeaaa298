@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Meerkat_0.0">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+<<<<<<< HEAD:Meerkat_bar/.settings/org.eclipse.wst.common.component
+        <property name="context-root" value="Meerkat_bar"/>
+        <property name="java-output-path" value="/Meerkat_bar/build/classes"/>
+=======
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="Meerkat_0.0"/>
+        <property name="java-output-path" value="/Meerkat_0.0/build/classes"/>
+>>>>>>> origin/master:.metadata/.plugins/org.eclipse.core.resources/.history/1a/50cc419bbf37001510a2f5e7aeaaa298
+    </wb-module>
+</project-modules>
