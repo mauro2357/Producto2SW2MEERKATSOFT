@@ -804,3 +804,9 @@ org.springsource.ide.eclipse.gradle.core.classpathcontainer.FastOperationFailedE
 	at org.springsource.ide.eclipse.gradle.ui.actions.ConvertToGradleProjectActionDelegate$1.doit(ConvertToGradleProjectActionDelegate.java:54)
 	at org.springsource.ide.eclipse.gradle.core.util.GradleRunnable$1.run(GradleRunnable.java:53)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-07-31 15:27:03.478
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-07-31 15:27:03.545
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
