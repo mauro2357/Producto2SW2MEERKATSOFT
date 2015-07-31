@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;ensayo/WebContent/META-INF/MANIFEST.MF&apos;" deleteContents="false" description="Delete resource &apos;ensayo/WebContent/META-INF/MANIFEST.MF&apos;" element1="/ensayo/WebContent/META-INF/MANIFEST.MF" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1438302958073"/>
-</session>
