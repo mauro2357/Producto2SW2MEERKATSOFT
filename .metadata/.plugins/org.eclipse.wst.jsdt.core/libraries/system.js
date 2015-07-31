@@ -477,14 +477,23 @@ Array.prototype.sort = function(funct){return [];};
 Array.prototype.splice = function(start, deletecount, items){return [];};
 /**
   * function unshift(items)
+<<<<<<< HEAD
   * @param {Array} start
   * @returns {Array}
+=======
+  * @param {Object} values
+  * @returns {Number}
+>>>>>>> origin/master
   * @memberOf   Array
   * @see     Array
   * @since   Standard ECMA-262 3rd. Edition 
   * @since   Level 2 Document Object Model Core Definition.   
  */  
+<<<<<<< HEAD
 Array.prototype.unshift = function(start){return [];};
+=======
+Array.prototype.unshift = function(values){return 1;};
+>>>>>>> origin/master
 
 /**
   * Object Function()
@@ -915,6 +924,7 @@ Date.prototype.setUTCFullYear = function(year, month,date){};
 Date.prototype.toUTCString = function(){return "";};
 
 /**
+<<<<<<< HEAD
   * Object Global
   * @super Object
   * @constructor
@@ -941,17 +951,37 @@ Global.prototype.Infinity=0;
 /**
   * function eval(s)
   * @memberOf Global
+=======
+  * Property NaN
+  * @since   Standard ECMA-262 3rd. Edition 
+  * @since   Level 2 Document Object Model Core Definition.  
+ */
+var NaN=0;
+/**
+  * Property Infinity
+  * @since   Standard ECMA-262 3rd. Edition 
+  * @since   Level 2 Document Object Model Core Definition.  
+ */
+var Infinity=0;
+/**
+  * function eval(s)
+>>>>>>> origin/master
   * @param {String} s
   * @type Object
   * @returns {Object}
   * @since   Standard ECMA-262 3rd. Edition 
   * @since   Level 2 Document Object Model Core Definition.     
  */
+<<<<<<< HEAD
 Global.prototype.eval=function(s){return new Object();};
+=======
+function eval(s){return new Object();};
+>>>>>>> origin/master
 
 //@GINO: Bug 197987 (Temp Fix)
 /**
   * Property debugger
+<<<<<<< HEAD
   * @memberOf Global
   * @description Debugger keyword
  */
@@ -967,6 +997,20 @@ Global.prototype.undefined=null;
 /**
   * function parseInt(s,radix)
   * @memberOf Global
+=======
+  * @description Debugger keyword
+ */
+var debugger=null;
+
+/**
+ * Property undefined
+ * @description undefined
+*/
+var undefined=null;
+
+/**
+  * function parseInt(s,radix)
+>>>>>>> origin/master
   * @param {String} s
   * @param {Number} radix
   * @type Number
@@ -974,97 +1018,155 @@ Global.prototype.undefined=null;
   * @since   Standard ECMA-262 3rd. Edition 
   * @since   Level 2 Document Object Model Core Definition.    
  */
+<<<<<<< HEAD
 Global.prototype.parseInt=function(s,radix){return 0;};
 /**
   * function parseFloat(s)
   * @memberOf Global
+=======
+function parseInt(s,radix){return 0;};
+/**
+  * function parseFloat(s)
+>>>>>>> origin/master
   * @param {String} s
   * @type Number
   * @returns {Number}
   * @since   Standard ECMA-262 3rd. Edition 
   * @since   Level 2 Document Object Model Core Definition.   
  */
+<<<<<<< HEAD
 Global.prototype.parseFloat=function(s){return 0;};
 /**
  * function escape(s)
  * @memberOf Global
+=======
+function parseFloat(s){return 0;};
+/**
+ * function escape(s)
+>>>>>>> origin/master
  * @param {String} s
  * @type String
  * @returns {String}
  * @since   Standard ECMA-262 3rd. Edition 
  * @since   Level 2 Document Object Model Core Definition.   
 */
+<<<<<<< HEAD
 Global.prototype.escape=function(s){return "";};
 /**
  * function unescape(s)
  * @memberOf Global
+=======
+function escape(s){return "";};
+/**
+ * function unescape(s)
+>>>>>>> origin/master
  * @param {String} s
  * @type String
  * @returns {String}
  * @since   Standard ECMA-262 3rd. Edition 
  * @since   Level 2 Document Object Model Core Definition.   
 */
+<<<<<<< HEAD
 Global.prototype.unescape=function(s){return "";};
 /**
   * function isNaN(number)
   * @memberOf Global
+=======
+function unescape(s){return "";};
+/**
+  * function isNaN(number)
+>>>>>>> origin/master
   * @param {String} number
   * @type Boolean
   * @returns {Boolean}
   * @since   Standard ECMA-262 3rd. Edition 
   * @since   Level 2 Document Object Model Core Definition.  
  */
+<<<<<<< HEAD
 Global.prototype.isNaN=function(number){return false;};
 /**
   * function isFinite(number)
   * @memberOf Global
+=======
+function isNaN(number){return false;};
+/**
+  * function isFinite(number)
+>>>>>>> origin/master
   * @param {String} number
   * @type Boolean
   * @returns {Boolean}
   * @since   Standard ECMA-262 3rd. Edition 
   * @since   Level 2 Document Object Model Core Definition.    
  */
+<<<<<<< HEAD
 Global.prototype.isFinite=function(number){return false;};
 /**
  * function decodeURI(encodedURI)
  * @memberOf Global
+=======
+function isFinite(number){return false;};
+/**
+ * function decodeURI(encodedURI)
+>>>>>>> origin/master
  * @param {String} encodedURI
  * @type String
  * @returns {String}
  * @since   Standard ECMA-262 3rd. Edition 
  * @since   Level 2 Document Object Model Core Definition.  
 */
+<<<<<<< HEAD
 Global.prototype.decodeURI=function(encodedURI){return "";};
 /**
  * @memberOf Global
+=======
+function decodeURI(encodedURI){return "";};
+/**
+>>>>>>> origin/master
  * @param {String} uriComponent
  * @type String
  * @returns {String}
  * @since   Standard ECMA-262 3rd. Edition 
  * @since   Level 2 Document Object Model Core Definition.  
 */
+<<<<<<< HEAD
 Global.prototype.decodeURIComponent=function(uriComponent){return "";};
 /**
  * function encodeURIComponent(uriComponent)
  * @memberOf Global
+=======
+function decodeURIComponent(uriComponent){return "";};
+/**
+ * function encodeURIComponent(uriComponent)
+>>>>>>> origin/master
  * @param {String} uriComponent
  * @type String
  * @returns {String}
  * @since   Standard ECMA-262 3rd. Edition 
  * @since   Level 2 Document Object Model Core Definition.    
 */
+<<<<<<< HEAD
 Global.prototype.encodeURIComponent=function(uriComponent){return "";};
 
 /**
  * function encodeURIComponent(URI)
  * @memberOf Global
+=======
+function encodeURIComponent(uriComponent){return "";};
+
+/**
+ * function encodeURIComponent(URI)
+>>>>>>> origin/master
  * @param {String} URI
  * @type String
  * @returns {String}
  * @since   Standard ECMA-262 3rd. Edition 
  * @since   Level 2 Document Object Model Core Definition.    
 */
+<<<<<<< HEAD
 Global.prototype.encodeURI=function(URI){return "";};
+=======
+function encodeURI(URI){return "";};
+>>>>>>> origin/master
 
 /**
   * Object Math(\s)

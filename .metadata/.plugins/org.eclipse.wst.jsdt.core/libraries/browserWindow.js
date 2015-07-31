@@ -1,5 +1,9 @@
 /*******************************************************************************
+<<<<<<< HEAD
  * Copyright (c) 2008, 2009 IBM Corporation and others.
+=======
+ * Copyright (c) 2008, 2013 IBM Corporation and others.
+>>>>>>> origin/master
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +22,11 @@ BarProp.prototype = new Array();
  * @since Common Usage, no standard
 */
 function Window(){};
+<<<<<<< HEAD
 Window.prototype = new Global();
+=======
+Window.prototype = new EventTarget();
+>>>>>>> origin/master
 Window.prototype.self = new Window();
 Window.prototype.window = new Window();
 Window.prototype.frames = new Array();
@@ -176,11 +184,15 @@ Window.prototype.scrollMaxX=0;
 Window.prototype.scrollMaxY=0;
 Window.prototype.fullScreen="";
 Window.prototype.frameElement="";
+<<<<<<< HEAD
 Window.prototype.sessionStorage="";
+=======
+>>>>>>> origin/master
 /* End properites */
 
 /**
  * function alert() 
+<<<<<<< HEAD
  * @param {String} arg
  * @memberOf  Window
  */
@@ -205,17 +217,48 @@ Window.prototype.clearTimeout = function(arg){};
 /**
  * function close() 
  * @memberOf  Window
+=======
+ * @param {String} message
+ * @memberOf Window
+ */
+Window.prototype.alert = function(message){};
+/**
+ * function blur() 
+ * @memberOf Window
+ */
+Window.prototype.blur = function(){};
+/**
+ * function clearInterval(intervalID) 
+ * @param intervalID
+ * @memberOf Window
+ */
+Window.prototype.clearInterval = function(intervalID){};
+/**
+ * function clearTimeout(intervalID) 
+ * @param intervalID
+ * @memberOf Window
+ */
+Window.prototype.clearTimeout = function(intervalID){};
+/**
+ * function close() 
+ * @memberOf Window
+>>>>>>> origin/master
  */
 Window.prototype.close = function(){};
 /**
  * function confirm() 
  * @param {String} arg
+<<<<<<< HEAD
  * @memberOf  Window
+=======
+ * @memberOf Window
+>>>>>>> origin/master
  * @returns {Boolean}
  */
 Window.prototype.confirm = function(arg){return false;};
 /**
  * function focus() 
+<<<<<<< HEAD
  * @memberOf  Window
  */
 Window.prototype.focus = function(){};
@@ -332,6 +375,124 @@ Window.prototype.setResizable=function(arg){};
 Window.prototype.captureEvents=function(arg1){};
 Window.prototype.releaseEvents=function(arg1){};
 Window.prototype.routeEvent=function(arg1){};
+=======
+ * @memberOf Window
+ */
+Window.prototype.focus = function(){};
+/**
+ * function getComputedStyle(element, pseudoElt ) 
+ * @param {Element} element
+ * @param {String} pseudoElt 
+ * @memberOf Window
+ * @returns {Object}
+ */
+Window.prototype.getComputedStyle = function(element,pseudoElt ){return new Object();};
+/**
+ * function moveTo(x, y) 
+ * @param {Number} x
+ * @param {Number} y
+ * @memberOf Window
+ */
+Window.prototype.moveTo = function(x,y){};
+/**
+ * function moveBy(deltaX, deltaY) 
+ * @param {Number} deltaX
+ * @param {Number} deltaY
+ * @memberOf Window
+ */
+Window.prototype.moveBy = function(deltaX,deltaY){};
+/**
+ * function open(optionalArg1, optionalArg2, optionalArg3, optionalArg4) 
+ * @param {String} url
+ * @param {String} windowName
+ * @param {String} windowFeatures
+ * @param {Boolean} optionalArg4
+ * @memberOf Window
+ * @returns {Window}
+ */
+Window.prototype.open = function(url, windowName, windowFeatures, optionalArg4){return new Window();};
+/**
+ * function print() 
+ * @memberOf Window
+ */
+Window.prototype.print = function(){};
+/**
+ * function prompt(text, value) 
+ * @param {String} text
+ * @param {String} value
+ * @memberOf Window
+ * @returns {String}
+ */
+Window.prototype.prompt = function(text, value){return "";};
+/**
+ * function resizeTo(newOuterWidth,newOuterHeight) 
+ * @param {Number} newOuterWidth
+ * @param {Number} newOuterHeighr
+ * @memberOf Window
+ */
+Window.prototype.resizeTo=function(newOuterWidth,newOuterHeight){};
+/**
+ * function resizeBy(deltaX, deltaY) 
+ * @param {Number} deltaX
+ * @param {Number} deltaY
+ * @memberOf Window
+ */
+Window.prototype.resizeBy=function(deltaX,deltaY){};
+/**
+ * function scrollTo(x,y) 
+ * @param {Number} x
+ * @param {Number} y
+ * @memberOf Window
+ */
+Window.prototype.scrollTo=function(x,y){};
+/**
+ * function scrollBy(pixelX,pixelY) 
+ * @param {Number} pixelX
+ * @param {Number} pixelY
+ * @memberOf Window
+ */
+Window.prototype.scrollBy=function(pixelX,pixelY){};
+/**
+ * function setInterval(arg1, arg2) 
+ * @param {Function} callback
+ * @param {Number} delay
+ * @memberOf Window
+ * @returns {Number}
+ */
+Window.prototype.setInterval=function(callback, delay){return 0;};
+/**
+ * function setTimeout(callback, delay) 
+ * @param {Function} callback
+ * @param {Number} delay
+ * @memberOf Window
+ * @returns {Number}
+ */
+Window.prototype.setTimeout=function(callback, delay){ return 0;};
+/**
+ * function atob(encodedData) 
+ * @param {String} encodedData
+ * @memberOf Window
+ * @returns {String}
+ */
+Window.prototype.atob=function(encodedData){return "";};
+/**
+ * function btoa(arg) 
+ * @param {String} stringToEncode
+ * @memberOf Window
+ * @returns {String}
+ */
+Window.prototype.btoa=function(stringToEncode){return "";};
+/**
+ * function setResizable(resizable) 
+ * @param {Boolean} resizable
+ * @memberOf Window
+ */
+Window.prototype.setResizable=function(resizable){};
+
+Window.prototype.captureEvents=function(eventType){};
+Window.prototype.releaseEvents=function(eventType){};
+Window.prototype.routeEvent=function(eventType){};
+>>>>>>> origin/master
 Window.prototype.enableExternalCapture=function(){};
 Window.prototype.disableExternalCapture=function(){};
 Window.prototype.find=function(){};
@@ -339,6 +500,7 @@ Window.prototype.back=function(){};
 Window.prototype.forward=function(){};
 Window.prototype.home=function(){};
 Window.prototype.stop=function(){};
+<<<<<<< HEAD
 Window.prototype.scroll=function(arg1,arg2){};
 
 /*
@@ -346,6 +508,13 @@ Window.prototype.scroll=function(arg1,arg2){};
  */
 Window.prototype.dispatchEvent=function(arg1){};
 Window.prototype.removeEventListener=function(arg1,arg2,arg3){};
+=======
+/**
+ * @param {Number} pixelX
+ * @param {Number} pixelY
+ */
+Window.prototype.scroll=function(pixelX,pixelY){};
+>>>>>>> origin/master
 /* End functions */
 
 /**
@@ -558,4 +727,68 @@ Navigator.prototype.height = 0;
  * @type Number
  * @memberOf Screen
  */
+<<<<<<< HEAD
 Navigator.prototype.width = 0;
+=======
+Navigator.prototype.width = 0;
+
+Event.prototype=new Object();
+// PhaseType
+Event.prototype.CAPTURING_PHASE = 1;
+Event.prototype.AT_TARGET = 2;
+Event.prototype.BUBBLING_PHASE = 3;
+
+Event.prototype.type="";
+Event.prototype.target=new EventTarget();
+Event.prototype.currentTarget=new EventTarget();
+Event.prototype.eventPhase=0;
+Event.prototype.bubbles=false;
+Event.prototype.cancelable=false;
+Event.prototype.timeStamp=0;
+Event.prototype.stopPropagation=function(){};
+Event.prototype.preventDefault=function(){};
+/**
+ * @param {String} eventTypeArg
+ * @param {Boolean} canBubbleArg
+ * @param {Boolean} cancelableArg
+ */
+Event.prototype.initEvent=function(eventTypeArg, 
+                             canBubbleArg, 
+                             cancelableArg){};
+function EventListener(){};
+EventListener.prototype=new Object();
+/**
+ * @param {Event} event
+ * @memberOf EventListener
+ */
+EventListener.prototype.handleEvent=function(event){};
+
+function EventTarget(){};
+EventTarget.prototype=new Object();
+/*
+ * These functions may need to be moved into a browser specific library.
+ */
+/**
+ * @memberOf Window
+ * @param event {Event}
+ * @throws {EventException}
+ */
+EventTarget.prototype.dispatchEvent=function(event){};
+
+// https://developer.mozilla.org/en-US/docs/DOM/element.addEventListener
+/**
+ * @memberOf Window
+ * @param {String} type
+ * @param {EventListener} listener
+ * @param {Boolean} useCapture
+ */
+EventTarget.prototype.addEventListener=function(type, listener, useCapture){};
+// https://developer.mozilla.org/en-US/docs/DOM/element.removeEventListener
+/**
+ * @memberOf Window
+ * @param {String} type
+ * @param {EventListener} listener
+ * @param {Boolean} useCapture
+ */
+EventTarget.prototype.removeEventListener=function(type, listener, useCapture){};
+>>>>>>> origin/master

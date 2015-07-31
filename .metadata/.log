@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !SESSION 2015-07-31 14:08:11.977 -----------------------------------------------
 eclipse.buildId=M20120208-0800
 java.version=1.7.0_65
@@ -155,3 +156,61 @@ Caused by: java.security.NoSuchAlgorithmException: No algorithm found for 2.16.8
 	at org.eclipse.osgi.internal.signedcontent.SignedBundleFile.setBundleFile(SignedBundleFile.java:47)
 	at org.eclipse.osgi.internal.signedcontent.SignedBundleHook.getSignedContent(SignedBundleHook.java:256)
 	... 13 more
+=======
+!SESSION 2015-07-31 07:51:20.028 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-07-31 07:57:34.770
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\seba'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2015-07-31 08:02:57.442 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data file:/C:/Users/seba/workspace/ -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-07-31 08:04:33.399
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\seba'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springsource.ide.eclipse.gradle.core 4 0 2015-07-31 08:09:30.631
+!MESSAGE GradleProject 'prueba' does not have a persisted root project location or model that allows computing it
+!STACK 0
+org.springsource.ide.eclipse.gradle.core.classpathcontainer.FastOperationFailedException: GradleProject 'prueba' does not have a persisted root project location or model that allows computing it
+	at org.springsource.ide.eclipse.gradle.core.GradleProject.getRootProject(GradleProject.java:989)
+	at org.springsource.ide.eclipse.gradle.core.preferences.AbstractGradleProjectPreferences.getRootProjectPreferences(AbstractGradleProjectPreferences.java:283)
+	at org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences.getEnableClasspathEntrySorting(GradleProjectPreferences.java:90)
+	at org.springsource.ide.eclipse.gradle.core.ClassPath.<init>(ClassPath.java:138)
+	at org.springsource.ide.eclipse.gradle.core.ClassPath.<init>(ClassPath.java:133)
+	at org.springsource.ide.eclipse.gradle.core.GradleProject.convertToGradleProject(GradleProject.java:710)
+	at org.springsource.ide.eclipse.gradle.ui.actions.ConvertToGradleProjectActionDelegate$1.doit(ConvertToGradleProjectActionDelegate.java:54)
+	at org.springsource.ide.eclipse.gradle.core.util.GradleRunnable$1.run(GradleRunnable.java:53)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.springsource.ide.eclipse.gradle.core 4 0 2015-07-31 08:09:30.777
+!MESSAGE GradleProject 'prueba' does not have a persisted root project location or model that allows computing it
+!STACK 0
+org.springsource.ide.eclipse.gradle.core.classpathcontainer.FastOperationFailedException: GradleProject 'prueba' does not have a persisted root project location or model that allows computing it
+	at org.springsource.ide.eclipse.gradle.core.GradleProject.getRootProject(GradleProject.java:989)
+	at org.springsource.ide.eclipse.gradle.core.preferences.AbstractGradleProjectPreferences.getRootProjectPreferences(AbstractGradleProjectPreferences.java:283)
+	at org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences.getEnableClassnameEntrySorting(GradleProjectPreferences.java:112)
+	at org.springsource.ide.eclipse.gradle.core.ClassPath.<init>(ClassPath.java:139)
+	at org.springsource.ide.eclipse.gradle.core.ClassPath.<init>(ClassPath.java:133)
+	at org.springsource.ide.eclipse.gradle.core.GradleProject.convertToGradleProject(GradleProject.java:710)
+	at org.springsource.ide.eclipse.gradle.ui.actions.ConvertToGradleProjectActionDelegate$1.doit(ConvertToGradleProjectActionDelegate.java:54)
+	at org.springsource.ide.eclipse.gradle.core.util.GradleRunnable$1.run(GradleRunnable.java:53)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+>>>>>>> origin/master
