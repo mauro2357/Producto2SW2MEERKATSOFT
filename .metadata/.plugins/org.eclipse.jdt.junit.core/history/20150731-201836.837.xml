@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTestRunner" project="Meerkat_0.0" tests="3" started="3" failures="2" errors="0" ignored="0">
+  <testsuite name="tomaynotificacionpedidos.UnitTestRunner" time="0.001">
+    <testsuite name="Feature: Como mesero quiero tener un listado de productos para ofrecerlos a mis clientes." time="0.001">
+      <testsuite name="Scenario: El mesero consulta productos y no hay." time="0.001" incomplete="true">
+        <failure>java.lang.AssertionError: expected:&lt;No hay productos&gt; but was:&lt;null&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:88)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:743)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:118)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at tomaynotificacionpedidos.listadodeproductosparameseroStepDefinitions.Notificar_que_no_hay_productos_para_vender(listadodeproductosparameseroStepDefinitions.java:25)&#13;
+	at ✽.Then Notificar que no hay productos para vender.(tomaynotificacionpedidos/listadodeproductosparamesero.feature:6)&#13;
+&#13;
+</failure>
+        <testcase name="Given El mesero va a consultar los productos." classname="Scenario: El mesero consulta productos y no hay." time="0.0"/>
+        <testcase name="When No hay productos." classname="Scenario: El mesero consulta productos y no hay." time="0.0"/>
+        <testcase name="Then Notificar que no hay productos para vender." classname="Scenario: El mesero consulta productos y no hay." time="0.001">
+          <failure>java.lang.AssertionError: expected:&lt;No hay productos&gt; but was:&lt;null&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:88)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:743)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:118)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at tomaynotificacionpedidos.listadodeproductosparameseroStepDefinitions.Notificar_que_no_hay_productos_para_vender(listadodeproductosparameseroStepDefinitions.java:25)&#13;
+	at ✽.Then Notificar que no hay productos para vender.(tomaynotificacionpedidos/listadodeproductosparamesero.feature:6)&#13;
+&#13;
+</failure>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

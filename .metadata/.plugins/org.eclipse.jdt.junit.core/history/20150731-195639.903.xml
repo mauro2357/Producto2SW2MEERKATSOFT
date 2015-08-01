@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTestRunner" project="Meerkat_0.0" tests="3" started="3" failures="0" errors="0" ignored="3">
+  <testsuite name="tomaynotificacionpedidos.UnitTestRunner" time="0.001">
+    <testsuite name="Feature: Como mesero quiero tener un listado de productos para ofrecerlos a mis clientes." time="0.001">
+      <testsuite name="Scenario: El mesero consulta productos y no hay." time="0.001" incomplete="true">
+        <skipped/>
+        <testcase name="Given El mesero va a consultar los productos." classname="Scenario: El mesero consulta productos y no hay." time="0.0" ignored="true"/>
+        <testcase name="When No hay productos." classname="Scenario: El mesero consulta productos y no hay." time="0.001" ignored="true"/>
+        <testcase name="Then Notificar que no hay productos para vender." classname="Scenario: El mesero consulta productos y no hay." time="0.0" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -3,10 +3,13 @@ package tomaynotificacionpedidos;
 public class Mesero {
 
 	public void consultarproductos() {
+		// TODO Auto-generated method stub
+		
 	}
-	
+
 	public String getMensaje() {
-		return "No hay productos";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
