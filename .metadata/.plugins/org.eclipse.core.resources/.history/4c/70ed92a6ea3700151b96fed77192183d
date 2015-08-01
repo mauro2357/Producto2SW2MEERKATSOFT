@@ -1,0 +1,10 @@
+package tomaynotificacionpedidos;
+
+public class Mesero {
+
+	public void consultarproductos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
