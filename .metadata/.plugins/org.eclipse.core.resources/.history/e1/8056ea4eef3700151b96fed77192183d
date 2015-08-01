@@ -1,0 +1,19 @@
+package tomaynotificacionpedidos;
+
+import java.util.ArrayList;
+
+public class Mesero {
+
+	public void consultarproductos() {
+	}
+	
+	public String getMensaje() {
+		return "Hay productos";
+	}
+
+	public ArrayList<Producto> getProductos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

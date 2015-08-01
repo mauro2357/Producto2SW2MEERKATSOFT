@@ -1,0 +1,17 @@
+package tomaynotificacionpedidos;
+
+public class Producto {
+
+	
+	
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return "Aguardiente";
+	}
+
+	public int getValor() {
+		// TODO Auto-generated method stub
+		return 30000;
+	}
+
+}

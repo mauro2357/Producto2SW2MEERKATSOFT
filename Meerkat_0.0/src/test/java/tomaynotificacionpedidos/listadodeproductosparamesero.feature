@@ -5,4 +5,8 @@ Feature: Como mesero quiero tener un listado de productos para ofrecerlos a mis 
 		When No hay productos.
 		Then Notificar que no hay productos para vender.
 		
+		Scenario: El mesero consulta productos y hay.
+		Given El mesero va a consultar los productos.
+		When Hay productos.
+		Then Notificar qué productos hay para vender.
 	

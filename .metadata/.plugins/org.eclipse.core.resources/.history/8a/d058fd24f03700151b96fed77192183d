@@ -1,0 +1,20 @@
+package tomaynotificacionpedidos;
+
+import org.junit.Assert;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class elmeseroconsultaproductosyencuentraunlistadodeeellosStepDefinitions {
+	
+	Mesero mesero = null;
+	
+	@Given("^El mesero va a consultar los productos.$")
+	public void El_mesero_va_a_consultar_los_productos() throws Throwable { 
+		mesero = new Mesero();
+	}
+
+	
+
+}

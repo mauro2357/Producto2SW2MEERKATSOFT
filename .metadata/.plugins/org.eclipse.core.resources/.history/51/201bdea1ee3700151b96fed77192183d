@@ -1,0 +1,10 @@
+package tomaynotificacionpedidos;
+
+public class Producto {
+
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

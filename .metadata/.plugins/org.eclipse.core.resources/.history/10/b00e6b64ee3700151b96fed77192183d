@@ -1,0 +1,17 @@
+package tomaynotificacionpedidos;
+
+public class Mesero {
+
+	public void consultarproductos() {
+	}
+	
+	public String getMensaje() {
+		return "No hay productos";
+	}
+
+	public ArrayList<String> getProductos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

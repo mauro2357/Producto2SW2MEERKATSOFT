@@ -24,5 +24,17 @@ public class listadodeproductosparameseroStepDefinitions {
 	public void Notificar_que_no_hay_productos_para_vender() throws Throwable {
 	    Assert.assertEquals("No hay productos", mesero.getMensaje());
 	}
-
+	
+	@When("^Hay productos.$")
+	public void Hay_productos() throws Throwable {
+	    mesero.consultarproductos();
+	    Assert.assertTrue(mesero.getProductos().size()>0);
+	}
+	
+	@Then("^Notificar qué productos hay para vender.$")
+	public void Notificar_que_productos_hay_para_vender() throws Throwable {
+		Producto producto = mesero.getProductos().get(0);
+	    Assert.assertEquals("Aguardiente", producto.getNombre());
+	    Assert.assertEquals(30000, producto.getValor());
+	}
 }
