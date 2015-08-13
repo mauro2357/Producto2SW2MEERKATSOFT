@@ -36,15 +36,5 @@ public class notificaciondepedidolistoStepDefinitions {
 	public void Notificar_al_despachador_que_no_hay_pedido_en_cola() throws Throwable {
 		Assert.assertEquals("Pedido despachado.", despachador.notificar_pedido());
 	}
-	
-	@When("^No hay mesero.$")
-	public void No_hay_mesero() throws Throwable {
-		Assert.assertTrue(true); //Codigo mínimo. //Se supone que siempre hay mesero.
-	}
 
-	@Then("^Notificar al despachador que no hay mesero.$")
-	public void Notificar_al_despachador_que_no_hay_mesero() throws Throwable {
-		Assert.assertEquals("No hay mesero", "No hay mesero");
-	}
-	
 }

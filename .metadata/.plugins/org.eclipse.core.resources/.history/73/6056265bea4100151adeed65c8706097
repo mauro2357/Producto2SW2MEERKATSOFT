@@ -1,8 +1,12 @@
 package actualizarinventario;
 
+import java.util.ArrayList;
+
+import tomaynotificacionpedidos.Mesero;
+
 public class Administrador {
 	
-	
+	public ArrayList<Mesero> listameseros = new ArrayList<Mesero>();
 	
 	public void consultar_inventario(){
 		

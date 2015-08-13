@@ -2,8 +2,6 @@ package actualizarinventario;
 
 public class Administrador {
 	
-	
-	
 	public void consultar_inventario(){
 		
 	}

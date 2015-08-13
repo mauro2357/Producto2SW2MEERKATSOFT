@@ -10,8 +10,3 @@ Feature: Como despachador quiero notificar al mesero que el pedido esta listo.
 		When No hay pedido en cola.
 		Then Notificar al despachador que no hay pedido en cola.
 		
-		Scenario: El despachador notifica que esta listo el pedido.
-		Given El despachador notifica que esta listo el pedido.
-		When No hay mesero.
-		Then Notificar al despachador que no hay mesero.
-		

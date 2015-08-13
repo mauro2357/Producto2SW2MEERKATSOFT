@@ -3,10 +3,11 @@ package tomaynotificacionpedidos;
 import java.util.ArrayList;
 
 public class Mesero {
+
+	ArrayList<Mesero> listameseros = new ArrayList<Mesero>();
 	
 	public void consultarproductos() {
 	}
-	
 	
 	public String getMensaje() {
 		return "No hay productos";

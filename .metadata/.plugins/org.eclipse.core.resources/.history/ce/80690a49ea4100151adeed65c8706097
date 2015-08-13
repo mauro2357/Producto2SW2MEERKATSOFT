@@ -39,12 +39,12 @@ public class notificaciondepedidolistoStepDefinitions {
 	
 	@When("^No hay mesero.$")
 	public void No_hay_mesero() throws Throwable {
-		Assert.assertTrue(true); //Codigo mínimo. //Se supone que siempre hay mesero.
+		Mesero.this;
 	}
 
 	@Then("^Notificar al despachador que no hay mesero.$")
 	public void Notificar_al_despachador_que_no_hay_mesero() throws Throwable {
-		Assert.assertEquals("No hay mesero", "No hay mesero");
+
 	}
 	
 }

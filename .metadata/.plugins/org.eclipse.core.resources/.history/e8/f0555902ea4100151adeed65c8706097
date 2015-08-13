@@ -3,6 +3,12 @@ package tomaynotificacionpedidos;
 import java.util.ArrayList;
 
 public class Mesero {
+
+	public ArrayList<Mesero> listameseros = new ArrayList<Mesero>();
+	
+	public Mesero() {
+		this.listameseros.add(this);
+	}
 	
 	public void consultarproductos() {
 	}
