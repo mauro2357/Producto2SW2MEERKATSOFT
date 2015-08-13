@@ -1,0 +1,8 @@
+package tomaynotificacionpedidos;
+
+public class Despachador {
+
+	public boolean recibir_pedido(){
+		
+	}
+}
