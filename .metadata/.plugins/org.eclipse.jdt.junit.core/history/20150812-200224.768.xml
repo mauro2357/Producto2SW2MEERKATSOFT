@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTestRunner" project="Meerkat_0.0" tests="9" started="9" failures="2" errors="0" ignored="0">
+  <testsuite name="tomaynotificacionpedidos.UnitTestRunner" time="0.094">
+    <testsuite name="Feature: Como despachador quiero tener un mensaje que me permita ver los pedidos que estan en cola." time="0.047">
+      <testsuite name="Scenario: El mesero envia un pedido." time="0.047" incomplete="true">
+        <failure>
+          <expected>Pedido enviado</expected>
+          <actual>No hay productos</actual>org.junit.ComparisonFailure: expected:&lt;[Pedido enviado]&gt; but was:&lt;[No hay productos]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:115)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at tomaynotificacionpedidos.listadodepedidosencolaStepDefinitions.Agregar_el_pedido_a_la_cola_de_pedidos(listadodepedidosencolaStepDefinitions.java:26)&#13;
+	at ✽.Then Agregar el pedido a la cola de pedidos.(tomaynotificacionpedidos/listadodepedidosencola.feature:6)&#13;
+&#13;
+</failure>
+        <testcase name="Given El mesero envia un pedido al despachador." classname="Scenario: El mesero envia un pedido." time="0.016"/>
+        <testcase name="When Hay productos en el pedido." classname="Scenario: El mesero envia un pedido." time="0.0"/>
+        <testcase name="Then Agregar el pedido a la cola de pedidos." classname="Scenario: El mesero envia un pedido." time="0.031">
+          <failure>
+            <expected>Pedido enviado</expected>
+            <actual>No hay productos</actual>org.junit.ComparisonFailure: expected:&lt;[Pedido enviado]&gt; but was:&lt;[No hay productos]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:115)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at tomaynotificacionpedidos.listadodepedidosencolaStepDefinitions.Agregar_el_pedido_a_la_cola_de_pedidos(listadodepedidosencolaStepDefinitions.java:26)&#13;
+	at ✽.Then Agregar el pedido a la cola de pedidos.(tomaynotificacionpedidos/listadodepedidosencola.feature:6)&#13;
+&#13;
+</failure>
+        </testcase>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature: Como mesero quiero tener un listado de productos para ofrecerlos a mis clientes." time="0.016">
+      <testsuite name="Scenario: El mesero consulta productos y no hay." time="0.0">
+        <testcase name="Given El mesero va a consultar los productos." classname="Scenario: El mesero consulta productos y no hay." time="0.0"/>
+        <testcase name="When No hay productos." classname="Scenario: El mesero consulta productos y no hay." time="0.0"/>
+        <testcase name="Then Notificar que no hay productos para vender." classname="Scenario: El mesero consulta productos y no hay." time="0.0"/>
+      </testsuite>
+      <testsuite name="Scenario: El mesero consulta productos y hay." time="0.0">
+        <testcase name="Given El mesero va a consultar los productos." classname="Scenario: El mesero consulta productos y hay." time="0.0"/>
+        <testcase name="When Hay productos." classname="Scenario: El mesero consulta productos y hay." time="0.0"/>
+        <testcase name="Then Notificar que productos hay para vender." classname="Scenario: El mesero consulta productos y hay." time="0.0"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

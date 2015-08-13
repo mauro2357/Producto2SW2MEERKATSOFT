@@ -18,5 +18,17 @@ public class Mesero {
 		x.add(productox);
 		return x;
 	}
+	
+	public Pedido enviar_pedidos(){
+		ArrayList<Producto> y = new ArrayList<Producto>();
+		y.add(productox);
+		Pedido x = new Pedido(y);
+		return x;
+	}
+	
+	public String enviar_pedido(){
+		return "Pedido enviado";
+	}
+	
 
 }

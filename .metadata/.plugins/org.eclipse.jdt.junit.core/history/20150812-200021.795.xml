@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTestRunner (1)" project="Meerkat_0.0" tests="3" started="3" failures="2" errors="0" ignored="1">
+  <testsuite name="test1.UnitTestRunner" time="0.094">
+    <testsuite name="Feature: Como despachador quiero tener un mensaje que me permita ver los pedidos que estan en cola." time="0.094">
+      <testsuite name="Scenario: El mesero envia un pedido." time="0.078" incomplete="true">
+        <failure>java.lang.AssertionError: expected:&lt;Hay productos en el pedido.&gt; but was:&lt;true&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:88)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:743)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:118)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at test1.listadodepedidosencolaStepDefinitions.Hay_productos_en_el_pedido(listadodepedidosencolaStepDefinitions.java:22)&#13;
+	at ✽.When Hay productos en el pedido.(test1/listadodepedidosencola.feature:5)&#13;
+&#13;
+</failure>
+        <testcase name="Given El mesero envia un pedido al despachador." classname="Scenario: El mesero envia un pedido." time="0.047"/>
+        <testcase name="When Hay productos en el pedido." classname="Scenario: El mesero envia un pedido." time="0.031">
+          <failure>java.lang.AssertionError: expected:&lt;Hay productos en el pedido.&gt; but was:&lt;true&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:88)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:743)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:118)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at test1.listadodepedidosencolaStepDefinitions.Hay_productos_en_el_pedido(listadodepedidosencolaStepDefinitions.java:22)&#13;
+	at ✽.When Hay productos en el pedido.(test1/listadodepedidosencola.feature:5)&#13;
+&#13;
+</failure>
+        </testcase>
+        <testcase name="Then Agregar el pedido a la cola de pedidos." classname="Scenario: El mesero envia un pedido." time="0.0" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

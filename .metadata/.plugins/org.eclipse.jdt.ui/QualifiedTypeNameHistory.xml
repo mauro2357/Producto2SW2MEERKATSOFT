@@ -3,5 +3,6 @@
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Producto"/>
+<fullyQualifiedTypeName name="tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
