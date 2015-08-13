@@ -1,0 +1,21 @@
+package tomaynotificacionpedidos;
+
+import java.util.ArrayList;
+
+public class Pedido {
+	
+	public ArrayList<Producto> cuerpo;
+	
+	public Pedido(ArrayList<Producto> cuerpo) {
+		this.cuerpo = cuerpo;
+	}
+	
+	public ArrayList<Producto> getCuerpo() {
+		return cuerpo;
+	}
+	
+	public void setCuerpo(ArrayList<Producto> cuerpo) {
+		this.cuerpo = cuerpo;
+	}
+	
+}

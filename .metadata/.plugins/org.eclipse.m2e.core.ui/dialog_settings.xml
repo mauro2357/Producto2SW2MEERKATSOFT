@@ -2,6 +2,18 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArchetypePage">
 		<item value="All Catalogs" key="catalog"/>
+<<<<<<< HEAD
+=======
+=======
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+>>>>>>> origin/master
+>>>>>>> origin/master
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -27,6 +39,21 @@
 		<list key="location">
 			<item value="C:\sourcecode\Meerkat\pom.xml"/>
 		</list>
+<<<<<<< HEAD
+=======
+=======
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+<<<<<<< HEAD
+		<item value="All Catalogs" key="catalog"/>
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -62,8 +89,24 @@
 		<list key="groupId">
 		</list>
 		<list key="name">
+<<<<<<< HEAD
+=======
+=======
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="Meerkat.cucumber"/>
+		</list>
+		<list key="groupId">
+<<<<<<< HEAD
+			<item value="Meerkat"/>
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 		</list>
 		<list key="artifactId">
+			<item value="0.1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

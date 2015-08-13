@@ -4,7 +4,12 @@
 IMPORT_FILES_AND_FOLDERS_RELATIVE=true
 IMPORT_FILES_AND_FOLDERS_TYPE=23,1\:7,1
 PROBLEMS_FILTERS_MIGRATE=true
+TASKS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
+<<<<<<< HEAD
 platformState=1437788299001
+=======
+platformState=1438300179068
+>>>>>>> origin/master
 quickStart=false
 tipsAndTricks=true

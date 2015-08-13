@@ -1,0 +1,3 @@
+#GlassFish 3
+#Wed Aug 12 17:30:05 COT 2015
+org.eclipse.jst.jee.server\:Meerkat_0.0=C\:\\Glassfish\\glassfish\\domains\\domain1\\eclipseApps\\Meerkat_0.0
