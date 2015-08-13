@@ -1,0 +1,12 @@
+package actualizarinventario;
+
+public class Administrador {
+	
+	public void consultar_inventario(){
+		
+	}
+	
+	public void agregar_producto_a_inventario(){
+		
+	}
+}

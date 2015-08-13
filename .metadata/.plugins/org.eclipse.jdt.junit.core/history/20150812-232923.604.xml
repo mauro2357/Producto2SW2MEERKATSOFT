@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTestRunner (2)" project="Meerkat_0.0" tests="1" started="0" failures="0" errors="0" ignored="0">
+  <testsuite name="actualizarinventario.UnitTestRunner" incomplete="true">
+    <testcase name="Feature: Como administrador quiero agregar al inventario nuevos productos." classname="Feature: Como administrador quiero agregar al inventario nuevos productos." incomplete="true"/>
+  </testsuite>
+</testrun>
