@@ -28,12 +28,12 @@ public class listadodepedidosencolaStepDefinitions {
 	
 	@When("^No hay productos en el pedido.$")
 	public void No_hay_productos_en_el_pedido() throws Throwable {
-		mesero.realizar_pedido();
+		mesero.consultarproductos()
 	}
 
 	@Then("^Notificar que no hay productos en el pedido.$")
 	public void Notificar_que_no_hay_productos_en_el_pedido() throws Throwable {
-		Assert.assertEquals("No hay productos.", mesero.enviar_pedido());
+		
 	}
 	
 	

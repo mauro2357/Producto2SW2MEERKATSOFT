@@ -27,9 +27,6 @@ public class Mesero {
 	}
 	
 	public String enviar_pedido(){
-		if(realizar_pedido().getCuerpo().size()==0){
-			return "No hay productos.";
-		}
 		return "Pedido enviado";
 	}
 	
