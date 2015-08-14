@@ -1,0 +1,21 @@
+package geraciondefactura;
+
+public class Cajero {
+
+	Factura factura = null;
+	
+	public String generarFactura() {
+		factura = new Factura();
+		return "Factura";
+	}
+
+	public Factura getFactura() {
+		return factura;
+	}
+
+	public boolean añadirpropina(int x) {
+		return true;
+		
+	}
+	
+}

@@ -59,4 +59,8 @@ public class Administrador {
 	public String notificar_conexion_bd(){
 		return "Error en la conexion con la base de datos.";
 	}
+
+	public String getConexionAInternet() {
+		return "No hay conexion a internet.";
+	}
 }

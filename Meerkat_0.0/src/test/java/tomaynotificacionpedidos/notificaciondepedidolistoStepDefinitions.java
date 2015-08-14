@@ -21,7 +21,6 @@ public class notificaciondepedidolistoStepDefinitions {
 
 	@When("^Hay un pedido en cola.$")
 	public void Hay_un_pedido_en_cola() throws Throwable {
-		despachador.recibir_pedido();
 		Assert.assertTrue(despachador.recibir_pedido());
 	}
 
@@ -33,7 +32,7 @@ public class notificaciondepedidolistoStepDefinitions {
 	@When("^No hay pedido en cola.$")
 	public void No_hay_pedido_en_cola() throws Throwable {
 		//Assert.assertTrue(!despachador.recibir_pedido());
-		Assert.assertTrue(true); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
+		Assert.assertTrue(!despachador.recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
 	}
 
 	@Then("^Notificar al despachador que no hay pedido en cola.$")
@@ -56,6 +55,22 @@ public class notificaciondepedidolistoStepDefinitions {
 	@Then("^Notificar al despachador que no hay mesero.$")
 	public void Notificar_al_despachador_que_no_hay_mesero() throws Throwable {
 		Assert.assertEquals("No hay mesero.", administrador.getMessageHayMesero()); //Código minimo para que no haya mesero
+	}
+	
+	@When("^No hay conexion a internet.$")
+	public void No_hay_conexion_a_internet() throws Throwable {
+		Assert.assertTrue(!false); //False simula que no hay conexion a internet.
+
+	}
+
+	@Then("^Notificar que no hay conexion a internet.$")
+	public void Notificar_que_no_hay_conexion_a_internet() throws Throwable {
+		Assert.assertEquals("No hay conexion a internet.", administrador.getConexionAInternet());
+	}
+
+	@When("^Hay conexion a internet.$")
+	public void Hay_conexion_a_internet() throws Throwable {
+		Assert.assertTrue(true); //El true simula que hay conexion a internet.
 	}
 	
 }

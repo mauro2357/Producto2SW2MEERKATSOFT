@@ -1,0 +1,57 @@
+package generaciondefactura;
+
+import org.junit.Assert;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import geraciondefactura.*;
+import tomaynotificacionpedidos.*;
+import actualizarinventario.*;
+
+public class generaciondefacturaStepDefinitions {
+	
+	Cajero cajero = null;
+	Despachador despachador = null;
+	
+	@Given("^El cajero generara una factura de cobro.$")
+	public void El_cajero_generara_una_factura_de_cobro() throws Throwable {
+		cajero = new Cajero();
+		despachador = new Despachador();
+	}
+
+	@When("^Hay pedido.$")
+	public void Hay_pedido() throws Throwable {
+		despachador.recibir_pedido();
+		Assert.assertTrue(despachador.recibir_pedido());
+	}
+
+	@Then("^Generar factura de cobro.$")
+	public void Generar_factura_de_cobro() throws Throwable {
+		Assert.assertEquals(cajero.generarFactura(), "Factura");
+	}
+
+	@When("^No hay pedido.$")
+	public void No_hay_pedido() throws Throwable {
+		//Assert.assertTrue(!despachador.recibir_pedido());
+		Assert.assertTrue(!despachador.recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
+	}
+
+	@Then("^Notificar que no hay pedido.$")
+	public void Notificar_que_no_hay_pedido() throws Throwable {
+		Assert.assertEquals("Pedido despachado.", despachador.notificar_pedido());
+	}
+
+	@When("^La factura incluye propina.$")
+	public void La_factura_incluye_propina() throws Throwable {
+	}
+
+	@Then("^Generar factura de cobro con propina.$")
+	public void Generar_factura_de_cobro_con_propina() throws Throwable {
+	}
+
+	@When("^La factura no incluye propina.$")
+	public void La_factura_no_incluye_propina() throws Throwable {
+	}
+
+}

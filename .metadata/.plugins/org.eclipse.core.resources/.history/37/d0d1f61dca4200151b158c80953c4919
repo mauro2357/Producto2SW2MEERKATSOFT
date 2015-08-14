@@ -1,0 +1,13 @@
+package geraciondefactura;
+
+public class Cajero {
+
+	Factura factura = null;
+	
+	public void generarFactura() {
+		Factura factura = new Factura();
+	}
+
+	
+	
+}

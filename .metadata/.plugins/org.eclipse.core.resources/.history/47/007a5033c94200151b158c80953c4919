@@ -1,0 +1,16 @@
+Feature: Como cajero quiero generar una factura de cobro.
+
+	Scenario: El mesero generara una factura de cobro.
+	Given El mesero generara una factura de cobro.
+	When Hay pedido.
+	Then Generar factura de cobro.
+	
+	Scenario: El mesero generara una factura de cobro.
+	Given El mesero generara una factura de cobro.
+	When No hay pedido.
+	Then Generar factura de cobro.
+	
+	Scenario: El mesero generara una factura de cobro.
+	Given El mesero generara una factura de cobro.
+	When Hay pedido.
+	Then Generar factura de cobro.

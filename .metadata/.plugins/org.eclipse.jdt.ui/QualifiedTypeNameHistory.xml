@@ -4,8 +4,11 @@
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Producto"/>
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="actualizarinventario.Administrador"/>
-<fullyQualifiedTypeName name="tomaynotificacionpedidos.Despachador"/>
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Mesero"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="geraciondefactura.Cajero"/>
+<fullyQualifiedTypeName name="geraciondefactura.Factura"/>
+<fullyQualifiedTypeName name="generaciondefactura.generaciondefacturaStepDefinitions"/>
+<fullyQualifiedTypeName name="tomaynotificacionpedidos.Despachador"/>
 </qualifiedTypeNameHistroy>
