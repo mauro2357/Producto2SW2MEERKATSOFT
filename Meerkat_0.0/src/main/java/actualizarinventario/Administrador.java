@@ -49,14 +49,14 @@ public class Administrador {
 	}
 	
 	public boolean verificar_el_producto_esta_en_el_inventario(){
-		return false;
-	}
-	
-	public boolean verificar_conexion_bd(){
 		return true;
 	}
 	
+	public boolean verificar_conexion_bd(){
+		return true ;
+	}
+	
 	public String notificar_conexion_bd(){
-		return "Error en la conexion BD.";
+		return "Error en la conexion con la base de datos.";
 	}
 }
