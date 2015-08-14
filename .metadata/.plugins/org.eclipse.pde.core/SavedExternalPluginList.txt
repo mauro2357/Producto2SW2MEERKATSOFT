@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-# List of external plug-in models previously loaded. Timestamp: 1439438418826
-=======
-# List of external plug-in models previously loaded. Timestamp: 1439441491637
->>>>>>> origin/master
+# List of external plug-in models previously loaded. Timestamp: 1439522895876
