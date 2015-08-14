@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTestRunner (2)" project="Meerkat_0.0" tests="6" started="6" failures="2" errors="0" ignored="1">
+  <testsuite name="actualizarinventario.UnitTestRunner" time="0.046">
+    <testsuite name="Feature: Como administrador quiero agregar al inventario nuevos productos." time="0.046">
+      <testsuite name="Scenario: El administrador va a agregar un producto al inventario." time="0.005">
+        <testcase name="Given El administrador va a agregar un producto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.004"/>
+        <testcase name="When El producto a agregar no existe en la lista de productos." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="Then Agregar el nuevo produto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.001"/>
+      </testsuite>
+      <testsuite name="Scenario: El administrador va a agregar un producto al inventario." time="0.0" incomplete="true">
+        <failure>java.lang.AssertionError: expected:&lt;false&gt; but was:&lt;true&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:88)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:743)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:118)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at actualizarinventario.agregarproductoalinventarioStepDefinitios.El_producto_a_agregar_existe_en_la_lista_de_productos(agregarproductoalinventarioStepDefinitios.java:31)&#13;
+	at ✽.When El producto a agregar existe en la lista de productos.(actualizarinventario/agregarproductoalinvetario.feature:10)&#13;
+&#13;
+</failure>
+        <testcase name="Given El administrador va a agregar un producto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="When El producto a agregar existe en la lista de productos." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0">
+          <failure>java.lang.AssertionError: expected:&lt;false&gt; but was:&lt;true&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:88)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:743)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:118)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at actualizarinventario.agregarproductoalinventarioStepDefinitios.El_producto_a_agregar_existe_en_la_lista_de_productos(agregarproductoalinventarioStepDefinitios.java:31)&#13;
+	at ✽.When El producto a agregar existe en la lista de productos.(actualizarinventario/agregarproductoalinvetario.feature:10)&#13;
+&#13;
+</failure>
+        </testcase>
+        <testcase name="Then Adiciona el producto al inventario." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.008" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

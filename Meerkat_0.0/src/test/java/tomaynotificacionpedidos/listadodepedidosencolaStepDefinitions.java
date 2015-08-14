@@ -6,13 +6,17 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import actualizarinventario.*;
+
 public class listadodepedidosencolaStepDefinitions {
 	
 	Mesero mesero = null;
+	Administrador administrador = null;
 	
 	@Given("^El mesero envia un pedido al despachador.$")
 	public void El_mesero_envia_un_pedido_al_despachador() throws Throwable { 
 		mesero = new Mesero();
+		administrador = new Administrador();
 		mesero.realizar_pedido();
 	}
 
@@ -35,6 +39,20 @@ public class listadodepedidosencolaStepDefinitions {
 	public void Notificar_que_no_hay_productos_en_el_pedido() throws Throwable {
 		//Assert.assertEquals("No hay productos.", mesero.enviar_pedido());
 		Assert.assertTrue(true); //Codigo minimo* Pues HAY productos. Se coloca true haciendo PARECER que no hay productos en el pedido
+	}
+	@When("^Hay despachador.$")
+	public void Hay_despachador() throws Throwable {
+		Assert.assertTrue(administrador.consultar_despachador());
+	}
+
+	@When("^No hay despachador.$")
+	public void No_hay_despachador() throws Throwable {
+		Assert.assertTrue(administrador.consultar_despachador());
+	}
+
+	@Then("^Notificar que no hay despachador.$")
+	public void Notificar_que_no_hay_despachador() throws Throwable {
+		Assert.assertEquals("No hay despachador.", administrador.getMessageHayDespachador());
 	}
 	
 	
