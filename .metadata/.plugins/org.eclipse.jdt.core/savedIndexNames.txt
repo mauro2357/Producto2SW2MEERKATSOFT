@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.127+C:\sourcecode\.metadata\.plugins\org.eclipse.jdt.core
 30253470.index
 3133528496.index
@@ -18,3 +19,32 @@ INDEX VERSION 1.127+C:\sourcecode\.metadata\.plugins\org.eclipse.jdt.core
 1286035763.index
 163172794.index
 1115467115.index
+=======
+INDEX VERSION 1.127+C:\Users\Crisman Carmona\OneDrive\Programacion\workspace\.metadata\.plugins\org.eclipse.jdt.core
+332159705.index
+3383348850.index
+4104585506.index
+488412465.index
+3469127304.index
+1414844496.index
+1288402089.index
+2135303338.index
+2009812315.index
+2585312288.index
+3727323777.index
+831420059.index
+1286035763.index
+1423521505.index
+3146668898.index
+1932380460.index
+915314298.index
+3426364576.index
+3833776325.index
+2933228071.index
+837780899.index
+1796884264.index
+192295827.index
+3363946422.index
+2689773191.index
+3252993830.index
+>>>>>>> origin/master

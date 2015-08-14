@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Producto"/>
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Pedido"/>
+=======
+<fullyQualifiedTypeName name="tomaynotificacionpedidos.Producto"/>
+<fullyQualifiedTypeName name="tomaynotificacionpedidos.Pedido"/>
+<fullyQualifiedTypeName name="actualizarinventario.Administrador"/>
+<fullyQualifiedTypeName name="tomaynotificacionpedidos.Despachador"/>
+<fullyQualifiedTypeName name="tomaynotificacionpedidos.Mesero"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+>>>>>>> origin/master
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
