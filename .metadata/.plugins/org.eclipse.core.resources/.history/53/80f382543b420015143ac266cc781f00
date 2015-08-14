@@ -16,6 +16,6 @@ Feature: Como administrador quiero agregar al inventario nuevos productos.
 		Then Notificar error en la base de datos.
 		
 		Scenario: El administrador va a agregar un producto al inventario.
-		Given El administrador va a agregar un producto.
+		Given El administrador va a agrear un producto.
 		When Ocurre un error de bd.
 		Then Notificar error en la base de datos.

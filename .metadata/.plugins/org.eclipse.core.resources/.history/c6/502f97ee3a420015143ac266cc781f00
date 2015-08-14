@@ -38,12 +38,7 @@ public class agregarproductoalinventarioStepDefinitios {
 	
 	@When("^No hay base de datos.$")
 	public void No_hay_base_de_datos() throws Throwable {
-		Assert.assertTrue(administrador.verificar_conexion_bd()); //Esto supone que la base de datos no conectó.
-	}
-	
-	@When("^Ocurre un error de bd.$")
-	public void Ocurre_un_error_de_bd() throws Throwable {
-	    Assert.assertTrue(!false); //False indicaría un error en la base de datos.
+		Assert.assertTrue(!administrador.verificar_conexion_bd()); //Esto supone que la base de datos no conectó.
 	}
 
 	@Then("^Notificar error en la base de datos.$")

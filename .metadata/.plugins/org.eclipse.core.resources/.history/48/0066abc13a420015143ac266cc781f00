@@ -56,7 +56,7 @@ public class Administrador {
 		return true;
 	}
 	
-	public String notificar_conexion_bd(){
+	public boolean notificar_conexion_bd(){
 		return "Error en la conexion BD.";
 	}
 }

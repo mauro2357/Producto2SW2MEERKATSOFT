@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTestRunner (2)" project="Meerkat_0.0" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="actualizarinventario.UnitTestRunner" time="0.05">
+    <testsuite name="Feature: Como administrador quiero agregar al inventario nuevos productos." time="0.05">
+      <testsuite name="Scenario: El administrador va a agregar un producto al inventario." time="0.004">
+        <testcase name="Given El administrador va a agregar un producto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.003"/>
+        <testcase name="When El producto a agregar no existe en la lista de productos." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.001"/>
+        <testcase name="Then Agregar el nuevo produto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+      </testsuite>
+      <testsuite name="Scenario: El administrador va a agregar un producto al inventario." time="0.0">
+        <testcase name="Given El administrador va a agregar un producto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="When El producto a agregar existe en la lista de productos." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="Then Adiciona el producto al inventario." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+      </testsuite>
+      <testsuite name="Scenario: El administrador va a agregar un producto al inventario." time="0.0">
+        <testcase name="Given El administrador va a agregar un producto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="When No hay base de datos." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="Then Notificar error en la base de datos." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+      </testsuite>
+      <testsuite name="Scenario: El administrador va a agregar un producto al inventario." time="0.0">
+        <testcase name="Given El administrador va a agregar un producto." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="When Ocurre un error de bd." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+        <testcase name="Then Notificar error en la base de datos." classname="Scenario: El administrador va a agregar un producto al inventario." time="0.0"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>
