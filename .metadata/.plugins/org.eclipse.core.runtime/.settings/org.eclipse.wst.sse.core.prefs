@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+<<<<<<< HEAD
+task-tag-projects-already-scanned=Meerkat_bar
+=======
+modelmanager.maxWaitDuringConcurrentLoad=30000
+>>>>>>> origin/master

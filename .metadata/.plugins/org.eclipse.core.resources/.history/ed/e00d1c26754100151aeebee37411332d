@@ -1,0 +1,16 @@
+package actualizarinventario;
+
+public class Administrador {
+	
+	public void consultar_inventario(){
+		
+	}
+	
+	public void agregar_producto_a_inventario(){
+		
+	}
+	
+	public boolean verificar_el_producto_esta_en_el_inventario(){
+		return false;
+	}
+}

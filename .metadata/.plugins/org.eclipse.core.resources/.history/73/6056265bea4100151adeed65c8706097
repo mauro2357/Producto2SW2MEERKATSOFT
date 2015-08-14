@@ -1,0 +1,26 @@
+package actualizarinventario;
+
+import java.util.ArrayList;
+
+import tomaynotificacionpedidos.Mesero;
+
+public class Administrador {
+	
+	public ArrayList<Mesero> listameseros = new ArrayList<Mesero>();
+	
+	public void consultar_inventario(){
+		
+	}
+	
+	public boolean agregar_producto_a_inventario(){
+		return true;
+	}
+	
+	public boolean adicinar_producto_al_inventario(){
+		return true;
+	}
+	
+	public boolean verificar_el_producto_esta_en_el_inventario(){
+		return false;
+	}
+}

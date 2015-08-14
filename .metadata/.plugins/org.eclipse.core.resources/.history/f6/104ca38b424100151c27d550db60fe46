@@ -1,0 +1,25 @@
+package tomaynotificacionpedidos;
+
+import org.junit.Assert;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class listadodepedidosencolaStepDefinitions {
+	
+	@Given("^El mesero envia un pedido al despachador.$")
+	public void El_mesero_va_a_consultar_los_productos() throws Throwable { 
+		mesero = new Mesero();
+	}
+
+	@When("^Aparece una notificacion.$")
+	public void No_hay_productos() throws Throwable {
+	    mesero.consultarproductos();
+	}
+
+	@Then("^Notificar que no hay productos para vender.$")
+	public void Notificar_que_no_hay_productos_para_vender() throws Throwable {
+	    Assert.assertEquals("No hay productos", mesero.getMensaje());
+	}
+}
