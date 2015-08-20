@@ -2,17 +2,17 @@ package generaciondefactura;
 
 import org.junit.Assert;
 
+import Negocio.geraciondefactura.*;
+import Negocio.tomaynotificacionpedidos.*;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import geraciondefactura.*;
-import tomaynotificacionpedidos.*;
+import negocio.actualizarinventario.*;
 
 public class generaciondefacturaStepDefinitions {
 	
 	Cajero cajero = null;
 	Despachador despachador = null;
-	Factura factura = null;
 	
 	@Given("^El cajero generara una factura de cobro.$")
 	public void El_cajero_generara_una_factura_de_cobro() throws Throwable {
@@ -29,7 +29,7 @@ public class generaciondefacturaStepDefinitions {
 	@Then("^Generar factura de cobro.$")
 	public void Generar_factura_de_cobro() throws Throwable {
 		Assert.assertEquals(cajero.generarFactura(), "Factura");
-		factura = cajero.getFactura();
+		Factura factura = cajero.getFactura();
 	}
 
 	@When("^No hay pedido.$")
@@ -51,12 +51,11 @@ public class generaciondefacturaStepDefinitions {
 
 	@Then("^Generar factura de cobro con propina.$")
 	public void Generar_factura_de_cobro_con_propina() throws Throwable {
-		Assert.assertEquals(cajero.generarFactura(), "Factura");
+		Assert.assertEquals(expected, actual);
 	}
 
 	@When("^La factura no incluye propina.$")
 	public void La_factura_no_incluye_propina() throws Throwable {
-		Assert.assertTrue(cajero.añadirpropina(0));
 	}
 
 }
