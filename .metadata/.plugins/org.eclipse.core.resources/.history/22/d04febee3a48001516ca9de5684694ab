@@ -1,0 +1,17 @@
+package Presentacion;
+
+import java.util.ArrayList;
+
+import Datos.ProductoRepository;
+import Negocio.tomaynotificacionpedidos.Producto;
+
+public class consultarproductosFacade {
+	public static void main(String []arg) throws Exception{
+		ProductoRepository productorepository = new ProductoRepository();
+		ArrayList<Producto> x = productorepository.ConsultarProducto();
+		for(Producto producto: x){
+			System.out.println(producto.codigo + " " + producto.nombre + " " + producto.valor + " " + producto.descripcion);
+		}
+		
+	}
+}

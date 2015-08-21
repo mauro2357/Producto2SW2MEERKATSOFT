@@ -33,10 +33,11 @@ public class listadodeproductosparameseroStepDefinitions {
 	    Assert.assertTrue(mesero.getProductos().size()>0);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Then("^Notificar que productos hay para vender.$")
 	public void Notificar_que_productos_hay_para_vender() throws Throwable {
 		Producto producto = mesero.getProductos().get(0);
 	    Assert.assertEquals("Aguardiente", producto.getNombre());
-	    Assert.assertEquals(30000, producto.getValor());
+	    Assert.assertEquals(30000, (double) producto.getValor()); //??
 	}
 }

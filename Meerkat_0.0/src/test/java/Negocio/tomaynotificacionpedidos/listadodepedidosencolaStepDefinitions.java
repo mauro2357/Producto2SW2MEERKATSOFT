@@ -1,7 +1,9 @@
 package Negocio.tomaynotificacionpedidos;
 
 import org.junit.Assert;
-
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import Negocio.actualizarinventario.Administrador;
 
 public class listadodepedidosencolaStepDefinitions {

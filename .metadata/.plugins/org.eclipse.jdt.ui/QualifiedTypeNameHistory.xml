@@ -15,10 +15,11 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="Datos.ConexionMySql"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="Datos.PedidoRepository"/>
 <fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Negocio.actualizarinventario.Administrador"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

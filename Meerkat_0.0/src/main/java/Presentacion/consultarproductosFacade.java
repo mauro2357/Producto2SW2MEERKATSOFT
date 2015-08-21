@@ -1,10 +1,14 @@
 package Presentacion;
 
+import java.util.ArrayList;
+
 import Datos.ProductoRepository;
+import Negocio.tomaynotificacionpedidos.Producto;
 
 public class consultarproductosFacade {
-	public static void main(String []arg) throws Exception{
-		ProductoRepository pedidorepository = new ProductoRepository();
-		System.out.println(pedidorepository.ConsultarProducto());
+	public static ArrayList<Producto> main(String []arg) throws Exception{
+		ProductoRepository productorepository = new ProductoRepository();
+		ArrayList<Producto> x = productorepository.ConsultarProducto();
+		return x;
 	}
 }

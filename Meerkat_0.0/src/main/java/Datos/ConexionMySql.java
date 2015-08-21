@@ -11,8 +11,7 @@ public class ConexionMySql {
 		    String password = "root";
 		    Class.forName(driver);
 		    Connection con = DriverManager.getConnection(connection, user, password);
-		    System.out.println("conectó");
 		   return con;
 		  
-}
+	  }
 }

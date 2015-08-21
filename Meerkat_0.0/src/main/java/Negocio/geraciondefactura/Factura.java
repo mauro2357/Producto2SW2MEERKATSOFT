@@ -1,9 +1,5 @@
 package Negocio.geraciondefactura;
 
-import java.util.ArrayList;
-
-import Negocio.tomaynotificacionpedidos.Producto;
-
 public class Factura {
 	
 	public String meser;

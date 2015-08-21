@@ -1,0 +1,14 @@
+package Presentacion;
+
+import Datos.ProductoRepository;
+import Negocio.tomaynotificacionpedidos.Producto;
+
+public class consultarproductosFacade {
+	public static void main(String []arg) throws Exception{
+		ProductoRepository productorepository = new ProductoRepository();
+		for(Producto producto: productorepository){
+			
+		}
+		System.out.println(productorepository.ConsultarProducto());
+	}
+}

@@ -3,10 +3,8 @@ package Datos;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 import Negocio.geraciondefactura.Factura;
-import Negocio.tomaynotificacionpedidos.Producto;
 public class FacturaRepository {
 	public Factura generarfactura() throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
