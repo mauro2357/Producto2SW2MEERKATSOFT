@@ -1,0 +1,32 @@
+package Datos;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import Negocio.geraciondefactura.Factura;
+import Negocio.tomaynotificacionpedidos.Producto;
+public class FacturaRepository {
+	public ArrayList<Producto> generarfactura() throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "SELECT * FROM venta natural join mesero natural join cajero ";
+
+	    Statement st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	   
+	    ArrayList<Producto> a = new ArrayList<>();
+	    
+	    while (rs.next()){
+	      String meser = rs.getString("Me_nombre"+""+"Me_apellido");
+	      String cajer = rs.getString("Caj_nombre"+""+"Caj_apellido");
+	      String mesa = rs.getString("Mesa_id");
+	     // ArrayList<Producto>productos=rs.getArray;
+	      
+	      Factura f = new Factura(meser, cajer,mesa, d);
+	      a.add(p);     
+	    }
+	    st.close();
+	    return a;
+
+}

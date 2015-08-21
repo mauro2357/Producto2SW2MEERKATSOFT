@@ -1,0 +1,5 @@
+package geraciondefactura.Negocio;
+
+public class Factura {
+
+}
