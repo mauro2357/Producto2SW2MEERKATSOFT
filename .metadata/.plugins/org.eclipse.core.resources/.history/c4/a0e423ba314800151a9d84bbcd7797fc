@@ -8,25 +8,24 @@ import java.util.ArrayList;
 import Negocio.geraciondefactura.Factura;
 import Negocio.tomaynotificacionpedidos.Producto;
 public class FacturaRepository {
-	public Factura generarfactura() throws Exception {
+	public ArrayList<Producto> generarfactura() throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "SELECT * FROM venta ";
+	    String query = "SELECT * FROM venta natural join mesero natural join cajero ";
 
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	   
 	    
 	    while (rs.next()){
-	      String meser = rs.getString("Me_nombre");
-	      String cajer = rs.getString("Caj_nombre");
+	      String meser = rs.getString("Me_nombre"+""+"Me_apellido");
+	      String cajer = rs.getString("Caj_nombre"+""+"Caj_apellido");
 	      String mesa = rs.getString("Mesa_id");
-	      String producto=rs.getString("Pro_id"+""+"Pro_nombre"+"Pro_valor");
+	     // ArrayList<Producto>productos=rs.getArray;
 	      
-	      Factura f = new Factura(meser, cajer,mesa,producto);
-	        
+	      Factura f = new Factura(meser, cajer,mesa, d);
+	      a.add(p);     
 	    }
 	    st.close();
-	    return f;
-	    		
+	    return a;
 
 }
