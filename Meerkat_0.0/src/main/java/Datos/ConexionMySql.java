@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class ConexionMySql {
 	  public  Connection ObtenerConexion() throws Exception {
-		    String driver = "com.mysql.jdbc.Driver";
+		    String driver = "com.mysql.jdbc.Driver";//Conexion Base de datos
 		    String connection = "jdbc:mysql://localhost:3306/future";
 		    String user = "root";
 		    String password = "root";
