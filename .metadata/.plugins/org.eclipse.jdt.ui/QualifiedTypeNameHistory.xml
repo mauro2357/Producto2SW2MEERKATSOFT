@@ -6,9 +6,17 @@
 <fullyQualifiedTypeName name="actualizarinventario.Administrador"/>
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Mesero"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="geraciondefactura.Cajero"/>
 <fullyQualifiedTypeName name="geraciondefactura.Factura"/>
 <fullyQualifiedTypeName name="generaciondefactura.generaciondefacturaStepDefinitions"/>
 <fullyQualifiedTypeName name="tomaynotificacionpedidos.Despachador"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="Datos.ConexionMySql"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
+<fullyQualifiedTypeName name="Datos.PedidoRepository"/>
 </qualifiedTypeNameHistroy>
