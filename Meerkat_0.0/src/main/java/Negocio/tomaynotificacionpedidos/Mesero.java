@@ -3,6 +3,7 @@ package Negocio.tomaynotificacionpedidos;
 import java.util.ArrayList;
 
 import Datos.MeseroRepository;
+import Presentacion.consultarproductosFacade;
 
 public class Mesero {
 	
@@ -10,6 +11,7 @@ public class Mesero {
 	String nombre;
 	String apellido;
 	String telefono;
+	ArrayList<Producto> x;
 	
 	MeseroRepository conexion = new MeseroRepository();
 	
@@ -21,10 +23,14 @@ public class Mesero {
 	}
 
 	public Mesero() {
-		
 	}
 
-	public void consultarproductos() {
+	public ArrayList<Producto> consultarproductos() throws Exception {
+		consultarproductosFacade y = new consultarproductosFacade();
+		ArrayList<Producto> x = new ArrayList<Producto>();
+		x = y.main();
+		this.x = x;
+		return x;
 	}
 	
 	public void setId(String id) {
@@ -36,16 +42,11 @@ public class Mesero {
 	}
 	
 	public String getMensaje() {
-		return "No hay productos";
+		if(this.x.size()==0) return "No hay productos";
+		return "Hay productos";
 	}
 	
 	Producto productox = new Producto("1","Aguardiente",(double) 30000, "muy rico");
-
-	public ArrayList<Producto> getProductos() {
-		ArrayList<Producto> x = new ArrayList<Producto>();
-		x.add(productox);
-		return x;
-	}
 	
 	public Pedido realizar_pedido(){
 		ArrayList<Producto> y = new ArrayList<Producto>();

@@ -1,6 +1,5 @@
 package Negocio.geraciondefactura;
 
-import Presentacion.generaciondefacturaFacade;
 
 public class Cajero {
 
@@ -21,12 +20,11 @@ public class Cajero {
 	}
 	
 	public String generarFactura() {
-		factura = new Factura(null,null,null,null);
+		factura = new Factura(null,null,null,null,null);
 		return "Factura";
 	}
 
 	public Factura getFactura() {
-		generaciondefacturaFacade x = new generaciondefacturaFacade();
 		return factura;
 	}
 

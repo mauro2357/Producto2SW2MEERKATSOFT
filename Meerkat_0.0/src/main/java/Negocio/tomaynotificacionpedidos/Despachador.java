@@ -3,6 +3,7 @@ package Negocio.tomaynotificacionpedidos;
 public class Despachador {
 
 	public boolean recibir_pedido(){
+		
 		return true;
 	}
 	

@@ -4,13 +4,11 @@ import java.util.ArrayList;
 
 import Datos.FacturaRepository;
 import Negocio.geraciondefactura.Factura;
-import Negocio.tomaynotificacionpedidos.Producto;
 
 public class generaciondefacturaFacade {
-	public static Factura main(String mesero, String cajero, String mesa, String productos) throws Exception{
-		FacturaRepository Facturarepository = new FacturaRepository();
-		Factura x = new Factura(mesero, cajero, mesa, productos);
-		Facturarepository.generarfactura();
+	public static ArrayList<Factura> main() throws Exception{
+		FacturaRepository facturarepository = new FacturaRepository();
+		ArrayList<Factura> x = facturarepository.generarfactura();
 		return x;
 	}
 }
