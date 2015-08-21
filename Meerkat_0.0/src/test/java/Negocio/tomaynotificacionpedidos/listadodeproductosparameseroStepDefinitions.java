@@ -14,7 +14,7 @@ public class listadodeproductosparameseroStepDefinitions {
 	
 	@Given("^El mesero va a consultar los productos.$")
 	public void El_mesero_va_a_consultar_los_productos() throws Throwable { 
-		mesero = new Mesero();
+		mesero = new Mesero(); //El mesero de id=1 qu
 	}
 
 	@When("^No hay productos.$")

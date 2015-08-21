@@ -15,7 +15,7 @@ public class generaciondefacturaStepDefinitions {
 	
 	@Given("^El cajero generara una factura de cobro.$")
 	public void El_cajero_generara_una_factura_de_cobro() throws Throwable {
-		cajero = new Cajero();
+		cajero = new Cajero("0001","Crisman","Carmona","1040046523","5533787");
 		despachador = new Despachador();
 	}
 

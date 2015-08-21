@@ -1,0 +1,24 @@
+package Negocio.geraciondefactura;
+
+import Presentacion.generaciondefacturaFacade;
+
+public class Cajero {
+
+	Factura factura = null;
+	
+	public String generarFactura() {
+		factura = new Factura(null,null,null,null);
+		return "Factura";
+	}
+
+	public Factura getFactura() {
+		generaciondefacturaFacade factura = new generaciondefacturaFacade();
+		return factura;
+	}
+
+	public boolean añadirpropina(int x) {
+		//se le suma x al valor de la factura.
+		return true;
+	}
+	
+}

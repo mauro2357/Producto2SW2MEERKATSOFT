@@ -1,8 +1,24 @@
 package Negocio.geraciondefactura;
 
+import Presentacion.generaciondefacturaFacade;
+
 public class Cajero {
 
 	Factura factura = null;
+	
+	public String id;
+	public String nombre;
+	public String apellido;
+	public String clave;
+	public String telefono;
+	
+	public Cajero(String id, String nombre, String apellido, String clave, String telefono) {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.clave = clave;
+		this.telefono = telefono;
+	}
 	
 	public String generarFactura() {
 		factura = new Factura(null,null,null,null);
@@ -10,6 +26,7 @@ public class Cajero {
 	}
 
 	public Factura getFactura() {
+		generaciondefacturaFacade x = new generaciondefacturaFacade();
 		return factura;
 	}
 

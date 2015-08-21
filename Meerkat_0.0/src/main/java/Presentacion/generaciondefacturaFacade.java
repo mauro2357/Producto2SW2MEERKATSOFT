@@ -1,10 +1,16 @@
 package Presentacion;
 
+import java.util.ArrayList;
+
 import Datos.FacturaRepository;
+import Negocio.geraciondefactura.Factura;
+import Negocio.tomaynotificacionpedidos.Producto;
 
 public class generaciondefacturaFacade {
-	public static void main(String []arg) throws Exception{
+	public static Factura main(String mesero, String cajero, String mesa, String productos) throws Exception{
 		FacturaRepository Facturarepository = new FacturaRepository();
-		System.out.println(Facturarepository.generarfactura());
+		Factura x = new Factura(mesero, cajero, mesa, productos);
+		Facturarepository.generarfactura();
+		return x;
 	}
 }

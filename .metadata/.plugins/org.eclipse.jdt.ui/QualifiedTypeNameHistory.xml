@@ -16,10 +16,13 @@
 <fullyQualifiedTypeName name="Datos.ConexionMySql"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="Datos.PedidoRepository"/>
-<fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="Negocio.actualizarinventario.Administrador"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
-<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
+<fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
+<fullyQualifiedTypeName name="Presentacion.generaciondefacturaFacade"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Mesero"/>
+<fullyQualifiedTypeName name="Datos.MeseroRepository"/>
 </qualifiedTypeNameHistroy>

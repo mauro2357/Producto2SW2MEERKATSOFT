@@ -2,11 +2,38 @@ package Negocio.tomaynotificacionpedidos;
 
 import java.util.ArrayList;
 
+import Datos.MeseroRepository;
+
 public class Mesero {
 	
+	String id;
+	String nombre;
+	String apellido;
+	String telefono;
+	
+	MeseroRepository conexion = new MeseroRepository();
+	
+	public Mesero(String id, String nombre, String apellido, String telefono) {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+	}
+
+	public Mesero() {
+		
+	}
+
 	public void consultarproductos() {
 	}
 	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
 	
 	public String getMensaje() {
 		return "No hay productos";
