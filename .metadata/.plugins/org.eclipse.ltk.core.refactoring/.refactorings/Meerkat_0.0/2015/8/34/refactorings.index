@@ -2,3 +2,5 @@
 1440043661880	Rename package 'generaciondefactura'
 1440093498625	Rename package 'tomaynotificacionpedidos'
 1440129064912	Rename type 'tomaynotificacionpedidosFacade'
+1440182483442	Delete element
+1440182854877	Rename type 'PedidoRepository'

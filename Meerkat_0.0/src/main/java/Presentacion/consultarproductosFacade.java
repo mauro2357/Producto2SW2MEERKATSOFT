@@ -1,11 +1,10 @@
 package Presentacion;
 
-import Datos.PedidoRepository;
+import Datos.ProductoRepository;
 
 public class consultarproductosFacade {
 	public static void main(String []arg) throws Exception{
-		PedidoRepository pedidorepository = new PedidoRepository();
+		ProductoRepository pedidorepository = new ProductoRepository();
 		System.out.println(pedidorepository.ConsultarProducto());
-		
 	}
 }

@@ -5,7 +5,7 @@ public class Cajero {
 	Factura factura = null;
 	
 	public String generarFactura() {
-		factura = new Factura();
+		factura = new Factura(null,null,null,null);
 		return "Factura";
 	}
 

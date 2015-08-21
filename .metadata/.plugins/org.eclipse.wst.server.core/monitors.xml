@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<monitors/>
+<monitors>
+  <monitor port="8006" portId="server" serverId="Tomcat v8.0 Server at localhost" started="false"/>
+</monitors>
