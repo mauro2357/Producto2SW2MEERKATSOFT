@@ -46,10 +46,12 @@ public class Mesero {
 		return "Hay productos";
 	}
 	
+	Producto productox = new Producto("1","Aguardiente",(double) 30000, "muy rico");
 	
-	public Pedido realizar_pedido(ArrayList<Producto> lista, String mesa, String cliente, String meser, String caja, String fecha, String estado, String id){
-
-		Pedido x = new Pedido(lista);
+	public Pedido realizar_pedido(){
+		ArrayList<Producto> y = new ArrayList<Producto>();
+		y.add(productox);
+		Pedido x = new Pedido(y);
 		return x;
 	}
 	

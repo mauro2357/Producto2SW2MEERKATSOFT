@@ -1,5 +1,7 @@
 package Negocio.tomaynotificacionpedidos;
 
+import java.util.ArrayList;
+
 import org.junit.Assert;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,7 +17,9 @@ public class listadodepedidosencolaStepDefinitions {
 	public void El_mesero_envia_un_pedido_al_despachador() throws Throwable { 
 		mesero = new Mesero();
 		administrador = new Administrador();
-		mesero.realizar_pedido();
+		
+		
+		
 	}
 
 	@When("^Hay productos en el pedido.$")
@@ -25,6 +29,18 @@ public class listadodepedidosencolaStepDefinitions {
 
 	@Then("^Agregar el pedido a la cola de pedidos.$")
 	public void Agregar_el_pedido_a_la_cola_de_pedidos() throws Throwable {
+		ArrayList<Producto> lista = new ArrayList<Producto>();
+		Producto producto = new Producto("9090", "cerveza", 2000.0, "Refresacante");
+		lista.add(producto);		
+		String mesa = "01";
+		String cliente = "100";
+		String meser = "200";
+		String caja = "10";
+		String fecha = "2015-12-03";
+		String estado = "Pendiente";
+		String id = "002";
+		mesero.realizar_pedido(lista, mesa, cliente, meser, caja, fecha, estado, id);
+		
 	    Assert.assertEquals("Pedido enviado", mesero.enviar_pedido());
 	}
 	
