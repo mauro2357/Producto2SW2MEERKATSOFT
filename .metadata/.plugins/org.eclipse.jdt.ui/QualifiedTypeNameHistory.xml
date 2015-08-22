@@ -25,6 +25,10 @@
 <fullyQualifiedTypeName name="Datos.MeseroRepository"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.listadodeproductosparameseroStepDefinitions"/>
 <fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
+<fullyQualifiedTypeName name="Datos.FacturaRepository"/>
+<fullyQualifiedTypeName name="Presentacion.realizarpedidoFacade"/>
+<fullyQualifiedTypeName name="java.io.PrintStream"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import Datos.MeseroRepository;
 import Presentacion.consultarproductosFacade;
+import Presentacion.realizarpedidoFacade;
 
 public class Mesero {
 	
@@ -47,16 +48,14 @@ public class Mesero {
 	}
 	
 	
-	public Pedido realizar_pedido(ArrayList<Producto> lista, String mesa, String cliente, String meser, String caja, String fecha, String estado, String id){
-
-		Pedido x = new Pedido(lista);
-		return x;
+	public void realizar_pedido(ArrayList<Producto> lista, String mesa, String cliente, String meser, String caja, String fecha, String estado, String id) throws Exception{
+		this.x = lista;
+		realizarpedidoFacade r = new realizarpedidoFacade();
+		r.main(lista,mesa,cliente,meser,caja,fecha,estado,id);
 	}
 	
 	public String enviar_pedido(){
-		if(realizar_pedido().getCuerpo().size()==0){
-			return "No hay productos.";
-		}
+		if(this.x.size()==0)return "No hay productos.";
 		return "Pedido enviado";
 	}
 	

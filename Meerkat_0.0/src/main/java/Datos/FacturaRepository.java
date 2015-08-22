@@ -4,23 +4,30 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import Negocio.geraciondefactura.Factura;
 import Negocio.tomaynotificacionpedidos.Producto;
 public class FacturaRepository {
-	public void ingresarPedido(ArrayList<Producto> x, String mesa, String mesero, String cliente) throws Exception {
-		
-
-		
+	public void ingresarPedido(String id, ArrayList<Producto> x, String fecha,String estado, String mesa, String mesero, String cliente, String caja) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "INSERT INTO `future`.`venta` (`Ven_id`, `Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('002', '2015-03-04', 'pendiente', '30', '50', '02', '011');";
+	    String query = "INSERT INTO `future`.`venta` (`Ven_id`, `Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('"+id+"', '"+fecha+"', '"+estado+"', '"+cliente+"', '"+mesero+"', '"+mesa+"', '"+caja+"');";
 	    Statement st = con.createStatement();
-	    st.executeUpdate(query);
+	    //st.executeUpdate(query);
+		int aux=0;
+		ArrayList<Producto> visitados = new ArrayList<Producto>();
 		for(Producto producto: x){
-			
+			if(visitados.contains(producto)) continue;
+			for(Producto auxproducto: x){
+				if(producto==auxproducto){
+					aux++;
+					visitados.add(auxproducto);
+				}
+			}
+			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.getCodigo()+"','"+id+"','"+aux+"');";
+			st.executeUpdate(query);
 		}
 	    st.close();
-	    
 	}
 	
 	public ArrayList<Factura> generarfactura() throws Exception {
