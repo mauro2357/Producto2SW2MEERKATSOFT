@@ -6,7 +6,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Negocio.geraciondefactura.Factura;
+import Negocio.tomaynotificacionpedidos.Producto;
 public class FacturaRepository {
+	public void ingresarPedido(ArrayList<Producto> x, String mesa, String mesero, String cliente) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "insert ";
+	    Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
+	
 	public ArrayList<Factura> generarfactura() throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM new_view";

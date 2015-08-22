@@ -21,10 +21,10 @@
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
 <fullyQualifiedTypeName name="Presentacion.generaciondefacturaFacade"/>
-<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Mesero"/>
 <fullyQualifiedTypeName name="Datos.MeseroRepository"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.listadodeproductosparameseroStepDefinitions"/>
 <fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
 </qualifiedTypeNameHistroy>
