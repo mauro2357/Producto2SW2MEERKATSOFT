@@ -42,6 +42,18 @@ public class Mesero {
 		return id;
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public String getApellido() {
+		return apellido;
+	}
+	
+	public String getTelefono() {
+		return telefono;
+	}
+	
 	public String getMensaje() {
 		if(this.x.size()==0) return "No hay productos";
 		return "Hay productos";
