@@ -38,6 +38,25 @@
 <entry path="C:\Eclipse\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="C:\eclipse\eclipse\jre" version="1.8.0_51">
+<bootpath>
+<entry path="C:\eclipse\eclipse\jre\lib\resources.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\rt.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\sunrsasign.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\jsse.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\jce.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\charsets.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\jfr.jar"/>
+<entry path="C:\eclipse\eclipse\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\eclipse\eclipse\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\eclipse\eclipse\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="C:\Program Files\Java\jdk1.8.0_51" version="1.8.0_51">
 <bootpath>
 <entry path="C:\Program Files\Java\jdk1.8.0_51\jre\lib\resources.jar"/>
@@ -93,6 +112,25 @@
 </extensionDirs>
 <endorsedDirs>
 <entry path="C:\Program Files\Java\jre1.8.0_51\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\eclipse\eclipse" version="1.8.0_51">
+<bootpath>
+<entry path="C:\eclipse\eclipse\jre\lib\resources.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\rt.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\sunrsasign.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\jsse.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\jce.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\charsets.jar"/>
+<entry path="C:\eclipse\eclipse\jre\lib\jfr.jar"/>
+<entry path="C:\eclipse\eclipse\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\eclipse\eclipse\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\eclipse\eclipse\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
 </libraryInfos>
