@@ -3,7 +3,7 @@
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;listadodepedidosencolaStepDefinitions.java&quot; tooltip=&quot;Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodepedidosencolaStepDefinitions.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodepedidosencolaStepDefinitions.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;listadodeproductosparameseroStepDefinitions.java&quot; tooltip=&quot;Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodeproductosparameseroStepDefinitions.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodeproductosparameseroStepDefinitions.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Mesero.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Mesero.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Mesero.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;notificaciondepedidolistoStepDefinitions.java&quot; tooltip=&quot;Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/notificaciondepedidolistoStepDefinitions.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/notificaciondepedidolistoStepDefinitions.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FacturaRepository.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Datos/FacturaRepository.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Datos/FacturaRepository.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;cucumber.eclipse.editor.editors.Editor&quot; name=&quot;listadodepedidosencola.feature&quot; tooltip=&quot;Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodepedidosencola.feature&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodepedidosencola.feature&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;realizarpedidoFacade.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Presentacion/realizarpedidoFacade.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Presentacion/realizarpedidoFacade.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;consultarproductosFacade.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Presentacion/consultarproductosFacade.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Presentacion/consultarproductosFacade.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MeseroRepository.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Datos/MeseroRepository.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Datos/MeseroRepository.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Pedido.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Pedido.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Pedido.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Producto.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Producto.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Producto.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;cucumber.eclipse.editor.editors.Editor&quot; name=&quot;notificaciondepedidolisto.feature&quot; tooltip=&quot;Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/notificaciondepedidolisto.feature&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/notificaciondepedidolisto.feature&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Despachador.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Despachador.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Despachador.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Cajero.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Negocio/geraciondefactura/Cajero.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Negocio/geraciondefactura/Cajero.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Factura.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Negocio/geraciondefactura/Factura.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Meerkat_0.0/src/main/java/Negocio/geraciondefactura/Factura.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_BkjigUgzEeWntIXnZPe5tQ" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_BkjigkgzEeWntIXnZPe5tQ" label="%trimmedwindow.label.eclipseSDK" x="-7" y="0" width="400" height="735">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_BkjigUgzEeWntIXnZPe5tQ" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_BkjigkgzEeWntIXnZPe5tQ" label="%trimmedwindow.label.eclipseSDK" x="0" y="0" width="400" height="735">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -80,10 +80,11 @@
               <children xsi:type="advanced:Placeholder" xmi:id="_BkjiikgzEeWntIXnZPe5tQ" elementId="org.eclipse.jdt.ui.PackagesView" toBeRendered="false" ref="_BkobBEgzEeWntIXnZPe5tQ"/>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_Bkjii0gzEeWntIXnZPe5tQ" containerData="7724" selectedElement="_7gGlkEhaEeWhW_CSaMxfJA" horizontal="true">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_7gGlkEhaEeWhW_CSaMxfJA" containerData="7018" selectedElement="_BkjijUgzEeWntIXnZPe5tQ">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_7gGlkEhaEeWhW_CSaMxfJA" containerData="7018" selectedElement="_BkjijkgzEeWntIXnZPe5tQ">
                 <children xsi:type="advanced:Placeholder" xmi:id="_BkjijUgzEeWntIXnZPe5tQ" elementId="org.eclipse.ui.editorss" containerData="6167" ref="_BknNJUgzEeWntIXnZPe5tQ"/>
-                <children xsi:type="basic:PartStack" xmi:id="_BkjijkgzEeWntIXnZPe5tQ" elementId="bottomRight" containerData="3833" selectedElement="_BkkJmkgzEeWntIXnZPe5tQ">
+                <children xsi:type="basic:PartStack" xmi:id="_BkjijkgzEeWntIXnZPe5tQ" elementId="bottomRight" containerData="3833" selectedElement="_BkkJkUgzEeWntIXnZPe5tQ">
                   <tags>Java</tags>
+                  <tags>active</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_Bkjij0gzEeWntIXnZPe5tQ" elementId="org.eclipse.ui.views.AllMarkersView" ref="_BkobBUgzEeWntIXnZPe5tQ"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_BkkJkEgzEeWntIXnZPe5tQ" elementId="org.eclipse.ui.views.PropertySheet" ref="_BkobCEgzEeWntIXnZPe5tQ"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_BkkJkUgzEeWntIXnZPe5tQ" elementId="org.eclipse.wst.server.ui.ServersView" ref="_BkobCUgzEeWntIXnZPe5tQ"/>
@@ -129,14 +130,11 @@
       <children xsi:type="basic:PartStack" xmi:id="_BknNJkgzEeWntIXnZPe5tQ" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_5xL3wEh9EeWfc-CJU3pt-Q">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_5xL3wEh9EeWfc-CJU3pt-Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="listadodepedidosencolaStepDefinitions.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;listadodepedidosencolaStepDefinitions.java&quot; partName=&quot;listadodepedidosencolaStepDefinitions.java&quot; title=&quot;listadodepedidosencolaStepDefinitions.java&quot; tooltip=&quot;Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodepedidosencolaStepDefinitions.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Meerkat_0.0/src/test/java/Negocio/tomaynotificacionpedidos/listadodepedidosencolaStepDefinitions.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1284&quot; selectionTopPixel=&quot;258&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_yQnM0Eh-EeWfc-CJU3pt-Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Mesero.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Mesero.java&quot; partName=&quot;Mesero.java&quot; title=&quot;Mesero.java&quot; tooltip=&quot;Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Mesero.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Meerkat_0.0/src/main/java/Negocio/tomaynotificacionpedidos/Mesero.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1357&quot; selectionTopPixel=&quot;525&quot;/>&#xD;&#xA;&lt;/editor>"/>
@@ -236,6 +234,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:Server</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_BkobCkgzEeWntIXnZPe5tQ" elementId="org.eclipse.wst.server.ui.ServersView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -244,7 +244,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:org.eclipse.wst.server.ui.ServersView</tags>
       </menus>
-      <toolbar xmi:id="_BkobFUgzEeWntIXnZPe5tQ" elementId="org.eclipse.wst.server.ui.ServersView" visible="false"/>
+      <toolbar xmi:id="_BkobFUgzEeWntIXnZPe5tQ" elementId="org.eclipse.wst.server.ui.ServersView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_BkobHUgzEeWntIXnZPe5tQ" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" closeable="true">
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; showCategories=&quot;true&quot;/>"/>
@@ -380,7 +380,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:org.eclipse.jdt.junit.ResultView</tags>
       </menus>
-      <toolbar xmi:id="_BkobQUgzEeWntIXnZPe5tQ" elementId="org.eclipse.jdt.junit.ResultView"/>
+      <toolbar xmi:id="_BkobQUgzEeWntIXnZPe5tQ" elementId="org.eclipse.jdt.junit.ResultView" visible="false"/>
     </sharedElements>
     <trimBars xmi:id="_BkobQkgzEeWntIXnZPe5tQ" elementId="org.eclipse.ui.main.toolbar">
       <children xsi:type="menu:ToolBar" xmi:id="_BkobQ0gzEeWntIXnZPe5tQ" elementId="group.file" toBeRendered="false">
@@ -389,7 +389,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_BkobRUgzEeWntIXnZPe5tQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_zTh30Eh9EeWfc-CJU3pt-Q" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_BlogskgzEeWntIXnZPe5tQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-DntYEraEeWvJLdboNNIhg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_BlogskgzEeWntIXnZPe5tQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_BkobUkgzEeWntIXnZPe5tQ" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -419,7 +419,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_BksFZkgzEeWntIXnZPe5tQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_zT0LsEh9EeWfc-CJU3pt-Q" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Bk-ZgEgzEeWntIXnZPe5tQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-Dt0AEraEeWvJLdboNNIhg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Bk-ZgEgzEeWntIXnZPe5tQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_BksFcUgzEeWntIXnZPe5tQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
