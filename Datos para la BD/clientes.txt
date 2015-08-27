@@ -1,0 +1,3 @@
+1001,crisman,carmona,masculino,0,pop,crispo@nada,566
+1002,william,valencia,masculino,0,pop,eusse@nada,667
+1003,sebastian,eusse,masculino,0,rock,william@nada,889

@@ -1,0 +1,8 @@
+2001,bulto harina,70000
+2002,kilo pescado,5000
+2003,arroba arroz,30000
+2004,bulto papa,60000
+2005,barra salchichon,6000
+2006,kilo frijol,5000
+2007,queso,7000
+2008,caja cerveza,45000
