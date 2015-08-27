@@ -30,21 +30,21 @@ public class Controlador extends HttpServlet {
     public static ArrayList<Producto> productos;
     public static consultarproductosFacade productosFacade = new consultarproductosFacade();
     public static ArrayList<Producto> productosactual=null;
-
+    
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-        HttpSession s = request.getSession();
+		HttpSession s = request.getSession();
         String Puerta = null;
-        Puerta = request.getParameter("cerrador");
+        Puerta = request.getParameter("entrar");
         String pagina = null;
-        if(Puerta != null)
+        if(Puerta.equalsIgnoreCase("Terminar"))
         {
         	s = request.getSession(false);
         	s.invalidate();
+        	productosactual=null;
         	pagina = "index.jsp";
         }
-        Puerta = request.getParameter("entrar");
-        System.out.println("llegó");
         if(Puerta.equalsIgnoreCase("botones")){
 			try {
 				productos = productosFacade.main();
@@ -52,15 +52,22 @@ public class Controlador extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			pagina = "/consultarproductosvista/consultarproductositems/botonmeseros.jsp";
+			pagina = "/consultarproductosvista/consultarproductositems/botonproductos.jsp";
         	s.setAttribute("todos-los-productos", productos);
         }
         if(Puerta.equalsIgnoreCase("ingresarproducto")){
         	String id = request.getParameter("idp");
         	s.setAttribute("id-producto",id);
-        	s.setAttribute("todos-los-productos", productos);
-        	if(productosactual==null) productosactual = new ArrayList<Producto>(); //aquí voy
-        	else 
+        	if(productosactual==null) productosactual = new ArrayList<Producto>();
+        	Producto encontrado = null;
+        	try {
+				encontrado = productosFacade.consultarproductoindividual(id);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	productosactual.add(encontrado);
+        	s.setAttribute("productos-pedido", productosactual);
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);

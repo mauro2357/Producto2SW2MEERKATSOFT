@@ -9,35 +9,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-	<%	String datoUno = request.getParameter("idp");
-		consultarproductosFacade x = new consultarproductosFacade();
-		ArrayList<Producto> y = x.main();
-		consultarpedidosFacade x1 = new consultarpedidosFacade();
-		ArrayList<Producto> z = x1.main(2);
-		Pedido pedido = null;
-		if(z.size()==0){
-			out.print("entró if");
-			pedido = new Pedido(z);
-		}
-		for(Producto producto: y){
-			if(producto.getCodigo().equals(datoUno)){ 
-				z.add(producto);
-				};
-		}
-		pedido.setCuerpo(z);
-		ArrayList<Producto> visitados = new ArrayList<Producto>();
-		for(Producto producto: pedido.getCuerpo()){
-			if(visitados.contains(producto)) continue;
+	<table border="0" cellpadding="0" cellspacing="0" width="300">
+		<tr><td>Producto</td><td>Cantidad</td><td align="right">Precio</td></tr>
+	<%	ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");
+		ArrayList<String> visitados = new ArrayList<String>();
+		double total=0;
+		double totalindividual=0;
+		for(Producto producto: productos_pedido){
+			if(visitados.contains(producto.getCodigo())) continue;
 			int aux=0;
-			for(Producto auxproducto: pedido.getCuerpo()){
-				if(producto==auxproducto){
+			for(Producto auxproducto: productos_pedido){
+				if(producto.getCodigo().equalsIgnoreCase(auxproducto.getCodigo())){
+					visitados.add(auxproducto.getCodigo());
 					aux++;
-					visitados.add(auxproducto);
 				}
+				totalindividual = producto.getValor() * aux;
 			}
-			out.print(producto.getNombre());
-			out.print(" " + aux);
-		}
-	%>
+			total += producto.getValor() * aux;
+			%>
+		<tr><td><%out.print(producto.getNombre());%></td><td><%out.print(aux);%></td><td align="right"><%out.print(totalindividual);%></td></tr>
+		<%}%>
+		<tr><td></td><td>Total:</td><td align="right"><%out.print(total); %></td></tr>
+	</table>
 </body>
 </html>

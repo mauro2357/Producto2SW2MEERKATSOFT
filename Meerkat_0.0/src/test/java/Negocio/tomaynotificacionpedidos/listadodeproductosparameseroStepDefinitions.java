@@ -41,6 +41,6 @@ public class listadodeproductosparameseroStepDefinitions {
 	public void Notificar_que_productos_hay_para_vender() throws Throwable {
 		Producto producto = x.get(0);
 	    Assert.assertEquals("Media de guaro", producto.getNombre());
-	    Assert.assertEquals(8000, (double) producto.getValor(),0); 
+	    Assert.assertEquals(8000,(double) producto.getValor(),0); 
 	}
 }

@@ -12,9 +12,9 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript">	
 	function ingresarproducto1(x){
-		var entrar = "ingresarproducto";
+		var Entrar = "ingresarproducto";
 		$.post("/Meerkat_0.0/index", {
-			Entrar : entrar,
+			entrar : Entrar,
 			idp : x
 		}, function(responseText) {
 			$('#table1').html(responseText);
@@ -31,14 +31,14 @@
 		});
 	
 </script>
-<title>Consultar productos</title>
-<% consultarproductosFacade x = new consultarproductosFacade(); 
-   Pedido pedido = null;%>
+<title>Productos</title>
 </head>
 <body>
 	<div id="boton1">
-		
 	</div>
+	<form method="post" action="http://localhost:8080/Meerkat_0.0/index" name="cerrar">
+	      	<input name="entrar" type="submit" value="Terminar"/>
+	</form>
 	<div id="table1">
 	</div>
 </body>

@@ -1,0 +1,51 @@
+package Negocio.tomaynotificacionpedidos;
+
+public class Producto {
+
+	public String nombre;
+	public String valor;
+	public String codigo;
+	public String descripcion;
+	
+	public Producto(String codigo, String nombre, String valor2, String descripcion ) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.valor = valor2;
+		this.descripcion = descripcion;	
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+
+}

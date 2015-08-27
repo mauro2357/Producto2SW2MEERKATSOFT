@@ -3,14 +3,14 @@ package Negocio.tomaynotificacionpedidos;
 public class Producto {
 
 	public String nombre;
-	public Double valor;
+	public double valor;
 	public String codigo;
 	public String descripcion;
 	
-	public Producto(String codigo, String nombre, Double valor, String descripcion ) {
+	public Producto(String codigo, String nombre, Double valor2, String descripcion ) {
 		this.codigo = codigo;
 		this.nombre = nombre;
-		this.valor = valor;
+		this.valor = valor2;
 		this.descripcion = descripcion;	
 	}
 
