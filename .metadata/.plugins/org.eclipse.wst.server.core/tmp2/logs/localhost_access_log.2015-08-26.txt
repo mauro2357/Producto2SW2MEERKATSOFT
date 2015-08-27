@@ -197,3 +197,9 @@
 0:0:0:0:0:0:0:1 - - [26/Aug/2015:21:11:49 -0500] "GET /Meerkat_0.0/index.jsp HTTP/1.1" 200 555
 0:0:0:0:0:0:0:1 - - [26/Aug/2015:21:11:50 -0500] "GET /Meerkat_0.0/consultarproductosvista/consultarproductos.jsp?mesero-00001%0A=Sebastian%0D%0A HTTP/1.1" 200 926
 0:0:0:0:0:0:0:1 - - [26/Aug/2015:21:11:50 -0500] "POST /Meerkat_0.0/index HTTP/1.1" 200 676
+127.0.0.1 - - [26/Aug/2015:22:33:11 -0500] "GET / HTTP/1.1" 404 1004
+0:0:0:0:0:0:0:1 - - [26/Aug/2015:22:33:13 -0500] "GET /Meerkat_0.0/index.jsp HTTP/1.1" 200 555
+0:0:0:0:0:0:0:1 - - [26/Aug/2015:22:33:14 -0500] "GET /Meerkat_0.0/consultarproductosvista/consultarproductos.jsp?mesero-00001%0A=Sebastian%0D%0A HTTP/1.1" 200 926
+0:0:0:0:0:0:0:1 - - [26/Aug/2015:22:33:14 -0500] "POST /Meerkat_0.0/index HTTP/1.1" 200 676
+0:0:0:0:0:0:0:1 - - [26/Aug/2015:22:33:16 -0500] "POST /Meerkat_0.0/index HTTP/1.1" 500 1504
+0:0:0:0:0:0:0:1 - - [26/Aug/2015:22:34:59 -0500] "POST /Meerkat_0.0/index HTTP/1.1" 500 1504
