@@ -2,3 +2,6 @@
 1440446694436	Move 'Principal.jsp' to 'Vistas'
 1440476334523	Move 'Principal.jsp' to 'WebContent'
 1440523481454	Copy compilation unit
+1440620455735	Rename resource 'tablapedidos.jsp'
+1440625163778	Copy compilation unit
+1440625192403	Rename type 'realizarpedidoFacade'
