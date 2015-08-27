@@ -1,0 +1,31 @@
+
+use future;
+
+LOAD DATA INFILE 'C:/sourcecode/Datos para la BD/cajeros.txt' INTO TABLE cajero
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE 'C:/sourcecode/Datos para la BD/clientes.txt' INTO TABLE cliente
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE 'C:/sourcecode/Datos para la BD/despachador.txt' INTO TABLE despachador
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE 'C:/sourcecode/Datos para la BD/insumos.txt' INTO TABLE insumos
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+
+LOAD DATA INFILE 'C:/sourcecode/Datos para la BD/mesa.txt' INTO TABLE mesa
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE 'C:/sourcecode/Datos para la BD/mesero.txt' INTO TABLE mesero
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE 'C:/sourcecode/Datos para la BD/producto.txt' INTO TABLE producto
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';

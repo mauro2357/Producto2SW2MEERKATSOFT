@@ -1,0 +1,3 @@
+5005,yeni,valencia,4444,77
+5006,mariana,gaviria,666,89
+5007,jenifer,davila,777,09

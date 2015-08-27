@@ -1,0 +1,17 @@
+pl01,mondongo,7000,delicioso mondongo con el sabor casero,plato,por_defecto.png
+li01,cerveza pilsen,2000,bien fria,licor,por_defecto.png
+li02,aguardiente,18000,de pura caña,licor,por_defecto.png
+pl02,desayuno paisa,4000,desayuno montañero ,plato,por_defecto.png
+pl03,pescado frito,12000,con bastante grasita,plato,por_defecto.png
+be01,coca cola ,2000,bien fria,bebida,por_defecto.png
+pl04,bandeja paisa,13000,arroz chorizo chicharron frijoles maduro,plato,por_defecto.png
+pl 05,picada,15000,carne res y cerdo morcilla chorizo,plato,por_defecto.png
+pl06,carne asada,11000,carne res o cerdo con ensalada y papas,plato,por_defecto.png
+pl07,hamburguesa,7500,papas y tocineta,plato,por_defecto.png
+pl08,sancocho,6000,de gallina criolla :3,plato,por_defecto.png
+pl09,arroz con pollo ,6000,con raices chinas,plato,por_defecto.png
+pl10,chuzo de res,10000,con adicion de papas,plato,por_defecto.png
+li03,cerveza club,2500,bien fria,licor,por_defecto.png
+be02,gaseosa colombiana,1900,la nuestra ,bebida,por_defecto.png
+li04,ron medellin ,20000,unico y  delicioso ,licor,por_defecto.png
+be03,jugo natural,2500,maracuya mora mango fresa banano guanabana,bebida,por_defecto.png
