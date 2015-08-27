@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="Datos.PedidoRepository"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="Negocio.actualizarinventario.Administrador"/>
-<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
 <fullyQualifiedTypeName name="Presentacion.generaciondefacturaFacade"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Mesero"/>
@@ -29,6 +28,9 @@
 <fullyQualifiedTypeName name="Presentacion.realizarpedidoFacade"/>
 <fullyQualifiedTypeName name="java.io.PrintStream"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

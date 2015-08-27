@@ -10,28 +10,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript">
-	function ingresarproducto(x){
-        var url = '/Meerkat_0.0/consultarproductosvista/tablapedidos/tablapedidos.jsp?id='+x;
-        alert(url);
-        $("#table1").load(url);
+<script type="text/javascript">	
+	function ingresarproducto1(x){
+		var entrar = "ingresarproducto";
+		$.post("/Meerkat_0.0/index", {
+			Entrar : entrar,
+			idp : x
+		}, function(responseText) {
+			$('#table1').html(responseText);
+		});
 	}
+	
+	$(function() {
+			var Entrar = "botones"; 
+			$.post("/Meerkat_0.0/index", {
+				entrar : Entrar,
+			}, function(responseText) {
+				$('#boton1').html(responseText);
+			});
+		});
+	
 </script>
 <title>Consultar productos</title>
-<% ArrayList<Producto> pedido = new ArrayList<Producto>();
-ArrayList<Producto> y = new ArrayList<Producto>(); 
-Pedido z = new Pedido(pedido);%>
+<% consultarproductosFacade x = new consultarproductosFacade(); 
+   Pedido pedido = null;%>
 </head>
 <body>
 	<div id="boton1">
-		<% consultarproductosFacade x = new consultarproductosFacade(); 
-		y = x.main();
-		for(Producto producto: y){
-			%><input size="15" maxlength="15" name="producto-<%out.print(producto.getCodigo());%>" type="submit"
-			value="<%out.println(producto.getNombre());%>" onclick="ingresarproducto(<%out.println(producto.getCodigo());%>);"><%
-			out.println(producto.getValor()); 
-			}
-		%>
+		
 	</div>
 	<div id="table1">
 	</div>
