@@ -21,9 +21,8 @@
 		ArrayList<Producto> z = x1.main(2);
 		//out.print(z);
 		Pedido pedido = null;
-		out.print(pedido);
+		//out.print("llegó");
 		if(z.size()==0){
-			out.print("entró if");
 			pedido = new Pedido(z);
 		}
 		//out.print("salió");

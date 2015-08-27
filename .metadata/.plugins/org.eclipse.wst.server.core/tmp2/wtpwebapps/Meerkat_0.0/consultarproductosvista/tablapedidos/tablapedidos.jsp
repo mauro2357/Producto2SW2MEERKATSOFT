@@ -10,28 +10,29 @@
 </head>
 <body>
 	<%	String datoUno = request.getParameter("id"); 
-		out.print(datoUno);
-		out.print("llegó");
+		//out.print(datoUno);
+		//out.print("llegó");
 		consultarproductosFacade x = new consultarproductosFacade();
-		out.print("llegó");
+		//out.print("llegó");
 		ArrayList<Producto> y = x.main();
-		out.print("llegó");
+		//out.print("llegó");
 		consultarpedidosFacade x1 = new consultarpedidosFacade();
-		out.print("llegó");
+		//out.print("llegó");
 		ArrayList<Producto> z = x1.main(2);
-		out.print(z);
+		//out.print(z);
 		Pedido pedido = null;
-		out.print("llegó");
+		out.print(pedido);
 		if(z.size()==0){
+			out.print("entró if");
 			pedido = new Pedido(z);
 		}
-		out.print("salió");
+		//out.print("salió");
 		for(Producto producto: y){
-			out.println("entró en ciclo");
-			out.println(producto.getCodigo());
-			out.println(datoUno);
+			//out.println("entró en ciclo");
+			//out.println(producto.getCodigo());
+			//out.println(datoUno);
 			if(producto.getCodigo().equals(datoUno)){ 
-				out.print(producto.getCodigo() + "seleccionado");
+				//out.print(producto.getCodigo() + "seleccionado");
 				z.add(producto);
 				};
 		}
@@ -46,6 +47,8 @@
 					visitados.add(auxproducto);
 				}
 			}
+			out.print(producto.getNombre());
+			out.print(" " + aux);
 		}
 	%>
 </body>
