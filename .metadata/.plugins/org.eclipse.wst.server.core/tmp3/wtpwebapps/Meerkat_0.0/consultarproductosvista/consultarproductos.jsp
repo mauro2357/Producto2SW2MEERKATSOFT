@@ -41,10 +41,10 @@
 </script>
 <title>Productos</title>
 </head>
-<body>
-	<div id="boton1">
+<body background="fondo.jpg">
+	<div id="boton1" align="center">
 	</div>
-	<div id="table1">
+	<div id="table1" align="center">
 	</div>
 	<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero">
 	      	<input name="entrar" type="submit" value="Terminar"/>
