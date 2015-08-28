@@ -18,10 +18,8 @@ public class Producto {
 		this.imagen = imagen;
 	}
 
-	public Producto(String codigo, String nombre, int valor2) {
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.valor = valor2;
+	public Producto() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getNombre() {
