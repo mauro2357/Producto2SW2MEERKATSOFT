@@ -11,14 +11,15 @@ import Negocio.tomaynotificacionpedidos.Pedido;
 import Negocio.tomaynotificacionpedidos.Producto;
 
 public class FacturaRepository {
-	public void ingresarPedido(String id, Pedido x, String estado, String mesa, String mesero, String cliente, String caja, String fecha) throws Exception {
+	public void ingresarPedido(Pedido x, String estado, String mesa, String mesero, String cliente, String caja, String fecha) throws Exception {
+		System.out.println("Metodo ingresar pedido del factura.repository");
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "INSERT INTO `future`.`venta` (`Ven_id`, `Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('"+id+"', '"+fecha+"', '"+estado+"', '"+cliente+"', '"+mesero+"', '"+mesa+"', '"+caja+"');";
-	    Statement st = con.createStatement();
+	    String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('"+fecha+"', '"+estado+"', '"+cliente+"', '"+800+"', '"+mesa+"', '"+5005+"');";
 	    System.out.println(query);
+	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
-		ArrayList<String> visitados = new ArrayList<String>();
-		for(Producto producto: x.getCuerpo()){
+		//ArrayList<String> visitados = new ArrayList<String>();
+		/*for(Producto producto: x.getCuerpo()){
 			if(visitados.contains(producto.getCodigo())) continue;
 			int aux=0;
 			for(Producto auxproducto: x.getCuerpo()){
@@ -27,10 +28,10 @@ public class FacturaRepository {
 					aux++;
 				}
 			}
-			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.getCodigo()+"','"+id+"','"+aux+"');";
+			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.getCodigo()+"','"+aux+"');";
 			System.out.println(query);
 			st.executeUpdate(query);
-		}
+		}*/
 	    st.close();
 	}
 	

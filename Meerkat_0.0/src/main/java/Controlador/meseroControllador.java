@@ -109,7 +109,7 @@ public class meseroControllador extends HttpServlet {
         	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
         	System.out.println(fecha + " fecha");
         	try {
-        		meseroControllador.mesero.enviar_pedido("6", pedido, estado, mesa, mesero, cliente, cajero, fecha);
+        		meseroControllador.mesero.enviar_pedido(pedido, estado, mesa, mesero, cliente, cajero, fecha);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

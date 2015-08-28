@@ -63,10 +63,10 @@ public class Mesero {
 		r.main(Integer.parseInt(id));
 	}
 	
-	public String enviar_pedido(String id, Pedido pedido, String estado, String mesa, String mesero, String cliente, String cajero, String fecha) throws Exception{
+	public String enviar_pedido(Pedido pedido, String estado, String mesa, String mesero, String cliente, String cajero, String fecha) throws Exception{
 		if(pedido.getCuerpo().size()==0) return "No hay productos.";
 		generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade(); 
-		pedidosFacade.enviar_pedido("6", pedido, estado, mesa, mesero, cliente, cajero, fecha);
+		pedidosFacade.enviar_pedido(pedido, estado, mesa, mesero, cliente, cajero, fecha);
 		return "Pedido enviado";
 	}
 	
