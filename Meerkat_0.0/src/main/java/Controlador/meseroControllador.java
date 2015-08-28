@@ -64,6 +64,7 @@ public class meseroControllador extends HttpServlet {
 	        		if(mesero.getId().contentEquals(meseroi)) meseroControllador.mesero = mesero;
 	        	}
         	}
+        	System.out.println("definió mesero:" + mesero.getId());
         	pagina = "/consultarproductosvista/consultarproductos.jsp";
         	s.setAttribute("", 1);
         }
@@ -99,15 +100,13 @@ public class meseroControllador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("Enviar pedido")){       //Lo ejecuta Mesero
         	String estado = request.getParameter("estado");
         	String cliente = request.getParameter("cliente");
-        	String mesero = request.getParameter("mesero");
+        	String mesero = meseroControllador.mesero.getId();
         	String mesa = request.getParameter("mesa");
         	String cajero = request.getParameter("cajero");
         	meseroControllador.mesero = new Mesero();
-        	System.out.println(productosactual);
         	pedido = new Pedido(productosactual);
         	Calendar x = Calendar.getInstance();
         	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
-        	System.out.println(fecha + " fecha");
         	try {
         		meseroControllador.mesero.enviar_pedido(pedido, estado, mesa, mesero, cliente, cajero, fecha);
 			} catch (Exception e) {

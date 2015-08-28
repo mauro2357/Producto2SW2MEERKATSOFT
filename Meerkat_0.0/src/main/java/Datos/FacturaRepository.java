@@ -12,14 +12,17 @@ import Negocio.tomaynotificacionpedidos.Producto;
 
 public class FacturaRepository {
 	public void ingresarPedido(Pedido x, String estado, String mesa, String mesero, String cliente, String caja, String fecha) throws Exception {
-		System.out.println("Metodo ingresar pedido del factura.repository");
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('"+fecha+"', '"+estado+"', '"+cliente+"', '"+800+"', '"+mesa+"', '"+5005+"');";
-	    System.out.println(query);
+	    String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('"+fecha+"', '"+estado+"', '"+cliente+"', '"+mesero+"', '"+mesa+"', '"+caja+"');";
 	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
-		//ArrayList<String> visitados = new ArrayList<String>();
-		/*for(Producto producto: x.getCuerpo()){
+	    query = "Select * from venta order by ven_id desc limit 1";
+	    st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    rs.first();
+	    String ven_id = rs.getString("Ven_id");
+		ArrayList<String> visitados = new ArrayList<String>();
+		for(Producto producto: x.getCuerpo()){
 			if(visitados.contains(producto.getCodigo())) continue;
 			int aux=0;
 			for(Producto auxproducto: x.getCuerpo()){
@@ -28,23 +31,19 @@ public class FacturaRepository {
 					aux++;
 				}
 			}
-			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.getCodigo()+"','"+aux+"');";
-			System.out.println(query);
+			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.getCodigo()+"','"+ven_id+"','"+aux+"');";
 			st.executeUpdate(query);
-		}*/
+		}
 	    st.close();
 	}
 	
 	public ArrayList<Factura> generarfactura() throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-		System.out.println("llegó1");
 	    String query = "SELECT * FROM factura";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
-	    System.out.println("llegó2");
 	    ArrayList<Factura> f = new ArrayList<Factura>();
 	    ArrayList<Producto> tproductos = meseroControllador.productos;
-	    System.out.println(tproductos);
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
 	    String auxid = null;
@@ -56,7 +55,6 @@ public class FacturaRepository {
 	      if(id.equalsIgnoreCase(auxid)){
 	    	  System.out.println("entró");
 	    	  if(x==null) x = new ArrayList<Producto>();
-	    	  
 	    	  mesero = rs.getString("Me_id");
 		      cajero = rs.getString("Caj_id");
 		      mesa = rs.getString("Mesa_id");
@@ -72,7 +70,6 @@ public class FacturaRepository {
 	    	  x = null;
 	    	  auxid = null;
 	      }
-	      System.out.println(y.getCuerpo());
 	      Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
 	      f.add(fi);
 	    }

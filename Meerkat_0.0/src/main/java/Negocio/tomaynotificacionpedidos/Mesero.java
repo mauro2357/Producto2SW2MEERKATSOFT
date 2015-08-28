@@ -56,12 +56,14 @@ public class Mesero {
 		return x;
 	}
 	
+	//código obsoleto
 	public void realizar_pedido(ArrayList<Producto> lista, String mesa, String cliente, String meser, String caja, String fecha, String estado, String id) throws Exception{
 		this.x = lista;
 		consultarpedidosFacade r = new consultarpedidosFacade();
 		//r.main(lista,mesa,cliente,meser,caja,fecha,estado,id);
 		r.main(Integer.parseInt(id));
 	}
+	//fin código obsoleto
 	
 	public String enviar_pedido(Pedido pedido, String estado, String mesa, String mesero, String cliente, String cajero, String fecha) throws Exception{
 		if(pedido.getCuerpo().size()==0) return "No hay productos.";

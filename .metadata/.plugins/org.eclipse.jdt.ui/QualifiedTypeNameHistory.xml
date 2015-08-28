@@ -39,6 +39,6 @@
 <fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
 <fullyQualifiedTypeName name="Presentacion.generaciondepedidoFacade"/>
 <fullyQualifiedTypeName name="Presentacion.consultarmeserosFacade"/>
-<fullyQualifiedTypeName name="Controlador.meseroControllador"/>
 <fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
+<fullyQualifiedTypeName name="Controlador.meseroControllador"/>
 </qualifiedTypeNameHistroy>
