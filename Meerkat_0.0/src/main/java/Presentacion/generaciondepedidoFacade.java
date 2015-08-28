@@ -7,14 +7,20 @@ import Negocio.geraciondefactura.Factura;
 import Negocio.tomaynotificacionpedidos.Pedido;
 
 public class generaciondepedidoFacade {
-	public static ArrayList<Factura> main() throws Exception{
+	public ArrayList<Factura> main() throws Exception{
 		FacturaRepository facturarepository = new FacturaRepository();
 		ArrayList<Factura> x = facturarepository.generarfactura();
 		return x;
 	}
 	
+	public int ultimopedidoid() throws Exception{
+		FacturaRepository facturarepository = new FacturaRepository();
+		ArrayList<Factura> x = facturarepository.generarfactura();
+		return x.size();
+	}
+	
 	public void enviar_pedido(String id, Pedido x, String estado, String mesa, String mesero, String cliente, String caja, String fecha) throws Exception{
 		FacturaRepository facturarepository = new FacturaRepository();
-		facturarepository.ingresarPedido(id, x, fecha, estado, mesa, mesero, cliente, caja);
+		facturarepository.ingresarPedido(id, x, estado, mesa, mesero, cliente, caja, fecha);
 	}
 }

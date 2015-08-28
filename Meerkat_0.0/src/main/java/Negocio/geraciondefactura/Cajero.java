@@ -20,7 +20,7 @@ public class Cajero {
 	}
 	
 	public String generarFactura() {
-		factura = new Factura(null,null,null,null,null);
+		factura = new Factura(null,null,null,null,null,null);
 		return "Factura";
 	}
 

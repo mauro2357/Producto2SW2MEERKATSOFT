@@ -38,7 +38,7 @@ public class listadodepedidosencolaStepDefinitions {
 	@Then("^Agregar el pedido a la cola de pedidos.$")
 	public void Agregar_el_pedido_a_la_cola_de_pedidos() throws Throwable {
 		mesero.realizar_pedido(lista, mesa, cliente, meser, caja, fecha, estado, id);
-	    Assert.assertEquals("Pedido enviado", mesero.enviar_pedido());
+	    Assert.assertEquals("Pedido enviado", mesero.enviar_pedido(null, null, null, null, null, null, null, null));
 	}
 	
 	@When("^No hay productos en el pedido.$")
@@ -48,7 +48,7 @@ public class listadodepedidosencolaStepDefinitions {
 
 	@Then("^Notificar que no hay productos en el pedido.$")
 	public void Notificar_que_no_hay_productos_en_el_pedido() throws Throwable {
-		Assert.assertTrue("No hay productos."!=mesero.enviar_pedido());
+		Assert.assertTrue("No hay productos."!=mesero.enviar_pedido(null, null, null, null, null, null, null, null));
 	}
 	@When("^Hay despachador.$")
 	public void Hay_despachador() throws Throwable {

@@ -2,19 +2,15 @@ package Negocio.tomaynotificacionpedidos;
 
 import java.util.ArrayList;
 
-import Datos.MeseroRepository;
-import Presentacion.consultarproductosFacade;
-import Presentacion.consultarpedidosFacade;
+import Presentacion.*;
 
 public class Mesero {
 	
-	String id;
-	String nombre;
-	String apellido;
-	String telefono;
-	ArrayList<Producto> x;
-	
-	MeseroRepository conexion = new MeseroRepository();
+	public String id;
+	public String nombre;
+	public String apellido;
+	public String telefono;
+	public ArrayList<Producto> x;
 	
 	public Mesero(String id, String nombre, String apellido, String telefono) {
 		this.id = id;
@@ -24,16 +20,9 @@ public class Mesero {
 	}
 
 	public Mesero() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Producto> consultarproductos() throws Exception {
-		consultarproductosFacade y = new consultarproductosFacade();
-		ArrayList<Producto> x = new ArrayList<Producto>();
-		x = y.main();
-		this.x = x;
-		return x;
-	}
-	
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -54,11 +43,18 @@ public class Mesero {
 		return telefono;
 	}
 	
-	public String getMensaje() {
-		if(this.x.size()==0) return "No hay productos";
+	public String getMensaje() throws Exception {
+		ArrayList<Producto> x = consultarproductos();
+		if(!(x.size()==0)) return "No hay productos";
 		return "Hay productos";
 	}
 	
+	public ArrayList<Producto> consultarproductos() throws Exception {
+		consultarproductosFacade y = new consultarproductosFacade();
+		ArrayList<Producto> x = new ArrayList<Producto>();
+		x = y.main();
+		return x;
+	}
 	
 	public void realizar_pedido(ArrayList<Producto> lista, String mesa, String cliente, String meser, String caja, String fecha, String estado, String id) throws Exception{
 		this.x = lista;
@@ -67,9 +63,17 @@ public class Mesero {
 		r.main(Integer.parseInt(id));
 	}
 	
-	public String enviar_pedido(){
-		if(this.x.size()==0)return "No hay productos.";
+	public String enviar_pedido(String id, Pedido pedido, String estado, String mesa, String mesero, String cliente, String cajero, String fecha) throws Exception{
+		if(pedido.getCuerpo().size()==0) return "No hay productos.";
+		generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade(); 
+		pedidosFacade.enviar_pedido("6", pedido, estado, mesa, mesero, cliente, cajero, fecha);
 		return "Pedido enviado";
+	}
+	
+	public Producto consultarproductoinvididual(String idu) throws Exception{
+		consultarproductosFacade productosFacade = new consultarproductosFacade();
+		Producto x = productosFacade.consultarproductoindividual(idu);
+		return x;
 	}
 	
 

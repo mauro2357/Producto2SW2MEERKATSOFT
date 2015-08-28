@@ -40,7 +40,7 @@ public class listadodeproductosparameseroStepDefinitions {
 	@Then("^Notificar que productos hay para vender.$")
 	public void Notificar_que_productos_hay_para_vender() throws Throwable {
 		Producto producto = x.get(0);
-	    Assert.assertEquals("Media de guaro", producto.getNombre());
-	    Assert.assertEquals(8000, (double) producto.getValor(),0); 
+	    Assert.assertEquals("coca cola ", producto.getNombre());
+	    Assert.assertEquals(2000, producto.getValor(),0); 
 	}
 }

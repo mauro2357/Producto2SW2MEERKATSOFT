@@ -1,0 +1,23 @@
+package Negocio.geraciondefactura;
+
+import Negocio.tomaynotificacionpedidos.Pedido;
+
+public class Factura {
+	
+	public String id;
+	public String mesero;
+	public String cajero;
+	public String mesa;
+	public String cliente;
+	public Pedido pedido;
+
+	public Factura(String id, String x,String y,String z,Pedido pedido,String cliente){	
+		this.id = id;
+		this.mesero=x;
+		this.cajero=y;
+		this.mesa=z;
+		this.cliente=cliente;
+		this.pedido=pedido;
+	}
+}
+

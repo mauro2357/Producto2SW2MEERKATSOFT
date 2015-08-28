@@ -9,19 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Meerkat_0.0</title>
-</head>
-<body>
-	Meseros:
-	<form method="post" action="consultarproductosvista/consultarproductos.jsp">
-		<% consultarmeserosFacade x1 = new consultarmeserosFacade(); 
-		ArrayList<Mesero> y1 = x1.main();
-		for(Mesero mesero: y1){
-			%><input size="15" maxlength="20" name="nombre_boton" type="submit" value="<%out.println(mesero.getNombre());%>">
-			<input type="hidden" name="id" value="<%out.print(mesero.getId());%>">
-			<%
-		}%>
-	</form>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript">	
+	$(function() {
+			var Entrar = "imprimirmeseros"; 
+			$.post("/Meerkat_0.0/mesero", {
+				entrar : Entrar,
+			}, function(responseText) {
+				$('#cuerpo').html(responseText);
+			});
+		});
+	function definirmesero(x){
+		var Entrar = "definirmesero";
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+			meseroi : x
+		}, window.location.replace("consultarproductosvista/consultarproductos.jsp"));
+	}
 	
-		
+</script>
+</head>
+
+<body>
+	<div id="cuerpo"></div>
 </body>
 </html>
