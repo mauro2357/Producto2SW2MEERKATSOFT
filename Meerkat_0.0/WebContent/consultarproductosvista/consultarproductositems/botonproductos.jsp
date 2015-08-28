@@ -12,10 +12,12 @@
 <body>
 	<% 
 		ArrayList<Producto> x = (ArrayList<Producto>) session.getAttribute("todos-los-productos");
+		int i=0;
 		for(Producto producto: x){
-			%><input size="15" maxlength="15" name="producto-<%out.print(producto.getCodigo());%>" type="submit"
-			value="<%out.println(producto.getNombre());%>" onclick="ingresarproducto1(<%out.println(producto.getCodigo());%>);"><%
+			%><input size="15" maxlength="15" name="<%out.print(producto.getCodigo());%>" id="<%out.print(i);%>" type="submit"
+			value="<%out.println(producto.getNombre());%>" onclick="ingresarproducto(<%out.print(i);%>);"><%
 			out.println(producto.getValor()); 
+			i++;
 			}
 	%>
 </body>

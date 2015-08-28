@@ -11,11 +11,14 @@
 <body>
 	<table border="0" cellpadding="0" cellspacing="0" width="300">
 		<tr><td>Producto</td><td>Cantidad</td><td align="right">Precio</td></tr>
-	<%	ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");
+	<%	
+		ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");
+		if(productos_pedido==null) productos_pedido = new ArrayList<Producto>();
 		ArrayList<String> visitados = new ArrayList<String>();
-		double total=0;
-		double totalindividual=0;
+		int total=0;
+		int totalindividual=0;
 		for(Producto producto: productos_pedido){
+			
 			if(visitados.contains(producto.getCodigo())) continue;
 			int aux=0;
 			for(Producto auxproducto: productos_pedido){

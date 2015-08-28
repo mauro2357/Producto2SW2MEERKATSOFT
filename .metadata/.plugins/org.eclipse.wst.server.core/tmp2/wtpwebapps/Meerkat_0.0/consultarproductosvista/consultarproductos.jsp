@@ -11,9 +11,11 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript">	
-	function ingresarproducto1(x){
+	function ingresarproducto(x){
 		var Entrar = "ingresarproducto";
-		$.post("/Meerkat_0.0/index", {
+		y = document.getElementById(x);
+		x = y.name;
+		$.post("/Meerkat_0.0/mesero", {
 			entrar : Entrar,
 			idp : x
 		}, function(responseText) {
@@ -23,10 +25,16 @@
 	
 	$(function() {
 			var Entrar = "botones"; 
-			$.post("/Meerkat_0.0/index", {
+			$.post("/Meerkat_0.0/mesero", {
 				entrar : Entrar,
 			}, function(responseText) {
 				$('#boton1').html(responseText);
+			});
+			Entrar = "listarpedidoactual";
+			$.post("/Meerkat_0.0/mesero", {
+				entrar : Entrar,
+			}, function(responseText) {
+				$('#table1').html(responseText);
 			});
 		});
 	
@@ -36,10 +44,16 @@
 <body>
 	<div id="boton1">
 	</div>
-	<form method="post" action="http://localhost:8080/Meerkat_0.0/index" name="cerrar">
-	      	<input name="entrar" type="submit" value="Terminar"/>
-	</form>
 	<div id="table1">
 	</div>
+	<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero">
+	      	<input name="entrar" type="submit" value="Terminar"/>
+	      	<input name="estado" type="hidden" value="En espera">
+	      	<input name="cliente" type="text" value="Cliente #1001 - #1003">
+	      	<input name="mesero" type="text" value="<%out.print(request.getParameter("nombre_boton")); %>" disabled="disabled">
+			<input name="mesa" type="text" value="Mesa #1-10">
+	      	<input name="cajero" type="text" value="Cajero #null">
+	      	<input name="entrar" type="submit" value="Enviar pedido">
+	</form>
 </body>
 </html>

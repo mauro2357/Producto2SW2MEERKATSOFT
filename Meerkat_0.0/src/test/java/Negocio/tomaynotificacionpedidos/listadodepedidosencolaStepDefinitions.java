@@ -14,7 +14,7 @@ public class listadodepedidosencolaStepDefinitions {
 	Administrador administrador = null;
 	
 	ArrayList<Producto> lista = new ArrayList<Producto>();
-	Producto producto = new Producto("9090", "cerveza", 2000.0, "Refresacante");
+	Producto producto = new Producto("9090", "cerveza", 2000, "Refresacante","a","a");
 	String mesa = "01";
 	String cliente = "100";
 	String meser = "200";

@@ -12,11 +12,13 @@
 </head>
 <body>
 	Meseros:
-	<form method="get" action="consultarproductosvista/consultarproductos.jsp">
+	<form method="post" action="consultarproductosvista/consultarproductos.jsp">
 		<% consultarmeserosFacade x1 = new consultarmeserosFacade(); 
 		ArrayList<Mesero> y1 = x1.main();
 		for(Mesero mesero: y1){
-			%><input size="15" maxlength="20" name="mesero-<%out.println(mesero.getId());%>" type="submit" value="<%out.println(mesero.getNombre());%>"><%
+			%><input size="15" maxlength="20" name="nombre_boton" type="submit" value="<%out.println(mesero.getNombre());%>">
+			<input type="hidden" name="id" value="<%out.print(mesero.getId());%>">
+			<%
 		}%>
 	</form>
 	

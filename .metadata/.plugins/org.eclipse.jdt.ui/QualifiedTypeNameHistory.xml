@@ -24,14 +24,19 @@
 <fullyQualifiedTypeName name="Datos.MeseroRepository"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.listadodeproductosparameseroStepDefinitions"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
-<fullyQualifiedTypeName name="Datos.FacturaRepository"/>
 <fullyQualifiedTypeName name="Presentacion.realizarpedidoFacade"/>
 <fullyQualifiedTypeName name="java.io.PrintStream"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
-<fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
+<fullyQualifiedTypeName name="Datos.FacturaRepository"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="Presentacion.generaciondepedidoFacade"/>
 </qualifiedTypeNameHistroy>
