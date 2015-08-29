@@ -46,14 +46,16 @@
 	</div>
 	<div id="table1" align="center">
 	</div>
-	<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero">
-	      	<input name="entrar" type="submit" value="Terminar"/>
-	      	<input name="estado" type="hidden" value="En espera">
-	      	<input name="cliente" type="text" value="Cliente #1001 - #1003">
-	      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
-			<input name="mesa" type="text" value="Mesa #1-10">
-	      	<input name="cajero" type="text" value="Cajero #null">
-	      	<input name="entrar" type="submit" value="Enviar pedido">
-	</form>
+	<div align="right">
+		<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero" >
+		      	<input name="entrar" type="submit" value="Terminar"/>
+		      	<input name="estado" type="hidden" value="En espera">
+		      	<input name="cliente" type="text" value="Cliente #1001 - #1003">
+		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
+				<input name="mesa" type="text" value="Mesa #1-10">
+		      	<input name="cajero" type="text" value="Cajero #null">
+		      	<input name="entrar" type="submit" value="Enviar pedido">
+		</form>
+	</div>
 </body>
 </html>

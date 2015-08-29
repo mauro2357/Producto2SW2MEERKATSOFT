@@ -33,6 +33,7 @@ public class meseroControllador extends HttpServlet {
     public static generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade();
     public static consultarmeserosFacade meserosFacade = new consultarmeserosFacade();
     public static ArrayList<Producto> productosactual=null;
+    public static ArrayList<Pedido> coladepedidos = null;
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -45,7 +46,9 @@ public class meseroControllador extends HttpServlet {
         	s = request.getSession(false);
         	s.invalidate();
         	productosactual=null;
+        	coladepedidos=null;
         	mesero = null;
+        	pedido = null;
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("imprimirmeseros")){ //Lo ejecuta controller
@@ -105,6 +108,9 @@ public class meseroControllador extends HttpServlet {
         	String cajero = request.getParameter("cajero");
         	meseroControllador.mesero = new Mesero();
         	pedido = new Pedido(productosactual);
+        	productosactual=null;
+        	if(coladepedidos==null) coladepedidos = new ArrayList<Pedido>(); //cola de pedidos
+        	coladepedidos.add(pedido);
         	Calendar x = Calendar.getInstance();
         	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
         	try {
