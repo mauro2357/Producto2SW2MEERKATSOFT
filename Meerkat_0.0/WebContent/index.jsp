@@ -11,7 +11,8 @@
 <title>Meerkat_0.0</title>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript">	
+<script type="text/javascript">
+	
 	$(function() {
 			var Entrar = "imprimirmeseros"; 
 			$.post("/Meerkat_0.0/mesero", {
@@ -27,6 +28,10 @@
 			meseroi : x
 		}, window.location.replace("consultarproductosvista/consultarproductos.jsp"));
 	}
+	
+	// Aquí debería ir una funcion para ingresar como administrador.
+	// me remite a una funcionesadministrador.jsp para las acciones que puede hacer el administrador.
+	
 	
 </script>
 </head>
