@@ -3,7 +3,6 @@ package Negocio.actualizarinventario;
 import java.util.ArrayList;
 
 import Negocio.tomaynotificacionpedidos.*;
-import Presentacion.consultarinventarioFacade;
 
 public class Administrador {
 	
@@ -11,13 +10,6 @@ public class Administrador {
 	//Lista de meseros.
 	ArrayList<Despachador> nominadedespachadores = new ArrayList<Despachador>();
 	//Lista de despachadores.
-	
-	public ArrayList<Producto> consultar_inventario() throws Exception {
-		consultarinventarioFacade y = new consultarinventarioFacade();
-		ArrayList<Producto> z = new ArrayList<Producto>();
-		z = y.main();
-		return z;
-	}
 	
 	public void contratar_mesero(){  //Se contrata un mesero y se mete en la lista de meseros contratados.
 		Mesero mesero = new Mesero();
@@ -45,6 +37,9 @@ public class Administrador {
 		return "No hay despachador.";
 	}
 	
+	public void consultar_inventario(){
+		
+	}
 	
 	public boolean agregar_producto_a_inventario(){
 		return true;
