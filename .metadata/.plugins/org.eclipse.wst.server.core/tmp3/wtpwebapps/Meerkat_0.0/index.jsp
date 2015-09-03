@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Meerkat_0.0</title>
+
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript">
@@ -19,7 +20,8 @@
 				entrar : Entrar,
 			}, function(responseText) {
 				$('#cuerpo').html(responseText);
-			});
+			});			
+			
 		});
 	function definirmesero(x){
 		var Entrar = "definirmesero";
@@ -28,6 +30,12 @@
 			meseroi : x
 		}, window.location.replace("consultarproductosvista/consultarproductos.jsp"));
 	}
+	$(document).ready(function(){
+    $("button").click(function(){
+        
+        window.location.replace("consultarinventariovista/funcionesadministrador.jsp")
+    });
+}); 
 	
 	// Aquí debería ir una funcion para ingresar como administrador.
 	// me remite a una funcionesadministrador.jsp para las acciones que puede hacer el administrador.
@@ -38,5 +46,8 @@
 
 <body>
 	<div id="cuerpo"></div>
+	<br></br>
+	<button>Administrador</button>
+	
 </body>
 </html>

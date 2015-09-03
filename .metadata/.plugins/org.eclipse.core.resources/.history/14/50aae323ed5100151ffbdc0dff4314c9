@@ -32,7 +32,6 @@
 	}
 	$(document).ready(function(){
     $("button").click(function(){
-        
         window.location.replace("consultarinventariovista/funcionesadministrador.jsp")
     });
 }); 
@@ -46,7 +45,6 @@
 
 <body>
 	<div id="cuerpo"></div>
-	<br></br>
 	<button>Administrador</button>
 	
 </body>

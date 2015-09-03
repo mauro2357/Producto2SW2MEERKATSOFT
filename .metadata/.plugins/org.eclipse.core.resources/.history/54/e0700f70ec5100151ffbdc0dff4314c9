@@ -33,8 +33,7 @@
 	$(document).ready(function(){
     $("button").click(function(){
         
-        window.location.replace("consultarinventariovista/funcionesadministrador.jsp")
-    });
+    }, window.location.replace("consultarinventariovista/funcionesadministrador.jsp"));
 }); 
 	
 	// Aquí debería ir una funcion para ingresar como administrador.
@@ -46,7 +45,6 @@
 
 <body>
 	<div id="cuerpo"></div>
-	<br></br>
 	<button>Administrador</button>
 	
 </body>

@@ -16,6 +16,7 @@
 
 	// aquí debe ir un Javascript con la accion consultar inventerio.
 	//No sé si actualizarlo en un ajax o crear otra jsp con la lista del inventario.
+	//LO QUE HAY AQUI ES PROVISIONAL
 
 
 function genera_tabla() {
