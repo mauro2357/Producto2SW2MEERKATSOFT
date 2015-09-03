@@ -13,9 +13,9 @@
 <body>
 
 <% 
-	public Administrador admin = new Administrador();
-	ArrayList<Producto> a = new ArrayList<Producto>();
-	a = admin.consultar_inventario();
+	//public Administrador admin = new Administrador();
+	//ArrayList<Producto> a = new ArrayList<Producto>();
+	//a = admin.consultar_inventario();
 
 
 
