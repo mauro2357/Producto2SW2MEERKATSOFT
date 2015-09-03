@@ -19,7 +19,6 @@
 		int total=0;
 		int totalindividual=0;
 		for(Producto producto: productos_pedido){
-			
 			if(visitados.contains(producto.getCodigo())) continue;
 			int aux=0;
 			for(Producto auxproducto: productos_pedido){

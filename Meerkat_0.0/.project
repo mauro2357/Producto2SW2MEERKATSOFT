@@ -3,6 +3,7 @@
 	<name>Meerkat_0.0</name>
 	<comment></comment>
 	<projects>
+		<project>Servers</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

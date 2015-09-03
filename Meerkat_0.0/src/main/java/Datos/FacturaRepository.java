@@ -43,7 +43,7 @@ public class FacturaRepository {
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
-	    ArrayList<Producto> tproductos = meseroControllador.productos;
+	    ArrayList<Producto> tproductos = meseroControllador.consultarmeserosFacade.mesero.productos;
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
 	    String auxid = null;
@@ -66,7 +66,8 @@ public class FacturaRepository {
 		      auxid = id;
 		      continue;
 	      }else{
-	    	  y = new Pedido(x);
+	    	  y = new Pedido();
+	    	  y.cuerpo = x;
 	    	  x = null;
 	    	  auxid = null;
 	      }
@@ -82,7 +83,7 @@ public class FacturaRepository {
 	    String query = "SELECT * FROM new_view";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
-	    ArrayList<Producto> f = meseroControllador.productos;
+	    ArrayList<Producto> f = meseroControllador.consultarmeserosFacade.mesero.productos;
 	    while (rs.next()){
 	      String id = rs.getString("Ven_id");
 	      if(Integer.parseInt(id)==idu){
