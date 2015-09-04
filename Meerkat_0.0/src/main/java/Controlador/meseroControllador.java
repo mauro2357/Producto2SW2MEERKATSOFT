@@ -23,8 +23,8 @@ public class meseroControllador extends HttpServlet {
         super();
     }
     
-    public static Factura factura=null;
-    public static ArrayList<Factura> facturas;
+    public static Factura factura=null; //
+    public static ArrayList<Factura> facturas; //
     public static consultarproductosFacade productosFacade = new consultarproductosFacade();
     public static generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade();
     public static consultarmeserosFacade consultarmeserosFacade = new consultarmeserosFacade();
