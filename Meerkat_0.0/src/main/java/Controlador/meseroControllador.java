@@ -29,7 +29,6 @@ public class meseroControllador extends HttpServlet {
     public static generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade();
     public static consultarmeserosFacade consultarmeserosFacade = new consultarmeserosFacade();
     public static consultarmesasFacade consultarmesasFacade = new consultarmesasFacade();
-    public static ArrayList<Pedido> coladepedidos = null; //a quitar
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -41,7 +40,6 @@ public class meseroControllador extends HttpServlet {
         {
         	s = request.getSession(false);
         	s.invalidate();
-        	coladepedidos=null; //a quitar
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("imprimirmeseros")){ //Lo ejecuta controller
@@ -80,26 +78,25 @@ public class meseroControllador extends HttpServlet {
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
         }
         if(Puerta.equalsIgnoreCase("listarpedidoactual")){ //Lo ejecuta controller
-        	s.setAttribute("productos-pedido", consultarmeserosFacade.mesero.pedido_sin_asignar.getCuerpo()); //Enviamos los productos que lleva el pedido (inicio)
+        	if(consultarmeserosFacade.mesero.pedido_sin_asignar != null) s.setAttribute("productos-pedido", consultarmeserosFacade.mesero.pedido_sin_asignar.getCuerpo()); //Enviamos los productos que lleva el pedido (inicio)
+        	else s.setAttribute("productos-pedido",null);
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";	
         }
-        if(Puerta.equalsIgnoreCase("Enviar pedido")){       //Lo ejecuta Mesero //Debe de ejecutarlo controller
-        	String estado = request.getParameter("estado");
+        if(Puerta.equalsIgnoreCase("Enviar pedido")){       //Listo
         	String cliente = request.getParameter("cliente");
         	String mesero = consultarmeserosFacade.mesero.getId();
         	String mesa = request.getParameter("mesa");
         	String cajero = request.getParameter("cajero");
         	Pedido pedido = consultarmeserosFacade.mesero.pedido_sin_asignar;
-        	//Finiquitar pedido desde mesero
-        	if(coladepedidos==null) coladepedidos = new ArrayList<Pedido>(); //cola de pedidos, a quitar
-        	coladepedidos.add(pedido); //a quitar
         	Calendar x = Calendar.getInstance();
         	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
         	try {
-        		consultarmeserosFacade.mesero.enviar_pedido(pedido, estado, mesa, mesero, cliente, cajero, fecha); //DEBE DE ENVIAR UNA CLASE PEDIDO
+				consultarmeserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesa,cajero,fecha);
 			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+        	consultarmeserosFacade.mesero.pedido_sin_asignar = null;
         	pagina = "/index.jsp";
         }
 

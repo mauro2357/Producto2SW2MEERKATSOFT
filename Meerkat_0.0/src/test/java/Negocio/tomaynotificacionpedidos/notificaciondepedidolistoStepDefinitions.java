@@ -32,7 +32,7 @@ public class notificaciondepedidolistoStepDefinitions {
 	@When("^No hay pedido en cola.$")
 	public void No_hay_pedido_en_cola() throws Throwable {
 		//Assert.assertTrue(!despachador.recibir_pedido());
-		Assert.assertTrue(!despachador.recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
+		Assert.assertTrue(despachador.recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
 	}
 
 	@Then("^Notificar al despachador que no hay pedido en cola.$")

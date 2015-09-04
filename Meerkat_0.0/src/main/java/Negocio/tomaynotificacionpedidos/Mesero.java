@@ -1,6 +1,7 @@
 package Negocio.tomaynotificacionpedidos;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import Presentacion.*;
@@ -13,7 +14,7 @@ public class Mesero {
 	public String telefono;
 	public ArrayList<Producto> productos;
 	public Pedido pedido_sin_asignar;
-	public Map<String,String> coladepedidos;
+	public Map<Pedido, String> coladepedidos;
 	
 	public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
 		this.id = id;
@@ -23,19 +24,17 @@ public class Mesero {
 		this.productos = consultarproductos();
 	}
 
-	public Mesero() {
+	public Mesero() { //A eliminar
 	}
 
 	public void setId(String id) {this.id = id;}
-	
 	public String getId() {return id;}
-	
 	public String getNombre() {return nombre;}
-	
 	public String getApellido() {return apellido;}
-	
 	public String getTelefono() {return telefono;}
-	
+	public Map<Pedido, String> getColadepedidos() {return coladepedidos;}
+	public void setColadepedidos(Map<Pedido, String> coladepedidos) {this.coladepedidos = coladepedidos;}
+
 	public String getMensaje() throws Exception {
 		ArrayList<Producto> x = consultarproductos();
 		if(!(x.size()==0)) return "No hay productos";
@@ -58,10 +57,10 @@ public class Mesero {
 	}
 	//fin código obsoleto
 	
-	public String enviar_pedido(Pedido pedido, String estado, String mesa, String mesero, String cliente, String cajero, String fecha) throws Exception{
+	public String enviar_pedido(Pedido pedido) throws Exception{
 		if(pedido.getCuerpo().size()==0) return "No hay productos.";
 		generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade(); 
-		pedidosFacade.enviar_pedido(pedido, estado, mesa, mesero, cliente, cajero, fecha);
+		pedidosFacade.enviar_pedido(pedido);
 		return "Pedido enviado";
 	}
 	
@@ -77,6 +76,15 @@ public class Mesero {
 		if(pedido_sin_asignar.getCuerpo() == null) pedido_sin_asignar.cuerpo = new ArrayList<Producto>(); //Si el pedido no tiene productos, se crea el vector
 		Producto encontrado = consultarproductoinvididual(id2); //Le decimos al mesero que nos busque la ubicacion en memoria del producto
 		pedido_sin_asignar.adicionarproducto(encontrado); //Ya encontrado el producto, lo adicionamos al pedido
+	}
+
+	public void finiquitarpedido(Pedido pedido, String cliente, String mesero, String mesa, String cajero, String fecha) throws Exception {
+		ArrayList<Producto> lista_productos = pedido.getCuerpo();
+		Pedido pedido_a_finiquitar = new Pedido(lista_productos, cliente, mesa, cajero, fecha);
+		if(coladepedidos == null) coladepedidos = new HashMap<Pedido, String>();
+		coladepedidos.put(pedido_a_finiquitar,mesa);
+		enviar_pedido(pedido_a_finiquitar);
+		
 	}
 	
 
