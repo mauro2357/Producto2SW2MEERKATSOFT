@@ -1,0 +1,13 @@
+package Presentacion;
+
+import java.util.ArrayList;
+
+import Datos.MesaRepository;
+import Negocio.tomaynotificacionpedidos.Producto;
+
+public class consultarmesasFacade {
+	public void main(int idu) throws Exception{
+		MesaRepository facturarepository = new MesaRepository();
+		ArrayList<Producto> x = facturarepository.generarpedido(idu);
+	}
+}
