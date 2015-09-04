@@ -30,12 +30,8 @@
 			meseroi : x
 		}, window.location.replace("consultarproductosvista/consultarproductos.jsp"));
 	}
-	$(document).ready(function(){
-    $("button").click(function(){
-        
-        window.location.replace("consultarinventariovista/funcionesadministrador.jsp")
-    });
-}); 
+	
+	
 	
 	// Aquí debería ir una funcion para ingresar como administrador.
 	// me remite a una funcionesadministrador.jsp para las acciones que puede hacer el administrador.
@@ -44,10 +40,11 @@
 </script>
 </head>
 
-<body>
+<body background="fondo1.JPG">
+	<center><h1><font color ="white">Administrador:</font></h1></center>
+	<center><a href="consultarinventariovista/funcionesadministrador.jsp"><img src="admin.png" width="300px" height="300px"> </center>
+	<center><h1><font color ="white">Meseros:</font></h1></center>
 	<div id="cuerpo"></div>
-	<br></br>
-	<button>Administrador</button>
 	
-</body>
+</body >
 </html>
