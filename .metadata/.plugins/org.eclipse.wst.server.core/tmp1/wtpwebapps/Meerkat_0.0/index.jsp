@@ -33,7 +33,7 @@
 	
 	function ir_administrador(){
 		var Entrar = "ir_administrador";
-		$.post("/Meerkat_0.0/Administrador", {
+		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,
 		}, window.location.replace("consultarinventariovista/funcionesadministrador.jsp"));
 	}
@@ -44,8 +44,7 @@
 <body>
 	<div id="cuerpo"></div>
 	<br></br>
-	//boton del administrador que invoca el metodo de ir_administrador de jquery y que va al administrador controlador.
-	<button type="button" onclick="ir_administrador">Adminisrtador</button>
+	<button type="button" onclick="ir_administrador()">Administrador</button>
 	
 </body>
 </html>

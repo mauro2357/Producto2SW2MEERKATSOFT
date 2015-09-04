@@ -60,11 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-<<<<<<< HEAD
     <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
-=======
-    <Connector connectionTimeout="20000" port="8081" protocol="HTTP/1.1" redirectPort="8443"/>
->>>>>>> origin/master
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -128,11 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-<<<<<<< HEAD
-      <Context docBase="C:\sourcecode\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\sourcecode\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Meerkat_0.0" path="/Meerkat_0.0" reloadable="true" source="org.eclipse.jst.jee.server:Meerkat_0.0"/></Host>
-=======
-      <Context docBase="C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Meerkat_0.0" path="/Meerkat_0.0" reloadable="true" source="org.eclipse.jst.jee.server:Meerkat_0.0"/></Host>
->>>>>>> origin/master
+      <Context docBase="C:\Users\Crisman Carmona\OneDrive\Programacion\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Crisman Carmona\OneDrive\Programacion\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Meerkat_0.0" path="/Meerkat_0.0" reloadable="true" source="org.eclipse.jst.jee.server:Meerkat_0.0"/></Host>
     </Engine>
   </Service>
 </Server>
