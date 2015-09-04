@@ -32,6 +32,7 @@ public class administradorControlador extends HttpServlet {
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         String pagina = null;
+        System.out.println(Puerta);
         if(Puerta.equalsIgnoreCase("Terminar"))
         {
         	s = request.getSession(false);

@@ -33,7 +33,7 @@
 	
 	function ir_administrador(){
 		var Entrar = "ir_administrador";
-		$.post("/Meerkat_0.0/Administrador", {
+		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,
 		}, window.location.replace("consultarinventariovista/funcionesadministrador.jsp"));
 	}
