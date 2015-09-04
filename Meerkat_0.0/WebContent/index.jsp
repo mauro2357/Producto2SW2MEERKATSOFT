@@ -30,24 +30,22 @@
 			meseroi : x
 		}, window.location.replace("consultarproductosvista/consultarproductos.jsp"));
 	}
-	$(document).ready(function(){
-    $("button").click(function(){
-        
-        window.location.replace("consultarinventariovista/funcionesadministrador.jsp")
-    });
-}); 
 	
-	// Aquí debería ir una funcion para ingresar como administrador.
-	// me remite a una funcionesadministrador.jsp para las acciones que puede hacer el administrador.
-	
-	
+	function ir_administrador(){
+		var Entrar = "ir_administrador";
+		$.post("/Meerkat_0.0/Administrador", {
+			entrar : Entrar,
+		}, window.location.replace("consultarinventariovista/funcionesadministrador.jsp"));
+	}
+			
 </script>
 </head>
 
 <body>
 	<div id="cuerpo"></div>
 	<br></br>
-	<button>Administrador</button>
+	//boton del administrador que invoca el metodo de ir_administrador de jquery y que va al administrador controlador.
+	<button type="button" onclick="ir_administrador">Adminisrtador</button>
 	
 </body>
 </html>

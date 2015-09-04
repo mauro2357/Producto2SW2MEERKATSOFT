@@ -1,0 +1,13 @@
+package Presentacion;
+
+import java.util.ArrayList;
+
+import Datos.MesaRepository;
+import Negocio.tomaynotificacionpedidos.Mesa;
+
+public class consultarmesasFacade {
+	public void main(int idu) throws Exception{
+		MesaRepository mesarepository = new MesaRepository();
+		ArrayList<Mesa> x = mesarepository.main();
+	}
+}

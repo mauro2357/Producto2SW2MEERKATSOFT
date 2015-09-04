@@ -19,7 +19,6 @@
 		int total=0;
 		int totalindividual=0;
 		for(Producto producto: productos_pedido){
-			
 			if(visitados.contains(producto.getCodigo())) continue;
 			int aux=0;
 			for(Producto auxproducto: productos_pedido){
@@ -36,20 +35,20 @@
 		<tr><td></td><td>Total:</td><td align="right"><%out.print(total); %></td></tr>
 	</table>
 		Pedidos en cola:
-		<% ArrayList<Pedido> h = meseroControllador.coladepedidos;
-			if(h!=null){
-				for(Pedido pedido: h){
-					out.println("");
-					out.println("Pedido pendiente: ");
-					for(Producto producto : pedido.getCuerpo()){
-						%><%out.println(producto.getNombre()+" ");%><%
-					}
-					%><br><%
-				}
-			}
-			else{
-				out.println("No hay pedidos pendientes");
-			}
+		<% //ArrayList<Pedido> h = meseroControllador.coladepedidos;
+			//if(h!=null){
+				//for(Pedido pedido: h){
+					//out.println("");
+					//out.println("Pedido pendiente: ");
+					//for(Producto producto : pedido.getCuerpo()){
+						//%><%//out.println(producto.getNombre()+" ");%><%
+					//}
+					//%><br><%
+				//}
+			//}
+			//else{
+				//out.println("No hay pedidos pendientes");
+			//}
 		%>
 </body>
 </html>

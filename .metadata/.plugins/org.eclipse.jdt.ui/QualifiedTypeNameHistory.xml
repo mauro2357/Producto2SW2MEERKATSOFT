@@ -40,5 +40,10 @@
 <fullyQualifiedTypeName name="Presentacion.generaciondepedidoFacade"/>
 <fullyQualifiedTypeName name="Presentacion.consultarmeserosFacade"/>
 <fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
+<fullyQualifiedTypeName name="Datos.MesaRepository"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Mesa"/>
+<fullyQualifiedTypeName name="Presentacion.consultarmesasFacade"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="Controlador.meseroControllador"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

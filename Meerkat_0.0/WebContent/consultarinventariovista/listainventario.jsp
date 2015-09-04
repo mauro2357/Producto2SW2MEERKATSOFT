@@ -11,15 +11,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<% 
-	//public Administrador admin = new Administrador();
-	//ArrayList<Producto> a = new ArrayList<Producto>();
-	//a = admin.consultar_inventario();
-
-
-
- %>
+		<% 
+		ArrayList<Producto> y1 = (ArrayList<Producto>) session.getAttribute("todos-los-insumos");
+		for(Producto producto: y1){
+			out.println(producto.getNombre());
+		}%>
 
 
 </body>

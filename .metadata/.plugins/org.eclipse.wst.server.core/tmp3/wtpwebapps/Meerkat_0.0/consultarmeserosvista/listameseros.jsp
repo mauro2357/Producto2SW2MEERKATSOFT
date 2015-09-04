@@ -10,11 +10,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Meseros:
+	
+	<br>
 		<% 
 		ArrayList<Mesero> y1 = (ArrayList<Mesero>) session.getAttribute("todos-los-meseros");
 		for(Mesero mesero: y1){
-			%><input size="15" maxlength="20" name="nombre_boton" type="submit" value="<%out.print(mesero.getNombre());%>" onclick="definirmesero(<%out.print(mesero.getId());%>);">
+			%>
+			<center>
+			<h3><font color ="white"><%out.print(mesero.getNombre());%></h2></font>
+			<input size="15" maxlength="20" name="nombre_boton" type="image" src="mes.png" onclick="definirmesero(<%out.print(mesero.getId());%>);">
+			</center>
 			<%
 		}%>
 </body>
