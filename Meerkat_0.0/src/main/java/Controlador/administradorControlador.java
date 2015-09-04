@@ -26,6 +26,7 @@ public class administradorControlador extends HttpServlet {
     public  static consultarinventarioFacade inventarioFacade= new consultarinventarioFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Ingreso al servlet");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
@@ -39,6 +40,7 @@ public class administradorControlador extends HttpServlet {
         }
         
         if(Puerta.equalsIgnoreCase("consultar_inventario")){ 
+        	System.out.println("Ingreso al controlador: ");
         	try { //Try catch para intentar conectar a la BD
         		inventarioFacade.main(); //Ejecuta el main del Facade, esto obtiene todos los insumos que están en la BD
 			} catch (Exception e) {

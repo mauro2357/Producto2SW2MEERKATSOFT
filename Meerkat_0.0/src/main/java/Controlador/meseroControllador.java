@@ -31,6 +31,7 @@ public class meseroControllador extends HttpServlet {
     public static consultarmesasFacade consultarmesasFacade = new consultarmesasFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ingreso al controlador de mesero");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
