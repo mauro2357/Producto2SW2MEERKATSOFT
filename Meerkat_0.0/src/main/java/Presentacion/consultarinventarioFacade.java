@@ -13,7 +13,8 @@ public class consultarinventarioFacade {
 	public ArrayList<Producto> main() throws Exception{
 		InventarioRepository inventariorepository = new InventarioRepository();
 		ArrayList<Producto> x = inventariorepository.ConsultarInsumos ();
-		this.listainsumos = x ;
+		this.listainsumos = x;
+		System.out.println("Ingreso al facade: ");
 		return x;
 	}
 }

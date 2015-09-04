@@ -15,10 +15,12 @@ public class InventarioRepository {
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Producto> a = new ArrayList<Producto>();
+	    System.out.println("ingreso al repository: ");
 	    while (rs.next()){
-	      String codigo = rs.getString("Pro_id");
-	      String nombre = rs.getString("Pro_nombre");
-	      int valor = rs.getInt("Pro_valor");
+	      String codigo = rs.getString("Ins_id");
+	      String nombre = rs.getString("Ins_nombre");
+	      int valor = rs.getInt("Ins_valor");
+	      
 	      Producto p = new Producto(codigo, nombre, valor);
 	      a.add(p);     
 	    }

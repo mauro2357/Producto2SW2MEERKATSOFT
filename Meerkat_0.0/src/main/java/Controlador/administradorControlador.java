@@ -41,7 +41,7 @@ public class administradorControlador extends HttpServlet {
         }
         
         if(Puerta.equalsIgnoreCase("consultar_inventario")){ 
-        	System.out.println("Ingreso al controlador: ");
+        	System.out.println("Ingreso a buscar el inventario: ");
         	try { //Try catch para intentar conectar a la BD
         		inventarioFacade.main(); //Ejecuta el main del Facade, esto obtiene todos los insumos que están en la BD
 			} catch (Exception e) {

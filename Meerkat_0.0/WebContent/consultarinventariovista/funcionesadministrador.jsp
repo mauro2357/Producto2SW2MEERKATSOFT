@@ -17,26 +17,21 @@
 	function consultar_inventario(){
 		var Entrar = "consultar_inventario";
 		$.post("/Meerkat_0.0/administrador", {
-			entrar : Entrar,
-		});
+			entrar : Entrar,			
+			}, function(responseText) {
+				$('#cuerpo').html(responseText);
+			});	
 	}
 			
 </script>
 </head>
 
 <body>
-	<div id="cuerpo"></div>
+
+	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
 	<br></br>
-	<button type="button" onclick="consultar_inventario()">Administrador</button>
+	<div id="cuerpo"></div>
+	
 	
 </body>
 </html>
-
-	function consultar_insumos(){
-		alert("ingreso al metodo de jquery");
-		var Entrar = "consultar_inventario";
-		$.post("/Meerkat_0.0/administrador", {		
-			entrar : Entrar,
-		}, function(responseText) {
-				$('#cuerpo').html(responseText);
-			});	
