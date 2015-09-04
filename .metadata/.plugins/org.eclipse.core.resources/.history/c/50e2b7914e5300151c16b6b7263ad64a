@@ -1,0 +1,40 @@
+package Controlador;
+
+import java.io.IOException;
+import java.util.Calendar;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/despachador")
+public class despachadorControlador extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public despachadorControlador() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ingreso al controlador de despachador");
+		response.setContentType("text/html;charset=UTF-8");
+		HttpSession s = request.getSession();
+        String Puerta = null;
+        Puerta = request.getParameter("entrar");
+        String pagina = null;
+        if(Puerta.equalsIgnoreCase("Terminar"))
+        {
+        	s = request.getSession(false);
+        	s.invalidate();
+        	pagina = "index.jsp";
+        }
+        RequestDispatcher rd = request.getRequestDispatcher(pagina);
+        rd.forward(request, response);
+	}
+
+}

@@ -37,7 +37,15 @@
 			entrar : Entrar,
 		}, window.location.replace("consultarinventariovista/funcionesadministrador.jsp"));
 	}
-			
+	
+	function ir_despachador(){
+		var Entrar = "ir_despachador";
+		$.post("/Meerkat_0.0/despachador", {
+			entrar : Entrar,
+		}, window.location.replace("despachadores/cocina.jsp"));
+	}
+	
+		
 </script>
 </head>
 
@@ -45,6 +53,6 @@
 	<div id="cuerpo"></div>
 	<br></br>
 	<button type="button" onclick="ir_administrador()">Administrador</button>
-	
+	<button type="button" onclick="ir_despachador()">Despachador</button>	
 </body>
 </html>

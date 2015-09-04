@@ -1,0 +1,45 @@
+package Presentacion;
+
+import java.util.ArrayList;
+
+import Datos.MesaRepository;
+import Negocio.tomaynotificacionpedidos.Mesa;
+import Negocio.tomaynotificacionpedidos.Mesero;
+
+public class consultarmesasFacade {
+	
+	public Mesa mesa;
+	public ArrayList<Mesa> listamesas;
+	
+	public void main() throws Exception{
+		MesaRepository mesarepository = new MesaRepository();
+		ArrayList<Mesa> x = mesarepository.main();
+		this.listamesas = x;
+	}
+	
+	public void definirmesa(String mesaid) {
+		if(mesaactual==null){
+        	for(Mesero mesero: listamesas){
+        		if(mesero.getId().contentEquals(mesaid)) this.mesaactual = mesero;
+        	}
+    	}
+	}
+
+	public Mesa getMesaactual() {
+		return mesaactual;
+	}
+
+	public void setMesaactual(Mesa mesaactual) {
+		this.mesaactual = mesaactual;
+	}
+
+	public ArrayList<Mesa> getListamesas() {
+		return listamesas;
+	}
+
+	public void setListamesas(ArrayList<Mesa> listamesas) {
+		this.listamesas = listamesas;
+	}
+	
+	
+}

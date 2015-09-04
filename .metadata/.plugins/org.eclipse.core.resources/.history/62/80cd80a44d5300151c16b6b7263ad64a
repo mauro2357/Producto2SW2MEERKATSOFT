@@ -1,0 +1,20 @@
+package Negocio.tomaynotificacionpedidos;
+
+public class Despachador {
+
+	String id;
+	String nombre;
+	String apellido;
+	String telefono;
+	
+	public boolean recibir_pedido(){
+		return true;
+	}
+	
+	public String notificar_pedido(){
+		return "Pedido despachado.";
+	}
+	
+	
+	
+}

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import Controlador.meseroControllador;
 import Negocio.geraciondefactura.Factura;
+import Negocio.tomaynotificacionpedidos.Mesero;
 import Negocio.tomaynotificacionpedidos.Pedido;
 import Negocio.tomaynotificacionpedidos.Producto;
 
@@ -43,7 +44,8 @@ public class FacturaRepository {
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
-	    ArrayList<Producto> tproductos = meseroControllador.consultarmeserosFacade.mesero.productos;
+	    Mesero meseroa = new Mesero();
+	    ArrayList<Producto> tproductos = meseroa.consultarproductos();
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
 	    String auxid = null;
