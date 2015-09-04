@@ -32,7 +32,7 @@ xmlhttp.onreadystatechange=function()
 }
 xmlhttp.open("POST","listainventario.jsp",true);
 xmlhttp.send();
-}
+} //Este ajax debe de redirigir al controllador para asignar un administrador nuevo, por eso en la jsp te dice lo del error.
 
 </script>
 
