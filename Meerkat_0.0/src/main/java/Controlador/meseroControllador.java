@@ -23,9 +23,8 @@ public class meseroControllador extends HttpServlet {
         super();
     }
     
-    public static Factura factura=null; //
+    public static Factura factura=null; // 
     public static ArrayList<Factura> facturas; //
-    public static consultarproductosFacade productosFacade = new consultarproductosFacade();
     public static generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade();
     public static consultarmeserosFacade consultarmeserosFacade = new consultarmeserosFacade();
     public static consultarmesasFacade consultarmesasFacade = new consultarmesasFacade();
@@ -58,12 +57,7 @@ public class meseroControllador extends HttpServlet {
         	consultarmeserosFacade.definirmesero(meseroi); //Lo enviamos para definir el mesero en el servidor.
         	pagina = "/consultarproductosvista/consultarproductos.jsp"; //Rederigimos a consultarprodutos.
         }
-        if(Puerta.equalsIgnoreCase("botones")){ //Lo ejecuta mesero y controller
-        	try {
-				facturas = pedidosFacade.main();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+        if(Puerta.equalsIgnoreCase("botones")){ //controller
 			pagina = "/consultarproductosvista/consultarproductositems/botonproductos.jsp"; //Le vamos a mandar a esta jsp todos los productos.
         	s.setAttribute("todos-los-productos", consultarmeserosFacade.mesero.productos); //Le mandamos los productos a la jsp encargada de imprimirlos
         }

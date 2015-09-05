@@ -1,0 +1,8 @@
+package Servicios;
+
+import javax.ws.rs.Path;
+
+@Path("consultaproductos")
+public class consultaproductosService {
+
+}

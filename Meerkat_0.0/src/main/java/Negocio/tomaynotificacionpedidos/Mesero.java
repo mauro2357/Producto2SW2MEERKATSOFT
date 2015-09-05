@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Datos.FacturaRepository;
+import Datos.ProductoRepository;
 import Presentacion.*;
 
 public class Mesero {
@@ -16,12 +18,14 @@ public class Mesero {
 	public Pedido pedido_sin_asignar;
 	public Map<Pedido, String> coladepedidos;
 	
+	ProductoRepository productorepository = new ProductoRepository();
+	
 	public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
-		this.productos = consultarproductos();
+		this.productos = productorepository.ConsultarProducto();
 	}
 
 	public Mesero() { //A eliminar
@@ -36,22 +40,15 @@ public class Mesero {
 	public void setColadepedidos(Map<Pedido, String> coladepedidos) {this.coladepedidos = coladepedidos;}
 
 	public String getMensaje() throws Exception {
-		ArrayList<Producto> x = consultarproductos();
+		ArrayList<Producto> x = productorepository.ConsultarProducto();
 		if(!(x.size()==0)) return "No hay productos";
 		return "Hay productos";
 	}
 	
-	public ArrayList<Producto> consultarproductos() throws Exception {
-		consultarproductosFacade y = new consultarproductosFacade();
-		ArrayList<Producto> x = new ArrayList<Producto>();
-		x = y.main();
-		return x;
-	}
-	
 	public String enviar_pedido(Pedido pedido) throws Exception{
 		if(pedido==null) return "No hay productos.";
-		generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade(); 
-		pedidosFacade.enviar_pedido(pedido);
+		FacturaRepository facturarepository = new FacturaRepository();
+		facturarepository.ingresarPedido(pedido);
 		return "Pedido enviado";
 	}
 	

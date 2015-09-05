@@ -45,7 +45,7 @@ public class FacturaRepository {
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
 	    Mesero meseroa = new Mesero();
-	    ArrayList<Producto> tproductos = meseroa.consultarproductos();
+	    ArrayList<Producto> tproductos = meseroa.productos;
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
 	    String auxid = null;
@@ -61,6 +61,11 @@ public class FacturaRepository {
 		      cajero = rs.getString("Caj_id");
 		      mesa = rs.getString("Mesa_id");
 		      cliente = rs.getString("Cli_id");
+		      System.out.println("atributos");
+		      System.out.println(mesero);
+		      System.out.println(cajero);
+		      System.out.println(mesa);
+		      System.out.println(cliente);
 		      for(Producto producto: tproductos){
 		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))) x.add(producto);
 		      }

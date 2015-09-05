@@ -18,8 +18,6 @@
 <fullyQualifiedTypeName name="Datos.PedidoRepository"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="Negocio.actualizarinventario.Administrador"/>
-<fullyQualifiedTypeName name="Presentacion.generaciondefacturaFacade"/>
-<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Mesero"/>
 <fullyQualifiedTypeName name="Datos.MeseroRepository"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.listadodeproductosparameseroStepDefinitions"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Producto"/>
@@ -29,14 +27,12 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Datos.FacturaRepository"/>
 <fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Pedido"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
 <fullyQualifiedTypeName name="Presentacion.generaciondepedidoFacade"/>
 <fullyQualifiedTypeName name="Presentacion.consultarmeserosFacade"/>
 <fullyQualifiedTypeName name="Presentacion.consultarproductosFacade"/>
@@ -46,4 +42,14 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="Controlador.meseroControllador"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="Presentacion.generaciondefacturaFacade"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Mesero"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Negocio.geraciondefactura.Factura"/>
+<fullyQualifiedTypeName name="Datos.ProductoRepository"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+<fullyQualifiedTypeName name="javax.ws.rs.GET"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
+<fullyQualifiedTypeName name="java.awt.MediaTracker"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 </qualifiedTypeNameHistroy>

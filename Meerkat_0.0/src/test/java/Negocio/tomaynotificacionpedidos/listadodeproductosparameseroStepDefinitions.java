@@ -22,7 +22,7 @@ public class listadodeproductosparameseroStepDefinitions {
 
 	@When("^No hay productos.$")
 	public void No_hay_productos() throws Throwable {
-		x = mesero.consultarproductos();
+		x = mesero.productos;
 		Assert.assertTrue(!(x.size()==0));
 	}
 
@@ -33,7 +33,7 @@ public class listadodeproductosparameseroStepDefinitions {
 	
 	@When("^Hay productos.$")
 	public void Hay_productos() throws Throwable {
-		x = mesero.consultarproductos();
+		x = mesero.productos;
 	    Assert.assertTrue(x.size()>0);
 	}
 	
