@@ -22,6 +22,13 @@
 				$('#cuerpo').html(responseText);
 			});	
 	}
+	
+	function crear_despachador(){
+		var Entrar = "crear_despachador";
+		$.post("/Meerkat_0.0/administrador", {
+			entrar : Entrar,			
+			});	
+	}
 			
 </script>
 </head>
@@ -30,6 +37,10 @@
 
 	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
 	<br></br>
+	
+	<button type="button" onclick="crear_despachador()">Crear despachador</button>
+	<br></br>
+	
 	<div id="cuerpo"></div>
 	
 	

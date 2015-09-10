@@ -37,7 +37,23 @@
 			entrar : Entrar,
 		}, window.location.replace("consultarinventariovista/funcionesadministrador.jsp"));
 	}
-			
+	
+	function ir_despachador(){
+		var Entrar = "ir_despachador";
+		$.post("/Meerkat_0.0/despachador", {
+			entrar : Entrar,
+		}, window.location.replace("despachadores/cocina.jsp"));
+	}
+	
+	function crear_usuario(){
+		var Entrar = "crear_usuario";
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+		}, window.location.replace("basedatosusuariosvista/crearusuario.jsp"));
+	}
+	
+	
+		
 </script>
 </head>
 
@@ -45,6 +61,7 @@
 	<div id="cuerpo"></div>
 	<br></br>
 	<button type="button" onclick="ir_administrador()">Administrador</button>
-	
+	<button type="button" onclick="ir_despachador()">Despachador</button>
+	<button type="button" onclick="crear_usuario()">Crear Usuario</button>	
 </body>
 </html>

@@ -74,6 +74,5 @@ public class Mesero {
 		enviar_pedido(pedido_a_finiquitar);
 		
 	}
-	
 
 }

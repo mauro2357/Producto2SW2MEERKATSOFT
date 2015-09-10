@@ -62,6 +62,6 @@
 	<br></br>
 	<button type="button" onclick="ir_administrador()">Administrador</button>
 	<button type="button" onclick="ir_despachador()">Despachador</button>
-	<button type="button" onclick="crear_usuario">Crear Usuario</button>	
+	<button type="button" onclick="crear_usuario()">Crear Usuario</button>	
 </body>
 </html>

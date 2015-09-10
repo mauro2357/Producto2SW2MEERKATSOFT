@@ -25,8 +25,8 @@ public class Administrador {
 	}
 	
 	public void contratar_despachador(){
-		Despachador despachador = new Despachador();
-		nominadedespachadores.add(despachador);
+		//Despachador despachador = new Despachador();
+		//nominadedespachadores.add(despachador);
 	}
 	
 	public boolean consultar_mesero(){

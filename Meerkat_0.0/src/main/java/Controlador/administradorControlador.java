@@ -52,8 +52,20 @@ public class administradorControlador extends HttpServlet {
         }      
         
         if(Puerta.equalsIgnoreCase("ir_administrador")){ //cuando en el index.jsp damos click al boton administrador.
+        	
         	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
         }
+        
+        if(Puerta.equalsIgnoreCase("crear_despachador")){ //cuando en el index.jsp damos click al boton administrador.
+        	System.out.println("Ingreso al controlador, crear despachador");
+        	pagina = "creardespachador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
+        }
+        
+        if(Puerta.equalsIgnoreCase("datos_despachador")){ //cuando en el index.jsp damos click al boton administrador.
+        	System.out.println("Ingreso al controlador, datos despachador");
+        	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
+        }
+        
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);
 	}

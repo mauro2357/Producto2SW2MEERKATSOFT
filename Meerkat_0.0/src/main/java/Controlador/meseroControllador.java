@@ -97,6 +97,9 @@ public class meseroControllador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("crear_usuario")){ //Lo ejecuta mesero
         	pagina = "/basedatosusuariosvista/crearusuario.jsp";
         }
+        if(Puerta.equalsIgnoreCase("datos_usuario")){ //Lo ejecuta mesero
+        	System.out.println("llegó al controler, datos usuario");
+        }
         
 
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
