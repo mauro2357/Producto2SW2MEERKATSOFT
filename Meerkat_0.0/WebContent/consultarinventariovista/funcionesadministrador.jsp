@@ -30,6 +30,9 @@
 
 	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
 	<br></br>
+	
+	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
+	<br></br>
 	<div id="cuerpo"></div>
 	
 	

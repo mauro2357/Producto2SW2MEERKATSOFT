@@ -94,6 +94,10 @@ public class meseroControllador extends HttpServlet {
         	consultarmeserosFacade.mesero.pedido_sin_asignar = null;
         	pagina = "/index.jsp";
         }
+        if(Puerta.equalsIgnoreCase("crear_usuario")){ //Lo ejecuta mesero
+        	pagina = "/basedatosusuariosvista/crearusuario.jsp";
+        }
+        
 
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);

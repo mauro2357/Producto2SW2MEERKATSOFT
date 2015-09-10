@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;Crearusuario.jsp&apos; to &apos;basedatosusuariosvista&apos;" description="Move &apos;Crearusuario.jsp&apos; to &apos;basedatosusuariosvista&apos;" destination="WebContent/basedatosusuariosvista" element1="WebContent/Crearusuario.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1441857671178" updateReferences="true"/>
+</session>
