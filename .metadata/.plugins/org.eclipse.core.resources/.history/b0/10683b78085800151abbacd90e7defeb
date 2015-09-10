@@ -13,9 +13,6 @@ public class Despachador {
 		this.telefono = telefono;
 	}
 
-	public Despachador() {
-	}
-
 	public boolean recibir_pedido(){
 		
 		return true;

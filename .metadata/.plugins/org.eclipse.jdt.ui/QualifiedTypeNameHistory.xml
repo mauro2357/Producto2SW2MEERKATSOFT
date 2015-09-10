@@ -52,4 +52,7 @@
 <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
 <fullyQualifiedTypeName name="java.awt.MediaTracker"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+<fullyQualifiedTypeName name="Negocio.basedatosclientes.Cliente"/>
+<fullyQualifiedTypeName name="Negocio.tomaynotificacionpedidos.Despachador"/>
+<fullyQualifiedTypeName name="Datos.nominaempleadosRepository"/>
 </qualifiedTypeNameHistroy>

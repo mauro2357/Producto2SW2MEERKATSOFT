@@ -1,0 +1,20 @@
+package Presentacion;
+
+import java.util.ArrayList;
+
+import Datos.InventarioRepository;
+import Negocio.tomaynotificacionpedidos.Despachador;
+import Negocio.tomaynotificacionpedidos.Producto;
+
+
+public class nominaempleadosFacade {	
+	
+	public ArrayList<Producto> listainsumos;
+	
+	public void main(ArrayList<Despachador> despachador) throws Exception{
+		InventarioRepository inventariorepository = new InventarioRepository();
+		ArrayList<Producto> x = inventariorepository.ConsultarInsumos ();
+		this.listainsumos = x;
+		System.out.println("Ingreso al facade: ");
+	}
+}

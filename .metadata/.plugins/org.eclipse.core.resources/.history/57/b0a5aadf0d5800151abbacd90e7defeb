@@ -62,7 +62,6 @@ public class administradorControlador extends HttpServlet {
         
         if(Puerta.equalsIgnoreCase("datos_despachador")){ //cuando en el index.jsp damos click al boton administrador.
         	System.out.println("Ingreso al controlador, datos despachador");
-        	
         	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
         }
         
