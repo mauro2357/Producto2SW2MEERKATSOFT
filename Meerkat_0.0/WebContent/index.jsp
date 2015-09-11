@@ -58,6 +58,7 @@
 </head>
 
 <body>
+	crisman papi
 	<div id="cuerpo"></div>
 	<br></br>
 	<button type="button" onclick="ir_administrador()">Administrador</button>
