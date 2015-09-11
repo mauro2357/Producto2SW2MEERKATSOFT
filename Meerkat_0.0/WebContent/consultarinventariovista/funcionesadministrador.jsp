@@ -47,7 +47,16 @@
 			}, function(responseText) {
 				$('#cuerpo').html(responseText);
 			});	
-	}			
+	}
+	
+	function productos_masvendidos(){
+		var Entrar = "productos_masvendidos";
+		$.post("/Meerkat_0.0/administrador", {
+			entrar : Entrar,
+			}, function(responseText) {
+				$('#cuerpo').html(responseText);
+			});	
+	}
 					
 </script>
 </head>
@@ -64,6 +73,9 @@
 	<br></br>
 	
 	<button type="button" onclick="consultar_totalVentas()">Total ventas</button>
+	<br></br>
+	
+	<button type="button" onclick="productos_masvendidos()">Productos más Vendidos</button>
 	<br></br>
 	
 	<div id="cuerpo"></div>

@@ -101,6 +101,17 @@ public class administradorControlador extends HttpServlet {
         	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
         }
         
+        if(Puerta.equalsIgnoreCase("productos_masvendidos")){ 
+        	System.out.println("Ingreso a consultar productos mas vendidos: ");
+        	try { //Try catch para intentar conectar a la BD
+        		totalventas.Productos_masvendidos();
+			} catch (Exception e) {
+				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
+			}
+        	pagina = "/consultasgeneralesenlaBDvista/productosmasvendidos.jsp"; //A esta página jsp se enviarán los atributos
+        	s.setAttribute("productos-masvendidos", totalventas.listaproductos);
+        }
+        
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);
 	}
