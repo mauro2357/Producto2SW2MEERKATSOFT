@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+import Negocio.basedatosclientes.Cliente;
 import Negocio.tomaynotificacionpedidos.*;
 import Presentacion.*;
 
@@ -23,7 +23,10 @@ public class administradorControlador extends HttpServlet {
     }
     
     public  static ArrayList<Producto> insumos;
+    public  static ArrayList<Cliente> clientes;
     public  static consultarinventarioFacade inventarioFacade= new consultarinventarioFacade();
+    public static basedatosclientesFacade clientesFacade= new basedatosclientesFacade();
+    public static consultasgeneralesenlaBDFacade totalventas = new consultasgeneralesenlaBDFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Ingreso al servlet");
@@ -49,7 +52,29 @@ public class administradorControlador extends HttpServlet {
 			}
         	pagina = "/consultarinventariovista/listainventario.jsp"; //A esta página jsp se enviarán los atributos
         	s.setAttribute("todos-los-insumos", inventarioFacade.listainsumos);
-        }      
+        }
+        
+        if(Puerta.equalsIgnoreCase("consultar_clientes")){ 
+        	System.out.println("Ingreso a consultar clientes: ");
+        	try { //Try catch para intentar conectar a la BD
+        		clientesFacade.main(); //Ejecuta el main del Facade, esto obtiene todos los insumos que están en la BD
+			} catch (Exception e) {
+				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
+			}
+        	pagina = "/basedatosusuariosvista/listaclientes.jsp"; //A esta página jsp se enviarán los atributos
+        	s.setAttribute("todos-los-clientes", clientesFacade.listaclientes);
+        }
+        
+        if(Puerta.equalsIgnoreCase("consultar_totalVentas")){ 
+        	System.out.println("Ingreso a consultar totalventas: ");
+        	try { //Try catch para intentar conectar a la BD
+        		totalventas.main(); 
+			} catch (Exception e) {
+				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
+			}
+        	pagina = "/basedatosusuariosvista/listaclientes.jsp"; //A esta página jsp se enviarán los atributos
+        	s.setAttribute("todos-los-clientes", clientesFacade.listaclientes);
+        }
         
         if(Puerta.equalsIgnoreCase("ir_administrador")){ //cuando en el index.jsp damos click al boton administrador.      	
         	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
@@ -61,6 +86,7 @@ public class administradorControlador extends HttpServlet {
         }
         
         if(Puerta.equalsIgnoreCase("datos_despachador")){ //cuando en el index.jsp damos click al boton administrador.
+        	
         	System.out.println("Ingreso al controlador, datos despachador");
         	
         	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	

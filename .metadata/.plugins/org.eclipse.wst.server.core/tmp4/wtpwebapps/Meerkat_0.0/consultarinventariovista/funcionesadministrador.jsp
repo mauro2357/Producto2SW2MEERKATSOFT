@@ -28,8 +28,26 @@
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,			
 			});	
+
+	
+	function consultar_clientes(){
+		var Entrar = "consultar_clientes";
+		$.post("/Meerkat_0.0/administrador", {
+			entrar : Entrar,
+			}, function(responseText) {
+				$('#cuerpo').html(responseText);
+			});	
 	}
-			
+	
+	function consultar_totalVentas(){
+		var Entrar = "consultar_totalVentas";
+		$.post("/Meerkat_0.0/administrador", {
+			entrar : Entrar,
+			}, function(responseText) {
+				$('#cuerpo').html(responseText);
+			});	
+	}			
+					
 </script>
 </head>
 
@@ -39,6 +57,12 @@
 	<br></br>
 	
 	<button type="button" onclick="crear_despachador()">Crear despachador</button>
+	<br></br>
+	
+	<button type="button" onclick="consultar_clientes()">Consultar Clientes</button>
+	<br></br>
+	
+	<button type="button" onclick="consultar_totalVentas()">Total ventas</button>
 	<br></br>
 	
 	<div id="cuerpo"></div>
