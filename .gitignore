@@ -2,6 +2,10 @@
 /build/
 /bin/
 target/
+/Servers
+/Servers/
+Servers/*
+Servers/**
  
 # OS Files #
 .DS_Store

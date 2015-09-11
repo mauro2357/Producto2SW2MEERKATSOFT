@@ -27,7 +27,8 @@
 		var Entrar = "crear_despachador";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,			
-			});	
+			}, window.location.replace("../nominaempleadosvista/creardespachador.jsp"));	
+	}
 
 	
 	function consultar_clientes(){

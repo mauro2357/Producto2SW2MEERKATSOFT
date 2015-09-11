@@ -16,14 +16,13 @@
 </script>
 </head>
 <body>
-<form name="nuevo_usuario" method= "post" onsubmit="return ir_controlador()">
+<form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/administrador">
 	<input type="text" name="Id"><br>
 	<input type="text" name="nombre"><br>
 	<input type="text" name="apellido"><br>
 	<input type="text" name="telefono"><br>
 	<input type="hidden" name="entrar" value="datos_despachador">
 	<input type="submit" name="registrar" value="Registrar despachador">
-	
 </form>
 </body>
 </html>
