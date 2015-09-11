@@ -22,12 +22,12 @@ public class administradorControlador extends HttpServlet {
         super();
     }
     
-    //crisman carechimba.
     public  static ArrayList<Producto> insumos;
     public  static ArrayList<Cliente> clientes;
     public  static consultarinventarioFacade inventarioFacade= new consultarinventarioFacade();
     public static basedatosclientesFacade clientesFacade= new basedatosclientesFacade();
     public static consultasgeneralesenlaBDFacade totalventas = new consultasgeneralesenlaBDFacade();
+    public static nominaempleadosFacade creardespachador = new nominaempleadosFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Ingreso al servlet");
@@ -87,6 +87,16 @@ public class administradorControlador extends HttpServlet {
         }
         
         if(Puerta.equalsIgnoreCase("datos_despachador")){ //cuando en el index.jsp damos click al boton administrador.
+        	String id = request.getParameter("id");
+        	String nombre = request.getParameter("nombre");
+        	String apellido = request.getParameter("apellido");
+        	String telefono = request.getParameter("telefono");
+        	try {
+				creardespachador.RegistarDespachador(id, nombre, apellido, telefono);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        	
         	
         	System.out.println("Ingreso al controlador, datos despachador");
         	
