@@ -17,9 +17,7 @@ public class consultasgeneralesenlaBDFacade {
 		System.out.println("Ingreso al facade: " + x);
 		return x;
 	}
-	
-	
-	
+
 	public ArrayList<Producto> Productos_masvendidos() throws Exception{
 		consultasgeneralesenlaBDRepository productosmas = new consultasgeneralesenlaBDRepository();
 		ArrayList<Producto> x = productosmas.Productos_masvendidos();

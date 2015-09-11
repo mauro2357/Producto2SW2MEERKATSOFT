@@ -33,9 +33,16 @@
 	
 	function ir_administrador(){
 		var Entrar = "ir_administrador";
+		var Pass = $('#pass').val();
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,
-		}, window.location.replace("consultarinventariovista/funcionesadministrador.jsp"));
+			pass : Pass 
+		},
+		function(responseText) {
+				if(responseText!=""){
+				window.location.replace("consultarinventariovista/funcionesadministrador.jsp");}
+				else{alert("contrasena incorrecta");}
+			});
 	}
 	
 	function ir_despachador(){
@@ -56,14 +63,12 @@
 </head>
 
 <body>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-	crisman papi
+<<<<<<< 
 	<div id="cuerpo"></div>
 	<br></br>
+	<form action=""></form>
 	<button type="button" onclick="ir_administrador()">Administrador</button>
+	<input name="pass" id="pass" type="password">
 	<button type="button" onclick="ir_despachador()">Despachador</button>
 	<button type="button" onclick="crear_usuario()">Crear Usuario</button>	
 </body>

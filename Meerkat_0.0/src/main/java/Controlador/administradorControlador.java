@@ -22,6 +22,8 @@ public class administradorControlador extends HttpServlet {
         super();
     }
     
+    
+    public static String clave = "meerkat";
     public  static ArrayList<Producto> insumos;
     public  static ArrayList<Cliente> clientes;
     public  static consultarinventarioFacade inventarioFacade= new consultarinventarioFacade();
@@ -78,7 +80,10 @@ public class administradorControlador extends HttpServlet {
         }
         
         if(Puerta.equalsIgnoreCase("ir_administrador")){ //cuando en el index.jsp damos click al boton administrador.      	
-        	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
+        	String claveaux = request.getParameter("pass");
+        	System.out.println("clave " + claveaux);
+        	if(!clave.equalsIgnoreCase(claveaux)) return;
+        	pagina = "/consultarinventariovista/funcionesadministrador.jsp";	
         }
         
         if(Puerta.equalsIgnoreCase("crear_despachador")){ //cuando en el index.jsp damos click al boton administrador.
