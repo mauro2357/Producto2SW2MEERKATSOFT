@@ -5,6 +5,7 @@
 1441921528273	Copy compilation unit
 1441921538493	Delete element
 1441921604331	Copy compilation unit
+<<<<<<< HEAD
 1441938685212	Move 'creardespachador.jsp' to 'nominaempleadosvista'
 1441941183573	Copy compilation unit
 1441941312698	Copy compilation unit
@@ -14,3 +15,10 @@
 1441995789637	Copy compilation unit
 1441995815728	Rename type 'consultasgeneralesenlaBD'
 1441995958039	Copy compilation unit
+=======
+1441941102898	Rename package 'Negocio.basedatosclientes'
+1441942147893	Copy file
+1441942345394	Rename resource 'generaciondefactura.feature'
+1441943141987	Rename resource 'nominaempleado.feature'
+1441943865905	Rename resource 'nominaempleados'
+>>>>>>> origin/master

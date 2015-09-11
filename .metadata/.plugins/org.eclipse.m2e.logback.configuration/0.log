@@ -13084,11 +13084,19 @@ Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.e
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:965) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:932) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	... 5 common frames omitted
+<<<<<<< HEAD
 2015-09-10 21:24:01,123 [Worker-6] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details workspace://
 java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+2015-09-10 21:42:59,989 [Worker-6] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details workspace://
+java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
@@ -13115,7 +13123,11 @@ java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:236) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 2015-09-10 21:24:01,298 [Worker-6] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+=======
+2015-09-10 21:43:00,019 [Worker-6] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+>>>>>>> origin/master
 org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:945) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:878) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
@@ -13123,10 +13135,17 @@ org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:236) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+Caused by: java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
@@ -13149,11 +13168,19 @@ Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.e
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:965) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:932) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	... 5 common frames omitted
+<<<<<<< HEAD
 2015-09-10 21:24:01,451 [Worker-6] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details central|https://repo.maven.apache.org/maven2
 java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+2015-09-10 21:43:09,232 [Worker-6] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details central|https://repo.maven.apache.org/maven2
+java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
@@ -13180,7 +13207,11 @@ java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:263) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 2015-09-10 21:24:01,458 [Worker-6] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+=======
+2015-09-10 21:43:09,317 [Worker-6] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+>>>>>>> origin/master
 org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:945) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:878) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
@@ -13188,10 +13219,17 @@ org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:263) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+Caused by: java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
@@ -13214,11 +13252,19 @@ Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.e
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:965) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:932) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	... 5 common frames omitted
+<<<<<<< HEAD
 2015-09-10 23:00:51,666 [Worker-6] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details workspace://
 java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+2015-09-11 10:21:33,313 [Worker-3] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details workspace://
+java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
@@ -13245,7 +13291,11 @@ java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:236) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 2015-09-10 23:00:51,676 [Worker-6] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+=======
+2015-09-11 10:21:34,851 [Worker-3] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+>>>>>>> origin/master
 org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:945) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:878) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
@@ -13253,10 +13303,17 @@ org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:236) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+Caused by: java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
@@ -13279,11 +13336,19 @@ Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.e
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:965) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:932) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	... 5 common frames omitted
+<<<<<<< HEAD
 2015-09-10 23:00:51,836 [Worker-6] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details central|https://repo.maven.apache.org/maven2
 java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+2015-09-11 10:21:50,124 [Worker-3] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details central|https://repo.maven.apache.org/maven2
+java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
@@ -13310,7 +13375,11 @@ java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:263) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 2015-09-10 23:00:51,849 [Worker-6] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+=======
+2015-09-11 10:21:50,239 [Worker-3] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+>>>>>>> origin/master
 org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:945) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:878) ~[org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
@@ -13318,6 +13387,7 @@ org.eclipse.core.runtime.CoreException: Could not add repository index
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:263) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+<<<<<<< HEAD
 Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
@@ -13452,6 +13522,12 @@ Caused by: java.io.FileNotFoundException: C:\sourcecode\.metadata\.plugins\org.e
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_51]
 	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_51]
+=======
+Caused by: java.io.FileNotFoundException: C:\Users\seba\Desktop\Producto2SW2MEERKATSOFT\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0.cfs (El sistema no puede encontrar el archivo especificado)
+	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.open(Unknown Source) ~[na:1.8.0_60]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_60]
+>>>>>>> origin/master
 	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
 	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
