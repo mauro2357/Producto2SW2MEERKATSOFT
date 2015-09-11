@@ -18,4 +18,10 @@ public class basedatosclientesFacade {
 		
 		return x;
 	}
+	
+	public void Registrarcliente(String id, String nombre, String apellido, String sexo,  int puntos, String musica, String email, String telefono) throws Exception{
+		BasedatosclientesRepository ingresarcliente = new BasedatosclientesRepository();
+		ingresarcliente.registrarusuario(id, nombre, apellido, sexo, puntos, musica, email, telefono);
+		System.out.println("Ingreso al facade: ");
+	}
 }

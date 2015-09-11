@@ -32,7 +32,17 @@ public class BasedatosclientesRepository {
 	    }
 	    st.close();
 	    return a; 
-	}
+		}
+		
+		public void registrarusuario (String id, String nombre, String apellido, String sexo, int puntos, String musica, String email, String telefono) throws Exception {
+			Connection con = new ConexionMySql().ObtenerConexion();
+		    String query = "INSERT INTO `future`.`despachador` (`Cli_id`, `Cli_nombre`, `Cli_apellido`, `Cli_sexo`, `Cli_puntos`, `Cli_musica`, `Cli_email`, `Cli_telefono`) VALUES ('"+id+"', '"+nombre+"', '"+apellido+"', '"+sexo+"', '"+puntos+"', '"+musica+"', '"+email+"', '"+apellido+"');";
+		    System.out.println("debio ingresar los datos");
+		    Statement st = con.createStatement();
+		    st.executeUpdate(query);
+		    st.close();
+		}
 	
+		
 	
 }

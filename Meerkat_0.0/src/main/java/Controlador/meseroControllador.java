@@ -28,6 +28,7 @@ public class meseroControllador extends HttpServlet {
     public static generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade();
     public static consultarmeserosFacade consultarmeserosFacade = new consultarmeserosFacade();
     public static consultarmesasFacade consultarmesasFacade = new consultarmesasFacade();
+    public static basedatosclientesFacade crearcliente = new basedatosclientesFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("ingreso al controlador de mesero");
@@ -98,6 +99,23 @@ public class meseroControllador extends HttpServlet {
         	pagina = "/basedatosusuariosvista/crearusuario.jsp";
         }
         if(Puerta.equalsIgnoreCase("datos_usuario")){ //Lo ejecuta mesero
+        	String id = request.getParameter("id");
+        	String nombre = request.getParameter("nombre");
+        	String apellido = request.getParameter("apellido");
+        	String sexo = request.getParameter("sexo");
+        	int puntos = Integer.parseInt(request.getParameter("puntos"));
+        	String musica = request.getParameter("musica");
+        	String email = request.getParameter("email");
+        	String telefono = request.getParameter("telefono");
+        	try {
+        		crearcliente.Registrarcliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        	System.out.println("Ingreso al controlador, datos despachador");
+        	pagina = "/consultarinventariovista/funcionesadministrador.jsp";
+        	
         	System.out.println("llegó al controler, datos usuario");
         }
         
