@@ -1,7 +1,0 @@
-package Servicios;
-@Path("consultaproductos");
-
-
-public class consultaproductosService {
-
-}
