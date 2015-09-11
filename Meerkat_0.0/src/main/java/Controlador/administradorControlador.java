@@ -22,6 +22,7 @@ public class administradorControlador extends HttpServlet {
         super();
     }
     
+    //crisman carechimba.
     public  static ArrayList<Producto> insumos;
     public  static ArrayList<Cliente> clientes;
     public  static consultarinventarioFacade inventarioFacade= new consultarinventarioFacade();
