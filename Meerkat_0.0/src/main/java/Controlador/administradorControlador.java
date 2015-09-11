@@ -73,8 +73,8 @@ public class administradorControlador extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
 			}
-        	pagina = "/basedatosusuariosvista/listaclientes.jsp"; //A esta página jsp se enviarán los atributos
-        	s.setAttribute("todos-los-clientes", clientesFacade.listaclientes);
+        	pagina = "/consultasgeneralesenlaBDvista/totalventas.jsp"; //A esta página jsp se enviarán los atributos
+        	s.setAttribute("todas-ventas", totalventas.x);
         }
         
         if(Puerta.equalsIgnoreCase("ir_administrador")){ //cuando en el index.jsp damos click al boton administrador.      	
@@ -96,10 +96,8 @@ public class administradorControlador extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-        	
-        	
+ 	
         	System.out.println("Ingreso al controlador, datos despachador");
-        	
         	pagina = "/consultarinventariovista/funcionesadministrador.jsp"; //Rederigimos a la jsp de las funciones del administrador.  	
         }
         
