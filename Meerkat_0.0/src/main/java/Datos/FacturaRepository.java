@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 import Controlador.meseroControllador;
 import Negocio.geraciondefactura.Factura;
-import Negocio.tomaynotificacionpedidos.Mesero;
 import Negocio.tomaynotificacionpedidos.Pedido;
 import Negocio.tomaynotificacionpedidos.Producto;
 
@@ -44,43 +43,47 @@ public class FacturaRepository {
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
-	    Mesero meseroa = new Mesero();
-	    ArrayList<Producto> tproductos = meseroa.productos;
+	    ProductoRepository prepository = new ProductoRepository();
+	    ArrayList<Producto> tproductos = prepository.ConsultarProducto();
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
 	    String auxid = null;
+	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null;
 	    while (rs.next()){
-	      String id = rs.getString("Ven_id");
-	      String mesero=null, cajero=null, mesa=null, cliente=null;
-	      System.out.println(id);
-	      if(auxid==null) auxid=id;
-	      if(id.equalsIgnoreCase(auxid)){
-	    	  System.out.println("entró");
+	    	id=rs.getString("Ven_id");
+	    	if(auxid==null) auxid=id;
+	    	System.out.println("id " + id);
+	    	System.out.println("aux " + auxid);
+	    	if(!auxid.equalsIgnoreCase(id)){
+	    	if(y!=null){
+	    		  y.cuerpo = x;
+	    		  Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
+			      f.add(fi);
+	    	}
+	    	y = new Pedido();
+	    	x = null;
+	    	auxid=id;
+	      }
+	      if(auxid.equalsIgnoreCase(id)){
 	    	  if(x==null) x = new ArrayList<Producto>();
+	    	  System.out.println("leer");
 	    	  mesero = rs.getString("Me_id");
 		      cajero = rs.getString("Caj_id");
 		      mesa = rs.getString("Mesa_id");
 		      cliente = rs.getString("Cli_id");
-		      System.out.println("atributos");
-		      System.out.println(mesero);
-		      System.out.println(cajero);
-		      System.out.println(mesa);
-		      System.out.println(cliente);
 		      for(Producto producto: tproductos){
-		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))) x.add(producto);
+		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); System.out.println(producto.getNombre()); break;}
 		      }
-		      System.out.println(x);
 		      auxid = id;
 		      continue;
-	      }else{
-	    	  y = new Pedido();
-	    	  y.cuerpo = x;
-	    	  x = null;
-	    	  auxid = null;
 	      }
-	      Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
-	      f.add(fi);
+	      
 	    }
+	    y.cuerpo = x;
+		Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
+	    f.add(fi);
+	    System.out.println("f");
+	    System.out.println(f);
 	    st.close();
 	    return f;
 	}

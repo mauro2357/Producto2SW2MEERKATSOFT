@@ -19,7 +19,7 @@ public class Administrador {
 		return z;
 	}
 	
-	public void contratar_mesero(){  //Se contrata un mesero y se mete en la lista de meseros contratados.
+	public void contratar_mesero() throws Exception{  //Se contrata un mesero y se mete en la lista de meseros contratados.
 		Mesero mesero = new Mesero();
 		nominademeseros.add(mesero);
 	}

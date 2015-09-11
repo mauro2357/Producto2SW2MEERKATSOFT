@@ -6,7 +6,6 @@ import java.util.Map;
 
 import Datos.FacturaRepository;
 import Datos.ProductoRepository;
-import Presentacion.*;
 
 public class Mesero {
 	
@@ -28,7 +27,8 @@ public class Mesero {
 		this.productos = productorepository.ConsultarProducto();
 	}
 
-	public Mesero() { //A eliminar
+	public Mesero() throws Exception { 
+		this.productos = productorepository.ConsultarProducto();
 	}
 
 	public void setId(String id) {this.id = id;}
@@ -73,6 +73,14 @@ public class Mesero {
 		coladepedidos.put(pedido_a_finiquitar,mesa);
 		enviar_pedido(pedido_a_finiquitar);
 		
+	}
+
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
 	}
 
 }

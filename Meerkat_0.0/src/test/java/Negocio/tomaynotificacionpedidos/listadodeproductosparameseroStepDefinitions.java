@@ -1,7 +1,5 @@
 package Negocio.tomaynotificacionpedidos;
 
-import java.util.ArrayList;
-
 import org.junit.Assert;
 
 import Negocio.tomaynotificacionpedidos.Mesero;
@@ -13,7 +11,6 @@ import cucumber.api.java.en.When;
 public class listadodeproductosparameseroStepDefinitions {
 	
 	Mesero mesero = null;
-	ArrayList<Producto> x = null;
 	
 	@Given("^El mesero va a consultar los productos.$")
 	public void El_mesero_va_a_consultar_los_productos() throws Throwable { 
@@ -22,8 +19,7 @@ public class listadodeproductosparameseroStepDefinitions {
 
 	@When("^No hay productos.$")
 	public void No_hay_productos() throws Throwable {
-		x = mesero.productos;
-		Assert.assertTrue(!(x.size()==0));
+		Assert.assertTrue(!(mesero.getProductos().size()==0));
 	}
 
 	@Then("^Notificar que no hay productos para vender.$")
@@ -33,13 +29,12 @@ public class listadodeproductosparameseroStepDefinitions {
 	
 	@When("^Hay productos.$")
 	public void Hay_productos() throws Throwable {
-		x = mesero.productos;
-	    Assert.assertTrue(x.size()>0);
+	    Assert.assertTrue(mesero.getProductos().size()>0);
 	}
 	
 	@Then("^Notificar que productos hay para vender.$")
 	public void Notificar_que_productos_hay_para_vender() throws Throwable {
-		Producto producto = x.get(0);
+		Producto producto = mesero.getProductos().get(0);
 	    Assert.assertEquals("coca cola ", producto.getNombre());
 	    Assert.assertEquals(2000, producto.getValor(),0); 
 	}

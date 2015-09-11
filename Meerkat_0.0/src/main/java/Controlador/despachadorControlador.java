@@ -25,13 +25,10 @@ public class despachadorControlador extends HttpServlet {
     generaciondefacturaFacade facturaFacade = new generaciondefacturaFacade();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("netro");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
         Puerta = request.getParameter("entrar");
-        System.out.println("puerta");
-        System.out.println(Puerta);
         String pagina = null;
         if(Puerta.equalsIgnoreCase("Terminar"))
         {
@@ -40,16 +37,15 @@ public class despachadorControlador extends HttpServlet {
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("ir_despachador")){
-        	System.out.println("entród");
         	ArrayList<Factura> x = null;
         	try {
 				x = facturaFacade.main();
-				System.out.println("x");
-				System.out.println(x);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+        	System.out.println("x");
+			System.out.println(x);
 			s.setAttribute("pedidos_en_cola",x);
         	pagina = "/despachadores/cocina.jsp";
         }

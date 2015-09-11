@@ -51,14 +51,16 @@
 			entrar : Entrar,
 		}, window.location.replace("basedatosusuariosvista/crearusuario.jsp"));
 	}
-	
-	
 		
 </script>
 </head>
 
 <body>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
+	crisman papi
 	<div id="cuerpo"></div>
 	<br></br>
 	<button type="button" onclick="ir_administrador()">Administrador</button>
