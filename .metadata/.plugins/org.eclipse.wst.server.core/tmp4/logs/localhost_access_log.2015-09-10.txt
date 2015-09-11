@@ -178,3 +178,9 @@
 0:0:0:0:0:0:0:1 - - [10/Sep/2015:12:19:40 -0500] "POST /Meerkat_0.0/mesero HTTP/1.1" 200 867
 0:0:0:0:0:0:0:1 - - [10/Sep/2015:12:19:44 -0500] "GET /Meerkat_0.0/basedatosusuariosvista/crearusuario.jsp HTTP/1.1" 404 1106
 0:0:0:0:0:0:0:1 - - [10/Sep/2015:12:19:44 -0500] "POST /Meerkat_0.0/mesero HTTP/1.1" 404 1106
+127.0.0.1 - - [10/Sep/2015:22:02:20 -0500] "GET / HTTP/1.1" 404 1004
+0:0:0:0:0:0:0:1 - - [10/Sep/2015:22:02:44 -0500] "GET /Meerkat_0.0/index.jsp HTTP/1.1" 200 1760
+0:0:0:0:0:0:0:1 - - [10/Sep/2015:22:02:57 -0500] "POST /Meerkat_0.0/mesero HTTP/1.1" 200 867
+0:0:0:0:0:0:0:1 - - [10/Sep/2015:22:02:57 -0500] "GET /Meerkat_0.0/mes.png HTTP/1.1" 200 35456
+0:0:0:0:0:0:0:1 - - [10/Sep/2015:22:04:22 -0500] "GET /Meerkat_0.0/basedatosusuariosvista/crearusuario.jsp HTTP/1.1" 404 1106
+0:0:0:0:0:0:0:1 - - [10/Sep/2015:22:04:22 -0500] "POST /Meerkat_0.0/mesero HTTP/1.1" 404 1106
