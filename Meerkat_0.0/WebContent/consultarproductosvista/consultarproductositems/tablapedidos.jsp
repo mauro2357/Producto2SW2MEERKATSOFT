@@ -35,20 +35,14 @@
 		<tr><td></td><td>Total:</td><td align="right"><%out.print(total); %></td></tr>
 	</table>
 		Pedidos en cola:
-		<% //ArrayList<Pedido> h = meseroControllador.coladepedidos;
-			//if(h!=null){
-				//for(Pedido pedido: h){
-					//out.println("");
-					//out.println("Pedido pendiente: ");
-					//for(Producto producto : pedido.getCuerpo()){
-						//%><%//out.println(producto.getNombre()+" ");%><%
-					//}
-					//%><br><%
-				//}
+		<%  //Map<Pedido,String> h = meseroControllador.consultarmeserosFacade.mesero.coladepedidos;
+			//if(h.size()>0){
+		 	//for (Map.Entry<Pedido, String> entry : h.entrySet())
+				//{
+				  //  out.println(entry.getKey().getCuerpo() + "/" + entry.getValue());
+			//	}
 			//}
-			//else{
-				//out.println("No hay pedidos pendientes");
-			//}
+			//else{out.println("No hay pedidos en cola");}
 		%>
 </body>
 </html>

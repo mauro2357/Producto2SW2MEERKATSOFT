@@ -56,14 +56,13 @@
 		var Entrar = "crear_usuario";
 		$.post("/Meerkat_0.0/mesero", {
 			entrar : Entrar,
-		}, window.location.replace("basedatosusuariosvista/crearusuario.jsp"));
+		}, window.location.replace("basedatosusuariosvista/Crearusuario.jsp"));
 	}
 		
 </script>
 </head>
 
 <body>
-<<<<<<< 
 	<div id="cuerpo"></div>
 	<br></br>
 	<form action=""></form>

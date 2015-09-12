@@ -23,6 +23,10 @@
 		});
 	}
 	
+	function ejecutar(){
+		alert("Se ha recibido un pedido");
+	}
+	
 	$(function() {
 			var Entrar = "botones"; 
 			$.post("/Meerkat_0.0/mesero", {
@@ -54,7 +58,7 @@
 		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
 				<input name="mesa" type="text" value="Mesa #1-10">
 		      	<input name="cajero" type="text" value="Cajero #null">
-		      	<input name="entrar" type="submit" value="Enviar pedido">
+		      	<input name="entrar" type="submit" value="Enviar pedido" onclick="ejecutar()">
 		</form>
 	</div>
 </body>

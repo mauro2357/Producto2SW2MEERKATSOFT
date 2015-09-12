@@ -1,7 +1,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Negocio.geraciondefactura.*;
 import Negocio.tomaynotificacionpedidos.*;
 import Presentacion.*;
 
@@ -23,15 +21,12 @@ public class meseroControllador extends HttpServlet {
         super();
     }
     
-    public static Factura factura=null; // 
-    public static ArrayList<Factura> facturas; //
     public static generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade();
     public static consultarmeserosFacade consultarmeserosFacade = new consultarmeserosFacade();
     public static consultarmesasFacade consultarmesasFacade = new consultarmesasFacade();
     public static basedatosclientesFacade crearcliente = new basedatosclientesFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("ingreso al controlador de mesero");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
@@ -113,13 +108,8 @@ public class meseroControllador extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-        	System.out.println("Ingreso al controlador, datos despachador");
-        	pagina = "/consultarinventariovista/funcionesadministrador.jsp";
-        	
-        	System.out.println("llegó al controler, datos usuario");
+        	pagina = "index.jsp";
         }
-        
-
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);
 	}

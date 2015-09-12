@@ -20,7 +20,8 @@
 <h1>Ingresar nuevo usuario</h1>
 
 <form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/mesero">
-	<input type="text" name="Id"><br>
+	<input type="hidden" name="entrar" value="datos_usuario">
+	<input type="text" name="id"><br>
 	<input type="text" name="nombre"><br>
 	<input type="text" name="apellido"><br>
 	<input type="text" name="sexo"><br>
