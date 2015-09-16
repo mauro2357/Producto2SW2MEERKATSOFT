@@ -1,4 +1,4 @@
-package Negocio.actualizarinventario;
+package Negocio.inventario;
 
 import java.util.ArrayList;
 

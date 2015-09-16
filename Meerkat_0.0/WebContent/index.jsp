@@ -20,7 +20,8 @@
 				entrar : Entrar,
 			}, function(responseText) {
 				$('#cuerpo').html(responseText);
-			});			
+			});
+						
 	});
 </script>
 </head>

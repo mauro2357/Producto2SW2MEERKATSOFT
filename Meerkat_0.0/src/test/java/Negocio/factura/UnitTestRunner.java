@@ -1,4 +1,4 @@
-package Negocio.tomaynotificacionpedidos;
+package Negocio.factura;
 
 import org.junit.runner.RunWith;
 

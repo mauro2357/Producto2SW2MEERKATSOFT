@@ -1,4 +1,4 @@
-package Negocio.generaciondefactura;
+package Negocio.pedido;
 
 import org.junit.runner.RunWith;
 

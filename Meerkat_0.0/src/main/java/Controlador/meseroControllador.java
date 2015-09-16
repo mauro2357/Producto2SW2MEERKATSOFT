@@ -22,10 +22,10 @@ public class MeseroControllador extends HttpServlet {
     }
     
     public static PedidosFacade pedidosFacade = new PedidosFacade(); 
-    public static MeserosFacade consultarmeserosFacade = new MeserosFacade(); //Cambiar nombre de Facade
-    public static MesasFacade consultarmesasFacade = new MesasFacade(); //Cambiar nombre de Facade
-    public static ClientesFacade crearcliente = new ClientesFacade(); //Cambiar nombre de Facade
-    public static MesasFacade mesasFacade = new MesasFacade(); //Cambiar nombre de Facade
+    public static MeserosFacade consultarmeserosFacade = new MeserosFacade(); 
+    public static MesasFacade consultarmesasFacade = new MesasFacade(); 
+    public static ClientesFacade crearcliente = new ClientesFacade(); 
+    public static MesasFacade mesasFacade = new MesasFacade(); 
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -33,46 +33,41 @@ public class MeseroControllador extends HttpServlet {
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         String pagina = null;
-        if(Puerta.equalsIgnoreCase("Terminar"))
-        {
+        if(Puerta.equalsIgnoreCase("Terminar")){
         	s = request.getSession(false);
         	s.invalidate();
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("imprimirmeseros")){ //Lo ejecuta controller
-        	try { //Try catch para intentar conectar a la BD
-        		consultarmeserosFacade.main(); //Ejecuta el main del Facade, esto obtiene todos los meseros que están en la BD
-			} catch (Exception e) {
-				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
-			}
+        	try { consultarmeserosFacade.main(); } 
+        	catch (Exception e) {System.out.println("Error en base de datos.");}
         	pagina = "/consultarmeserosvista/listameseros.jsp"; //A esta página jsp se enviarán los atributos
         	s.setAttribute("todos-los-meseros", consultarmeserosFacade.listameseros); //Envíamos a la jsp anteriormente mencionada la lista de meseros con el nombre de "todos-los-meseros"
         }
-        if(Puerta.equalsIgnoreCase("definirmesero")){ //Lo ejecuta mesero
-        	String meseroi = request.getParameter("meseroi"); //Capturamos la id del mesero que está ejecutando
-        	//el botón que se presionó desde Index.
-        	consultarmeserosFacade.definirmesero(meseroi); //Lo enviamos para definir el mesero en el servidor.
-        	try {
-				s.setAttribute("lista-mesas", mesasFacade.main());
-				s.setAttribute("lista-clientes", crearcliente.main());
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-        	pagina = "/consultarproductosvista/consultarproductos.jsp"; //Rederigimos a consultarprodutos.
+        if(Puerta.equalsIgnoreCase("definirmesero")){ 
+        	String meseroi = request.getParameter("meseroi"); 
+        	consultarmeserosFacade.definirmesero(meseroi); 
+        	pagina = "/consultarproductosvista/consultarproductos.jsp"; 
+        }
+        if(Puerta.equalsIgnoreCase("listar_mesas")){ 
+        	try { s.setAttribute("lista-mesas", mesasFacade.main());} 
+        	catch (Exception e) {System.out.println("Error en base de datos.");}
+        	pagina = "/consultarproductosvista/consultarproductositems/selectmesas.jsp"; 
+        }
+        if(Puerta.equalsIgnoreCase("listar_clientes")){ 
+        	try { s.setAttribute("lista-clientes", crearcliente.main());} 
+        	catch (Exception e) {System.out.println("Error en base de datos.");}
+        	pagina = "/consultarproductosvista/consultarproductositems/selectclientes.jsp"; 
         }
         if(Puerta.equalsIgnoreCase("botones")){ //controller
 			pagina = "/consultarproductosvista/consultarproductositems/botonproductos.jsp"; //Le vamos a mandar a esta jsp todos los productos.
-        	s.setAttribute("todos-los-productos", consultarmeserosFacade.mesero.productos); //Le mandamos los productos a la jsp encargada de imprimirlos
+			s.setAttribute("todos-los-productos", consultarmeserosFacade.mesero.productos); //Le mandamos los productos a la jsp encargada de imprimirlos
         }
         if(Puerta.equalsIgnoreCase("ingresarproducto")){ //Lo ejecuta controller
         	String id = request.getParameter("idp"); //Este id lo recibimos del boton del producto que presionamos
         	//s.setAttribute("id-producto",id); //Lo colocamos como atributo 
-        	try {
-				consultarmeserosFacade.mesero.adicionarproducto(id); //Le decimos al mesero que busque cuál es el producto (en memoria del servidor) y lo agregue al pedido actual
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+        	try { consultarmeserosFacade.mesero.adicionarproducto(id);} 
+        	catch (Exception e) {System.out.println("Error en base de datos.");}
         	s.setAttribute("productos-pedido", consultarmeserosFacade.mesero.pedido_sin_asignar.getCuerpo()); //enviamos los productos que lleva el pedido actual
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
         }
@@ -89,12 +84,8 @@ public class MeseroControllador extends HttpServlet {
         	Pedido pedido = consultarmeserosFacade.mesero.pedido_sin_asignar;
         	Calendar x = Calendar.getInstance();
         	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
-        	try {
-				consultarmeserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesa,cajero,fecha);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        	try { consultarmeserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesa,cajero,fecha);} 
+        	catch (Exception e) {System.out.println("Error en base de datos.");}
         	consultarmeserosFacade.mesero.pedido_sin_asignar = null;
         	pagina = "/index.jsp";
         }
@@ -110,12 +101,8 @@ public class MeseroControllador extends HttpServlet {
         	String musica = request.getParameter("musica");
         	String email = request.getParameter("email");
         	String telefono = request.getParameter("telefono");
-        	try {
-        		crearcliente.Registrarcliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+        	try { crearcliente.Registrarcliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);} 
+        	catch (Exception e) { System.out.println("Error en base de datos.");}
         	pagina = "index.jsp";
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);

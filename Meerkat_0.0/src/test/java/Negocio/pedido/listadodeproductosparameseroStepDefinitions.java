@@ -1,4 +1,4 @@
-package Negocio.tomaynotificacionpedidos;
+package Negocio.pedido;
 
 import org.junit.Assert;
 
@@ -38,4 +38,35 @@ public class listadodeproductosparameseroStepDefinitions {
 	    Assert.assertEquals("coca cola ", producto.getNombre());
 	    Assert.assertEquals(2000, producto.getValor(),0); 
 	}
+	
+	@Given("^El mesero va a consultar un producto.$")
+	public void El_mesero_va_a_consultar_un_producto() throws Throwable {
+	}
+
+	@When("^Existe el producto.$")
+	public void Existe_el_producto() throws Throwable {
+
+	}
+
+	@Then("^Notificar el producto.$")
+	public void Notificar_el_producto() throws Throwable {
+
+	}
+
+	@When("^No existe el producto.$")
+	public void No_existe_el_producto() throws Throwable {
+
+	}
+
+	@Then("^Notificar que no existe el producto.$")
+	public void Notificar_que_no_existe_el_producto() throws Throwable {
+
+	}
+
+	@When("^Existe un error en la base de datos.$")
+	public void Existe_un_error_en_la_base_de_datos() throws Throwable {
+
+	}
+
+	
 }

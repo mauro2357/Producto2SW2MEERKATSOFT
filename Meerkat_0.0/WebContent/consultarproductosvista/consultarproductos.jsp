@@ -11,9 +11,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="js/codigo.js"></script>
+<script src="../js/codigo.js"></script>
 <script type="text/javascript">	
-	
 	$(function() {
 			var Entrar = "botones"; 
 			$.post("/Meerkat_0.0/mesero", {
@@ -26,6 +25,18 @@
 				entrar : Entrar,
 			}, function(responseText) {
 				$('#table1').html(responseText);
+			});
+			Entrar = "listar_mesas";
+			$.post("/Meerkat_0.0/mesero", {
+				entrar : Entrar,
+			}, function(responseText) {
+				$('#selectmesas').html(responseText);
+			});
+			Entrar = "listar_clientes";
+			$.post("/Meerkat_0.0/mesero", {
+				entrar : Entrar,
+			}, function(responseText) {
+				$('#selectclientes').html(responseText);
 			});
 		});
 	
@@ -41,31 +52,9 @@
 		<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero" >
 		      	<input name="entrar" type="submit" value="Terminar"/>
 		      	<input name="estado" type="hidden" value="En espera">
-		      	<select>
-		      		<%
-		      			ArrayList<Cliente> lista_clientes = (ArrayList<Cliente>) session.getAttribute("lista-clientes");
-		      			if(lista_clientes==null) out.print("No hay clientes");
-		      			else
-		      			{
-			      			for(Cliente cliente: lista_clientes){
-			      				%><option><%out.print(cliente.getId());%></option><%
-			      			}
-		      			}
-		      		%>
-		      	</select>
+		      	<select id="selectclientes"></select>
 		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
-		      	<select>
-		      		<%
-		      			ArrayList<Mesa> lista_mesas = (ArrayList<Mesa>) session.getAttribute("lista-mesas");
-		      			if(lista_mesas==null) out.print("No hay mesas");
-		      			else
-		      			{
-			      			for(Mesa mesa: lista_mesas){
-			      				%><option><%out.print(mesa.getId());%></option><%
-			      			}
-		      			}
-		      		%>
-		      	</select>
+		      	<select id="selectmesas"></select>
 		      	<input name="cajero" type="text" value="Cajero #null">
 		      	<input name="entrar" type="submit" value="Enviar pedido" onclick="ejecutar()">
 		</form>
