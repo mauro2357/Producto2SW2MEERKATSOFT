@@ -2,7 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="java.util.*" %>
-<link rel="stylesheet" href="cssproducto.css">
+<link rel="stylesheet" href="../cssproducto.css">
+<script src="../js/codigo.js"></script>
 <table>
 <tr> 
 <% 
@@ -13,14 +14,24 @@
 	else{
 		for(Producto producto: x){
 			%>
-			<td><img alt="<%out.print(producto.getNombre());%>" src="../images/<% out.print(producto.getImagen()); %>"></td>
-			<td><input size="15" maxlength="15" name="<% out.print(producto.getCodigo()); %>" id="<%out.print(i-1);%>" type="submit"
-			value="<% out.println(producto.getNombre()); %>" onclick="ingresarproducto(<%	out.print(i-1);	%>);">
-			<%	out.println(producto.getValor());%></td><%	if(	i%3==0)	{ %> </tr> <tr></tr> 	
+			<td>
+			<div class='jdg-container'>
+				<div class='jdg-item'>
+					<a href="javascript:ingresarproducto(<%out.print(i-1);%>);" id="<%out.print(i-1);%>" name="<%out.print(producto.getCodigo());%>">
+						<img src="../images/<%out.print(producto.getImagen());%>"/>
+			     	</a>
+			     <p><%out.println(producto.getNombre());%> <%out.println(producto.getValor());%></p>
+				</div>
+			</div>
+			</td>
+			<% if(i%4==0){ %> </tr> <tr></tr> 	
 			<%
 			}
 			i++;
 		}
 	}
 %>
+
 </table>
+
+

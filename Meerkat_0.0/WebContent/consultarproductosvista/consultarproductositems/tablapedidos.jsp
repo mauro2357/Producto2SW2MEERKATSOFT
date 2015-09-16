@@ -10,6 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
+	Tabla:
 	<table border="0" cellpadding="0" cellspacing="0" width="300">
 		<tr><td>Producto</td><td>Cantidad</td><td align="right">Precio</td></tr>
 	<%	

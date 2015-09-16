@@ -64,11 +64,11 @@ public class MeseroControllador extends HttpServlet {
 			pagina = "/consultarproductosvista/consultarproductositems/botonproductos.jsp"; //Le vamos a mandar a esta jsp todos los productos.
 			s.setAttribute("todos-los-productos", consultarmeserosFacade.mesero.productos); //Le mandamos los productos a la jsp encargada de imprimirlos
         }
-        if(Puerta.equalsIgnoreCase("ingresarproducto")){ //Lo ejecuta controller
-        	String id = request.getParameter("idp"); //Este id lo recibimos del boton del producto que presionamos
-        	//s.setAttribute("id-producto",id); //Lo colocamos como atributo 
+        if(Puerta.equalsIgnoreCase("ingresarproducto")){ 
+        	String id = request.getParameter("idp"); 
         	try { consultarmeserosFacade.mesero.adicionarproducto(id);} 
         	catch (Exception e) {System.out.println("Error en base de datos al adicionar producto.");}
+        	System.out.println(consultarmeserosFacade.mesero.pedido_sin_asignar.getCuerpo());
         	s.setAttribute("productos-pedido", consultarmeserosFacade.mesero.pedido_sin_asignar.getCuerpo()); //enviamos los productos que lleva el pedido actual
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
         }

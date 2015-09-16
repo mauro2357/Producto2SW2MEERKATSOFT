@@ -56,6 +56,7 @@ public class Mesero {
 		for(Producto producto: productos){ //Revisamos todos los productos
 			if(producto.getCodigo().equalsIgnoreCase(idu)) return producto; //Cuando encontremos el producto en memoria que consida con la id que estamos buscando, retorna el producto
 		}
+		System.out.println("retornó null");
 		return null;
 	}
 

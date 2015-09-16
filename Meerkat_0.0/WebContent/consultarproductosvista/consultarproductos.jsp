@@ -12,6 +12,7 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="../js/codigo.js"></script>
+<link rel="stylesheet" href="cssproducto.css">
 <script type="text/javascript">	
 	$(function() {
 			var Entrar = "botones"; 
