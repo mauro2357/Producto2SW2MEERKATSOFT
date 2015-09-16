@@ -19,7 +19,7 @@ public class GeneralesFacade {
 
 	public ArrayList<Producto> Productos_masvendidos() throws Exception{
 		GeneralesRepository productosmas = new GeneralesRepository();
-		ArrayList<Producto> x = productosmas.Productos_masvendidos();
+		ArrayList<Producto> x = productosmas.Consultarproductos_masvendidos();
 		this.listaproductos = x;
 		return x;
 	}
