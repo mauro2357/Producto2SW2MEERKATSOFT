@@ -40,7 +40,7 @@ public class MeseroControllador extends HttpServlet {
         }
         if(Puerta.equalsIgnoreCase("imprimirmeseros")){ //Lo ejecuta controller
         	try { consultarmeserosFacade.main(); } 
-        	catch (Exception e) {System.out.println("Error en base de datos.");}
+        	catch (Exception e) {System.out.println("Error en base de datos al imprimir meseros.");}
         	pagina = "/consultarmeserosvista/listameseros.jsp"; //A esta página jsp se enviarán los atributos
         	s.setAttribute("todos-los-meseros", consultarmeserosFacade.listameseros); //Envíamos a la jsp anteriormente mencionada la lista de meseros con el nombre de "todos-los-meseros"
         }
@@ -51,12 +51,12 @@ public class MeseroControllador extends HttpServlet {
         }
         if(Puerta.equalsIgnoreCase("listar_mesas")){ 
         	try { s.setAttribute("lista-mesas", mesasFacade.main());} 
-        	catch (Exception e) {System.out.println("Error en base de datos.");}
+        	catch (Exception e) {System.out.println("Error en base de datos al listar mesas.");}
         	pagina = "/consultarproductosvista/consultarproductositems/selectmesas.jsp"; 
         }
         if(Puerta.equalsIgnoreCase("listar_clientes")){ 
         	try { s.setAttribute("lista-clientes", crearcliente.main());} 
-        	catch (Exception e) {System.out.println("Error en base de datos.");}
+        	catch (Exception e) {System.out.println("Error en base de datos al listar clientes.");}
         	pagina = "/consultarproductosvista/consultarproductositems/selectclientes.jsp"; 
         }
         if(Puerta.equalsIgnoreCase("botones")){ //controller
@@ -67,7 +67,7 @@ public class MeseroControllador extends HttpServlet {
         	String id = request.getParameter("idp"); //Este id lo recibimos del boton del producto que presionamos
         	//s.setAttribute("id-producto",id); //Lo colocamos como atributo 
         	try { consultarmeserosFacade.mesero.adicionarproducto(id);} 
-        	catch (Exception e) {System.out.println("Error en base de datos.");}
+        	catch (Exception e) {System.out.println("Error en base de datos al adicionar producto.");}
         	s.setAttribute("productos-pedido", consultarmeserosFacade.mesero.pedido_sin_asignar.getCuerpo()); //enviamos los productos que lleva el pedido actual
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
         }
@@ -85,7 +85,7 @@ public class MeseroControllador extends HttpServlet {
         	Calendar x = Calendar.getInstance();
         	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
         	try { consultarmeserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesa,cajero,fecha);} 
-        	catch (Exception e) {System.out.println("Error en base de datos.");}
+        	catch (Exception e) {System.out.println("Error en base de datos al enviar pedido.");}
         	consultarmeserosFacade.mesero.pedido_sin_asignar = null;
         	pagina = "/index.jsp";
         }
@@ -102,7 +102,7 @@ public class MeseroControllador extends HttpServlet {
         	String email = request.getParameter("email");
         	String telefono = request.getParameter("telefono");
         	try { crearcliente.Registrarcliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);} 
-        	catch (Exception e) { System.out.println("Error en base de datos.");}
+        	catch (Exception e) { System.out.println("Error en base de datos al agregar datos del usuario.");}
         	pagina = "index.jsp";
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);

@@ -4,6 +4,8 @@
 <%@ page import="Negocio.cliente.*" %>
 <%@ page import="java.util.*" %>
 
+
+<option>Mesa</option>
 <%
 	ArrayList<Mesa> lista_mesas = (ArrayList<Mesa>) session.getAttribute("lista-mesas");
 	if(lista_mesas==null) out.print("No hay mesas");

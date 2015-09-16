@@ -14,7 +14,8 @@ public class FacturaRepository {
 	
 	public void ingresarPedido(Pedido x) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa+"', '"+x.cajero+"');";
+	    System.out.println(x.cliente);
+		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa+"');";
 	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
 	    query = "Select * from venta order by ven_id desc limit 1";

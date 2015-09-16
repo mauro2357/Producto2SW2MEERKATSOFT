@@ -52,10 +52,9 @@
 		<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero" >
 		      	<input name="entrar" type="submit" value="Terminar"/>
 		      	<input name="estado" type="hidden" value="En espera">
-		      	<select id="selectclientes"></select>
+		      	<select name="cliente" id="selectclientes"></select>
 		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
-		      	<select id="selectmesas"></select>
-		      	<input name="cajero" type="text" value="Cajero #null">
+		      	<select name="mesa" id="selectmesas"></select>
 		      	<input name="entrar" type="submit" value="Enviar pedido" onclick="ejecutar()">
 		</form>
 	</div>
