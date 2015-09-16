@@ -15,7 +15,9 @@
 </head>
 
 <body>
-
+	<div id="logo" align="center">
+		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
+	</div>
 	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
 	<br>
 	<button type="button" onclick="crear_despachador()">Crear despachador</button>

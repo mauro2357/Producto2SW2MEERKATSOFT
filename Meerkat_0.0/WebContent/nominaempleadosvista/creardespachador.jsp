@@ -16,6 +16,9 @@
 </script>
 </head>
 <body>
+<div id="logo" align="center">
+		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
+</div>
 <form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/administrador">
 	<input type="text" name="id"><br>
 	<input type="text" name="nombre"><br>

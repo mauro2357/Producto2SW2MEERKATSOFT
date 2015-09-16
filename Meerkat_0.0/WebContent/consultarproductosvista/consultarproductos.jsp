@@ -44,6 +44,9 @@
 <title>Productos</title>
 </head>
 <body background="fondo.jpg">
+	<div id="logo" align="center">
+		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
+	</div>
 	<div id="boton1" align="center">
 	</div>
 	<div id="table1" align="center">

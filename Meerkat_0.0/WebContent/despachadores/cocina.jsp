@@ -3,7 +3,12 @@
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="Negocio.factura.*" %>
 <%@ page import="java.util.*" %>
-	<div id="cuerpo">
+	
+	<div id="logo" align="center">
+		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
+	</div>
+	<div id="cuerpo" align="center">
+	<table border="1">
 	<% 
 		@SuppressWarnings("unchecked")
 		ArrayList<Factura> x = (ArrayList<Factura>) session.getAttribute("pedidos_en_cola");
@@ -12,23 +17,31 @@
 		if(x.size()==0) out.println("No hay facturas");
 		else{
 			for(Factura factura: x){
-				%> Id: <br> <%
+				%> <tr> <td>Id: <%
 				out.println(factura.getId());
-				%> Mesa: <br> <%
+				%> </td> <td>Mesa: <%
 				out.println(factura.getMesa());
-				%> Mesero: <br> <%
+				%> </td> <td>Mesero: <%
 				out.println(factura.getMesero());
-				%> Cliente: <br> <%
+				%> </td> <td>Cliente: <%
 				out.println(factura.getCliente());
-				%> Cajero: <br> <%
+				%> </td> <td>Cajero: <%
 				out.println(factura.getCajero());
-				%> Productos: <br> <%
-				for(Producto producto: factura.getPedido().getCuerpo()){
-					out.println(producto.getNombre());
-					%> <br> <%
-				}
-				%> <br> <%
+				%> </td> <td>Productos: 
+				</td>
+				<td>
+					<table>
+					<%
+					for(Producto producto: factura.getPedido().getCuerpo()){%>
+						<tr><td><%out.println(producto.getNombre());%></td></tr><%
+					}%>
+					</table>
+				</td>
+				<td><input size="auto" name="despachar" type="submit"
+				value="Despachar"></td>
+				</tr><%
 			}
 		}
 	%>
+	</table>
 	</div>

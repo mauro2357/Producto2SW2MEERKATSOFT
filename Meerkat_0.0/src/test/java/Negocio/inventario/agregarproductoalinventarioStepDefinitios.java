@@ -14,7 +14,7 @@ public class agregarproductoalinventarioStepDefinitios {
 	@Given("^El administrador va a agregar un producto.$")
 	public void El_administrador_va_a_agregar_un_producto() throws Throwable {
 		administrador = new Administrador();
-		administrador.agregar_producto_a_inventario();
+		administrador.Adicionar_alinventario();
 	}
 
 	@When("^El producto a agregar no existe en la lista de productos.$")
@@ -24,7 +24,7 @@ public class agregarproductoalinventarioStepDefinitios {
 
 	@Then("^Agregar el nuevo produto.$")
 	public void Agregar_el_nuevo_produto() throws Throwable {
-		Assert.assertTrue(administrador.agregar_producto_a_inventario());
+		Assert.assertTrue(administrador.Adicionar_alinventario());
 	}
 
 	@When("^El producto a agregar existe en la lista de productos.$")
@@ -34,7 +34,7 @@ public class agregarproductoalinventarioStepDefinitios {
 
 	@Then("^Adiciona el producto al inventario.$")
 	public void Adiciona_el_producto_al_inventario() throws Throwable {
-		Assert.assertTrue(administrador.agregar_producto_a_inventario());
+		Assert.assertTrue(administrador.Adicionar_alinventario());
 	}
 	
 	@When("^No hay base de datos.$")
