@@ -9,32 +9,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Meerkat_0.0</title>
-
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="js/codigo.js"></script>
-
+<script src="../js/codigo.js"></script>
 </head>
 
 <body>
 
 	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
-	<br></br>
-	
+	<br>
 	<button type="button" onclick="crear_despachador()">Crear despachador</button>
-	<br></br>
-	
+	<br>
 	<button type="button" onclick="consultar_clientes()">Consultar Clientes</button>
-	<br></br>
-	
+	<br>
 	<button type="button" onclick="consultar_totalVentas()">Total ventas</button>
-	<br></br>
-	
+	<br>
 	<button type="button" onclick="productos_masvendidos()">Productos más Vendidos</button>
-	<br></br>
-	
+	<br>
 	<div id="cuerpo"></div>
-	
-	
 </body>
 </html>

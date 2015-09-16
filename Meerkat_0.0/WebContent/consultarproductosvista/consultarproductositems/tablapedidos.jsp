@@ -13,6 +13,7 @@
 	<table border="0" cellpadding="0" cellspacing="0" width="300">
 		<tr><td>Producto</td><td>Cantidad</td><td align="right">Precio</td></tr>
 	<%	
+		@SuppressWarnings("unchecked")
 		ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");
 		if(productos_pedido==null) productos_pedido = new ArrayList<Producto>();
 		ArrayList<String> visitados = new ArrayList<String>();

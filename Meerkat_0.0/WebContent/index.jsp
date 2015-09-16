@@ -28,10 +28,11 @@
 <body>
 	<div id="cuerpo"></div>
 	<br></br>
-	<form action=""></form>
-	<button type="button" onclick="ir_administrador()">Administrador</button>
-	<input name="pass" id="pass" type="password" value="meerkat">
-	<button type="button" onclick="ir_despachador()">Despachador</button>
-	<button type="button" onclick="crear_usuario()">Crear Usuario</button>	
+	<div align="center">
+		<button type="button" onclick="ir_administrador()">Administrador</button>
+		<input name="pass" id="pass" type="password" value="meerkat">
+		<button type="button" onclick="ir_despachador()">Despachador</button>
+		<button type="button" onclick="crear_usuario()">Crear Usuario</button>
+	</div>
 </body>
 </html>
