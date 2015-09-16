@@ -5,9 +5,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Negocio.tomaynotificacionpedidos.Mesa;
+import Negocio.pedido.Mesa;
 
 public class MesaRepository {
+	
 	public ArrayList<Mesa> main() throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM mesa";
@@ -23,4 +24,5 @@ public class MesaRepository {
 	    st.close();
 	    return a; 
 	}
+	
 }

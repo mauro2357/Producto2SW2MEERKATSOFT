@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Negocio.basedatosclientes.Cliente;
-import Negocio.tomaynotificacionpedidos.*;
+import Negocio.cliente.Cliente;
+import Negocio.pedido.*;
 import Presentacion.*;
 
 @WebServlet("/administrador")
-public class administradorControlador extends HttpServlet {
+public class AdministradorControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public administradorControlador() {
+    public AdministradorControlador() {
         super();
     }
     
@@ -26,10 +26,10 @@ public class administradorControlador extends HttpServlet {
     public static String clave = "meerkat";
     public  static ArrayList<Producto> insumos;
     public  static ArrayList<Cliente> clientes;
-    public  static consultarinventarioFacade inventarioFacade= new consultarinventarioFacade();
-    public static basedatosclientesFacade clientesFacade= new basedatosclientesFacade();
-    public static consultasgeneralesenlaBDFacade totalventas = new consultasgeneralesenlaBDFacade();
-    public static nominaempleadosFacade creardespachador = new nominaempleadosFacade();
+    public  static InventarioFacade inventarioFacade= new InventarioFacade();
+    public static ClientesFacade clientesFacade= new ClientesFacade();
+    public static GeneralesFacade totalventas = new GeneralesFacade();
+    public static NominaFacade creardespachador = new NominaFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Ingreso al servlet");

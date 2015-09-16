@@ -1,4 +1,4 @@
-package Negocio.tomaynotificacionpedidos;
+package Negocio.pedido;
 
 public class Despachador {
 	public String id;

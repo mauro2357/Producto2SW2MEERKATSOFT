@@ -2,10 +2,10 @@ package Negocio.actualizarinventario;
 
 import org.junit.Assert;
 
+import Negocio.inventario.Administrador;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import Negocio.actualizarinventario.Administrador;
 
 public class agregarproductoalinventarioStepDefinitios {
 	

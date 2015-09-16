@@ -1,4 +1,4 @@
-package Negocio.basedatosclientes;
+package Negocio.cliente;
 
 public class Cliente {
 	public String id;

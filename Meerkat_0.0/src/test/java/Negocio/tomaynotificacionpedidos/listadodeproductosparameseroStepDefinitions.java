@@ -2,8 +2,8 @@ package Negocio.tomaynotificacionpedidos;
 
 import org.junit.Assert;
 
-import Negocio.tomaynotificacionpedidos.Mesero;
-import Negocio.tomaynotificacionpedidos.Producto;
+import Negocio.pedido.Mesero;
+import Negocio.pedido.Producto;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

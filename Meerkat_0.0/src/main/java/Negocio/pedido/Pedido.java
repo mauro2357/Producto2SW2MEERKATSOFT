@@ -1,4 +1,4 @@
-package Negocio.tomaynotificacionpedidos;
+package Negocio.pedido;
 
 import java.util.ArrayList;
 import Controlador.*;
@@ -16,7 +16,7 @@ public class Pedido {
 	public Pedido() {}
 	
 	public Pedido(ArrayList<Producto> lista_productos, String cliente, String mesa, String cajero, String fecha) {
-		this.mesero = meseroControllador.consultarmeserosFacade.mesero;
+		this.mesero = MeseroControllador.consultarmeserosFacade.mesero;
 		this.cliente = cliente;
 		this.estado = "En espera";
 		this.cuerpo = lista_productos;

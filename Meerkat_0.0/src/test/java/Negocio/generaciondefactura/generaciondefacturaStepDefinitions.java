@@ -2,8 +2,8 @@ package Negocio.generaciondefactura;
 
 import org.junit.Assert;
 
-import Negocio.geraciondefactura.*;
-import Negocio.tomaynotificacionpedidos.*;
+import Negocio.factura.*;
+import Negocio.pedido.*;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

@@ -3,9 +3,9 @@ package Presentacion;
 import java.util.ArrayList;
 
 import Datos.MeseroRepository;
-import Negocio.tomaynotificacionpedidos.Mesero;
+import Negocio.pedido.Mesero;
 
-public class consultarmeserosFacade {
+public class MeserosFacade {
 	public Mesero mesero;
 	public ArrayList<Mesero> listameseros;
 	

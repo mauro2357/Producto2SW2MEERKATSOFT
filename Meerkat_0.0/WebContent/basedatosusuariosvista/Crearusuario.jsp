@@ -4,17 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
-<script type="text/javascript">
-	function ir_controlador(){
-		var Entrar = "datos_cliente";
-		$.post("/Meerkat_0.0/mesero", {
-			entrar : Entrar,
-		});
-	}
-</script>
-
 </head>
 <body>
 <h1>Ingresar nuevo usuario</h1>
@@ -32,6 +21,5 @@
 	<input type="submit" name="registrar" value="Registrar Usuario">
 	
 </form>
-
 </body>
 </html>

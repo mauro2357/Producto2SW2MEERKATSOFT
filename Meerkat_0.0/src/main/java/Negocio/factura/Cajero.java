@@ -1,8 +1,8 @@
-package Negocio.geraciondefactura;
+package Negocio.factura;
 
 import java.util.ArrayList;
 
-import Presentacion.generaciondefacturaFacade;
+import Presentacion.*;
 
 public class Cajero {
 
@@ -32,7 +32,7 @@ public class Cajero {
 	}
 	
 	public Factura generarfactura(String id) throws Exception{
-		generaciondefacturaFacade x = new generaciondefacturaFacade();
+		PedidosFacade x = new PedidosFacade();
 		ArrayList<Factura> listadefacturas = x.main();
 		for(Factura factura:listadefacturas){
 			if(factura.getId() == id) return factura;

@@ -1,6 +1,6 @@
-package Negocio.geraciondefactura;
+package Negocio.factura;
 
-import Negocio.tomaynotificacionpedidos.Pedido;
+import Negocio.pedido.Pedido;
 
 public class Factura {
 	

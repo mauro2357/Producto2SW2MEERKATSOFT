@@ -11,20 +11,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Negocio.tomaynotificacionpedidos.*;
+import Negocio.pedido.*;
 import Presentacion.*;
 
 @WebServlet("/mesero")
-public class meseroControllador extends HttpServlet {
+public class MeseroControllador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public meseroControllador() {
+    public MeseroControllador() {
         super();
     }
     
-    public static generaciondepedidoFacade pedidosFacade = new generaciondepedidoFacade();
-    public static consultarmeserosFacade consultarmeserosFacade = new consultarmeserosFacade();
-    public static consultarmesasFacade consultarmesasFacade = new consultarmesasFacade();
-    public static basedatosclientesFacade crearcliente = new basedatosclientesFacade();
+    public static PedidosFacade pedidosFacade = new PedidosFacade(); 
+    public static MeserosFacade consultarmeserosFacade = new MeserosFacade(); //Cambiar nombre de Facade
+    public static MesasFacade consultarmesasFacade = new MesasFacade(); //Cambiar nombre de Facade
+    public static ClientesFacade crearcliente = new ClientesFacade(); //Cambiar nombre de Facade
+    public static MesasFacade mesasFacade = new MesasFacade(); //Cambiar nombre de Facade
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -51,6 +52,13 @@ public class meseroControllador extends HttpServlet {
         	String meseroi = request.getParameter("meseroi"); //Capturamos la id del mesero que está ejecutando
         	//el botón que se presionó desde Index.
         	consultarmeserosFacade.definirmesero(meseroi); //Lo enviamos para definir el mesero en el servidor.
+        	try {
+				s.setAttribute("lista-mesas", mesasFacade.main());
+				s.setAttribute("lista-clientes", crearcliente.main());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         	pagina = "/consultarproductosvista/consultarproductos.jsp"; //Rederigimos a consultarprodutos.
         }
         if(Puerta.equalsIgnoreCase("botones")){ //controller

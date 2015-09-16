@@ -1,6 +1,6 @@
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="Negocio.actualizarinventario.Administrador"%>
-<%@ page import="Negocio.tomaynotificacionpedidos.Producto"%>
+<%@ page import="Negocio.inventario.*"%>
+<%@ page import="Negocio.pedido.*"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>

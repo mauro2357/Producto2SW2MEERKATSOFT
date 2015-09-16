@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Negocio.geraciondefactura.Factura;
-import Presentacion.generaciondefacturaFacade;
+import Negocio.factura.Factura;
+import Presentacion.*;
 
 @WebServlet("/despachador")
-public class despachadorControlador extends HttpServlet {
+public class DespachadorControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public despachadorControlador() {
+    public DespachadorControlador() {
         super();
     }
     
-    generaciondefacturaFacade facturaFacade = new generaciondefacturaFacade();
+    PedidosFacade facturaFacade = new PedidosFacade();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");

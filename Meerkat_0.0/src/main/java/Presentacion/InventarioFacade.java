@@ -3,10 +3,10 @@ package Presentacion;
 import java.util.ArrayList;
 
 import Datos.InventarioRepository;
-import Negocio.tomaynotificacionpedidos.Producto;
+import Negocio.pedido.Producto;
 
 
-public class consultarinventarioFacade {	
+public class InventarioFacade {	
 	
 	public ArrayList<Producto> listainsumos;
 	

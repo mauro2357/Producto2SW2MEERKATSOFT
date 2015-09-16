@@ -5,9 +5,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Negocio.tomaynotificacionpedidos.Producto;
+import Negocio.pedido.Producto;
 
 public class ProductoRepository {
+	
 	public ArrayList<Producto> ConsultarProducto() throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM producto";

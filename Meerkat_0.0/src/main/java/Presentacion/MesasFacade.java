@@ -3,10 +3,10 @@ package Presentacion;
 import java.util.ArrayList;
 
 import Datos.MesaRepository;
-import Negocio.tomaynotificacionpedidos.Mesa;
+import Negocio.pedido.Mesa;
 
-public class consultarmesasFacade {
-	public ArrayList<Mesa> main(int idu) throws Exception{
+public class MesasFacade {
+	public ArrayList<Mesa> main() throws Exception{
 		MesaRepository mesarepository = new MesaRepository();
 		ArrayList<Mesa> x = mesarepository.main();
 		return x;

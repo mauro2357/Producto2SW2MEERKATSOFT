@@ -1,9 +1,9 @@
-package Negocio.actualizarinventario;
+package Negocio.inventario;
 
 import java.util.ArrayList;
 
-import Negocio.tomaynotificacionpedidos.*;
-import Presentacion.consultarinventarioFacade;
+import Negocio.pedido.*;
+import Presentacion.InventarioFacade;
 
 public class Administrador {
 	
@@ -13,7 +13,7 @@ public class Administrador {
 	//Lista de despachadores.
 	
 	public ArrayList<Producto> consultar_inventario() throws Exception {
-		consultarinventarioFacade y = new consultarinventarioFacade();
+		InventarioFacade y = new InventarioFacade();
 		ArrayList<Producto> z = new ArrayList<Producto>();
 		z = y.main();
 		return z;

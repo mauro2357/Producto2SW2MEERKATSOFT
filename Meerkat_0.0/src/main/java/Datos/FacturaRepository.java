@@ -5,12 +5,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Controlador.meseroControllador;
-import Negocio.geraciondefactura.Factura;
-import Negocio.tomaynotificacionpedidos.Pedido;
-import Negocio.tomaynotificacionpedidos.Producto;
+import Controlador.MeseroControllador;
+import Negocio.factura.Factura;
+import Negocio.pedido.Pedido;
+import Negocio.pedido.Producto;
 
 public class FacturaRepository {
+	
 	public void ingresarPedido(Pedido x) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`, `Caj_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa+"', '"+x.cajero+"');";
@@ -52,8 +53,6 @@ public class FacturaRepository {
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	if(auxid==null) auxid=id;
-	    	System.out.println("id " + id);
-	    	System.out.println("aux " + auxid);
 	    	if(!auxid.equalsIgnoreCase(id)){
 	    	if(y!=null){
 	    		  y.cuerpo = x;
@@ -82,8 +81,6 @@ public class FacturaRepository {
 	    y.cuerpo = x;
 		Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
 	    f.add(fi);
-	    System.out.println("f");
-	    System.out.println(f);
 	    st.close();
 	    return f;
 	}
@@ -93,7 +90,7 @@ public class FacturaRepository {
 	    String query = "SELECT * FROM new_view";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
-	    ArrayList<Producto> f = meseroControllador.consultarmeserosFacade.mesero.productos;
+	    ArrayList<Producto> f = MeseroControllador.consultarmeserosFacade.mesero.productos;
 	    while (rs.next()){
 	      String id = rs.getString("Ven_id");
 	      if(Integer.parseInt(id)==idu){

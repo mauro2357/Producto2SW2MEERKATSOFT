@@ -5,9 +5,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Negocio.tomaynotificacionpedidos.Mesero;
+import Negocio.pedido.Mesero;
 
 public class MeseroRepository {
+	
 	public ArrayList<Mesero> ConsultarMesero () throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM Mesero";
@@ -25,4 +26,5 @@ public class MeseroRepository {
 	    st.close();
 	    return a; 
 	}
+	
 }

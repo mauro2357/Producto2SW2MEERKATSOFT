@@ -3,11 +3,14 @@ package Presentacion;
 import java.util.ArrayList;
 
 import Datos.FacturaRepository;
-import Negocio.geraciondefactura.Factura;
-import Negocio.tomaynotificacionpedidos.Pedido;
+import Negocio.factura.Factura;
+import Negocio.pedido.Pedido;
+import Negocio.pedido.Producto;
 
-public class generaciondepedidoFacade {
+public class PedidosFacade {
+	
 	FacturaRepository facturarepository = new FacturaRepository();
+	
 	public ArrayList<Factura> main() throws Exception{
 		ArrayList<Factura> x = facturarepository.generarfactura();
 		return x;
@@ -20,5 +23,10 @@ public class generaciondepedidoFacade {
 	
 	public void enviar_pedido(Pedido x) throws Exception{
 		facturarepository.ingresarPedido(x);
+	}
+	
+	public ArrayList<Producto> main(int idu) throws Exception{
+		ArrayList<Producto> x = facturarepository.generarpedido(idu);
+		return x;
 	}
 }
