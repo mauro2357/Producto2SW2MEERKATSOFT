@@ -12,21 +12,21 @@ public class PedidosFacade {
 	FacturaRepository facturarepository = new FacturaRepository();
 	
 	public ArrayList<Factura> main() throws Exception{
-		ArrayList<Factura> x = facturarepository.generarfactura();
+		ArrayList<Factura> x = facturarepository.Generar_factura();
 		return x;
 	}
 	
 	public int ultimopedidoid() throws Exception{
-		ArrayList<Factura> x = facturarepository.generarfactura();
+		ArrayList<Factura> x = facturarepository.Generar_factura();
 		return x.size();
 	}
 	
-	public void enviar_pedido(Pedido x) throws Exception{
-		facturarepository.ingresarPedido(x);
+	public void Enviar_pedido(Pedido x) throws Exception{
+		facturarepository.Ingresar_pedido(x);
 	}
 	
 	public ArrayList<Producto> main(int idu) throws Exception{
-		ArrayList<Producto> x = facturarepository.generarpedido(idu);
+		ArrayList<Producto> x = facturarepository.Generar_pedido(idu);
 		return x;
 	}
 }

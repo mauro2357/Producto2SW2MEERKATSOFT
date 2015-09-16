@@ -12,10 +12,10 @@ public class Administrador {
 	ArrayList<Despachador> nominadedespachadores = new ArrayList<Despachador>();
 	//Lista de despachadores.
 	
-	public ArrayList<Producto> consultar_inventario() throws Exception {
+	public ArrayList<Producto> Consultar_inventario() throws Exception {
 		InventarioFacade y = new InventarioFacade();
 		ArrayList<Producto> z = new ArrayList<Producto>();
-		z = y.main();
+		z = y.Consultar_insumos();
 		return z;
 	}
 	
@@ -33,7 +33,7 @@ public class Administrador {
 		return true; //if(objeto mesero existe en el array) return true
 	}
 	
-	public boolean consultar_despachador(){
+	public boolean Consultar_despachador(){
 		return true; //if(objeto despachador existe en el array) return true
 	}
 	
@@ -46,15 +46,11 @@ public class Administrador {
 	}
 	
 	
-	public boolean agregar_producto_a_inventario(){
+	public boolean Adicionar_alinventario(){
 		return true;
 	}
 	
-	public boolean adicinar_producto_al_inventario(){
-		return true;
-	}
-	
-	public boolean verificar_el_producto_esta_en_el_inventario(){
+	public boolean Verificar_productoinventario(){
 		return true;
 	}
 	

@@ -21,23 +21,23 @@ public class notificaciondepedidolistoStepDefinitions {
 
 	@When("^Hay un pedido en cola.$")
 	public void Hay_un_pedido_en_cola() throws Throwable {
-		Assert.assertTrue(despachador.recibir_pedido());
+		Assert.assertTrue(despachador.Recibir_pedido());
 	}
 
 	@Then("^Notificar al mesero que el esta listo el pedido.$")
 	public void Notificar_al_mesero_que_el_esta_listo_el_pedido() throws Throwable {
-		Assert.assertTrue(despachador.recibir_pedido()); //Código mínimo para notificar que está listo el pedido
+		Assert.assertTrue(despachador.Recibir_pedido()); //Código mínimo para notificar que está listo el pedido
 	}
 
 	@When("^No hay pedido en cola.$")
 	public void No_hay_pedido_en_cola() throws Throwable {
 		//Assert.assertTrue(!despachador.recibir_pedido());
-		Assert.assertTrue(despachador.recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
+		Assert.assertTrue(despachador.Recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
 	}
 
 	@Then("^Notificar al despachador que no hay pedido en cola.$")
 	public void Notificar_al_despachador_que_no_hay_pedido_en_cola() throws Throwable { //Código mínimo que avisa que se despachó el pedido.
-		Assert.assertEquals("Pedido despachado.", despachador.notificar_pedido());
+		Assert.assertEquals("Pedido despachado.", despachador.Notificar_pedido());
 	}
 	
 	@When("^No hay mesero.$")

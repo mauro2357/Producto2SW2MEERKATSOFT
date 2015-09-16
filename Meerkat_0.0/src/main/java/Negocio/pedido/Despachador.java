@@ -16,12 +16,12 @@ public class Despachador {
 	public Despachador() {
 	}
 
-	public boolean recibir_pedido(){
+	public boolean Recibir_pedido(){
 		
 		return true;
 	}
 	
-	public String notificar_pedido(){
+	public String Notificar_pedido(){
 		return "Pedido despachado.";
 	}
 	

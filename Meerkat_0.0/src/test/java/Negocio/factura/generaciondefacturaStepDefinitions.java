@@ -20,8 +20,8 @@ public class generaciondefacturaStepDefinitions {
 
 	@When("^Hay pedido.$")
 	public void Hay_pedido() throws Throwable {
-		despachador.recibir_pedido();
-		Assert.assertTrue(despachador.recibir_pedido());
+		despachador.Recibir_pedido();
+		Assert.assertTrue(despachador.Recibir_pedido());
 	}
 
 	@Then("^Generar factura de cobro.$")
@@ -32,12 +32,12 @@ public class generaciondefacturaStepDefinitions {
 	@When("^No hay pedido.$")
 	public void No_hay_pedido() throws Throwable {
 		//Assert.assertTrue(!despachador.recibir_pedido());
-		Assert.assertTrue(!despachador.recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
+		Assert.assertTrue(!despachador.Recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
 	}
 
 	@Then("^Notificar que no hay pedido.$")
 	public void Notificar_que_no_hay_pedido() throws Throwable {
-		Assert.assertEquals("Pedido despachado.", despachador.notificar_pedido()); //Haciéndolo VERDE. No está bueno
+		Assert.assertEquals("Pedido despachado.", despachador.Notificar_pedido()); //Haciéndolo VERDE. No está bueno
 	}
 
 	@When("^La factura incluye propina.$")

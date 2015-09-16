@@ -20,8 +20,8 @@ public class consultarinventarioStepdefinitons {
 	@Given("^El administrador consulta los insumos que hay en el inventario.$")
 	public void El_administrador_consulta_los_insumos_que_hay_en_el_inventario() throws Throwable {
 		administrador = new Administrador();
-		administrador.consultar_inventario();
-		lista = inventarioFacade.main();
+		administrador.Consultar_inventario();
+		lista = inventarioFacade.Consultar_insumos();
 		
 		
 	}

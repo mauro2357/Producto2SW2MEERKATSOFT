@@ -9,7 +9,7 @@ import Negocio.pedido.Mesa;
 
 public class MesaRepository {
 	
-	public ArrayList<Mesa> ConsultarMesa() throws Exception { 
+	public ArrayList<Mesa> Consultar_mesa() throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM mesa";
 	    Statement st = con.createStatement();

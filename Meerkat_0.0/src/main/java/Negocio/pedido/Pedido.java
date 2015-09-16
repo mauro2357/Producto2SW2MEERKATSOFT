@@ -25,7 +25,7 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
-	public void adicionarproducto(Producto x){
+	public void Adicionarproducto(Producto x){
 		this.cuerpo.add(x); //Recibo el producto, lo agregamos al cuerpo del pedido.
 	}
 	

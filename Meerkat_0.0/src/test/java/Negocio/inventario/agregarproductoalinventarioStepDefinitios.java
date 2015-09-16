@@ -19,7 +19,7 @@ public class agregarproductoalinventarioStepDefinitios {
 
 	@When("^El producto a agregar no existe en la lista de productos.$")
 	public void El_producto_a_agregar_no_existe_en_la_lista_de_productos() throws Throwable {
-		Assert.assertEquals(administrador.verificar_el_producto_esta_en_el_inventario(),false); 
+		Assert.assertEquals(administrador.Verificar_productoinventario(),false); 
 	}
 
 	@Then("^Agregar el nuevo produto.$")
@@ -29,7 +29,7 @@ public class agregarproductoalinventarioStepDefinitios {
 
 	@When("^El producto a agregar existe en la lista de productos.$")
 	public void El_producto_a_agregar_existe_en_la_lista_de_productos() throws Throwable {
-		Assert.assertEquals(!administrador.verificar_el_producto_esta_en_el_inventario(),true);
+		Assert.assertEquals(!administrador.Verificar_productoinventario(),true);
 	}
 
 	@Then("^Adiciona el producto al inventario.$")

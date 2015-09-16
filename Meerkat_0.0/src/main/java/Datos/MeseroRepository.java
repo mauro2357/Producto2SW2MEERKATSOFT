@@ -9,7 +9,7 @@ import Negocio.pedido.Mesero;
 
 public class MeseroRepository {
 	
-	public ArrayList<Mesero> ConsultarMesero () throws Exception { 
+	public ArrayList<Mesero> Consultar_mesero () throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM Mesero";
 	    Statement st = con.createStatement();

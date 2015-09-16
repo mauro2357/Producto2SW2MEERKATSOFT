@@ -12,7 +12,7 @@ import Negocio.pedido.Producto;
 
 public class FacturaRepository {
 	
-	public void ingresarPedido(Pedido x) throws Exception {
+	public void Ingresar_pedido(Pedido x) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    System.out.println(x.cliente);
 		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa+"');";
@@ -39,14 +39,14 @@ public class FacturaRepository {
 	    st.close();
 	}
 	
-	public ArrayList<Factura> generarfactura() throws Exception {
+	public ArrayList<Factura> Generar_factura() throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM factura";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
 	    ProductoRepository prepository = new ProductoRepository();
-	    ArrayList<Producto> tproductos = prepository.ConsultarProducto();
+	    ArrayList<Producto> tproductos = prepository.Consultar_producto();
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
 	    String auxid = null;
@@ -86,7 +86,7 @@ public class FacturaRepository {
 	    return f;
 	}
 	
-	public ArrayList<Producto> generarpedido(int idu) throws Exception {
+	public ArrayList<Producto> Generar_pedido(int idu) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM new_view";
 	    Statement st = con.createStatement();

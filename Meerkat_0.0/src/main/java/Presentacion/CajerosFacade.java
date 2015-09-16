@@ -9,9 +9,9 @@ public class CajerosFacade {
 	
 	public ArrayList<Cajero> listacajeros;
 	
-	public ArrayList<Cajero> main() throws Exception{
+	public ArrayList<Cajero> Consultar_cajeros() throws Exception{
 		CajeroRepository clientesrepository = new CajeroRepository();
-		ArrayList<Cajero> x = clientesrepository.main();
+		ArrayList<Cajero> x = clientesrepository.Consultar_cajeros();
 		this.listacajeros = x;
 		return x;
 	}

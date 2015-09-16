@@ -9,15 +9,15 @@ public class ClientesFacade {
 	
 	public ArrayList<Cliente> listaclientes;
 	
-	public ArrayList<Cliente> main() throws Exception{
+	public ArrayList<Cliente> Consultar_clientes() throws Exception{
 		ClientesRepository clientesrepository = new ClientesRepository();
-		ArrayList<Cliente> x = clientesrepository.ConsultarCliente();
+		ArrayList<Cliente> x = clientesrepository.Consultar_Cliente();
 		this.listaclientes = x;
 		return x;
 	}
 	
-	public void Registrarcliente(String id, String nombre, String apellido, String sexo,  int puntos, String musica, String email, String telefono) throws Exception{
+	public void Registrar_cliente(String id, String nombre, String apellido, String sexo,  int puntos, String musica, String email, String telefono) throws Exception{
 		ClientesRepository ingresarcliente = new ClientesRepository();
-		ingresarcliente.registrarusuario(id, nombre, apellido, sexo, puntos, musica, email, telefono);
+		ingresarcliente.Registrar_usuario(id, nombre, apellido, sexo, puntos, musica, email, telefono);
 	}
 }

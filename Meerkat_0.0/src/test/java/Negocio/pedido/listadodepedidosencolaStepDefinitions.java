@@ -56,12 +56,12 @@ public class listadodepedidosencolaStepDefinitions {
 	}
 	@When("^Hay despachador.$")
 	public void Hay_despachador() throws Throwable {
-		Assert.assertTrue(administrador.consultar_despachador());
+		Assert.assertTrue(administrador.Consultar_despachador());
 	}
 
 	@When("^No hay despachador.$")
 	public void No_hay_despachador() throws Throwable {
-		Assert.assertTrue(administrador.consultar_despachador());
+		Assert.assertTrue(administrador.Consultar_despachador());
 	}
 
 	@Then("^Notificar que no hay despachador.$")

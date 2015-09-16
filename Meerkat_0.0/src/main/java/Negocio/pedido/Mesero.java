@@ -24,11 +24,11 @@ public class Mesero {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
-		this.productos = productorepository.ConsultarProducto();
+		this.productos = productorepository.Consultar_producto();
 	}
 
 	public Mesero() throws Exception { 
-		this.productos = productorepository.ConsultarProducto();
+		this.productos = productorepository.Consultar_producto();
 	}
 
 	public void setId(String id) {this.id = id;}
@@ -40,7 +40,7 @@ public class Mesero {
 	public void setColadepedidos(Map<Pedido, String> coladepedidos) {this.coladepedidos = coladepedidos;}
 
 	public String getMensaje() throws Exception {
-		ArrayList<Producto> x = productorepository.ConsultarProducto();
+		ArrayList<Producto> x = productorepository.Consultar_producto();
 		if(!(x.size()==0)) return "No hay productos";
 		return "Hay productos";
 	}
@@ -48,7 +48,7 @@ public class Mesero {
 	public String enviar_pedido(Pedido pedido) throws Exception{
 		if(pedido==null) return "No hay productos.";
 		FacturaRepository facturarepository = new FacturaRepository();
-		facturarepository.ingresarPedido(pedido);
+		facturarepository.Ingresar_pedido(pedido);
 		return "Pedido enviado";
 	}
 	
@@ -63,7 +63,7 @@ public class Mesero {
 		if(pedido_sin_asignar==null) pedido_sin_asignar = new Pedido(); //Si no hay pedido, se crea
 		if(pedido_sin_asignar.getCuerpo() == null) pedido_sin_asignar.cuerpo = new ArrayList<Producto>(); //Si el pedido no tiene productos, se crea el vector
 		Producto encontrado = consultarproductoinvididual(id2); //Le decimos al mesero que nos busque la ubicacion en memoria del producto
-		pedido_sin_asignar.adicionarproducto(encontrado); //Ya encontrado el producto, lo adicionamos al pedido
+		pedido_sin_asignar.Adicionarproducto(encontrado); //Ya encontrado el producto, lo adicionamos al pedido
 	}
 
 	public void finiquitarpedido(Pedido pedido, String cliente, String mesero, String mesa, String cajero, String fecha) throws Exception {

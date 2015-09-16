@@ -39,23 +39,23 @@ public class MeseroControllador extends HttpServlet {
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("imprimirmeseros")){ //Lo ejecuta controller
-        	try { consultarmeserosFacade.main(); } 
+        	try { consultarmeserosFacade.Consultar_meseros(); } 
         	catch (Exception e) {System.out.println("Error en base de datos al imprimir meseros.");}
         	pagina = "/consultarmeserosvista/listameseros.jsp"; //A esta página jsp se enviarán los atributos
         	s.setAttribute("todos-los-meseros", consultarmeserosFacade.listameseros); //Envíamos a la jsp anteriormente mencionada la lista de meseros con el nombre de "todos-los-meseros"
         }
         if(Puerta.equalsIgnoreCase("definirmesero")){ 
         	String meseroi = request.getParameter("meseroi"); 
-        	consultarmeserosFacade.definirmesero(meseroi); 
+        	consultarmeserosFacade.Definir_mesero(meseroi); 
         	pagina = "/consultarproductosvista/consultarproductos.jsp"; 
         }
         if(Puerta.equalsIgnoreCase("listar_mesas")){ 
-        	try { s.setAttribute("lista-mesas", mesasFacade.main());} 
+        	try { s.setAttribute("lista-mesas", mesasFacade.Consultar_mesas());} 
         	catch (Exception e) {System.out.println("Error en base de datos al listar mesas.");}
         	pagina = "/consultarproductosvista/consultarproductositems/selectmesas.jsp"; 
         }
         if(Puerta.equalsIgnoreCase("listar_clientes")){ 
-        	try { s.setAttribute("lista-clientes", crearcliente.main());} 
+        	try { s.setAttribute("lista-clientes", crearcliente.Consultar_clientes());} 
         	catch (Exception e) {System.out.println("Error en base de datos al listar clientes.");}
         	pagina = "/consultarproductosvista/consultarproductositems/selectclientes.jsp"; 
         }
@@ -101,7 +101,7 @@ public class MeseroControllador extends HttpServlet {
         	String musica = request.getParameter("musica");
         	String email = request.getParameter("email");
         	String telefono = request.getParameter("telefono");
-        	try { crearcliente.Registrarcliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);} 
+        	try { crearcliente.Registrar_cliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);} 
         	catch (Exception e) { System.out.println("Error en base de datos al agregar datos del usuario.");}
         	pagina = "index.jsp";
         }

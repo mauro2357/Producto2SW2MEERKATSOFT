@@ -9,7 +9,7 @@ import Negocio.factura.*;
 
 public class CajeroRepository {
 	
-	public ArrayList<Cajero> main() throws Exception { 
+	public ArrayList<Cajero> Consultar_cajeros() throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM cajero";
 	    Statement st = con.createStatement();

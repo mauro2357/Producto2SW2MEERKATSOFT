@@ -10,9 +10,9 @@ public class InventarioFacade {
 	
 	public ArrayList<Producto> listainsumos;
 	
-	public ArrayList<Producto> main() throws Exception{
+	public ArrayList<Producto> Consultar_insumos() throws Exception{
 		InventarioRepository inventariorepository = new InventarioRepository();
-		ArrayList<Producto> x = inventariorepository.ConsultarInsumos ();
+		ArrayList<Producto> x = inventariorepository.Consultar_insumos ();
 		this.listainsumos = x;
 		System.out.println("Ingreso al facade: ");
 		return x;

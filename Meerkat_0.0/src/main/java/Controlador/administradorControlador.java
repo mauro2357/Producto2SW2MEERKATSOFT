@@ -49,7 +49,7 @@ public class AdministradorControlador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("consultar_inventario")){ 
         	System.out.println("Ingreso a buscar el inventario: ");
         	try { //Try catch para intentar conectar a la BD
-        		inventarioFacade.main(); //Ejecuta el main del Facade, esto obtiene todos los insumos que están en la BD
+        		inventarioFacade.Consultar_insumos(); //Ejecuta el main del Facade, esto obtiene todos los insumos que están en la BD
 			} catch (Exception e) {
 				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
 			}
@@ -60,7 +60,7 @@ public class AdministradorControlador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("consultar_clientes")){ 
         	System.out.println("Ingreso a consultar clientes: ");
         	try { //Try catch para intentar conectar a la BD
-        		clientesFacade.main(); //Ejecuta el main del Facade, esto obtiene todos los insumos que están en la BD
+        		clientesFacade.Consultar_clientes(); //Ejecuta el main del Facade, esto obtiene todos los insumos que están en la BD
 			} catch (Exception e) {
 				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
 			}
@@ -71,7 +71,7 @@ public class AdministradorControlador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("consultar_totalVentas")){ 
         	System.out.println("Ingreso a consultar totalventas: ");
         	try { //Try catch para intentar conectar a la BD
-        		totalventas.main(); 
+        		totalventas.Consultar_totalventas(); 
 			} catch (Exception e) {
 				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
 			}
@@ -97,7 +97,7 @@ public class AdministradorControlador extends HttpServlet {
         	String apellido = request.getParameter("apellido");
         	String telefono = request.getParameter("telefono");
         	try {
-				creardespachador.RegistarDespachador(id, nombre, apellido, telefono);
+				creardespachador.Registar_Despachador(id, nombre, apellido, telefono);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -109,7 +109,7 @@ public class AdministradorControlador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("productos_masvendidos")){ 
         	System.out.println("Ingreso a consultar productos mas vendidos: ");
         	try { //Try catch para intentar conectar a la BD
-        		totalventas.Productos_masvendidos();
+        		totalventas.Consultar_productosmasvendidos();
 			} catch (Exception e) {
 				e.printStackTrace(); //Devuelve un error si no conectó correctamente a la BD
 			}

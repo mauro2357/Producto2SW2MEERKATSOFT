@@ -1,18 +1,11 @@
 package Presentacion;
 
 import Datos.EmpleadosRepository;
-import Negocio.pedido.Despachador;
 
 public class NominaFacade {	
 	
-		
-	public void main(Despachador d) throws Exception{
-		System.out.println("Ingreso al facade: ");
-	}
-	
-	public void RegistarDespachador(String id, String nombre, String apellido, String telefono) throws Exception{
+	public void Registar_Despachador(String id, String nombre, String apellido, String telefono) throws Exception{
 		EmpleadosRepository nominaempleados = new EmpleadosRepository();
-		nominaempleados.registrarusuario(id, nombre, apellido, telefono);
-		System.out.println("Ingreso al facade: ");
+		nominaempleados.Registrar_despachador(id, nombre, apellido, telefono);
 	}
 }

@@ -9,7 +9,7 @@ import Negocio.pedido.Producto;
 
 public class InventarioRepository {
 
-	public ArrayList<Producto> ConsultarInsumos () throws Exception { 
+	public ArrayList<Producto> Consultar_insumos () throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM insumos";
 	    Statement st = con.createStatement();
