@@ -16,7 +16,7 @@ public class Pedido {
 	public Pedido() {}
 	
 	public Pedido(ArrayList<Producto> lista_productos, String cliente, String mesa, String cajero, String fecha) {
-		this.mesero = MeseroControllador.consultarmeserosFacade.mesero;
+		this.mesero = MeseroControllador.meserosFacade.mesero;
 		this.cliente = cliente;
 		this.estado = "En espera";
 		this.cuerpo = lista_productos;

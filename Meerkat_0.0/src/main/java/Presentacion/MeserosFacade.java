@@ -6,6 +6,7 @@ import Datos.MeseroRepository;
 import Negocio.pedido.Mesero;
 
 public class MeserosFacade {
+	
 	public Mesero mesero;
 	public ArrayList<Mesero> listameseros;
 	
@@ -23,7 +24,4 @@ public class MeserosFacade {
         	}
     	}
 	}
-	
-	
-	
 }

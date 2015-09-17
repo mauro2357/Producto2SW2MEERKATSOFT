@@ -91,7 +91,7 @@ public class FacturaRepository {
 	    String query = "SELECT * FROM new_view";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
-	    ArrayList<Producto> f = MeseroControllador.consultarmeserosFacade.mesero.productos;
+	    ArrayList<Producto> f = MeseroControllador.meserosFacade.mesero.productos;
 	    while (rs.next()){
 	      String id = rs.getString("Ven_id");
 	      if(Integer.parseInt(id)==idu){

@@ -12,7 +12,6 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="../js/codigo.js"></script>
-<link rel="stylesheet" href="cssproducto.css">
 <script type="text/javascript">	
 	$(function() {
 			var Entrar = "botones"; 
@@ -54,7 +53,7 @@
 	</div>
 	<div align="right">
 		<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero" >
-		      	<input name="entrar" type="submit" value="Terminar"/>
+		      	<input name="entrar" type="submit" value="Cancelar"/>
 		      	<input name="estado" type="hidden" value="En espera">
 		      	<select name="cliente" id="selectclientes"></select>
 		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">

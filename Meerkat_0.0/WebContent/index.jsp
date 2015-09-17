@@ -4,7 +4,6 @@
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="java.util.*" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -24,12 +23,12 @@
 	});
 </script>
 </head>
-<body>
+<body background="fondo1.JPG">
 	<div id="logo" align="center">
 		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="logo.png" style="max-width: 100%; height: auto;"></a>
 	</div>
 	<div id="cuerpo"></div>
-	<br></br>
+	<br>
 	
 	<div align="center">
 		<button type="button" onclick="ir_administrador()">Administrador</button>
