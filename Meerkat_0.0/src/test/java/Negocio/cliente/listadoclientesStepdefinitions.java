@@ -1,4 +1,4 @@
-package Negocio.consultas;
+package Negocio.cliente;
 
 import org.junit.Assert;
 

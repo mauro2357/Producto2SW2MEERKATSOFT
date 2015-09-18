@@ -1,4 +1,4 @@
-package Negocio.inventario;
+package Negocio.nomina;
 
 import org.junit.Assert;
 
