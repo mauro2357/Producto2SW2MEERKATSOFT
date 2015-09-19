@@ -30,22 +30,15 @@ public class DespachadorControlador extends HttpServlet {
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         String pagina = null;
-        if(Puerta.equalsIgnoreCase("Terminar"))
-        {
+        if(Puerta.equalsIgnoreCase("Terminar")){
         	s = request.getSession(false);
         	s.invalidate();
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("ir_despachador")){
         	ArrayList<Factura> x = null;
-        	try {
-				x = facturaFacade.main();
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-        	System.out.println("x");
-			System.out.println(x);
+        	try { x = facturaFacade.main();
+			} catch (Exception e1) { System.out.println("Error en la base de datos al recibir los pedidos en cola.");}
 			s.setAttribute("pedidos_en_cola",x);
         	pagina = "/despachadores/cocina.jsp";
         }
