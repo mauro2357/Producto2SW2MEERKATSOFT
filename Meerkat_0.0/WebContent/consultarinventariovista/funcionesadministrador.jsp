@@ -12,12 +12,15 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="../js/codigo.js"></script>
+<link rel="stylesheet" href="cssadm.css" type="text/css">
+
 </head>
 
 <body>
 	<div id="logo" align="center">
 		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
 	</div>
+	<div class="f" align="center">
 	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
 	<br>
 	<button type="button" onclick="crear_despachador()">Crear despachador</button>
@@ -28,6 +31,8 @@
 	<br>
 	<button type="button" onclick="productos_masvendidos()">Productos más Vendidos</button>
 	<br>
+	</div>
+	
 	<div id="cuerpo"></div>
 </body>
 </html>
