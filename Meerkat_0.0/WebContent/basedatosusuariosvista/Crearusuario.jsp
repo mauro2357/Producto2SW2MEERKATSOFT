@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="logo" align="center">
-		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
+		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.jpg" style="max-width: 100%; height: auto;"></a>
 </div>
 <h1>Ingresar nuevo usuario</h1>
 <form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/mesero">

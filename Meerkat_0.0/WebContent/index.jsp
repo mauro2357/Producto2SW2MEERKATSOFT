@@ -25,7 +25,7 @@
 </head>
 <body background="fondo1.JPG">
 	<div id="logo" align="center">
-		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="logo.png" style="max-width: 100%; height: auto;"></a>
+		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="logo.jpg" style="max-width: 100%; height: auto;"></a>
 	</div>
 	<div id="cuerpo"></div>
 	<br>
