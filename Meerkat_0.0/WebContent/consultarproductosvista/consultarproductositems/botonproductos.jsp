@@ -3,6 +3,8 @@
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="java.util.*" %>
 <link rel="stylesheet" href="../cssproducto.css">
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
 <script src="../js/codigo.js"></script>
 <table>
 <tr> 
@@ -20,7 +22,7 @@
 					<a href="javascript:ingresarproducto(<%out.print(i-1);%>);" id="<%out.print(i-1);%>" name="<%out.print(producto.getCodigo());%>">
 						<img src="../images/<%out.print(producto.getImagen());%>"/>
 			     	</a>
-			     <p><%out.println(producto.getNombre());%> <%out.println(producto.getValor());%></p>
+			     <p><%out.println(producto.getNombre());%>   $<%out.println(producto.getValor());%></p>
 				</div>
 			</div>
 			</td>

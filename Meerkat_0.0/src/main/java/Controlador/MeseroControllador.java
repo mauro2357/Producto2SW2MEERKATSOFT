@@ -34,10 +34,7 @@ public class MeseroControllador extends HttpServlet {
         Puerta = request.getParameter("entrar");
         String pagina = null;
         if(Puerta.equalsIgnoreCase("Cancelar")){
-        	pedidosFacade = null;
         	meserosFacade.mesero = null;
-        	mesasFacade = null;
-        	clientesFacade = null;
         	s = request.getSession(false);
         	s.invalidate();
         	pagina = "index.jsp";
