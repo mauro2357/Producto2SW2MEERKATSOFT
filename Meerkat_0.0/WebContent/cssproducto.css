@@ -19,10 +19,12 @@
 
 .jdg-item p {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   margin: 2px 2px;
   font-weight: 600;
   color: black;
+  text-align: center;
+  font-family:'Lobster', cursive;
 }
 
 .jdg-item img {
