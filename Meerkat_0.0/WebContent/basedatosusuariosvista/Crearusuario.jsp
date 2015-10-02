@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <html>
 <head>
+<link rel="stylesheet" href="estilosregistro.css" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
@@ -10,16 +11,18 @@
 </div>
 <h1>Ingresar nuevo usuario</h1>
 <form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/mesero">
+	<center>
 	<input type="hidden" name="entrar" value="datos_usuario">
-	<input type="text" name="id"><br>
-	<input type="text" name="nombre"><br>
-	<input type="text" name="apellido"><br>
-	<input type="text" name="sexo"><br>
-	<input type="text" name="puntos"><br>
-	<input type="text" name="musica"><br>
-	<input type="text" name="email"><br>
-	<input type="text" name="telefono"><br>
+	<input type="text" name="id" placeholder="CEDULA"><br>
+	<input type="text" name="nombre" placeholder="NOMBRE"><br>
+	<input type="text" name="apellido"placeholder="APELLIDO"><br>
+	<input type="text" name="sexo"placeholder="SEXO"><br>
+	<input type="text" name="puntos"placeholder="0"><br>
+	<input type="text" name="musica"placeholder="GUSTO MUSICAL"><br>
+	<input type="text" name="email"placeholder="EMAIL"><br>
+	<input type="text" name="telefono"placeholder="TELEFONO"><br>
 	<input type="submit" name="registrar" value="Registrar Usuario">
+    </center>
 </form>
 </body>
 </html>
