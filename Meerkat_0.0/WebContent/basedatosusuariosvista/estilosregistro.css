@@ -9,7 +9,11 @@ background-image: url("fondo1.JPG");
 
 }
 
-
+h1{
+	 font-family:'Lobster', cursive;
+	 color:white;
+	 text-align: center;
+}
 
 form{
 	background: transparent;

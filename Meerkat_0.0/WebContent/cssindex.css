@@ -1,3 +1,20 @@
+body h1{
+	 font-family:'Lobster', cursive;
+	 color:white;
+	 text-align: center;
+}
+.icon input{
+	width: 280px;
+	height: 35px;
+	padding: 0px 10px;
+	margin: 10px 30px;
+	color: black;
+	text-align:center;
+	border:2px solid white;
+	font-family: 'Oswald', sans-serif;
+	font-weight:800;
+	border-radius: 10px;
+}
 .icon button {
 	width: 135px;
 	margin: 20px 0px 20px 22px;
@@ -12,7 +29,7 @@ background: -ms-linear-gradient(top,  rgba(147,184,193,0.71) 0%,rgba(147,184,193
 background: linear-gradient(to bottom,  rgba(147,184,193,0.71) 0%,rgba(147,184,193,0.71) 1%,rgba(12,68,64,0.78) 50%,rgba(188,224,238,0.85) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b593b8c1', endColorstr='#d9bce0ee',GradientType=0 ); /* IE6-9 */
  color: white;
-    border: 1px solid blue;
+    border: 1px solid ;
     box-shadow: 0px 2px 0px #00008B;
     border-radius: 4px;
 
