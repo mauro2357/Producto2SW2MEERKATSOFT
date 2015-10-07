@@ -9,11 +9,11 @@ import Negocio.pedido.Producto;
 
 public class PedidosFacade {
 	
-	FacturaRepository facturarepository = new FacturaRepository();
+	public static FacturaRepository facturarepository = new FacturaRepository();
+	public ArrayList<Factura> listafacturas;
 	
-	public ArrayList<Factura> main() throws Exception{
-		ArrayList<Factura> x = facturarepository.Generar_factura();
-		return x;
+	public void main() throws Exception{
+		listafacturas = facturarepository.Generar_factura();
 	}
 	
 	public int ultimopedidoid() throws Exception{
@@ -28,5 +28,13 @@ public class PedidosFacade {
 	public ArrayList<Producto> main(int idu) throws Exception{
 		ArrayList<Producto> x = facturarepository.Generar_pedido(idu);
 		return x;
+	}
+
+	public ArrayList<Factura> getListafacturas() {
+		return listafacturas;
+	}
+
+	public void setListafacturas(ArrayList<Factura> listafacturas) {
+		this.listafacturas = listafacturas;
 	}
 }

@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import Controlador.MeseroControllador;
 import Negocio.factura.Factura;
+import Negocio.pedido.Mesero;
 import Negocio.pedido.Pedido;
 import Negocio.pedido.Producto;
 
@@ -49,37 +52,42 @@ public class FacturaRepository {
 	    ArrayList<Producto> tproductos = prepository.Consultar_producto();
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
+	    Map<Producto, Integer> z = null;
 	    String auxid = null;
 	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null;
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	if(auxid==null) auxid=id;
 	    	if(!auxid.equalsIgnoreCase(id)){
-	    	if(y!=null){
-	    		  y.cuerpo = x;
-	    		  Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
-			      f.add(fi);
+		    	if(y==null){
+		    		  y = new Pedido();
+		    		  y.cuerpo = x;
+		    		  y.cantidades = z;
+		    		  Factura fi = new Factura(auxid,mesero,cajero,mesa,y,cliente);
+				      f.add(fi);
+		    	}
+		    	x = null;
+		    	z = null;
+		    	y = null;
+		    	auxid=id;
 	    	}
-	    	y = new Pedido();
-	    	x = null;
-	    	auxid=id;
-	      }
-	      if(auxid.equalsIgnoreCase(id)){
-	    	  if(x==null) x = new ArrayList<Producto>();
-	    	  System.out.println("leer");
-	    	  mesero = rs.getString("Me_id");
-		      cajero = rs.getString("Caj_id");
-		      mesa = rs.getString("Mesa_id");
-		      cliente = rs.getString("Cli_id");
-		      for(Producto producto: tproductos){
-		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); System.out.println(producto.getNombre()); break;}
-		      }
-		      auxid = id;
-		      continue;
-	      }
-	      
+	    	if(auxid.equalsIgnoreCase(id)){ 
+		    	  if(x==null){ x = new ArrayList<Producto>(); z = new HashMap<Producto, Integer>(); }
+	 	    	  mesero = rs.getString("Me_id"); 
+	 		      cajero = rs.getString("Caj_id"); 
+	 		      mesa = rs.getString("Mesa_id"); 
+	 		      cliente = rs.getString("Cli_id"); 
+	 		      for(Producto producto: tproductos){ 
+	 		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
+	 		      } 
+	 		      auxid = id; 
+	 		      continue; 
+		     } 
+
 	    }
+	    y = new Pedido();
 	    y.cuerpo = x;
+	    y.cantidades = z;
 		Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
 	    f.add(fi);
 	    st.close();
@@ -91,6 +99,8 @@ public class FacturaRepository {
 	    String query = "SELECT * FROM new_view";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
+	    @SuppressWarnings("unused")
+		Mesero x = new Mesero();
 	    ArrayList<Producto> f = MeseroControllador.meserosFacade.mesero.productos;
 	    while (rs.next()){
 	      String id = rs.getString("Ven_id");

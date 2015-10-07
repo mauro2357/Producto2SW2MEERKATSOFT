@@ -39,9 +39,7 @@
 		<button type="button" onclick="ir_despachador()">Despachador</button>
 		<button type="button" onclick="crear_usuario()">Crear Usuario</button>
 		<button type="button" onclick="entrar_a_caja()">Entrar a caja</button>
-		</div>
-	</center>
-	
+	</div>
 	
 </body>
 </html>

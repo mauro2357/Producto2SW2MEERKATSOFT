@@ -4,7 +4,8 @@
 		$.post("/Meerkat_0.0/mesero", {
 			entrar : Entrar,
 			meseroi : x
-		}, window.location.replace("consultarproductosvista/consultarproductos.jsp"));
+		}, function(responseText){
+			$('#body').html(responseText)});
 	}
 	
 	function ir_administrador(){
@@ -16,7 +17,7 @@
 		},
 		function(responseText) {
 				if(responseText!=""){
-				window.location.replace("consultarinventariovista/funcionesadministrador.jsp");}
+				$('#body').html(responseText);}
 				else{alert("contrasena incorrecta");}
 			});
 	}
@@ -25,14 +26,16 @@
 		var Entrar = "ir_despachador";
 		$.post("/Meerkat_0.0/despachador", {
 			entrar : Entrar,
-		}, window.location.replace("despachadores/cocina.jsp"));
+		}, function(responseText){
+			$('#body').html(responseText)});
 	}
 	
 	function crear_usuario(){
 		var Entrar = "crear_usuario";
 		$.post("/Meerkat_0.0/mesero", {
 			entrar : Entrar,
-		}, window.location.replace("basedatosusuariosvista/Crearusuario.jsp"));
+		}, function(responseText){
+			$('#body').html(responseText)});
 	}
 	
 	function ingresarproducto(x){
@@ -64,7 +67,8 @@
 		var Entrar = "crear_despachador";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,			
-			}, window.location.replace("../nominaempleadosvista/creardespachador.jsp"));	
+			}, function(responseText){
+				$('#body').html(responseText)});
 	}
 
 	

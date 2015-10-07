@@ -1,7 +1,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Negocio.factura.Factura;
 import Presentacion.*;
 
 @WebServlet("/despachador")
@@ -22,7 +20,7 @@ public class DespachadorControlador extends HttpServlet {
         super();
     }
     
-    PedidosFacade facturaFacade = new PedidosFacade();
+    public static PedidosFacade pedidosFacade = new PedidosFacade();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -36,10 +34,8 @@ public class DespachadorControlador extends HttpServlet {
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("ir_despachador")){
-        	ArrayList<Factura> x = null;
-        	try { x = facturaFacade.main();
-			} catch (Exception e1) { System.out.println("Error en la base de datos al recibir los pedidos en cola.");}
-			s.setAttribute("pedidos_en_cola",x);
+        	try { pedidosFacade.main(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
+			s.setAttribute("pedidos_en_cola",pedidosFacade.getListafacturas());
         	pagina = "/despachadores/cocina.jsp";
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);

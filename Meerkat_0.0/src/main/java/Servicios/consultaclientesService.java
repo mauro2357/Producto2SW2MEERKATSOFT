@@ -9,9 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 import Negocio.cliente.Cliente;
-import Negocio.pedido.Mesero;
 import Presentacion.ClientesFacade;
-import Presentacion.MeserosFacade;
 
 
 @Path("consultaclientes")

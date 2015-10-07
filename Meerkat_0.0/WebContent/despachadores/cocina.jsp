@@ -3,18 +3,19 @@
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="Negocio.factura.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import="Controlador.*" %>
 	
 	<div id="logo" align="center">
-		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
+		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.jpg" style="max-width: 100%; height: auto;"></a>
 	</div>
 	<div id="cuerpo" align="center">
 	<table border="1">
 	<% 
 		@SuppressWarnings("unchecked")
 		ArrayList<Factura> x = (ArrayList<Factura>) session.getAttribute("pedidos_en_cola");
-		System.out.println(x);
+		out.println(x);
 		int i=1;
-		if(x.size()==0) out.println("No hay facturas");
+		if(x == null || x.size()==0) out.println("No hay facturas");
 		else{
 			for(Factura factura: x){
 				%> <tr> <td>Id: <%
@@ -33,7 +34,7 @@
 					<table>
 					<%
 					for(Producto producto: factura.getPedido().getCuerpo()){%>
-						<tr><td><%out.println(producto.getNombre());%></td></tr><%
+						<tr><td><%out.println(producto.getNombre()); out.println(factura.getPedido().getCantidades().get(producto));%></td></tr><%
 					}%>
 					</table>
 				</td>
