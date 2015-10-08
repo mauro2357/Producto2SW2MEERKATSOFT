@@ -21,6 +21,7 @@ public class DespachadorControlador extends HttpServlet {
     }
     
     public static PedidosFacade pedidosFacade = new PedidosFacade();
+    public static DespachadoresFacade despachadoresFacade = new DespachadoresFacade();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -33,10 +34,22 @@ public class DespachadorControlador extends HttpServlet {
         	s.invalidate();
         	pagina = "index.jsp";
         }
-        if(Puerta.equalsIgnoreCase("ir_despachador")){
+        if(Puerta.equalsIgnoreCase("ir_despachador")) pagina = "/despachadores/cocina.jsp";
+        if(Puerta.equalsIgnoreCase("imprimir_pedidos_despachador")){
         	try { pedidosFacade.main(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
 			s.setAttribute("pedidos_en_cola",pedidosFacade.getListafacturas());
-        	pagina = "/despachadores/cocina.jsp";
+        	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
+        }
+        if(Puerta.equalsIgnoreCase("despachar_pedido")){
+        	String pedido_id = request.getParameter("pedido");
+        	try { despachadoresFacade.Consultar_despachador();
+			} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
+        	try { despachadoresFacade.despachador.despachar(pedido_id);
+			} catch (NumberFormatException e1) {System.out.println("Error al ingrear el id del pedido");
+			} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
+        	try { pedidosFacade.main(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
+			s.setAttribute("pedidos_en_cola",pedidosFacade.getListafacturas());
+        	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);

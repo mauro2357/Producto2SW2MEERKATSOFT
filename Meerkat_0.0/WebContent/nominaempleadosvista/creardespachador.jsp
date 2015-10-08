@@ -3,8 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="estilosregistro.css" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
 
 <script>
 	function ir_controlador(){
@@ -16,14 +17,11 @@
 </script>
 </head>
 <body>
-<div id="logo" align="center">
-		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.png" style="max-width: 100%; height: auto;"></a>
-</div>
 <form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/administrador">
-	<input type="text" name="id"><br>
-	<input type="text" name="nombre"><br>
-	<input type="text" name="apellido"><br>
-	<input type="text" name="telefono"><br>
+	<input type="text" name="id" placeholder="ID"><br>
+	<input type="text" name="nombre" placeholder="NOMBRE"><br>
+	<input type="text" name="apellido" placeholder="APELLIDO"><br>
+	<input type="text" name="telefono" placeholder="TELEFONO"><br>
 	<input type="hidden" name="entrar" value="datos_despachador">
 	<input type="submit" name="registrar" value="Registrar despachador">
 </form>

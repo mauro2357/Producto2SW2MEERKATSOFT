@@ -8,31 +8,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Meerkat_0.0</title>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="../js/codigo.js"></script>
-<link rel="stylesheet" href="cssadm.css" type="text/css">
-
+<link rel="stylesheet" href="consultarinventariovista/cssadm.css" type="text/css">
+<link rel="stylesheet" href="cssindex.css" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
-
-<body background="../fondo1.JPG">
-	<div id="logo" align="center">
-		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.jpg" style="max-width: 100%; height: auto;"></a>
-	</div>
-	<div class="f" align="center">
-	<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
-	<br>
-	<button type="button" onclick="crear_despachador()">Crear despachador</button>
-	<br>
-	<button type="button" onclick="consultar_clientes()">Consultar Clientes</button>
-	<br>
-	<button type="button" onclick="consultar_totalVentas()">Total ventas</button>
-	<br>
-	<button type="button" onclick="productos_masvendidos()">Productos más Vendidos</button>
-	<br>
-	</div>
-	
-	<div id="cuerpo"></div>
+<div class="f" align="center">
+<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
+<br>
+<button type="button" onclick="crear_despachador()">Crear despachador</button>
+<br>
+<button type="button" onclick="consultar_clientes()">Consultar Clientes</button>
+<br>
+<button type="button" onclick="consultar_totalVentas()">Total ventas</button>
+<br>
+<button type="button" onclick="productos_masvendidos()">Productos más Vendidos</button>
+<br>
+</div>
 </body>
 </html>

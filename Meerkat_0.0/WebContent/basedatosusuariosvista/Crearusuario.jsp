@@ -1,18 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<html>
-<head>
-<link rel="stylesheet" href="estilosregistro.css" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-</head>
-<body>
-<div id="logo" align="center">
-		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.jpg" style="max-width: 100%; height: auto;"></a>
-</div>
-<br>
-<br>
-<br>
-<br>
+
 <h1>Ingresar nuevo usuario</h1>
 	<div align="center">
 		<form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/mesero">
@@ -28,5 +14,3 @@
 			<input type="submit" name="registrar" value="Registrar Usuario">
 		</form>
 	</div>
-</body>
-</html>

@@ -61,7 +61,7 @@ public class AdministradorControlador extends HttpServlet {
         	pagina = "/consultarinventariovista/funcionesadministrador.jsp";	
         }
         if(Puerta.equalsIgnoreCase("crear_despachador")){
-        	pagina = "creardespachador.jsp";	
+        	pagina = "nominaempleadosvista/creardespachador.jsp";	
         }
         if(Puerta.equalsIgnoreCase("datos_despachador")){
         	String id = request.getParameter("id");

@@ -1,5 +1,7 @@
 package Negocio.pedido;
 
+import Datos.DespachadorRepository;
+
 public class Despachador {
 	public String id;
 	public String nombre;
@@ -23,6 +25,43 @@ public class Despachador {
 	
 	public String Notificar_pedido(){
 		return "Pedido despachado.";
+	}
+	
+	public void despachar(String id) throws NumberFormatException, Exception{
+		DespachadorRepository despachadorRepository = new DespachadorRepository();
+		despachadorRepository.Despachar_pedido(Integer.parseInt(id));
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 	
 }

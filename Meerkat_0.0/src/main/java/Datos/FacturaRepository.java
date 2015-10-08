@@ -54,12 +54,14 @@ public class FacturaRepository {
 	    Pedido y = null;
 	    Map<Producto, Integer> z = null;
 	    String auxid = null;
-	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null;
+	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null, estado=null;
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
+	    	estado = rs.getString("Ven_estado");
+	    	if(estado.equalsIgnoreCase("Despachado")) continue;
 	    	if(auxid==null) auxid=id;
 	    	if(!auxid.equalsIgnoreCase(id)){
-		    	if(y==null){
+	    		if(y==null){
 		    		  y = new Pedido();
 		    		  y.cuerpo = x;
 		    		  y.cantidades = z;
@@ -75,7 +77,7 @@ public class FacturaRepository {
 		    	  if(x==null){ x = new ArrayList<Producto>(); z = new HashMap<Producto, Integer>(); }
 	 	    	  mesero = rs.getString("Me_id"); 
 	 		      cajero = rs.getString("Caj_id"); 
-	 		      mesa = rs.getString("Mesa_id"); 
+	 		      mesa = rs.getString("Mesa_id");
 	 		      cliente = rs.getString("Cli_id"); 
 	 		      for(Producto producto: tproductos){ 
 	 		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
@@ -88,8 +90,10 @@ public class FacturaRepository {
 	    y = new Pedido();
 	    y.cuerpo = x;
 	    y.cantidades = z;
-		Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
-	    f.add(fi);
+	    if(!(estado.equalsIgnoreCase("Despachado"))){
+			Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
+		    f.add(fi);
+	    }
 	    st.close();
 	    return f;
 	}

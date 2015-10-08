@@ -32,6 +32,7 @@ public class MeseroControllador extends HttpServlet {
 		HttpSession s = request.getSession();
         String Puerta = null;
         Puerta = request.getParameter("entrar");
+        System.out.println(Puerta);
         String pagina = null;
         if(Puerta.equalsIgnoreCase("Cancelar")){
         	meserosFacade.mesero = null;

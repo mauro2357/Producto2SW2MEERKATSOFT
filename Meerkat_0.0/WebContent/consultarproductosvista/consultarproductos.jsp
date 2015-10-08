@@ -9,10 +9,9 @@
 <html>
 <head>
 <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="cssindex.css" type="text/css">
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="../js/codigo.js"></script>
 <script type="text/javascript">	
 	$(function() {
 			var Entrar = "botones"; 
@@ -44,13 +43,9 @@
 </script>
 <title>Productos</title>
 </head>
-<body background="fondo.jpg">
-	<div id="logo" align="center">
-		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../logo.jpg" style="max-width: 100%; height: auto;"></a>
-	</div>
+<body>
 	<br>
 	<br>
-	<center><h1>PRODUCTOS</h1></center>
 	<div id="boton1" align="center">
 	</div>
 	<div id="table1" align="center">
