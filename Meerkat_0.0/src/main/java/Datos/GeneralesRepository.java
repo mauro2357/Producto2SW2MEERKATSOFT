@@ -11,7 +11,7 @@ public class GeneralesRepository {
 
 	public String Consultar_totalVentas () throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "select sum(Valor) Valors from (select sum(Dtv_cantidad)*Pro_valor Valor from producto natural join Detalles_venta natural join venta group by Pro_nombre order by Dtv_cantidad asc) as A;";
+	    String query = "select sum(Valor) Valors from (select sum(Dtv_cantidad)*Pro_valor Valor from producto natural join Detalles_venta natural join venta where venta.Ven_estado = 'Despachado' group by Pro_nombre order by Dtv_cantidad asc) as A;";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    String a = null;
