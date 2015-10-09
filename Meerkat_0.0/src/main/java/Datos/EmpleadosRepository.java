@@ -12,4 +12,14 @@ public class EmpleadosRepository {
 	    st.executeUpdate(query);
 	    st.close();
 	}
+	
+	public void Registrar_mesero (String id, String nombre, String apellido, String telefono) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "INSERT INTO `future`.`mesero` (`Me_id`, `Me_nombre`, `Me_apellido`, `Me_telefono`) VALUES ('"+id+"', '"+nombre+"', '"+apellido+"', '"+telefono+"');";
+	    Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
+	
 }
+

@@ -17,6 +17,8 @@
 <br>
 <button type="button" onclick="crear_despachador()">Crear despachador</button>
 <br>
+<button type="button" onclick="crear_mesero()">Crear mesero</button>
+<br>
 <button type="button" onclick="consultar_clientes()">Consultar Clientes</button>
 <br>
 <button type="button" onclick="consultar_totalVentas()">Total ventas</button>

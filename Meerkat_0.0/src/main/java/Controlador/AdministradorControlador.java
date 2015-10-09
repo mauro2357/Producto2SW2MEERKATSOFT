@@ -24,6 +24,7 @@ public class AdministradorControlador extends HttpServlet {
     public static ClientesFacade clientesFacade= new ClientesFacade();
     public static GeneralesFacade totalventas = new GeneralesFacade();
     public static NominaFacade creardespachador = new NominaFacade();
+    public static NominaFacade crearmesero = new NominaFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -31,6 +32,7 @@ public class AdministradorControlador extends HttpServlet {
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         String pagina = null;
+        
         if(Puerta.equalsIgnoreCase("Terminar")){
         	s = request.getSession(false);
         	s.invalidate();
@@ -63,6 +65,9 @@ public class AdministradorControlador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("crear_despachador")){
         	pagina = "nominaempleadosvista/creardespachador.jsp";	
         }
+        if(Puerta.equalsIgnoreCase("crear_mesero")){
+        	pagina = "nominaempleadosvista/crearmesero.jsp";	
+        }       
         if(Puerta.equalsIgnoreCase("datos_despachador")){
         	String id = request.getParameter("id");
         	String nombre = request.getParameter("nombre");
@@ -70,8 +75,17 @@ public class AdministradorControlador extends HttpServlet {
         	String telefono = request.getParameter("telefono");
         	try {creardespachador.Registar_Despachador(id, nombre, apellido, telefono);
 			}catch (Exception e) {System.out.println("Error en la base de datos al crear un despachador");}
-        	pagina = "/consultarinventariovista/funcionesadministrador.jsp";  	
+        	pagina = "index.jsp";  	
         }
+        if(Puerta.equalsIgnoreCase("datos_mesero")){
+        	String id = request.getParameter("id");
+        	String nombre = request.getParameter("nombre");
+        	String apellido = request.getParameter("apellido");
+        	String telefono = request.getParameter("telefono");
+        	try {crearmesero.Registar_Mesero(id, nombre, apellido, telefono);
+			}catch (Exception e) {System.out.println("Error en la base de datos al crear un mesero");}
+        	pagina = "index.jsp";  	
+        }        
         if(Puerta.equalsIgnoreCase("productos_masvendidos")){ 
         	try {totalventas.Consultar_productosmasvendidos();
 			} catch (Exception e) {System.out.println("Error en la base de datos al consultar los productos más vendidos");}

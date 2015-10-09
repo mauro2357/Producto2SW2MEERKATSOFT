@@ -91,11 +91,20 @@
 		var Entrar = "crear_despachador";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,			
-			}, function(responseText){
-				$('#cuerpodos').html(responseText)
+			}, function(responseText) {
+				$('#cuerpodos').html(responseText);
 			});
 	}
 
+	function crear_mesero(){
+		abrircerrarcuerpodos();
+		var Entrar = "crear_mesero";
+		$.post("/Meerkat_0.0/administrador", {
+			entrar : Entrar,			
+			}, function(responseText) {
+				$('#cuerpodos').html(responseText);
+			});
+	}
 	
 	function consultar_clientes(){
 		abrircerrarcuerpodos();
