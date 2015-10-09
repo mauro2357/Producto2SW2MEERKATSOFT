@@ -33,7 +33,7 @@ public class Cajero {
 	
 	public Factura generarfactura(String id) throws Exception{
 		PedidosFacade pedidosFacade = new PedidosFacade();
-		ArrayList<Factura> listadefacturas = pedidosFacade.getListafacturas();
+		ArrayList<Factura> listadefacturas = pedidosFacade.getListafacturassindespachar();
 		for(Factura factura:listadefacturas){
 			if(factura.getId() == id) return factura;
 		}

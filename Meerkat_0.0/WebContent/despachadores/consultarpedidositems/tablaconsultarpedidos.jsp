@@ -22,7 +22,7 @@
 					%> <tr> <td>Id: <%
 					out.println(factura.getId());
 					%> </td> <td>Mesa: <%
-					out.println(factura.getMesa());
+					out.println(factura.getMesa().getId());
 					%> </td> <td>Mesero: <%
 					out.println(factura.getMesero());
 					%> </td> <td>Cliente: <%

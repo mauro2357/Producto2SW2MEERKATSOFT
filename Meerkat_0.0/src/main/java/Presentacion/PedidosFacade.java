@@ -13,16 +13,23 @@ import Negocio.pedido.Producto;
 public class PedidosFacade {
 	
 	public static FacturaRepository facturarepository = new FacturaRepository();
-	public ArrayList<Factura> listafacturas;
+	public ArrayList<Factura> listafacturassindespachar;
+	public ArrayList<Factura> listafacturasdespachadas;
 	public Map<Mesa,Factura> FacturaPorMesa;
 	
 	public void GenerarFactura(String aignorar) throws Exception{
-		listafacturas = facturarepository.Generar_factura(aignorar);
+		if(aignorar.equalsIgnoreCase("Despachado")){
+			listafacturassindespachar = facturarepository.Generar_factura("Despachado");
+		}
+		if(aignorar.equalsIgnoreCase("En espera")){
+			listafacturasdespachadas = facturarepository.Generar_factura("En espera");
+		}
 	}
 	
 	public Map<Mesa,Factura> Organizar_Facturas_Mesa(){
 		Map<Mesa,Factura> u = new HashMap<Mesa,Factura>();
-		for(Factura factura: listafacturas){
+		u.clear();
+		for(Factura factura: listafacturasdespachadas){
 			u.put(factura.getMesa(), factura);
 		}
 		FacturaPorMesa = u;
@@ -43,11 +50,21 @@ public class PedidosFacade {
 		return x;
 	}
 
-	public ArrayList<Factura> getListafacturas() {
-		return listafacturas;
+	public ArrayList<Factura> getListafacturassindespachar() {
+		return listafacturassindespachar;
 	}
 
-	public void setListafacturas(ArrayList<Factura> listafacturas) {
-		this.listafacturas = listafacturas;
+	public void setListafacturassindespachar(ArrayList<Factura> listafacturassindespachar) {
+		this.listafacturassindespachar = listafacturassindespachar;
 	}
+
+	public ArrayList<Factura> getListafacturasdespachadas() {
+		return listafacturasdespachadas;
+	}
+
+	public void setListafacturasdespachadas(ArrayList<Factura> listafacturasdespachadas) {
+		this.listafacturasdespachadas = listafacturasdespachadas;
+	}
+
+	
 }

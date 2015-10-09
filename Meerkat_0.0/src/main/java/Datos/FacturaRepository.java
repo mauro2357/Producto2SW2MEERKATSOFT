@@ -19,7 +19,7 @@ public class FacturaRepository {
 	
 	public void Ingresar_pedido(Pedido x) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa+"');";
+		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa.getId()+"');";
 	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
 	    query = "Select * from venta order by ven_id desc limit 1";
@@ -60,7 +60,7 @@ public class FacturaRepository {
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	estado = rs.getString("Ven_estado");
-	    	if(estado.equalsIgnoreCase("Despachado")) continue;
+	    	if(estado.equalsIgnoreCase(aignorar)) continue;
 	    	if(auxid==null) auxid=id;
 	    	if(!auxid.equalsIgnoreCase(id)){
 	    		if(y==null){
@@ -93,11 +93,9 @@ public class FacturaRepository {
 	    y = new Pedido();
 	    y.cuerpo = x;
 	    y.cantidades = z;
-	    if(!(estado.equalsIgnoreCase(aignorar))){
-	    	mesam = CajeroControlador.mesasFacade.Buscar_Mesa(mesa);
-			Factura fi = new Factura(id,mesero, cajero,mesam,y,cliente);
-		    f.add(fi);
-	    }
+	    mesam = CajeroControlador.mesasFacade.Buscar_Mesa(mesa);
+	    Factura fi = new Factura(id,mesero, cajero,mesam,y,cliente);
+		f.add(fi);
 	    st.close();
 	    return f;
 	}

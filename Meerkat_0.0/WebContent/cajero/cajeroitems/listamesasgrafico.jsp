@@ -11,7 +11,11 @@
 	if(x.size()==0 || x == null) out.println("No hay mesas con facturas");
 	else{
 		for (Map.Entry<Mesa, Factura> entry : x.entrySet()) {
-    		out.println("Key = " + entry.getKey().getId() + ", Value = " + entry.getValue().getPedido().getCuerpo());
+    		out.println("Mesa = " + entry.getKey().getId());
+    		out.println("Productos = ");
+    		for(Producto producto: entry.getValue().getPedido().getCuerpo()){
+    			out.println(producto.getNombre());
+    		}
 		}
 	}
 %>
