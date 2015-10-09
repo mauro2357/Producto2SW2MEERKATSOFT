@@ -25,7 +25,6 @@ public class CajeroControlador extends HttpServlet {
     public static PedidosFacade pedidosFacade = new PedidosFacade();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("entró a cajero controllador");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;

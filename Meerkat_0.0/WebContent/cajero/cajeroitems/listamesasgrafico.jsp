@@ -3,13 +3,17 @@
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="Negocio.factura.*" %>
 <%@ page import="java.util.*" %>
-<link rel="stylesheet" href="cssproducto.css">
+<link rel="stylesheet" href="../cssproducto.css">
 <head>
 <script type="text/javascript">
-function esconderhijo(){
-	$(this).next('div').fadeToggle("fast", function () {
+$(document).ready(function(){
+    $('.button').click(function() {
+    $(this).children('.toggle:first').slideToggle();
+    }, function () {
+        $(this).children('.toggle:first').slideToggle();
     });
-}
+
+  });
 </script>
 
 </head>
@@ -19,12 +23,13 @@ function esconderhijo(){
 	if(x.size()==0 || x == null) out.println("No hay mesas con facturas");
 	else{
 		for(Map.Entry<Mesa, Factura> entry : x.entrySet()) {
-    		%><div id="<%out.print(entry.getKey().getId());%>" onclick="esconderhijo()" ><% out.print("Mesa " + entry.getKey().getId());
-	    		%><div id="productos"><%
-	    		out.print("Productos = ");
+    		%><div class="button" align="center" id="<%out.print(entry.getKey().getId());%>" onclick="esconderhijo()" ><% out.print("Mesa " + entry.getKey().getId());
+	    		%><div class="toggle" id="productos" style="display: none;"><%
+	    		%><table><%
 	    		for(Producto producto: entry.getValue().getPedido().getCuerpo()){
-	    			out.print(producto.getNombre() + entry.getValue().getPedido().cantidades.get(producto));
+	    			%><tr><%out.println(producto.getNombre() + "-" + entry.getValue().getPedido().cantidades.get(producto));%></tr><%
 	    		}
+	    		%></table><%
 	    		%></div><%
     		%></div><%
 		}
