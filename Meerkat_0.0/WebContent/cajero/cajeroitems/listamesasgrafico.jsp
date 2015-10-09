@@ -17,13 +17,18 @@ $(document).ready(function(){
 </script>
 
 </head>
+<table>
+<tr>
 <% 
 	@SuppressWarnings("unchecked")
 	Map<Mesa,Factura> x = (Map<Mesa,Factura>) session.getAttribute("mesas-facturas");
+	int i=0;
 	if(x.size()==0 || x == null) out.println("No hay mesas con facturas");
 	else{
 		for(Map.Entry<Mesa, Factura> entry : x.entrySet()) {
-    		%><div class="button" align="center" id="<%out.print(entry.getKey().getId());%>" onclick="esconderhijo()" ><% out.print("Mesa " + entry.getKey().getId());
+    		%>
+    		<td>
+    		<div class="button" align="center" id="<%out.print(entry.getKey().getId());%>" onclick="esconderhijo()" ><% out.print("Mesa " + entry.getKey().getId());
 	    		%><div class="toggle" id="productos" style="display: none;"><%
 	    		%><table><%
 	    		for(Producto producto: entry.getValue().getPedido().getCuerpo()){
@@ -31,7 +36,13 @@ $(document).ready(function(){
 	    		}
 	    		%></table><%
 	    		%></div><%
-    		%></div><%
+    		%></div>
+    		</td>
+    		<% if(i%4==0){ %> </tr> <tr></tr>
+    		<%
+    			}
+    		i++;
+			}
 		}
-	}
 %>
+</table>
