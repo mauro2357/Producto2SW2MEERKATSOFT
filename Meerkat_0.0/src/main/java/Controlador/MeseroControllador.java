@@ -55,7 +55,11 @@ public class MeseroControllador extends HttpServlet {
         	pagina = "/consultarproductosvista/consultarproductos.jsp"; 
         }
         if(Puerta.equalsIgnoreCase("listar_mesas")){ 
-        	try { s.setAttribute("lista-mesas", mesasFacade.Consultar_mesas());} 
+        	try { 
+        		mesasFacade.Consultar_mesas();
+        		if(mesasFacade.listamesas_libres==null) s.setAttribute("lista-mesas", mesasFacade.listamesas);
+        		else s.setAttribute("lista-mesas", mesasFacade.listamesas_libres);
+        	}
         	catch (Exception e) {System.out.println("Error en base de datos al listar mesas.");}
         	pagina = "/consultarproductosvista/consultarproductositems/selectmesas.jsp"; 
         }
@@ -98,6 +102,11 @@ public class MeseroControllador extends HttpServlet {
         	try { meserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesam,cajero,fecha);} 
         	catch (Exception e) {System.out.println("Error en base de datos al enviar pedido.");}
         	meserosFacade.mesero.pedido_sin_asignar = null;
+        	try {
+				mesasFacade.Ocupar_Mesa(mesam);
+			} catch (Exception e) {
+				System.out.println("Error en la base de datos al ocupar la mesa");
+			}
         	pagina = "/index.jsp";
         }
         if(Puerta.equalsIgnoreCase("crear_usuario")){ //Lo ejecuta mesero

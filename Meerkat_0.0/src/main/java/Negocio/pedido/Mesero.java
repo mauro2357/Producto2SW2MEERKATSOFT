@@ -72,6 +72,7 @@ public class Mesero {
 		Pedido pedido_a_finiquitar = new Pedido(lista_productos, cliente, mesa, cajero, fecha);
 		if(coladepedidos == null) coladepedidos = new HashMap<Mesa, Pedido>();
 		coladepedidos.put(mesa,pedido_a_finiquitar);
+		mesa.setEstado("Despachado");
 		enviar_pedido(pedido_a_finiquitar);
 	}
 	

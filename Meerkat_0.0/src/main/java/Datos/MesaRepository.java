@@ -24,5 +24,13 @@ public class MesaRepository {
 	    st.close();
 	    return a; 
 	}
+
+	public void Ocupar_Desocupar_Mesa(String id,String estado) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		String query = "UPDATE mesa SET Mesa_estado='"+estado+"' WHERE Mesa_id='"+id+"';";
+		Statement st = con.createStatement();
+		st.executeUpdate(query);
+		st.close();
+	}
 	
 }

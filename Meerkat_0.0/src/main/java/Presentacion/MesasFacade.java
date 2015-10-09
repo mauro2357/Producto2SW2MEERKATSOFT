@@ -7,12 +7,18 @@ import Negocio.pedido.Mesa;
 
 public class MesasFacade {
 	
-	ArrayList<Mesa> listamesas;
+	public ArrayList<Mesa> listamesas;
+	public ArrayList<Mesa> listamesas_libres;
+	
+	MesaRepository mesarepository = new MesaRepository();
 	
 	public ArrayList<Mesa> Consultar_mesas() throws Exception{
-		MesaRepository mesarepository = new MesaRepository();
 		ArrayList<Mesa> x = mesarepository.Consultar_mesa();
 		this.listamesas = x;
+		listamesas_libres = new ArrayList<Mesa>();
+		for(Mesa mesa: listamesas){
+			if(mesa.getEstado().equalsIgnoreCase("disponible") || mesa.getEstado().equalsIgnoreCase("disponible\r")) listamesas_libres.add(mesa);
+		}
 		return x;
 	}
 	
@@ -25,5 +31,9 @@ public class MesasFacade {
 			}
 		}
 		return mesae;
+	}
+
+	public void Ocupar_Mesa(Mesa mesam) throws Exception {
+		mesarepository.Ocupar_Desocupar_Mesa(mesam.getId(), "ocupada");
 	}
 }
