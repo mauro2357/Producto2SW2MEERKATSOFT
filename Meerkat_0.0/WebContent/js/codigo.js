@@ -1,4 +1,10 @@
 	
+	function abrircerrarcuerpodos(){
+		if( !($("#cuerpodos").is(':visible')) ){
+			$("#cuerpodos").toggle();
+		}
+	}	
+
 	function definirmesero(x){
 		var Entrar = "definirmesero";
 		$.post("/Meerkat_0.0/mesero", {
@@ -51,6 +57,7 @@
 		}, function(responseText){
 			$('#cuerpo').html(responseText)
 		});
+		$('#titulo').text("Crear Usuario")
 	}
 	
 	function ingresarproducto(x){
@@ -70,7 +77,7 @@
 	}
 	
 	function consultar_inventario(){
-		$("#cuerpodos").toggle();
+		abrircerrarcuerpodos();
 		var Entrar = "consultar_inventario";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,			
@@ -80,7 +87,7 @@
 	}
 	
 	function crear_despachador(){
-		$("#cuerpodos").toggle();
+		abrircerrarcuerpodos();
 		var Entrar = "crear_despachador";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,			
@@ -91,7 +98,7 @@
 
 	
 	function consultar_clientes(){
-		$("#cuerpodos").toggle();
+		abrircerrarcuerpodos();
 		var Entrar = "consultar_clientes";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,
@@ -101,7 +108,7 @@
 	}
 	
 	function consultar_totalVentas(){
-		$("#cuerpodos").toggle();
+		abrircerrarcuerpodos();
 		var Entrar = "consultar_totalVentas";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,
@@ -111,7 +118,7 @@
 	}
 	
 	function productos_masvendidos(){
-		$("#cuerpodos").toggle();
+		abrircerrarcuerpodos();
 		var Entrar = "productos_masvendidos";
 		$.post("/Meerkat_0.0/administrador", {
 			entrar : Entrar,

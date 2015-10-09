@@ -1,5 +1,7 @@
 package Negocio.factura;
 
+
+import Negocio.pedido.Mesa;
 import Negocio.pedido.Pedido;
 
 public class Factura {
@@ -7,11 +9,11 @@ public class Factura {
 	public String id;
 	public String mesero;
 	public String cajero;
-	public String mesa;
+	public Mesa mesa;
 	public String cliente;
 	public Pedido pedido;
 
-	public Factura(String id, String mesero,String cajero,String mesa,Pedido pedido,String cliente){	
+	public Factura(String id, String mesero,String cajero,Mesa mesa,Pedido pedido,String cliente){	
 		this.id = id;
 		this.mesero=mesero;
 		this.cajero=cajero;
@@ -44,11 +46,11 @@ public class Factura {
 		this.cajero = cajero;
 	}
 
-	public String getMesa() {
+	public Mesa getMesa() {
 		return mesa;
 	}
 
-	public void setMesa(String mesa) {
+	public void setMesa(Mesa mesa) {
 		this.mesa = mesa;
 	}
 

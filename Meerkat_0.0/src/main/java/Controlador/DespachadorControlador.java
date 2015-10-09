@@ -36,7 +36,7 @@ public class DespachadorControlador extends HttpServlet {
         }
         if(Puerta.equalsIgnoreCase("ir_despachador")) pagina = "/despachadores/cocina.jsp";
         if(Puerta.equalsIgnoreCase("imprimir_pedidos_despachador")){
-        	try { pedidosFacade.main(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
+        	try { pedidosFacade.GenerarFactura("Despachado");; } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
 			s.setAttribute("pedidos_en_cola",pedidosFacade.getListafacturas());
         	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
         }
@@ -47,7 +47,7 @@ public class DespachadorControlador extends HttpServlet {
         	try { despachadoresFacade.despachador.despachar(pedido_id);
 			} catch (NumberFormatException e1) {System.out.println("Error al ingrear el id del pedido");
 			} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
-        	try { pedidosFacade.main(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
+        	try { pedidosFacade.GenerarFactura("Despachado"); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
 			s.setAttribute("pedidos_en_cola",pedidosFacade.getListafacturas());
         	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
         }

@@ -12,13 +12,13 @@ public class Pedido {
 	public String cliente;
 	public String estado;
 	public Mesero mesero;
-	public String mesa;
+	public Mesa mesa;
 	public String cajero;
 	public String fecha;
 	
 	public Pedido(){}
 	
-	public Pedido(ArrayList<Producto> lista_productos, String cliente, String mesa, String cajero, String fecha, Map<Producto, Integer> cantidades) {
+	public Pedido(ArrayList<Producto> lista_productos, String cliente, Mesa mesa, String cajero, String fecha, Map<Producto, Integer> cantidades) {
 		this.cantidades = cantidades;
 		this.mesero = MeseroControllador.meserosFacade.mesero;
 		this.cliente = cliente;
@@ -29,7 +29,7 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 	
-	public Pedido(ArrayList<Producto> lista_productos, String cliente, String mesa, String cajero, String fecha) {
+	public Pedido(ArrayList<Producto> lista_productos, String cliente, Mesa mesa, String cajero, String fecha) {
 		this.mesero = MeseroControllador.meserosFacade.mesero;
 		this.cliente = cliente;
 		this.estado = "En espera";
@@ -59,5 +59,55 @@ public class Pedido {
 	public void setCantidades(Map<Producto, Integer> cantidades) {
 		this.cantidades = cantidades;
 	}
+
+	public String getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public Mesero getMesero() {
+		return mesero;
+	}
+
+	public void setMesero(Mesero mesero) {
+		this.mesero = mesero;
+	}
+
+	public Mesa getMesa() {
+		return mesa;
+	}
+
+	public void setMesa(Mesa mesa) {
+		this.mesa = mesa;
+	}
+
+	public String getCajero() {
+		return cajero;
+	}
+
+	public void setCajero(String cajero) {
+		this.cajero = cajero;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+	
+	
 	
 }

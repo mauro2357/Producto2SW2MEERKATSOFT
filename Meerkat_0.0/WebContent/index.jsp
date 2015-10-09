@@ -38,7 +38,7 @@
 		<input name="pass" id="pass" type="password" value="meerkat">
 		<button type="button" onclick="location='despachadores/cocina.jsp'">Despachador</button>
 		<button type="button" onclick="crear_usuario()">Crear Usuario</button>
-		<button type="button" onclick="entrar_a_caja()">Entrar a caja</button>
+		<button type="button" onclick="location='cajero/cajero.jsp'">Entrar a caja</button>
 	</div>
 	<div id="cuerpodos" style="background: rgba(300, 300, 300, 0.8);" align="center"></div>
 </body>

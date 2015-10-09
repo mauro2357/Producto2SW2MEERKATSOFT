@@ -1,9 +1,12 @@
 package Presentacion;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import Datos.FacturaRepository;
 import Negocio.factura.Factura;
+import Negocio.pedido.Mesa;
 import Negocio.pedido.Pedido;
 import Negocio.pedido.Producto;
 
@@ -11,13 +14,23 @@ public class PedidosFacade {
 	
 	public static FacturaRepository facturarepository = new FacturaRepository();
 	public ArrayList<Factura> listafacturas;
+	public Map<Mesa,Factura> FacturaPorMesa;
 	
-	public void main() throws Exception{
-		listafacturas = facturarepository.Generar_factura();
+	public void GenerarFactura(String aignorar) throws Exception{
+		listafacturas = facturarepository.Generar_factura(aignorar);
+	}
+	
+	public Map<Mesa,Factura> Organizar_Facturas_Mesa(){
+		Map<Mesa,Factura> u = new HashMap<Mesa,Factura>();
+		for(Factura factura: listafacturas){
+			u.put(factura.getMesa(), factura);
+		}
+		FacturaPorMesa = u;
+		return u;
 	}
 	
 	public int ultimopedidoid() throws Exception{
-		ArrayList<Factura> x = facturarepository.Generar_factura();
+		ArrayList<Factura> x = facturarepository.Generar_factura(null);
 		return x.size();
 	}
 	

@@ -15,7 +15,7 @@ public class Mesero {
 	public String telefono;
 	public ArrayList<Producto> productos;
 	public Pedido pedido_sin_asignar;
-	public Map<Pedido, String> coladepedidos;
+	public Map<Mesa, Pedido> coladepedidos;
 	
 	ProductoRepository productorepository = new ProductoRepository();
 	
@@ -36,8 +36,8 @@ public class Mesero {
 	public String getNombre() {return nombre;}
 	public String getApellido() {return apellido;}
 	public String getTelefono() {return telefono;}
-	public Map<Pedido, String> getColadepedidos() {return coladepedidos;}
-	public void setColadepedidos(Map<Pedido, String> coladepedidos) {this.coladepedidos = coladepedidos;}
+	public Map<Mesa, Pedido> getColadepedidos() {return coladepedidos;}
+	public void setColadepedidos(Map<Mesa, Pedido> coladepedidos) {this.coladepedidos = coladepedidos;}
 
 	public String getMensaje() throws Exception {
 		ArrayList<Producto> x = productorepository.Consultar_producto();
@@ -67,15 +67,14 @@ public class Mesero {
 		pedido_sin_asignar.Adicionarproducto(encontrado); //Ya encontrado el producto, lo adicionamos al pedido
 	}
 
-	public void finiquitarpedido(Pedido pedido, String cliente, String mesero, String mesa, String cajero, String fecha) throws Exception {
+	public void finiquitarpedido(Pedido pedido, String cliente, String mesero, Mesa mesa, String cajero, String fecha) throws Exception {
 		ArrayList<Producto> lista_productos = pedido.getCuerpo();
 		Pedido pedido_a_finiquitar = new Pedido(lista_productos, cliente, mesa, cajero, fecha);
-		if(coladepedidos == null) coladepedidos = new HashMap<Pedido, String>();
-		coladepedidos.put(pedido_a_finiquitar,mesa);
+		if(coladepedidos == null) coladepedidos = new HashMap<Mesa, Pedido>();
+		coladepedidos.put(mesa,pedido_a_finiquitar);
 		enviar_pedido(pedido_a_finiquitar);
-		
 	}
-
+	
 	public ArrayList<Producto> getProductos() {
 		return productos;
 	}

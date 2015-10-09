@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Controlador.CajeroControlador;
 import Controlador.MeseroControllador;
 import Negocio.factura.Factura;
+import Negocio.pedido.Mesa;
 import Negocio.pedido.Mesero;
 import Negocio.pedido.Pedido;
 import Negocio.pedido.Producto;
@@ -17,7 +19,6 @@ public class FacturaRepository {
 	
 	public void Ingresar_pedido(Pedido x) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    System.out.println(x.cliente);
 		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa+"');";
 	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
@@ -42,19 +43,20 @@ public class FacturaRepository {
 	    st.close();
 	}
 	
-	public ArrayList<Factura> Generar_factura() throws Exception {
+	public ArrayList<Factura> Generar_factura(String aignorar) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM factura";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
-	    ProductoRepository prepository = new ProductoRepository();
-	    ArrayList<Producto> tproductos = prepository.Consultar_producto();
+	    ProductoRepository productoRepository = new ProductoRepository();
+	    ArrayList<Producto> tproductos = productoRepository.Consultar_producto(); //sI HAY ERROR ES AQUÍ
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
 	    Map<Producto, Integer> z = null;
 	    String auxid = null;
 	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null, estado=null;
+	    Mesa mesam = null;
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	estado = rs.getString("Ven_estado");
@@ -65,7 +67,8 @@ public class FacturaRepository {
 		    		  y = new Pedido();
 		    		  y.cuerpo = x;
 		    		  y.cantidades = z;
-		    		  Factura fi = new Factura(auxid,mesero,cajero,mesa,y,cliente);
+		    		  mesam = CajeroControlador.mesasFacade.Buscar_Mesa(mesa);
+		    		  Factura fi = new Factura(auxid,mesero,cajero,mesam,y,cliente);
 				      f.add(fi);
 		    	}
 		    	x = null;
@@ -90,8 +93,9 @@ public class FacturaRepository {
 	    y = new Pedido();
 	    y.cuerpo = x;
 	    y.cantidades = z;
-	    if(!(estado.equalsIgnoreCase("Despachado"))){
-			Factura fi = new Factura(id,mesero, cajero,mesa,y,cliente);
+	    if(!(estado.equalsIgnoreCase(aignorar))){
+	    	mesam = CajeroControlador.mesasFacade.Buscar_Mesa(mesa);
+			Factura fi = new Factura(id,mesero, cajero,mesam,y,cliente);
 		    f.add(fi);
 	    }
 	    st.close();

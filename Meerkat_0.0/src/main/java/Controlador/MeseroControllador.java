@@ -65,19 +65,19 @@ public class MeseroControllador extends HttpServlet {
         	pagina = "/consultarproductosvista/consultarproductositems/selectclientes.jsp"; 
         }
         if(Puerta.equalsIgnoreCase("botones")){ //controller
-			pagina = "/consultarproductosvista/consultarproductositems/botonproductos.jsp"; //Le vamos a mandar a esta jsp todos los productos.
-			s.setAttribute("todos-los-productos", meserosFacade.mesero.productos); //Le mandamos los productos a la jsp encargada de imprimirlos
+			pagina = "/consultarproductosvista/consultarproductositems/botonproductos.jsp"; 
+			s.setAttribute("todos-los-productos", meserosFacade.mesero.productos);
         }
         if(Puerta.equalsIgnoreCase("ingresarproducto")){ 
         	String id = request.getParameter("idp"); 
         	try { meserosFacade.mesero.adicionarproducto(id);} 
         	catch (Exception e) {System.out.println("Error en base de datos al adicionar producto.");}
         	System.out.println(meserosFacade.mesero.pedido_sin_asignar.getCuerpo());
-        	s.setAttribute("productos-pedido", meserosFacade.mesero.pedido_sin_asignar.getCuerpo()); //enviamos los productos que lleva el pedido actual
+        	s.setAttribute("productos-pedido", meserosFacade.mesero.pedido_sin_asignar.getCuerpo()); 
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
         }
         if(Puerta.equalsIgnoreCase("listarpedidoactual")){ //Lo ejecuta controller
-        	if(meserosFacade.mesero.pedido_sin_asignar != null) s.setAttribute("productos-pedido", meserosFacade.mesero.pedido_sin_asignar.getCuerpo()); //Enviamos los productos que lleva el pedido (inicio)
+        	if(meserosFacade.mesero.pedido_sin_asignar != null) s.setAttribute("productos-pedido", meserosFacade.mesero.pedido_sin_asignar.getCuerpo()); 
         	else s.setAttribute("productos-pedido",null);
         	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";	
         }
@@ -85,17 +85,23 @@ public class MeseroControllador extends HttpServlet {
         	String cliente = request.getParameter("cliente");
         	String mesero = meserosFacade.mesero.getId();
         	String mesa = request.getParameter("mesa");
+        	Mesa mesam = null;
+			try {
+				mesam = mesasFacade.Buscar_Mesa(mesa);
+			} catch (Exception e1) {
+				System.out.println("Error al consultar la ubicación en memoria de la mesa");
+			}
         	String cajero = request.getParameter("cajero");
         	Pedido pedido = meserosFacade.mesero.pedido_sin_asignar;
         	Calendar x = Calendar.getInstance();
         	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
-        	try { meserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesa,cajero,fecha);} 
+        	try { meserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesam,cajero,fecha);} 
         	catch (Exception e) {System.out.println("Error en base de datos al enviar pedido.");}
         	meserosFacade.mesero.pedido_sin_asignar = null;
         	pagina = "/index.jsp";
         }
         if(Puerta.equalsIgnoreCase("crear_usuario")){ //Lo ejecuta mesero
-        	pagina = "/basedatosusuariosvista/crearusuario.jsp";
+        	pagina = "/basedatosusuariosvista/Crearusuario.jsp";
         }
         if(Puerta.equalsIgnoreCase("datos_usuario")){ //Lo ejecuta mesero
         	String id = request.getParameter("id");
