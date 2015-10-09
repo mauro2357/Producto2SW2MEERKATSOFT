@@ -93,6 +93,7 @@ public class FacturaRepository {
 	    y = new Pedido();
 	    y.cuerpo = x;
 	    y.cantidades = z;
+	    if(mesa == null) return f;
 	    mesam = CajeroControlador.mesasFacade.Buscar_Mesa(mesa);
 	    Factura fi = new Factura(id,mesero, cajero,mesam,y,cliente);
 		f.add(fi);
