@@ -2,7 +2,7 @@ package Negocio.pedido;
 
 import Datos.DespachadorRepository;
 
-public class Despachador {
+public class Despachador extends Empleado {
 	public String id;
 	public String nombre;
 	public String apellido;
@@ -62,6 +62,12 @@ public class Despachador {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+
+	@Override
+	public void pagar() {
+		System.out.println("Pagar a despachador 20 mil");
+		
 	}
 	
 }

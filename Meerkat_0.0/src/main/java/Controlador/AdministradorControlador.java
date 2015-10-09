@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Negocio.pedido.Nomina;
 import Presentacion.*;
 
 @WebServlet("/administrador")
@@ -36,6 +37,16 @@ public class AdministradorControlador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("Terminar")){
         	s = request.getSession(false);
         	s.invalidate();
+        	pagina = "index.jsp";
+        }
+        if(Puerta.equalsIgnoreCase("Pagarm")){
+        	Nomina x = Nomina.INSTACE;
+        	try {
+				x.actualizarNomina();
+			} catch (Exception e) {
+				System.out.println("Error al pagar la nómina");
+			}
+        	System.out.println("Pagados");
         	pagina = "index.jsp";
         }
         if(Puerta.equalsIgnoreCase("consultar_inventario")){ 

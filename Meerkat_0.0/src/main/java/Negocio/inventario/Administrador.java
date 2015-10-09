@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Negocio.pedido.*;
 import Presentacion.InventarioFacade;
 
-public class Administrador {
+public class Administrador extends Empleado {
 	
 	ArrayList<Mesero> nominademeseros = new ArrayList<Mesero>();
 	//Lista de meseros.
@@ -64,5 +64,10 @@ public class Administrador {
 
 	public String getConexionAInternet() {
 		return "No hay conexion a internet.";
+	}
+
+	@Override
+	public void pagar() {
+		System.out.println("Se le debe pagar al administrador un millon de pesos");	
 	}
 }

@@ -7,7 +7,7 @@ import java.util.Map;
 import Datos.FacturaRepository;
 import Datos.ProductoRepository;
 
-public class Mesero {
+public class Mesero extends Empleado {
 	
 	public String id;
 	public String nombre;
@@ -82,6 +82,11 @@ public class Mesero {
 
 	public void setProductos(ArrayList<Producto> productos) {
 		this.productos = productos;
+	}
+
+	@Override
+	public void pagar() {
+		System.out.println("Se le debe pagar 20");
 	}
 
 }

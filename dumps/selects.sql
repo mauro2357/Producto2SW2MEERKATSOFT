@@ -5,6 +5,7 @@ select sum(Valor) Valors from (select sum(Dtv_cantidad)*Pro_valor Valor from pro
 
 INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('2015-09-11', 'En espera', '1001', '800', '2');
 
+
 select * from producto;
 select * from detalles_venta;
 select * from mesero;

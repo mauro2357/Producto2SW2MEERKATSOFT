@@ -33,7 +33,7 @@ public class ClientesRepository {
 	
 	public void Registrar_usuario (String id, String nombre, String apellido, String sexo, int puntos, String musica, String email, String telefono) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "INSERT INTO `future`.`cliente` (`Cli_id`, `Cli_nombre`, `Cli_apellido`, `Cli_sexo`, `Cli_puntos`, `Cli_musica`, `Cli_email`, `Cli_telefono`) VALUES ('"+id+"', '"+nombre+"', '"+apellido+"', '"+sexo+"', '"+puntos+"', '"+musica+"', '"+email+"', '"+apellido+"');";
+	    String query = "INSERT INTO `future`.`cliente` (`Cli_id`, `Cli_nombre`, `Cli_apellido`, `Cli_sexo`, `Cli_puntos`, `Cli_musica`, `Cli_email`, `Cli_telefono`) VALUES ('"+id+"', '"+nombre+"', '"+apellido+"', '"+sexo+"', '"+puntos+"', '"+musica+"', '"+email+"', '"+telefono+"');";
 	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
 	    st.close();

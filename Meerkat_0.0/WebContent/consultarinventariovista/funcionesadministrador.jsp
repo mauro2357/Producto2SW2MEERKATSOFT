@@ -25,6 +25,11 @@
 <br>
 <button type="button" onclick="productos_masvendidos()">Productos más Vendidos</button>
 <br>
+<form action="http://localhost:8080/Meerkat_0.0/administrador" method="post">
+	<input type="submit" value="Pagar" >
+	<input type="hidden" value="Pagarm" name="entrar">
+</form>
+
 </div>
 </body>
 </html>

@@ -2,9 +2,10 @@ package Negocio.factura;
 
 import java.util.ArrayList;
 
+import Negocio.pedido.Empleado;
 import Presentacion.*;
 
-public class Cajero {
+public class Cajero extends Empleado{
 
 	
 	public String id;
@@ -43,6 +44,12 @@ public class Cajero {
 	public boolean añadirpropina(int x) {
 		//se le suma x al valor de la factura.
 		return true;
+	}
+
+	@Override
+	public void pagar() {
+		System.out.println("Se le debe pagar al empleado 20 mil");
+		
 	}
 	
 }
