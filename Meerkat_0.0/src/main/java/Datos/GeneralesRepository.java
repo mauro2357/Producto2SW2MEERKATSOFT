@@ -22,7 +22,7 @@ public class GeneralesRepository {
 
 	public ArrayList<Producto> Consultarproductos_masvendidos () throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "select Pro_nombre, sum(Dtv_cantidad) b from producto natural join Detalles_venta natural join venta group by Pro_nombre order by Dtv_cantidad asc;";
+	    String query = "select Pro_nombre, sum(Dtv_cantidad) b from producto natural join Detalles_venta natural join venta group by Pro_nombre order by b desc;";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Producto> a = new ArrayList<Producto>();
