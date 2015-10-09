@@ -150,6 +150,31 @@ INSERT INTO `despachador` VALUES ('4040','Mauricio','Giraldo','5533787'),('456',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `insumos`
+--
+
+DROP TABLE IF EXISTS `insumos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `insumos` (
+  `Ins_id` varchar(20) NOT NULL,
+  `Ins_nombre` varchar(20) NOT NULL,
+  `Ins_valor` int(11) NOT NULL,
+  PRIMARY KEY (`Ins_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `insumos`
+--
+
+LOCK TABLES `insumos` WRITE;
+/*!40000 ALTER TABLE `insumos` DISABLE KEYS */;
+INSERT INTO `insumos` VALUES ('2001','bulto harina',70000),('2002','kilo pescado',5000),('2003','arroba arroz',30000),('2004','bulto papa',60000),('2005','barra salchichon',6000),('2006','kilo frijol',5000),('2007','queso',7000),('2008','caja cerveza',45000);
+/*!40000 ALTER TABLE `insumos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `detalle_compra`
 --
 
@@ -197,82 +222,33 @@ LOCK TABLES `detalles_compras` WRITE;
 /*!40000 ALTER TABLE `detalles_compras` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
 --
--- Table structure for table `detalles_venta`
+-- Table structure for table `producto`
 --
 
-DROP TABLE IF EXISTS `detalles_venta`;
+DROP TABLE IF EXISTS `producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `detalles_venta` (
+CREATE TABLE `producto` (
   `Pro_id` varchar(20) NOT NULL,
-  `Ven_id` int(11) NOT NULL,
-  `Dtv_cantidad` int(11) DEFAULT NULL,
-  PRIMARY KEY (`Pro_id`,`Ven_id`),
-  KEY `Ven_id` (`Ven_id`),
-  CONSTRAINT `detalles_venta_ibfk_1` FOREIGN KEY (`Pro_id`) REFERENCES `producto` (`Pro_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `detalles_venta_ibfk_2` FOREIGN KEY (`Ven_id`) REFERENCES `venta` (`Ven_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `Pro_nombre` varchar(20) NOT NULL,
+  `Pro_valor` int(11) NOT NULL,
+  `Pro_descripcion` varchar(200) DEFAULT NULL,
+  `Pro_tipo` varchar(20) NOT NULL,
+  `Pro_imagen` varchar(200) NOT NULL,
+  PRIMARY KEY (`Pro_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `detalles_venta`
+-- Dumping data for table `producto`
 --
 
-LOCK TABLES `detalles_venta` WRITE;
-/*!40000 ALTER TABLE `detalles_venta` DISABLE KEYS */;
-INSERT INTO `detalles_venta` VALUES ('be01',2,2),('be01',3,1),('be02',5,1),('be03',6,1),('li04',4,1),('pl06',2,2),('pl10',1,5);
-/*!40000 ALTER TABLE `detalles_venta` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Temporary view structure for view `factura`
---
-
-DROP TABLE IF EXISTS `factura`;
-/*!50001 DROP VIEW IF EXISTS `factura`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE VIEW `factura` AS SELECT 
- 1 AS `Ven_id`,
- 1 AS `Pro_id`,
- 1 AS `Pro_nombre`,
- 1 AS `Pro_valor`,
- 1 AS `Pro_descripcion`,
- 1 AS `Pro_tipo`,
- 1 AS `Pro_imagen`,
- 1 AS `Dtv_cantidad`,
- 1 AS `Ven_fecha`,
- 1 AS `Ven_estado`,
- 1 AS `Cli_id`,
- 1 AS `Me_id`,
- 1 AS `Mesa_id`,
- 1 AS `Caj_id`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Table structure for table `insumos`
---
-
-DROP TABLE IF EXISTS `insumos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `insumos` (
-  `Ins_id` varchar(20) NOT NULL,
-  `Ins_nombre` varchar(20) NOT NULL,
-  `Ins_valor` int(11) NOT NULL,
-  PRIMARY KEY (`Ins_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `insumos`
---
-
-LOCK TABLES `insumos` WRITE;
-/*!40000 ALTER TABLE `insumos` DISABLE KEYS */;
-INSERT INTO `insumos` VALUES ('2001','bulto harina',70000),('2002','kilo pescado',5000),('2003','arroba arroz',30000),('2004','bulto papa',60000),('2005','barra salchichon',6000),('2006','kilo frijol',5000),('2007','queso',7000),('2008','caja cerveza',45000);
-/*!40000 ALTER TABLE `insumos` ENABLE KEYS */;
+LOCK TABLES `producto` WRITE;
+/*!40000 ALTER TABLE `producto` DISABLE KEYS */;
+INSERT INTO `producto` VALUES ('be01','coca cola ',2000,'bien fria','bebida','editadas/coca.png'),('be02','gaseosa colombiana',1900,'la nuestra ','bebida','editadas/colombiana.png'),('be03','jugo natural',2500,'maracuya mora mango fresa banano guanabana','bebida','editadas/jugo.png'),('li01','cerveza pilsen',2000,'bien fria','licor','editadas/pilsen.png'),('li02','aguardiente',18000,'de pura ca','licor','editadas/guaro.png'),('li03','cerveza club',2500,'bien fria','licor','editadas/club.png'),('li04','ron medellin ',20000,'unico y  delicioso ','licor','editadas/ron-mde.png'),('pl 05','picada',15000,'carne res y cerdo morcilla chorizo','plato','editadas/picad.png'),('pl01','mondongo',7000,'delicioso mondongo con el sabor casero','plato','editadas/mondongo.png\r'),('pl02','desayuno paisa',4000,'desayuno monta','plato','editadas/desayunopaisa.png\r'),('pl03','pescado frito',12000,'con bastante grasita','plato','editadas/pescado.png\r'),('pl04','bandeja paisa',13000,'arroz chorizo chicharron frijoles maduro','plato','editadas/bandejapaisa.png\r'),('pl06','carne asada',11000,'carne res o cerdo con ensalada y papas','plato','editadas/carne_asada.png\r'),('pl07','hamburguesa',7500,'papas y tocineta','plato','editadas/hamburguesa.png\r'),('pl08','sancocho',6000,'de gallina criolla :3','plato','editadas/sancocho.png\r'),('pl09','arroz con pollo ',6000,'con raices chinas','plato','editadas/arrozpollo.png\r'),('pl10','chuzo de res',10000,'con adicion de papas','plato','editadas/chuzo.png\r');
+/*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -325,33 +301,6 @@ INSERT INTO `mesero` VALUES ('800','crisman','zapata','45\r'),('801','katerine',
 /*!40000 ALTER TABLE `mesero` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `producto`
---
-
-DROP TABLE IF EXISTS `producto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `producto` (
-  `Pro_id` varchar(20) NOT NULL,
-  `Pro_nombre` varchar(20) NOT NULL,
-  `Pro_valor` int(11) NOT NULL,
-  `Pro_descripcion` varchar(200) DEFAULT NULL,
-  `Pro_tipo` varchar(20) NOT NULL,
-  `Pro_imagen` varchar(200) NOT NULL,
-  PRIMARY KEY (`Pro_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `producto`
---
-
-LOCK TABLES `producto` WRITE;
-/*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES ('be01','coca cola ',2000,'bien fria','bebida','editadas/coca.png'),('be02','gaseosa colombiana',1900,'la nuestra ','bebida','editadas/colombiana.png'),('be03','jugo natural',2500,'maracuya mora mango fresa banano guanabana','bebida','editadas/jugo.png'),('li01','cerveza pilsen',2000,'bien fria','licor','editadas/pilsen.png'),('li02','aguardiente',18000,'de pura ca','licor','editadas/guaro.png'),('li03','cerveza club',2500,'bien fria','licor','editadas/club.png'),('li04','ron medellin ',20000,'unico y  delicioso ','licor','editadas/ron-mde.png'),('pl 05','picada',15000,'carne res y cerdo morcilla chorizo','plato','editadas/picad.png'),('pl01','mondongo',7000,'delicioso mondongo con el sabor casero','plato','editadas/mondongo.png\r'),('pl02','desayuno paisa',4000,'desayuno monta','plato','editadas/desayunopaisa.png\r'),('pl03','pescado frito',12000,'con bastante grasita','plato','editadas/pescado.png\r'),('pl04','bandeja paisa',13000,'arroz chorizo chicharron frijoles maduro','plato','editadas/bandejapaisa.png\r'),('pl06','carne asada',11000,'carne res o cerdo con ensalada y papas','plato','editadas/carne_asada.png\r'),('pl07','hamburguesa',7500,'papas y tocineta','plato','editadas/hamburguesa.png\r'),('pl08','sancocho',6000,'de gallina criolla :3','plato','editadas/sancocho.png\r'),('pl09','arroz con pollo ',6000,'con raices chinas','plato','editadas/arrozpollo.png\r'),('pl10','chuzo de res',10000,'con adicion de papas','plato','editadas/chuzo.png\r');
-/*!40000 ALTER TABLE `producto` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `venta`
@@ -390,6 +339,65 @@ INSERT INTO `venta` VALUES (1,'2015-10-09','Despachado','Publico','800','1',NULL
 /*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- Table structure for table `detalles_venta`
+--
+
+DROP TABLE IF EXISTS `detalles_venta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `detalles_venta` (
+  `Pro_id` varchar(20) NOT NULL,
+  `Ven_id` int(11) NOT NULL,
+  `Dtv_cantidad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Pro_id`,`Ven_id`),
+  KEY `Ven_id` (`Ven_id`),
+  CONSTRAINT `detalles_venta_ibfk_1` FOREIGN KEY (`Pro_id`) REFERENCES `producto` (`Pro_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `detalles_venta_ibfk_2` FOREIGN KEY (`Ven_id`) REFERENCES `venta` (`Ven_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `detalles_venta`
+--
+
+LOCK TABLES `detalles_venta` WRITE;
+/*!40000 ALTER TABLE `detalles_venta` DISABLE KEYS */;
+INSERT INTO `detalles_venta` VALUES ('be01',2,2),('be01',3,1),('be02',5,1),('be03',6,1),('li04',4,1),('pl06',2,2),('pl10',1,5);
+/*!40000 ALTER TABLE `detalles_venta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `factura`
+--
+
+select * from factura;
+
+DROP TABLE IF EXISTS `factura`;
+/*!50001 DROP VIEW IF EXISTS `factura`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `factura` AS SELECT 
+ 1 AS `Ven_id`,
+ 1 AS `Pro_id`,
+ 1 AS `Pro_nombre`,
+ 1 AS `Pro_valor`,
+ 1 AS `Pro_descripcion`,
+ 1 AS `Pro_tipo`,
+ 1 AS `Pro_imagen`,
+ 1 AS `Dtv_cantidad`,
+ 1 AS `Ven_fecha`,
+ 1 AS `Ven_estado`,
+ 1 AS `Cli_id`,
+ 1 AS `Me_id`,
+ 1 AS `Mesa_id`,
+ 1 AS `Caj_id`*/;
+SET character_set_client = @saved_cs_client;
+
+select * from factura;
+
+create view factura as
+select * from producto natural join detalles_venta natural join venta;
 --
 -- Dumping events for database 'future'
 --
