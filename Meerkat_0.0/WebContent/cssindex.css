@@ -1,5 +1,12 @@
+@font-face {
+    font-family: "meerkat";
+    src:
+         url("freebooterscript.ttf") format("truetype");    
+   
+}
+
 body h1{
-	 font-family:'Lobster', cursive;
+	 font-family: meerkat;
 	 color:white;
 	 text-align: center;
 }
