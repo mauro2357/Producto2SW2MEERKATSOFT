@@ -9,6 +9,17 @@ import Negocio.pedido.Mesa;
 
 public class MesaRepository {
 	
+	public Mesa Buscar_Mesa(String mesa) throws Exception{
+		Mesa mesae = null;
+		for(Mesa mesam: Consultar_mesas(null)){
+			if(mesa.equalsIgnoreCase(mesam.getId())){
+				mesae=mesam;
+				break;
+			}
+		}
+		return mesae;
+	}
+	
 	public ArrayList<Mesa> Consultar_mesas(String aignorar) throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM mesa";

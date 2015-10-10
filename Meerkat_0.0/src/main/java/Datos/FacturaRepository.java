@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import Controlador.CajeroControlador;
-import Controlador.MeseroControllador;
 import Negocio.factura.Factura;
 import Negocio.pedido.Mesa;
 import Negocio.pedido.Mesero;
@@ -50,6 +48,7 @@ public class FacturaRepository {
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
 	    ProductoRepository productoRepository = new ProductoRepository();
+	    MesaRepository mesaRepository = new MesaRepository();
 	    ArrayList<Producto> tproductos = productoRepository.Consultar_producto(); //sI HAY ERROR ES AQUÍ
 	    ArrayList<Producto> x = null;
 	    Pedido y = null;
@@ -67,7 +66,7 @@ public class FacturaRepository {
 		    		  y = new Pedido();
 		    		  y.cuerpo = x;
 		    		  y.cantidades = z;
-		    		  mesam = CajeroControlador.mesasFacade.Buscar_Mesa(mesa);
+		    		  mesam = mesaRepository.Buscar_Mesa(mesa);
 		    		  Factura fi = new Factura(auxid,mesero,cajero,mesam,y,cliente);
 				      f.add(fi);
 		    	}
@@ -94,7 +93,7 @@ public class FacturaRepository {
 	    y.cuerpo = x;
 	    y.cantidades = z;
 	    if(mesa == null) return f;
-	    mesam = CajeroControlador.mesasFacade.Buscar_Mesa(mesa);
+	    mesam = mesaRepository.Buscar_Mesa(mesa);
 	    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);
 		f.add(fi);
 	    st.close();
@@ -108,7 +107,8 @@ public class FacturaRepository {
 	    ResultSet rs = st.executeQuery(query);
 	    @SuppressWarnings("unused")
 		Mesero x = new Mesero();
-	    ArrayList<Producto> f = MeseroControllador.meserosFacade.mesero.productos;
+	    ProductoRepository productoRepository = new ProductoRepository();
+	    ArrayList<Producto> f = productoRepository.Consultar_producto();
 	    while (rs.next()){
 	      String id = rs.getString("Ven_id");
 	      if(Integer.parseInt(id)==idu){

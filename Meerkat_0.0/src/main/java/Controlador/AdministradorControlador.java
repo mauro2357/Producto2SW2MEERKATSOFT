@@ -123,11 +123,13 @@ public class AdministradorControlador extends HttpServlet {
 	public void Contratar_Mesero(HttpSession s){
 		try {administradoresFacade.getAdministrador().Contratar_Mesero(id, nombre, apellido, telefono);
 		}catch (Exception e) {System.out.println("Error en la base de datos al crear un mesero");}
+		pagina = "index.jsp";
 	}
 	
 	public void Contratar_Despachador(HttpSession s){
 		try {administradoresFacade.getAdministrador().Contratar_Despachador(id, nombre, apellido, telefono);
 		}catch (Exception e) {System.out.println("Error en la base de datos al crear un mesero");}
+		pagina = "index.jsp";
 	}
 	
 	public void Pagar_Nomina(){

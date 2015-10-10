@@ -34,7 +34,7 @@ public class Mesero extends Empleado {
 		this.telefono = telefono;
 		this.productos = productoRepository.Consultar_producto();
 		this.mesas = mesaRepository.Consultar_mesas(null);
-		this.mesas_libres = mesaRepository.Consultar_mesas("Despachado");
+		this.mesas_libres = mesaRepository.Consultar_mesas("ocupada");
 		this.clientes = clienteRepository.Consultar_Clientes();
 	}
 

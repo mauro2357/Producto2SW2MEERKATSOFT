@@ -1,12 +1,9 @@
 package Presentacion;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import Datos.FacturaRepository;
 import Negocio.factura.Factura;
-import Negocio.pedido.Mesa;
 import Negocio.pedido.Pedido;
 import Negocio.pedido.Producto;
 
@@ -15,7 +12,7 @@ public class PedidosFacade {
 	public static FacturaRepository facturarepository = new FacturaRepository();
 	public ArrayList<Factura> listafacturassindespachar;
 	public ArrayList<Factura> listafacturasdespachadas;
-	public Map<Mesa,Factura> FacturaPorMesa;
+	
 	
 	public void GenerarFactura(String aignorar) throws Exception{
 		if(aignorar.equalsIgnoreCase("Despachado")){
@@ -24,16 +21,6 @@ public class PedidosFacade {
 		if(aignorar.equalsIgnoreCase("En espera")){
 			listafacturasdespachadas = facturarepository.Generar_factura("En espera");
 		}
-	}
-	
-	public Map<Mesa,Factura> Organizar_Facturas_Mesa(){
-		Map<Mesa,Factura> u = new HashMap<Mesa,Factura>();
-		u.clear();
-		for(Factura factura: listafacturasdespachadas){
-			u.put(factura.getMesa(), factura);
-		}
-		FacturaPorMesa = u;
-		return u;
 	}
 	
 	public int ultimopedidoid() throws Exception{

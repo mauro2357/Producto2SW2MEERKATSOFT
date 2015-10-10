@@ -21,35 +21,56 @@ public class CajeroControlador extends HttpServlet {
     }
     
     public static CajerosFacade cajeroFacade = new CajerosFacade();
-    public static MesasFacade mesasFacade = new MesasFacade();
     
+    String pagina = null;
+    String id = null;
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
         Puerta = request.getParameter("entrar");
-        String pagina = null;
-        if(Puerta.equalsIgnoreCase("Terminar")){
-        	s = request.getSession(false);
-        	s.invalidate();
-        	pagina = "index.jsp";
-        }
-        if(Puerta.equalsIgnoreCase("entrar_cajero")){
-        	try {
-        		cajeroFacade.Consultar_cajeros();
-        		cajeroFacade.cajero.generarFactura();
-    		} catch (Exception e) {
-    			System.out.println("Error al organizar las facturas por mesa.");
-    		}
-        	pagina = "cajero/cajeroitems/listamesasgrafico.jsp";
-        	s.setAttribute("mesas-facturas", cajeroFacade.cajero.Mesas_x_factura());
-        }
+        id = request.getParameter("id");
+        switch (Puerta) {
+		case "Terminar":
+			cerrar_sesion(s, request);
+			break;
+		case "entrar_cajero":
+			Entrar(s);
+			break;
+		case "Cobrar":
+			Cobrar(s, request);
+			break;
+		default:
+			break;
+		}
         if(Puerta.equalsIgnoreCase("Cobrar")){
-        	String id = request.getParameter("id");
+        	
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);
+	}
+	
+	public void cerrar_sesion(HttpSession s, HttpServletRequest request){
+		cajeroFacade.setCajero(null);
+		s = request.getSession(false);
+    	s.invalidate();
+    	pagina = "index.jsp";
+	}
+	
+	public void Entrar(HttpSession s){
+		try {
+    		cajeroFacade.Consultar_cajeros();
+    		cajeroFacade.getCajero().getListafacturasdespachadas();
+		} catch (Exception e) {
+			System.out.println("Error al organizar las facturas por mesa.");
+		}
+    	pagina = "cajero/cajeroitems/listamesasgrafico.jsp";
+    	s.setAttribute("mesas-facturas", cajeroFacade.getCajero().Organizar_Facturas_Mesa());
+	}
+	
+	public void Cobrar(HttpSession s, HttpServletRequest request){
+		
 	}
 
 }
