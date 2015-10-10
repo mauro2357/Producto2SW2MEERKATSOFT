@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import Datos.FacturaRepository;
-import Datos.ProductoRepository;
+import Datos.*;
+import Negocio.cliente.Cliente;
 
 public class Mesero extends Empleado {
 	
@@ -14,21 +14,35 @@ public class Mesero extends Empleado {
 	public String apellido;
 	public String telefono;
 	public ArrayList<Producto> productos;
+	public ArrayList<Mesa> mesas;
+	public ArrayList<Mesa> mesas_libres;
 	public Pedido pedido_sin_asignar;
+
 	public Map<Mesa, Pedido> coladepedidos;
+	public ArrayList<Cliente> clientes;
 	
-	ProductoRepository productorepository = new ProductoRepository();
+	
+
+	ProductoRepository productoRepository = new ProductoRepository();
+	MesaRepository mesaRepository = new MesaRepository();
+	ClientesRepository clienteRepository = new ClientesRepository();
 	
 	public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
-		this.productos = productorepository.Consultar_producto();
+		this.productos = productoRepository.Consultar_producto();
+		this.mesas = mesaRepository.Consultar_mesas(null);
+		this.mesas_libres = mesaRepository.Consultar_mesas("Despachado");
+		this.clientes = clienteRepository.Consultar_Clientes();
 	}
 
 	public Mesero() throws Exception { 
-		this.productos = productorepository.Consultar_producto();
+		this.productos = productoRepository.Consultar_producto();
+		this.mesas = mesaRepository.Consultar_mesas(null);
+		this.mesas_libres = mesaRepository.Consultar_mesas("Despachado");
+		this.clientes = clienteRepository.Consultar_Clientes();
 	}
 
 	public void setId(String id) {this.id = id;}
@@ -38,9 +52,28 @@ public class Mesero extends Empleado {
 	public String getTelefono() {return telefono;}
 	public Map<Mesa, Pedido> getColadepedidos() {return coladepedidos;}
 	public void setColadepedidos(Map<Mesa, Pedido> coladepedidos) {this.coladepedidos = coladepedidos;}
-
+	public ArrayList<Producto> getProductos() {return productos;}
+	public void setProductos(ArrayList<Producto> productos) {this.productos = productos;}
+	
+	public Mesa Definir_Mesa(String mesa){
+		Mesa mesae = null;
+		for(Mesa mesam: mesas){
+			if(mesa.equalsIgnoreCase(mesam.getId())){
+				mesae=mesam;
+				break;
+			}
+		}
+		return mesae;
+	}
+	
+	public void Ocupar_Mesa(Mesa mesa) throws Exception{mesaRepository.Ocupar_Desocupar_Mesa(mesa.getId(), "ocupada");}
+	
+	public void Registrar_Cliente(String id, String nombre, String apellido, String sexo, int puntos, String musica, String email, String telefono) throws Exception{
+		clienteRepository.Registrar_usuario(id, nombre, apellido, sexo, puntos, musica, email, telefono);
+	}
+	
 	public String getMensaje() throws Exception {
-		ArrayList<Producto> x = productorepository.Consultar_producto();
+		ArrayList<Producto> x = productoRepository.Consultar_producto();
 		if(!(x.size()==0)) return "No hay productos";
 		return "Hay productos";
 	}
@@ -56,7 +89,6 @@ public class Mesero extends Empleado {
 		for(Producto producto: productos){ //Revisamos todos los productos
 			if(producto.getCodigo().equalsIgnoreCase(idu)) return producto; //Cuando encontremos el producto en memoria que consida con la id que estamos buscando, retorna el producto
 		}
-		System.out.println("retornó null");
 		return null;
 	}
 
@@ -67,26 +99,65 @@ public class Mesero extends Empleado {
 		pedido_sin_asignar.Adicionarproducto(encontrado); //Ya encontrado el producto, lo adicionamos al pedido
 	}
 
-	public void finiquitarpedido(Pedido pedido, String cliente, String mesero, Mesa mesa, String cajero, String fecha) throws Exception {
+	public String finiquitarpedido(Pedido pedido, String cliente, String mesero, Mesa mesa, String cajero, String fecha) throws Exception {
 		ArrayList<Producto> lista_productos = pedido.getCuerpo();
+		if(lista_productos == null || lista_productos.size()<0) return "No hay productos.";
 		Pedido pedido_a_finiquitar = new Pedido(lista_productos, cliente, mesa, cajero, fecha);
 		if(coladepedidos == null) coladepedidos = new HashMap<Mesa, Pedido>();
 		coladepedidos.put(mesa,pedido_a_finiquitar);
 		mesa.setEstado("Despachado");
 		enviar_pedido(pedido_a_finiquitar);
+		return "Pedido enviado";
 	}
 	
-	public ArrayList<Producto> getProductos() {
-		return productos;
-	}
-
-	public void setProductos(ArrayList<Producto> productos) {
-		this.productos = productos;
-	}
+	
 
 	@Override
 	public void pagar() {
 		System.out.println("Se le debe pagar 20");
+	}
+
+	@Override
+	public void bonificacacion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String Agregar_Pedido_a_la_cola_de_pedidos(Mesa mesam, Pedido pedido) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<Mesa> getMesas() {
+		return mesas;
+	}
+
+	public void setMesas(ArrayList<Mesa> mesas) {
+		this.mesas = mesas;
+	}
+
+	public ArrayList<Mesa> getMesas_libres() {
+		return mesas_libres;
+	}
+
+	public void setMesas_libres(ArrayList<Mesa> mesas_libres) {
+		this.mesas_libres = mesas_libres;
+	}
+
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+	
+	public Pedido getPedido_sin_asignar() {
+		return pedido_sin_asignar;
+	}
+
+	public void setPedido_sin_asignar(Pedido pedido_sin_asignar) {
+		this.pedido_sin_asignar = pedido_sin_asignar;
 	}
 
 }

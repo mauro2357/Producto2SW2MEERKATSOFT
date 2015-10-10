@@ -9,7 +9,7 @@ import Negocio.pedido.Mesa;
 
 public class MesaRepository {
 	
-	public ArrayList<Mesa> Consultar_mesa() throws Exception { 
+	public ArrayList<Mesa> Consultar_mesas(String aignorar) throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM mesa";
 	    Statement st = con.createStatement();
@@ -18,6 +18,7 @@ public class MesaRepository {
 	    while (rs.next()){
 	      String id = rs.getString("Mesa_id");
 	      String estado = rs.getString("Mesa_estado");
+	      if(estado.equalsIgnoreCase(aignorar)) continue;
 	      Mesa p = new Mesa(id, estado);
 	      a.add(p);     
 	    }

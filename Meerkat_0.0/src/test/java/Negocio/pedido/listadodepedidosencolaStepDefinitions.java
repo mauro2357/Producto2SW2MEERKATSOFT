@@ -1,6 +1,6 @@
 package Negocio.pedido;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import org.junit.Assert;
 
@@ -19,18 +19,17 @@ public class listadodepedidosencolaStepDefinitions {
 	ArrayList<Producto> lista = new ArrayList<Producto>();
 	
 	Producto producto = new Producto("9090", "cerveza", 2000, "Refresacante","a","a");
-	String mesa = "01";
-	String cliente = "100";
-	String meser = "200";
-	String caja = "10";
-	String fecha = "2015-12-03";
-	String estado = "Pendiente";
-	String id = "002";
+	String mesa = "10";
+	String cliente = "1001";
+	String meser = "800";
+	String caja = "5005";
+	Calendar x = Calendar.getInstance();
+	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
+	String estado = "En espera";
 	
 	@Given("^El mesero envia un pedido al despachador.$")
 	public void El_mesero_envia_un_pedido_al_despachador() throws Throwable { 
 		mesero = new Mesero();
-		administrador = new Administrador();
 		lista.add(producto);
 	}
 
@@ -41,18 +40,21 @@ public class listadodepedidosencolaStepDefinitions {
 
 	@Then("^Agregar el pedido a la cola de pedidos.$")
 	public void Agregar_el_pedido_a_la_cola_de_pedidos() throws Throwable {
-		mesero.enviar_pedido(null);
-	    Assert.assertTrue("Pedido enviado" != mesero.enviar_pedido(null));
+		Pedido pedido = new Pedido();
+		Mesa mesam = mesero.Definir_Mesa(mesa);
+	    Assert.assertTrue("Pedido agregado" == mesero.Agregar_Pedido_a_la_cola_de_pedidos(mesam,pedido));
 	}
 	
 	@When("^No hay productos en el pedido.$")
 	public void No_hay_productos_en_el_pedido() throws Throwable {
-		Assert.assertTrue((lista.size()>0));
+		Assert.assertTrue(!(lista.size()<0));
 	}
 
 	@Then("^Notificar que no hay productos en el pedido.$")
 	public void Notificar_que_no_hay_productos_en_el_pedido() throws Throwable {
-		Assert.assertTrue("No hay productos."==mesero.enviar_pedido(null));
+		Pedido pedido = new Pedido();
+		Mesa mesam = mesero.Definir_Mesa(mesa);
+		Assert.assertTrue("No hay productos." == mesero.finiquitarpedido(pedido, cliente, mesero.getId(), mesam, caja, fecha));
 	}
 	@When("^Hay despachador.$")
 	public void Hay_despachador() throws Throwable {

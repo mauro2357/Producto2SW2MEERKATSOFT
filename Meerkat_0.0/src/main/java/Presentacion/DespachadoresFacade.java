@@ -18,12 +18,4 @@ public class DespachadoresFacade {
 		return x;
 	}
 
-	/*public void Definir_mesero(String despachadori) {
-		if(despachador==null){
-        	for(Despachador despachador: listadespachadores){
-        		if(despachador.getId().contentEquals(despachadori)) this.despachador = despachador;
-        	}
-    	}
-	}
-	*/
 }

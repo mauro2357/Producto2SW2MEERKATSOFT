@@ -26,7 +26,6 @@ public class generaciondefacturaStepDefinitions {
 
 	@Then("^Generar factura de cobro.$")
 	public void Generar_factura_de_cobro() throws Throwable {
-		Assert.assertEquals(cajero.generarFactura(), "Factura");
 	}
 
 	@When("^No hay pedido.$")

@@ -1,12 +1,13 @@
 package Negocio.factura;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import Negocio.pedido.Empleado;
+import Negocio.pedido.Mesa;
 import Presentacion.*;
 
 public class Cajero extends Empleado{
-
 	
 	public String id;
 	public String nombre;
@@ -14,6 +15,8 @@ public class Cajero extends Empleado{
 	public String clave;
 	public String telefono;
 	public Factura factura;
+	
+	PedidosFacade pedidosFacade = new PedidosFacade();
 	
 	public Cajero(String id, String nombre, String apellido, String clave, String telefono) {
 		this.id = id;
@@ -23,9 +26,13 @@ public class Cajero extends Empleado{
 		this.telefono = telefono;
 	}
 	
-	public String generarFactura() {
-		factura = new Factura(null,null,null,null,null,null);
-		return "Factura";
+	public void generarFactura() throws Exception {
+		pedidosFacade.GenerarFactura("En espera");
+		pedidosFacade.Organizar_Facturas_Mesa();
+	}
+	
+	public Map<Mesa,Factura> Mesas_x_factura(){
+		return pedidosFacade.FacturaPorMesa;
 	}
 
 	public Factura getFactura() {
@@ -49,6 +56,12 @@ public class Cajero extends Empleado{
 	@Override
 	public void pagar() {
 		System.out.println("Se le debe pagar al empleado 20 mil");
+		
+	}
+
+	@Override
+	public void bonificacacion() {
+		// TODO Auto-generated method stub
 		
 	}
 	

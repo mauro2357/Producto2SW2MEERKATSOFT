@@ -42,7 +42,9 @@ public class AdministradorControlador extends HttpServlet {
         if(Puerta.equalsIgnoreCase("Pagarm")){
         	Nomina x = Nomina.INSTACE;
         	try {
-				x.actualizarNomina();
+        		x.actualizarnomina();
+				x.pagar();
+				x.bonificacion();
 			} catch (Exception e) {
 				System.out.println("Error al pagar la nómina");
 			}

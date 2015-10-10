@@ -70,4 +70,10 @@ public class Administrador extends Empleado {
 	public void pagar() {
 		System.out.println("Se le debe pagar al administrador un millon de pesos");	
 	}
+
+	@Override
+	public void bonificacacion() {
+		// TODO Auto-generated method stub
+		
+	}
 }

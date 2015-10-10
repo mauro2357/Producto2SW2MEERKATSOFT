@@ -16,7 +16,7 @@ select * from detalles_compras;
 select * from cajero;
 select * from mesa;
 select * from cliente;
-delete from detalles_venta where ven_id>3;
+delete from detalles_venta where ven_id>0;
 delete from venta where ven_id>0;
 ALTER TABLE venta AUTO_INCREMENT=1;
 ALTER TABLE detalles_venta AUTO_INCREMENT=1;

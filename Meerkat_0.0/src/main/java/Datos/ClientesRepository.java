@@ -9,7 +9,7 @@ import Negocio.cliente.Cliente;
 
 public class ClientesRepository {
 
-	public ArrayList<Cliente> Consultar_Cliente () throws Exception { 
+	public ArrayList<Cliente> Consultar_Clientes () throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM cliente";
 	    Statement st = con.createStatement();

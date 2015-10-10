@@ -22,7 +22,7 @@ public class CajeroControlador extends HttpServlet {
     
     public static CajerosFacade cajeroFacade = new CajerosFacade();
     public static MesasFacade mesasFacade = new MesasFacade();
-    public static PedidosFacade pedidosFacade = new PedidosFacade();
+    
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -37,13 +37,16 @@ public class CajeroControlador extends HttpServlet {
         }
         if(Puerta.equalsIgnoreCase("entrar_cajero")){
         	try {
-    			pedidosFacade.GenerarFactura("En espera");
-    			pedidosFacade.Organizar_Facturas_Mesa();
+        		cajeroFacade.Consultar_cajeros();
+        		cajeroFacade.cajero.generarFactura();
     		} catch (Exception e) {
     			System.out.println("Error al organizar las facturas por mesa.");
     		}
         	pagina = "cajero/cajeroitems/listamesasgrafico.jsp";
-        	s.setAttribute("mesas-facturas", pedidosFacade.FacturaPorMesa);
+        	s.setAttribute("mesas-facturas", cajeroFacade.cajero.Mesas_x_factura());
+        }
+        if(Puerta.equalsIgnoreCase("Cobrar")){
+        	String id = request.getParameter("id");
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);

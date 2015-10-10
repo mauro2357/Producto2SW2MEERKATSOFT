@@ -14,7 +14,7 @@ public enum Nomina {
 	DespachadoresFacade despachadoresFacade = new DespachadoresFacade();
 	CajerosFacade cajerosFacade = new CajerosFacade();
 	
-	public void actualizarNomina() throws Exception{
+	public void actualizarnomina() throws Exception{
 		ArrayList<Mesero> x = meserosFacade.Consultar_meseros();
 		ArrayList<Despachador> y = despachadoresFacade.Consultar_despachador();
 		ArrayList<Cajero> z = cajerosFacade.Consultar_cajeros();
@@ -27,10 +27,18 @@ public enum Nomina {
 		for(Cajero cajero: z){
 			empleados.add(cajero);
 		}
+	}
+	
+	public void pagar(){
 		for(Empleado empleado: empleados){
 			empleado.pagar();
 		}
-		
+	}
+	
+	public void bonificacion(){
+		for(Empleado empleado: empleados){
+			empleado.bonificacacion();
+		}
 	}
 	
 }

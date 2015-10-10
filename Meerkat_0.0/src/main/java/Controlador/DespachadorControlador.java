@@ -24,7 +24,6 @@ public class DespachadorControlador extends HttpServlet {
     public static DespachadoresFacade despachadoresFacade = new DespachadoresFacade();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("entro");
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
@@ -37,8 +36,8 @@ public class DespachadorControlador extends HttpServlet {
         }
         if(Puerta.equalsIgnoreCase("ir_despachador")) pagina = "/despachadores/cocina.jsp";
         if(Puerta.equalsIgnoreCase("imprimir_pedidos_despachador")){
-        	try { pedidosFacade.GenerarFactura("Despachado");; } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
-			s.setAttribute("pedidos_en_cola",pedidosFacade.getListafacturassindespachar());
+        	try { despachadoresFacade.Consultar_despachador(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
+			s.setAttribute("pedidos_en_cola",despachadoresFacade.despachador.getListafacturassindespachar());
         	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
         }
         if(Puerta.equalsIgnoreCase("despachar_pedido")){

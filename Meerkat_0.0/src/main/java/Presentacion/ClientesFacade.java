@@ -11,7 +11,7 @@ public class ClientesFacade {
 	
 	public ArrayList<Cliente> Consultar_clientes() throws Exception{
 		ClientesRepository clientesrepository = new ClientesRepository();
-		ArrayList<Cliente> x = clientesrepository.Consultar_Cliente();
+		ArrayList<Cliente> x = clientesrepository.Consultar_Clientes();
 		this.listaclientes = x;
 		return x;
 	}

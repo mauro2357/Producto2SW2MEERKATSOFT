@@ -1,18 +1,26 @@
 package Negocio.pedido;
 
+import java.util.ArrayList;
+
 import Datos.DespachadorRepository;
+import Datos.FacturaRepository;
+import Negocio.factura.Factura;
 
 public class Despachador extends Empleado {
 	public String id;
 	public String nombre;
 	public String apellido;
 	public String telefono;
+	public ArrayList<Factura> listafacturassindespachar;
 	
-	public Despachador(String id, String nombre, String apellido, String telefono){
+	FacturaRepository facturaRepository = new FacturaRepository();
+	
+	public Despachador(String id, String nombre, String apellido, String telefono) throws Exception{
 		this.id = id;
 		this.nombre  = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
+		this.listafacturassindespachar = facturaRepository.Generar_factura("Despachado");
 	}
 
 	public Despachador() {
@@ -68,6 +76,20 @@ public class Despachador extends Empleado {
 	public void pagar() {
 		System.out.println("Pagar a despachador 20 mil");
 		
+	}
+
+	@Override
+	public void bonificacacion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public ArrayList<Factura> getListafacturassindespachar() {
+		return listafacturassindespachar;
+	}
+
+	public void setListafacturassindespachar(ArrayList<Factura> listafacturassindespachar) {
+		this.listafacturassindespachar = listafacturassindespachar;
 	}
 	
 }

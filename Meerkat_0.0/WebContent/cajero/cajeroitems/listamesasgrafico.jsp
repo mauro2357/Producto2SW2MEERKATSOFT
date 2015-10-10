@@ -12,10 +12,8 @@ $(document).ready(function(){
     }, function () {
         $(this).children('.toggle:first').slideToggle();
     });
-
   });
 </script>
-
 </head>
 <table>
 <tr>
@@ -29,13 +27,17 @@ $(document).ready(function(){
     		%>
     		<td>
     		<div class="button" align="center" id="<%out.print(entry.getKey().getId());%>" onclick="esconderhijo()" ><% out.print("Mesa " + entry.getKey().getId());
-	    		%><div class="toggle" id="productos" style="display: none;"><%
-	    		%><table><%
+	    		%><div class="toggle" id="productos" style="display: none;">
+	    		<table><%
 	    		for(Producto producto: entry.getValue().getPedido().getCuerpo()){
 	    			%><tr><%out.println(producto.getNombre() + "-" + entry.getValue().getPedido().cantidades.get(producto));%></tr><%
 	    		}
-	    		%></table><%
-	    		%></div><%
+	    		%></table>
+	    		<form action="http://localhost:8080/Meerkat_0.0/caja" method="post">
+	    			<input type="submit" name="entrar" value="Cobrar">
+	    			<input type="hidden" name="id" value="<%out.print(entry.getValue().getId());%>">
+	    		</form>
+	    		</div><%
     		%></div>
     		</td>
     		<% if(i%4==0){ %> </tr> <tr></tr>
