@@ -20,8 +20,6 @@ public class AdministradorControlador extends HttpServlet {
         super();
     }
     
-    public static NominaFacade creardespachador = new NominaFacade();
-    public static NominaFacade crearmesero = new NominaFacade();
     public static AdministradoresFacade administradoresFacade = new AdministradoresFacade();
     
     String pagina = null;
