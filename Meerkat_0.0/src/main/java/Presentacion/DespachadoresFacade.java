@@ -18,4 +18,22 @@ public class DespachadoresFacade {
 		return x;
 	}
 
+	public Despachador getDespachador() {
+		return despachador;
+	}
+
+	public void setDespachador(Despachador despachador) {
+		this.despachador = despachador;
+	}
+
+	public ArrayList<Despachador> getListadespachadores() {
+		return listadespachadores;
+	}
+
+	public void setListadespachadores(ArrayList<Despachador> listadespachadores) {
+		this.listadespachadores = listadespachadores;
+	}
+	
+	
+
 }

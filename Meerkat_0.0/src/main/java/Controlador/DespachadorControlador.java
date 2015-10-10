@@ -20,39 +20,64 @@ public class DespachadorControlador extends HttpServlet {
         super();
     }
     
-    public static PedidosFacade pedidosFacade = new PedidosFacade();
     public static DespachadoresFacade despachadoresFacade = new DespachadoresFacade();
+    String pagina = null;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
         Puerta = request.getParameter("entrar");
-        String pagina = null;
-        if(Puerta.equalsIgnoreCase("Terminar")){
-        	s = request.getSession(false);
-        	s.invalidate();
-        	pagina = "index.jsp";
-        }
-        if(Puerta.equalsIgnoreCase("ir_despachador")) pagina = "/despachadores/cocina.jsp";
-        if(Puerta.equalsIgnoreCase("imprimir_pedidos_despachador")){
-        	try { despachadoresFacade.Consultar_despachador(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
-			s.setAttribute("pedidos_en_cola",despachadoresFacade.despachador.getListafacturassindespachar());
-        	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
-        }
-        if(Puerta.equalsIgnoreCase("despachar_pedido")){
-        	String pedido_id = request.getParameter("pedido");
-        	try { despachadoresFacade.Consultar_despachador();
-			} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
-        	try { despachadoresFacade.despachador.despachar(pedido_id);
-			} catch (NumberFormatException e1) {System.out.println("Error al ingresar el id del pedido");
-			} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
-        	try { pedidosFacade.GenerarFactura("Despachado"); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
-			s.setAttribute("pedidos_en_cola",pedidosFacade.getListafacturassindespachar());
-        	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
+        
+        switch (Puerta) {
+	        case "Cancelar":
+				cerrar_sesion(s, request);
+				break;
+	        case "ir_despachador":
+				pagina = "/despachadores/cocina.jsp";
+				break;
+	        case "imprimir_pedidos_despachador":
+	        	Imprimir_Pedidos_Despachador(s);
+				break;
+	        case "despachar_pedido":
+	        	Despachar_Pedido(s, request);
+	        	break;
+			default:
+				pagina = "index.jsp";
+				break;
         }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);
+	}
+	
+	public void cerrar_sesion(HttpSession s, HttpServletRequest request){
+    	despachadoresFacade.setDespachador(null);
+		s = request.getSession(false);
+    	s.invalidate();
+    	pagina = "index.jsp";
+	}
+	
+	public void Imprimir_Pedidos_Despachador(HttpSession s){
+		try { despachadoresFacade.Consultar_despachador(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
+		s.setAttribute("pedidos_en_cola",despachadoresFacade.getDespachador().getListafacturassindespachar());
+    	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
+	}
+	
+	public void Despachar_Pedido(HttpSession s, HttpServletRequest request){
+		String pedido_id = request.getParameter("pedido");
+    	
+    	try { despachadoresFacade.Consultar_despachador();
+		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
+    	
+    	try { despachadoresFacade.getDespachador().despachar(pedido_id);
+		} catch (NumberFormatException e1) {System.out.println("Error al ingresar el id del pedido");
+		} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
+    	
+    	try { despachadoresFacade.Consultar_despachador();
+		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
+		
+    	s.setAttribute("pedidos_en_cola", despachadoresFacade.getDespachador().getListafacturassindespachar());
+    	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
 	}
 
 }

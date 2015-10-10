@@ -2,68 +2,49 @@ package Negocio.inventario;
 
 import java.util.ArrayList;
 
+import Datos.ClientesRepository;
+import Datos.EmpleadosRepository;
+import Datos.GeneralesRepository;
+import Datos.InventarioRepository;
+import Negocio.cliente.Cliente;
 import Negocio.pedido.*;
-import Presentacion.InventarioFacade;
 
 public class Administrador extends Empleado {
 	
-	ArrayList<Mesero> nominademeseros = new ArrayList<Mesero>();
-	//Lista de meseros.
-	ArrayList<Despachador> nominadedespachadores = new ArrayList<Despachador>();
-	//Lista de despachadores.
+	public String id;
+	public String nombre;
+	public String apellido;
+	public String telefono;
+	public String clave;
+	public ArrayList<Producto> lista_insumos;
+	public ArrayList<Cliente> lista_clientes;
+	public ArrayList<Producto> productos_mas_vendidos;
+	public String total_ventas;
 	
-	public ArrayList<Producto> Consultar_inventario() throws Exception {
-		InventarioFacade y = new InventarioFacade();
-		ArrayList<Producto> z = new ArrayList<Producto>();
-		z = y.Consultar_insumos();
-		return z;
-	}
+	public static InventarioRepository inventarioRepository = new InventarioRepository();
+	public static ClientesRepository clientesRepository = new ClientesRepository();
+	public static GeneralesRepository generalesRepository = new GeneralesRepository();
+	public static EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
-	public void contratar_mesero() throws Exception{  //Se contrata un mesero y se mete en la lista de meseros contratados.
-		Mesero mesero = new Mesero();
-		nominademeseros.add(mesero);
-	}
-	
-	public void contratar_despachador(){
-		//Despachador despachador = new Despachador();
-		//nominadedespachadores.add(despachador);
-	}
-	
-	public boolean consultar_mesero(){
-		return true; //if(objeto mesero existe en el array) return true
-	}
-	
-	public boolean Consultar_despachador(){
-		return true; //if(objeto despachador existe en el array) return true
-	}
-	
-	public String getMessageHayMesero(){
-		return "No hay mesero.";
-	}
-	
-	public String getMessageHayDespachador(){
-		return "No hay despachador.";
+	public Administrador(String id, String nombre, String apellido, String telefono, String clave) throws Exception{
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+		this.clave = clave;
+		this.lista_insumos = inventarioRepository.Consultar_insumos();
+		this.lista_clientes = clientesRepository.Consultar_Clientes();
+		this.total_ventas = generalesRepository.Consultar_totalVentas();
+		this.productos_mas_vendidos = generalesRepository.Consultarproductos_masvendidos();
 	}
 	
 	
-	public boolean Adicionar_alinventario(){
-		return true;
+	public void Contratar_Mesero(String id, String nombre, String apellido, String telefono) throws Exception{ 
+		empleadosRepository.Registrar_mesero(id, nombre, apellido, telefono);
 	}
 	
-	public boolean Verificar_productoinventario(){
-		return true;
-	}
-	
-	public boolean verificar_conexion_bd(){
-		return true ;
-	}
-	
-	public String notificar_conexion_bd(){
-		return "Error en la conexion con la base de datos.";
-	}
-
-	public String getConexionAInternet() {
-		return "No hay conexion a internet.";
+	public void Contratar_Despachador(String id, String nombre, String apellido, String telefono) throws Exception{ 
+		empleadosRepository.Registrar_despachador(id, nombre, apellido, telefono);
 	}
 
 	@Override
@@ -73,7 +54,78 @@ public class Administrador extends Empleado {
 
 	@Override
 	public void bonificacacion() {
-		// TODO Auto-generated method stub
 		
+	}
+
+	public ArrayList<Producto> getLista_insumos() {
+		return lista_insumos;
+	}
+
+	public void setLista_insumos(ArrayList<Producto> lista_insumos) {
+		this.lista_insumos = lista_insumos;
+	}
+
+	public ArrayList<Cliente> getLista_clientes() {
+		return lista_clientes;
+	}
+
+	public void setLista_clientes(ArrayList<Cliente> lista_clientes) {
+		this.lista_clientes = lista_clientes;
+	}
+
+	public String getTotal_ventas() {
+		return total_ventas;
+	}
+
+	public void setTotal_ventas(String total_ventas) {
+		this.total_ventas = total_ventas;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+	public ArrayList<Producto> getProductos_mas_vendidos() {
+		return productos_mas_vendidos;
+	}
+
+	public void setProductos_mas_vendidos(ArrayList<Producto> productos_mas_vendidos) {
+		this.productos_mas_vendidos = productos_mas_vendidos;
 	}
 }

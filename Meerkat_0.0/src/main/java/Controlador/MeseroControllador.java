@@ -73,7 +73,7 @@ public class MeseroControllador extends HttpServlet {
 	}
 	
 	public void cerrar_sesion(HttpSession s, HttpServletRequest request){
-    	meserosFacade.mesero = null;
+    	meserosFacade.setMesero(null);
 		s = request.getSession(false);
     	s.invalidate();
     	pagina = "index.jsp";
@@ -99,53 +99,53 @@ public class MeseroControllador extends HttpServlet {
 	public void listar_mesas(HttpSession s){
 		try {
     		if(meserosFacade.mesero.getMesas_libres()==null) s.setAttribute("lista-mesas", meserosFacade.mesero.getMesas());
-    		else s.setAttribute("lista-mesas", meserosFacade.mesero.getMesas_libres());
+    		else s.setAttribute("lista-mesas", meserosFacade.getMesero().getMesas_libres());
     	}
     	catch (Exception e) {System.out.println("Error en base de datos al listar mesas.");}
     	pagina = "/consultarproductosvista/consultarproductositems/selectmesas.jsp"; 
 	}
 	
 	public void listar_clientes(HttpSession s){
-		try { s.setAttribute("lista-clientes", meserosFacade.mesero.getClientes());} 
+		try { s.setAttribute("lista-clientes", meserosFacade.getMesero().getClientes());} 
     	catch (Exception e) {System.out.println("Error en base de datos al listar clientes.");}
     	pagina = "/consultarproductosvista/consultarproductositems/selectclientes.jsp"; 
 	}
 	
 	public void listar_botones_productos(HttpSession s){
 		pagina = "/consultarproductosvista/consultarproductositems/botonproductos.jsp"; 
-		s.setAttribute("todos-los-productos", meserosFacade.mesero.getProductos());
+		s.setAttribute("todos-los-productos", meserosFacade.getMesero().getProductos());
 	}
 	
 	public void ingresar_producto(HttpSession s, HttpServletRequest request){
 		String id = request.getParameter("idp"); 
-    	try { meserosFacade.mesero.adicionarproducto(id);} 
+    	try { meserosFacade.getMesero().adicionarproducto(id);} 
     	catch (Exception e) {System.out.println("Error en base de datos al adicionar producto.");}
-    	System.out.println(meserosFacade.mesero.getPedido_sin_asignar().getCuerpo());
-    	s.setAttribute("productos-pedido", meserosFacade.mesero.getPedido_sin_asignar().getCuerpo()); 
+    	System.out.println(meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo());
+    	s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
     	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
 	}
 	
 	public void listar_pedido_actual(HttpSession s){
-		if(meserosFacade.mesero.pedido_sin_asignar != null) s.setAttribute("productos-pedido", meserosFacade.mesero.getPedido_sin_asignar().getCuerpo()); 
+		if(meserosFacade.getMesero().pedido_sin_asignar != null) s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
     	else s.setAttribute("productos-pedido",null);
     	pagina = "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";	
 	}
 	
 	public void enviar_pedido(HttpSession s, HttpServletRequest request){
 		String cliente = request.getParameter("cliente");
-    	String mesero = meserosFacade.mesero.getId();
+    	String mesero = meserosFacade.getMesero().getId();
     	String mesa = request.getParameter("mesa");
     	Mesa mesam = null;
-		try { mesam = meserosFacade.mesero.Definir_Mesa(mesa);} 
+		try { mesam = meserosFacade.getMesero().Definir_Mesa(mesa);} 
 		catch (Exception e1) {System.out.println("Error al consultar la ubicación en memoria de la mesa");}
     	String cajero = request.getParameter("cajero");
-    	Pedido pedido = meserosFacade.mesero.getPedido_sin_asignar();
+    	Pedido pedido = meserosFacade.getMesero().getPedido_sin_asignar();
     	Calendar x = Calendar.getInstance();
     	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
-    	try { meserosFacade.mesero.finiquitarpedido(pedido,cliente,mesero,mesam,cajero,fecha);} 
+    	try { meserosFacade.getMesero().finiquitarpedido(pedido,cliente,mesero,mesam,cajero,fecha);} 
     	catch (Exception e) {System.out.println("Error en base de datos al enviar pedido.");}
     	meserosFacade.mesero.setPedido_sin_asignar(null);
-    	try { meserosFacade.mesero.Ocupar_Mesa(mesam);
+    	try { meserosFacade.getMesero().Ocupar_Mesa(mesam);
 		} catch (Exception e) {System.out.println("Error en la base de datos al ocupar la mesa"); }
     	pagina = "/index.jsp";
 	}
@@ -159,7 +159,7 @@ public class MeseroControllador extends HttpServlet {
     	String musica = request.getParameter("musica");
     	String email = request.getParameter("email");
     	String telefono = request.getParameter("telefono");
-    	try { meserosFacade.mesero.Registrar_Cliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);} 
+    	try { meserosFacade.getMesero().Registrar_Cliente(id, nombre, apellido, sexo, puntos, musica, email, telefono);} 
     	catch (Exception e) { System.out.println("Error en base de datos al agregar datos del usuario.");}
     	pagina = "index.jsp";
 	}
