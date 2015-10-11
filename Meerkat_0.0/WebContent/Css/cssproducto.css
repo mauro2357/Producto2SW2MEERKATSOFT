@@ -3,10 +3,19 @@
   width: auto;
   height: auto;
   background: transparent;
-  boder-radius: 2px;
+  boder-radius: 6px;
   overflow: hidden;
   box-sizing: content-box;
 }
+.jdg-container hover {
+  width: auto;
+  height: auto;
+  background: white;
+  boder-radius: 6px;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
 
 .jdg-item {
   width: 200px;

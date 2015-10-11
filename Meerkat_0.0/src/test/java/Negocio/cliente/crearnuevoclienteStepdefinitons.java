@@ -1,18 +1,10 @@
 package Negocio.cliente;
 
-import java.util.ArrayList;
-
-import org.junit.Assert;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import Negocio.factura.Cajero;
 import Negocio.inventario.Administrador;
-import Negocio.pedido.Despachador;
 import Negocio.pedido.Mesero;
-import Negocio.pedido.Producto;
-import Presentacion.InventarioFacade;
 
 public class crearnuevoclienteStepdefinitons {
 	

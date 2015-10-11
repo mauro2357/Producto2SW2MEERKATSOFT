@@ -18,8 +18,8 @@
 		for(Mesero mesero: y1){
 			%>
 				<td align="center" style="background: rgba(300, 300, 300, 0.3);">
-					<h3><font color="black"><%out.print(mesero.getNombre());%></font></h3>
-					<input size="15" maxlength="20" name="nombre_boton" type="image" src="mes.png" width="50%" onclick="definirmesero(<%out.print(mesero.getId());%>);">
+					<font face=meerkat size="90" color ="white"><br><%out.print(mesero.getNombre());%></font>
+					<input size="15" maxlength="20" name="nombre_boton" type="image" src="images/mes.png" width="50%" onclick="definirmesero(<%out.print(mesero.getId());%>);">
 				</td>
 			<%
 		}%></tr><%%>

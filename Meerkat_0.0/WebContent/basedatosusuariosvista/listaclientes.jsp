@@ -13,7 +13,7 @@
 		@SuppressWarnings("unchecked") 		
 		ArrayList<Cliente> y1 = (ArrayList<Cliente>) session.getAttribute("todos-los-clientes");
 		for(Cliente cliente: y1){
-			out.println(cliente.getNombre() + " " + cliente.apellido + ".  Telfono: " + cliente.getTelefono());
+			out.println(cliente.getNombre() + " " + cliente.apellido + ".  Telefono: " + cliente.getTelefono());
 			out.println("<br />");
 		}%>
 
