@@ -3,6 +3,11 @@
     src:
          url("freebooterscript.ttf") format("truetype");     
 }
+#Logo {
+	border-collapse: collapse;ç
+	
+	
+}
 
 body h1{
 	 font-family: meerkat;

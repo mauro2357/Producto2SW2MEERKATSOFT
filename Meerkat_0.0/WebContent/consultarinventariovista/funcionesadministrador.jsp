@@ -9,8 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="consultarinventariovista/cssadm.css" type="text/css">
-<link rel="stylesheet" href="cssindex.css" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="Css/cssadm.css" type="text/css">
 </head>
 <div class="f" align="center">
 <button type="button" onclick="consultar_inventario()">Consultar inventario</button>

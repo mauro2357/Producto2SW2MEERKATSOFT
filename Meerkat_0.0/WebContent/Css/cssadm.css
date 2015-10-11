@@ -1,8 +1,16 @@
+@font-face {
+    font-family: "meerkat";
+    src:
+         url("freebooterscript.ttf") format("truetype");     
+}
 .f button {
 	width: 135px;
 	margin: 20px 0px 20px 22px;
-	height:50px;
-	font-family: 'Oswald', sans-serif;
+	height:60px;
+	font-family: meerkat;
+	font-size:large;
+	font-weight:bold;
+	color:white;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100&amp;0.7+0,0.63+100;Grey+Gloss+%231 */
 background: -moz-linear-gradient(top,  rgba(226,226,226,0.7) 0%, rgba(219,219,219,0.67) 50%, rgba(209,209,209,0.67) 51%, rgba(254,254,254,0.63) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,0.7)), color-stop(50%,rgba(219,219,219,0.67)), color-stop(51%,rgba(209,209,209,0.67)), color-stop(100%,rgba(254,254,254,0.63))); /* Chrome,Safari4+ */
@@ -11,7 +19,6 @@ background: -o-linear-gradient(top,  rgba(226,226,226,0.7) 0%,rgba(219,219,219,0
 background: -ms-linear-gradient(top,  rgba(226,226,226,0.7) 0%,rgba(219,219,219,0.67) 50%,rgba(209,209,209,0.67) 51%,rgba(254,254,254,0.63) 100%); /* IE10+ */
 background: linear-gradient(to bottom,  rgba(226,226,226,0.7) 0%,rgba(219,219,219,0.67) 50%,rgba(209,209,209,0.67) 51%,rgba(254,254,254,0.63) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e2e2e2', endColorstr='#a1fefefe',GradientType=0 ); /* IE6-9 */
-
  color: white;
     border: 1px solid ;
     box-shadow: 0px 1px 0px white;
