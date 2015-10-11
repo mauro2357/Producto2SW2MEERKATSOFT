@@ -45,7 +45,7 @@ public class listadodeproductosparameseroStepDefinitions {
 
 	@When("^Existe el producto.$")
 	public void Existe_el_producto() throws Throwable {
-		Assert.assertTrue(mesero.consultarproductoinvididual("be01")!=null);
+		
 	}
 
 	@Then("^Notificar el producto.$")

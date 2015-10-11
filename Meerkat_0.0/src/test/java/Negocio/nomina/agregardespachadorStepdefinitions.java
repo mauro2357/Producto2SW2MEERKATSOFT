@@ -13,7 +13,7 @@ public class agregardespachadorStepdefinitions {
 	
 	@Given("^El administrador quiere agregar un nuevo despachador$")
 	public void El_administrador_quiere_agregar_un_nuevo_despachador() throws Throwable {
-		administrador = new Administrador();
+		administrador = new Administrador(null, null, null, null, null);
 		administrador.contratar_despachador();
 	}
 

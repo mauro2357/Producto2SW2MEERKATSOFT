@@ -7,7 +7,10 @@ import org.junit.Assert;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import Negocio.factura.Cajero;
 import Negocio.inventario.Administrador;
+import Negocio.pedido.Despachador;
+import Negocio.pedido.Mesero;
 import Negocio.pedido.Producto;
 import Presentacion.InventarioFacade;
 
@@ -17,7 +20,8 @@ public class crearnuevoclienteStepdefinitons {
 	
 	@Given("^El mesero va a agregar un nuevo cliente$")
 	public void El_mesero_va_a_agregar_un_nuevo_cliente() throws Throwable {
-
+		Mesero mesero = new Mesero();
+		mesero.Registrar_Cliente(null, null, null, null, 0, null, null, null);
 	}
 
 	@When("^Presiona el boton registrar cliente$")

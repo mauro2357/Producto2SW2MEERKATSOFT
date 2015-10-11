@@ -16,7 +16,7 @@ public class notificaciondepedidolistoStepDefinitions {
 	@Given("^El despachador notifica que esta listo el pedido.$")
 	public void El_despachador_notifica_que_esta_listo_el_pedido() throws Throwable {
 		despachador = new Despachador();
-		administrador = new Administrador();
+		administrador = new Administrador(null, null, null, null, null);
 	}
 
 	@When("^Hay un pedido en cola.$")
@@ -42,14 +42,14 @@ public class notificaciondepedidolistoStepDefinitions {
 	
 	@When("^No hay mesero.$")
 	public void No_hay_mesero() throws Throwable {
-		Assert.assertTrue(!!administrador.consultar_mesero()); //Codigo mínimo. //Se supone que siempre hay mesero,
+		Assert.assertTrue(!administrador.Consultar_mesero()); //Codigo mínimo. //Se supone que siempre hay mesero,
 		//por ende, dará falso. Negamos falso para simular que no hay mesero.
 	}
 	
 	@When("^Hay mesero.$")
 	public void Hay_mesero() throws Throwable {
-		Assert.assertTrue(administrador.consultar_mesero()); //Codigo mínimo. //Se supone que siempre hay mesero.
-		//Colocamos true, para similar que hay mesero.
+		Assert.assertTrue(administrador.Consultar_mesero()); //Codigo mínimo. //Se supone que siempre hay mesero.
+		//Colocamos true, para simular que hay mesero.
 	}
 
 	@Then("^Notificar al despachador que no hay mesero.$")

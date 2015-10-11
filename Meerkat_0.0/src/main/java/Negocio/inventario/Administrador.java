@@ -38,6 +38,11 @@ public class Administrador extends Empleado {
 		this.productos_mas_vendidos = generalesRepository.Consultarproductos_masvendidos();
 	}
 	
+	public void AgregarProducto() throws Exception{ 
+		
+	}
+	
+	
 	
 	public void Contratar_Mesero(String id, String nombre, String apellido, String telefono) throws Exception{ 
 		empleadosRepository.Registrar_mesero(id, nombre, apellido, telefono);
@@ -128,4 +133,40 @@ public class Administrador extends Empleado {
 	public void setProductos_mas_vendidos(ArrayList<Producto> productos_mas_vendidos) {
 		this.productos_mas_vendidos = productos_mas_vendidos;
 	}
+
+	public void Consultar_inventario() {
+		
+	}
+
+	public void contratar_despachador() {
+		
+		
+	}
+
+	public boolean Consultar_despachador() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object getMessageHayDespachador() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean Consultar_mesero() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object getMessageHayMesero() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getConexionAInternet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }
