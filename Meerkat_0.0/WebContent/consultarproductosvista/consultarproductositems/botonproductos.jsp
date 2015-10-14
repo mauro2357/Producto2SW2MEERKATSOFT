@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="java.util.*" %>
-<link rel="stylesheet" href="cssproducto.css">
+<link rel="stylesheet" href="Css/cssproducto.css">
 <table>
 <tr> 
 <% 

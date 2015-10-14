@@ -1,17 +1,21 @@
-
+@font-face {
+    font-family: "meerkat";
+    src:
+         url("freebooterscript.ttf") format("truetype");     
+}
 .jdg-container {
   width: auto;
   height: auto;
   background: transparent;
-  boder-radius: 6px;
+  boder-radius: 2px;
   overflow: hidden;
   box-sizing: content-box;
 }
-.jdg-container hover {
+.jdg-container :ACTIVE {
   width: auto;
   height: auto;
-  background: white;
-  boder-radius: 6px;
+  background: trnasparent;
+  boder-radius: 2px;
   overflow: hidden;
   box-sizing: content-box;
 }
@@ -19,7 +23,7 @@
 
 .jdg-item {
   width: 200px;
-  height: 160px;
+  height: 190px;
   margin: 2px;
   padding: 0 0 10px;
   position: relative;
@@ -28,12 +32,11 @@
 
 .jdg-item p {
   margin: 0;
-  font-size: 15px;
+  font-size:x-large;
   margin: 2px 2px;
-  font-weight: 600;
-  color: black;
+  color:white;
   text-align: center;
-  font-family:'Lobster', cursive;
+  font-family:meerkat;
 }
 
 .jdg-item img {

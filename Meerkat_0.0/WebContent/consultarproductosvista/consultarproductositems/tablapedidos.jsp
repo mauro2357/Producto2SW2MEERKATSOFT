@@ -10,12 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-	
-	<div style="max-width: 100%; height: auto;">
+	<br>
+	<div style="max-width: 100%; height:70%;">
 		
 		<table border="0" cellpadding="0" cellspacing="0" width="300" style="background: rgba(300, 300, 300, 0.5);">
-			<tr align="center"><td>Pedido:</td></tr>
-			<tr><td>Producto</td><td>Cantidad</td><td align="right">Precio</td></tr>
+			<center><tr><td>Pedido:</td></tr></center>
+			<tr><td>Producto</td><td>Cantidad</td></td><td align="right"><td><td>Precio</td></tr>
 		<%	
 			@SuppressWarnings("unchecked")
 			ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");
@@ -35,9 +35,10 @@
 				}
 				total += producto.getValor() * aux;
 				%>
-			<tr><td><%out.print(producto.getNombre());%></td><td><%out.print(aux);%></td><td align="right"><%out.print(totalindividual);%></td></tr>
+			<tr><td><%out.print(producto.getNombre());%></td><td><td><td><%out.print(aux);%></td><td align="right"><%out.print(totalindividual);%></td></tr>
 			<%}%>
-			<tr><td></td><td>Total:</td><td align="right"><%out.print(total); %></td></tr>
+			<tr><td></td><td></td><td><td><td align="right"><%out.print("__________"); %></td></tr>
+			<tr><td></td><td>Total:</td><td align="right"><td><td><%out.print(total); %></td></tr>
 		</table>
 	</div>
 		<%  //Map<Pedido,String> h = meseroControllador.consultarmeserosFacade.mesero.coladepedidos;
