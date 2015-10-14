@@ -33,6 +33,8 @@
 	</div>
 	<center><h1><div id="titulo"><font face=meerkat size="100" color ="white">Meseros</div></h1></center>
 	<div id="cuerpo"></div>
+	<br>
+	
 	 <div class='icon' align="center" id="menu">
 		<button type="button" onclick="ir_administrador()"><font face="meerkat" size="5" color ="white">Administrador</font></button>
 		<input name="pass" id="pass" type="password" value="meerkat">
@@ -40,6 +42,6 @@
 		<button type="button" onclick="crear_usuario()"><font face="meerkat" size="5" color ="white">Crear Usuario</button>
 		<button type="button" onclick="location='cajero/cajero.jsp'"><font face="meerkat" size="5" color ="white">Entrar a caja</button>
 	</div>
-	<div id="cuerpodos" style="background: rgba(300, 300, 300, 0.8);" align="center"></div>
+	<div id="cuerpodos" style="background: rgb(300, 300, 300, 0.8);" align="center"></div>
 </body>
 </html>

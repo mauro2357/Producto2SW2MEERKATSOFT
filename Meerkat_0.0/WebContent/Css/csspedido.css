@@ -1,14 +1,12 @@
-@font-face {
-    font-family: "meerkat";
-    src:
-         url("freebooterscript.ttf") format("truetype");     
-}
-.f button,form {
+
+
+
+form button {
 	width: 135px;
 	margin: 20px 0px 20px 22px;
-	height:60px;
+	height:50px;
 	font-family: meerkat;
-	font-size:large;
+	font-size:xx-large;
 	font-weight:bold;
 	color:white;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100&amp;0.7+0,0.63+100;Grey+Gloss+%231 */
@@ -26,7 +24,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e2e2e2', e
 
 
 }
-.f button,form:hover {
+form button:hover {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100&amp;0.01+0,0.04+100;Grey+Gloss+%231 */
 background: -moz-linear-gradient(top,  rgba(226,226,226,0.01) 0%, rgba(219,219,219,0.03) 50%, rgba(209,209,209,0.03) 51%, rgba(254,254,254,0.04) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,0.01)), color-stop(50%,rgba(219,219,219,0.03)), color-stop(51%,rgba(209,209,209,0.03)), color-stop(100%,rgba(254,254,254,0.04))); /* Chrome,Safari4+ */
@@ -37,7 +35,7 @@ background: linear-gradient(to bottom,  rgba(226,226,226,0.01) 0%,rgba(219,219,2
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03e2e2e2', endColorstr='#0afefefe',GradientType=0 ); /* IE6-9 */
 	
 }
-.f button,form:active{
+form button:active{
 /* /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100&amp;1+0,0.77+100;White+Gloss */
 background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,0.89) 50%, rgba(215,222,227,0.89) 51%, rgba(245,247,249,0.77) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,0.89)), color-stop(51%,rgba(215,222,227,0.89)), color-stop(100%,rgba(245,247,249,0.77))); /* Chrome,Safari4+ */
@@ -48,3 +46,60 @@ background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#c4f5f7f9',GradientType=0 ); /* IE6-9 */
 
 }
+select{
+width:135px;
+background:background: -moz-linear-gradient(top,  rgba(226,226,226,0.7) 0%, rgba(219,219,219,0.67) 50%, rgba(209,209,209,0.67) 51%, rgba(254,254,254,0.63) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,0.7)), color-stop(50%,rgba(219,219,219,0.67)), color-stop(51%,rgba(209,209,209,0.67)), color-stop(100%,rgba(254,254,254,0.63))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(226,226,226,0.7) 0%,rgba(219,219,219,0.67) 50%,rgba(209,209,209,0.67) 51%,rgba(254,254,254,0.63) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(226,226,226,0.7) 0%,rgba(219,219,219,0.67) 50%,rgba(209,209,209,0.67) 51%,rgba(254,254,254,0.63) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(226,226,226,0.7) 0%,rgba(219,219,219,0.67) 50%,rgba(209,209,209,0.67) 51%,rgba(254,254,254,0.63) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(226,226,226,0.7) 0%,rgba(219,219,219,0.67) 50%,rgba(209,209,209,0.67) 51%,rgba(254,254,254,0.63) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e2e2e2', endColorstr='#a1fefefe',GradientType=0 ); /* IE6-9 */
+	background-position: 280px center;
+    background-repeat: repeat;
+   	padding: 10px;
+   	font-size: 16px;
+   	border: 0;
+   	border-radius: 3px;
+   -webkit-appearance: none;
+   -webkit-transition: all 0.4s;
+   -moz-transition: all 0.4s;
+   transition: all 0.4s;
+   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+select:hover{
+	background-color: #ddd;
+}
+    
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:18px}
+}
+
+label {position:relative}
+label:after {
+    content:'<>';
+    font:11px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:2px;
+    padding:0 0 2px;
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    pointer-events:none;
+}
+label:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; height:20px;
+    background:#f8f8f8;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+

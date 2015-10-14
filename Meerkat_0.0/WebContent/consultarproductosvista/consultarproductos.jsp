@@ -8,7 +8,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="cssindex.css" type="text/css">
+<link rel="stylesheet" href="Css/csspedido.css" type="text/css">
 <link rel="stylesheet" href="cssproducto.css">
 
 
@@ -53,12 +53,12 @@
 	</div>
 	<div align="right">
 		<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero" >
-		      	<input name="entrar" type="submit" value="Cancelar"/>
+		      	<button name="entrar" type="submit" value="Cancelar">Cancelar</button>
 		      	<input name="estado" type="hidden" value="En espera">
-		      	<select name="cliente" id="selectclientes"></select>
+		      	<select name="cliente ↓" id="selectclientes"></select>
 		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
-		      	<select name="mesa" id="selectmesas"></select>
-		      	<input name="entrar" type="submit" value="Enviar pedido" onclick="ejecutar()">
+		      	<select name="mesa ↓" id="selectmesas"></select>
+		      	<button name="entrar" type="submit" value="Enviar pedido" onclick="ejecutar()">Enviar</button>
 		</form>
 	</div>
 </body>

@@ -3,10 +3,10 @@
     src:
          url("freebooterscript.ttf") format("truetype");     
 }
-#Logo {
-	border-collapse: collapse;ç
-	
-	
+#logo :ACTIVE{
+  width: 950px;
+  height: 200px;
+  
 }
 
 body h1{
