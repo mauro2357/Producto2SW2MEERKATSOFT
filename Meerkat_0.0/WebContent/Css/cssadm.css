@@ -1,7 +1,5 @@
 @font-face {
-    font-family: "meerkat";
-    src:
-         url("freebooterscript.ttf") format("truetype");     
+    font-family: serif;  
 }
 .f button,form {
 	width: 135px;

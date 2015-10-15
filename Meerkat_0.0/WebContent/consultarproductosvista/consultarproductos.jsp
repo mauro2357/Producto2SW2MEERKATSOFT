@@ -9,7 +9,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="Css/csspedido.css" type="text/css">
-<link rel="stylesheet" href="cssproducto.css">
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -19,7 +18,7 @@
 			$.post("/Meerkat_0.0/mesero", {
 				entrar : Entrar,
 			}, function(responseText) {
-				$('#boton1').html(responseText);
+				$('#cuerpo1').html(responseText);
 			});
 			Entrar = "listarpedidoactual";
 			$.post("/Meerkat_0.0/mesero", {
@@ -42,12 +41,8 @@
 		});
 	
 </script>
-<title>Productos</title>
-</head>
 <body>
-	<br>
-	<br>
-	<div id="boton1" align="center">
+	<div id="cuerpo1" class="contenedor" align="center">
 	</div>
 	<div id="table1" align="center">
 	</div>
@@ -55,9 +50,9 @@
 		<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero" >
 		      	<button name="entrar" type="submit" value="Cancelar">Cancelar</button>
 		      	<input name="estado" type="hidden" value="En espera">
-		      	<select name="cliente ↓" id="selectclientes"></select>
+		      	<select name="cliente" id="selectclientes"></select>
 		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
-		      	<select name="mesa ↓" id="selectmesas"></select>
+		      	<select name="mesa" id="selectmesas"></select>
 		      	<button name="entrar" type="submit" value="Enviar pedido" onclick="ejecutar()">Enviar</button>
 		</form>
 	</div>

@@ -8,27 +8,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="consultarinventariovista/cssadm.css" type="text/css">
 <link rel="stylesheet" href="Css/cssadm.css" type="text/css">
 </head>
-<div class="f" align="center">
-<button type="button" onclick="consultar_inventario()">Consultar inventario</button>
-<br>
-<button type="button" onclick="crear_despachador()">Crear despachador</button>
-<br>
-<button type="button" onclick="crear_mesero()">Crear mesero</button>
-<br>
-<button type="button" onclick="consultar_clientes()">Consultar Clientes</button>
-<br>
-<button type="button" onclick="consultar_totalVentas()">Total ventas</button>
-<br>
-<button type="button" onclick="productos_masvendidos()">Productos más Vendidos</button>
-<br>
-<form action="http://localhost:8080/Meerkat_0.0/administrador" method="post">
-	<button type="submit" value="Pagar">Pagar</button> 
-	<input type="hidden" value="Pagarm" name="entrar">
-</form>
-
+<div class="contenedor">
+	<div class="botona" onclick="consultar_inventario()">Consultar inventario</div>
+	<div class="botona" onclick="crear_despachador()">Crear despachador</div>
+	<div class="botona" onclick="crear_mesero()">Crear mesero</div>
+	<div class="botona" onclick="consultar_clientes()">Consultar Clientes</div>
+	<div class="botona" onclick="consultar_totalVentas()">Total ventas</div>
+	<div class="botona" onclick="productos_masvendidos()">Productos más Vendidos</div>
+	<form action="http://localhost:8080/Meerkat_0.0/administrador" method="post">
+		<button type="submit" value="Pagar">Pagar</button> 
+		<input type="hidden" value="Pagarm" name="entrar">
+	</form>
 </div>
 </body>
 </html>

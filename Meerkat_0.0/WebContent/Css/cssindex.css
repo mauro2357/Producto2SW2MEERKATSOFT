@@ -1,12 +1,9 @@
 @font-face {
-    font-family: "meerkat";
-    src:
-         url("freebooterscript.ttf") format("truetype");     
+    font-family: serif;    
 }
 #logo :ACTIVE{
   width: 950px;
   height: 200px;
-  
 }
 
 body h1{
@@ -36,9 +33,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e2e2e2', e
 
 
 .icon button {
-	width: 135px;
+	width: auto;
 	margin: 20px 0px 20px 22px;
-	height:50px;
+	height: 50px;
 	font-family: meerkat;
 	font-size:xx-large;
 	font-weight:bold;
@@ -81,48 +78,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', end
 
 }
 
-/* Content Boxes
- ———————————————————— */
- .content-box-blue,
- .content-box-gray,
- .content-box-green,
- .content-box-purple,
- .button,
- .content-box-yellow {
- margin: 0 0 25px;
- overflow: hidden;
- padding: 20px;
- height: auto;
- width: 200px;
- }
 
-.content-box-blue {
- background-color: #d8ecf7;
- border: 1px solid #afcde3;
- }
 
-.content-box-gray {
- background-color: #e2e2e2;
- border: 1px solid #bdbdbd;
- }
-
-.content-box-green {
- background-color: #d9edc2;
- border: 1px solid #b2ce96;
- }
-
-.content-box-purple {
- background-color: #e2e2f9;
- border: 1px solid #bebde9;
- }
-
-.button {
- background-color: white;
- border: 1px solid white;
- }
-
-.content-box-yellow {
- background-color: #fef5c4;
- border: 1px solid #fadf98;
- }
 

@@ -12,12 +12,9 @@
 <body>
 	<br>
 	<div style="max-width: 100%; height:70%;">
-		
-		<table border="0" cellpadding="0" cellspacing="0" width="300" style="background: rgba(300, 300, 300, 0.5);">
-			<center><tr><td>Pedido:</td></tr></center>
-			<tr><td>Producto</td><td>Cantidad</td></td><td align="right"><td><td>Precio</td></tr>
-		<%	
-			@SuppressWarnings("unchecked")
+		<table border="1" cellpadding="1" cellspacing="0" width="300" style="background: rgba(300, 300, 300, 0.5);">
+			<tr><td>Producto</td><td>Cantidad</td><td>Precio</td></tr>
+		<%	@SuppressWarnings("unchecked")
 			ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");
 			if(productos_pedido==null) productos_pedido = new ArrayList<Producto>();
 			ArrayList<String> visitados = new ArrayList<String>();
@@ -35,20 +32,12 @@
 				}
 				total += producto.getValor() * aux;
 				%>
-			<tr><td><%out.print(producto.getNombre());%></td><td><td><td><%out.print(aux);%></td><td align="right"><%out.print(totalindividual);%></td></tr>
+				<tr><td><%out.print(producto.getNombre());%></td><td align="right"><%out.print(aux);%></td><td><%out.print(totalindividual);%></td></tr>
 			<%}%>
-			<tr><td></td><td></td><td><td><td align="right"><%out.print("__________"); %></td></tr>
-			<tr><td></td><td>Total:</td><td align="right"><td><td><%out.print(total); %></td></tr>
+			<tr><td colspan="2"><%out.print("Total"); %></td><td><%out.print(total); %></td></tr>
 		</table>
+		
+		
 	</div>
-		<%  //Map<Pedido,String> h = meseroControllador.consultarmeserosFacade.mesero.coladepedidos;
-			//if(h.size()>0){
-		 	//for (Map.Entry<Pedido, String> entry : h.entrySet())
-				//{
-				  //  out.println(entry.getKey().getCuerpo() + "/" + entry.getValue());
-			//	}
-			//}
-			//else{out.println("No hay pedidos en cola");}
-		%>
 </body>
 </html>
