@@ -7,6 +7,7 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> 
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
 <script src="../js/codigo.js"></script>
+<link rel="stylesheet" href="../Css/estilosregistro.css" type="text/css">
 <script type="text/javascript">
 	$(function() {
 			var Entrar = "entrar_cajero"; 
@@ -23,5 +24,6 @@
 			<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../images/logo.jpg" style="max-width: 100%; height: auto;"></a>
 		</div>
 		<center><h1><div id="titulo">Cajero</div></h1></center>
+		<br>
 		<div id="cuerpo" class="contenedor"></div>
 </body>

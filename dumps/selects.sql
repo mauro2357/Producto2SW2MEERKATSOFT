@@ -6,6 +6,8 @@ select sum(Valor) Valors from (select sum(Dtv_cantidad)*Pro_valor Valor from pro
 INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('2015-09-11', 'En espera', '1001', '800', '2');
 
 
+select * from insumos;
+select * from administrador;
 select * from producto;
 select * from detalles_venta;
 select * from mesero;
@@ -20,6 +22,9 @@ delete from detalles_venta where ven_id>0;
 delete from venta where ven_id>0;
 ALTER TABLE venta AUTO_INCREMENT=1;
 ALTER TABLE detalles_venta AUTO_INCREMENT=1;
+
+UPDATE `future`.`mesa` SET `Mesa_estado`='disponible' WHERE `Mesa_id`>'0';
+
 
 select * from factura where ven_id=2;
 

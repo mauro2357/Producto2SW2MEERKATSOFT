@@ -3,8 +3,6 @@ package Negocio.pedido;
 import java.util.ArrayList;
 import java.util.Map;
 
-import Controlador.*;
-
 public class Pedido {
 	
 	public ArrayList<Producto> cuerpo;
@@ -18,9 +16,9 @@ public class Pedido {
 	
 	public Pedido(){}
 	
-	public Pedido(ArrayList<Producto> lista_productos, String cliente, Mesa mesa, String cajero, String fecha, Map<Producto, Integer> cantidades) {
+	public Pedido(ArrayList<Producto> lista_productos, String cliente, Mesa mesa, String cajero, String fecha, Map<Producto, Integer> cantidades, Mesero mesero) {
 		this.cantidades = cantidades;
-		this.mesero = MeseroControllador.meserosFacade.mesero;
+		this.mesero = mesero;
 		this.cliente = cliente;
 		this.estado = "En espera";
 		this.cuerpo = lista_productos;
@@ -29,8 +27,8 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 	
-	public Pedido(ArrayList<Producto> lista_productos, String cliente, Mesa mesa, String cajero, String fecha) {
-		this.mesero = MeseroControllador.meserosFacade.mesero;
+	public Pedido(ArrayList<Producto> lista_productos, String cliente, Mesa mesa, String cajero, String fecha, Mesero mesero) {
+		this.mesero = mesero;
 		this.cliente = cliente;
 		this.estado = "En espera";
 		this.cuerpo = lista_productos;

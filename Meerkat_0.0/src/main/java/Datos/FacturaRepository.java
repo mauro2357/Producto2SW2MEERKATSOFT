@@ -56,7 +56,7 @@ public class FacturaRepository {
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	estado = rs.getString("Ven_estado");
-	    	if(estado.equalsIgnoreCase(aignorar)) continue;
+	    	if(estado.equalsIgnoreCase(aignorar) || estado.equalsIgnoreCase("Finalizado")) continue;
 	    	if(auxid==null) auxid=id;
 	    	if(!auxid.equalsIgnoreCase(id)){
 	    		if(y==null){
@@ -95,6 +95,16 @@ public class FacturaRepository {
 		f.add(fi);
 	    st.close();
 	    return f;
+	}
+
+	public void Cobrar(String id, String mesa) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		String query = "UPDATE `future`.`venta` SET `Ven_estado`='Finalizado' WHERE `Ven_id`='"+id+"';";
+		MesaRepository mesaRepository = new MesaRepository();
+		mesaRepository.Ocupar_Desocupar_Mesa(mesa, "disponible");
+		Statement st = con.createStatement();
+		st.executeUpdate(query);
+		st.close();
 	}
 	
 }

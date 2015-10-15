@@ -20,17 +20,20 @@ public class CajeroControlador extends HttpServlet {
         super();
     }
     
-    public static CajerosFacade cajeroFacade = new CajerosFacade();
+    public CajerosFacade cajeroFacade; //Por ahora así
     
     String pagina = null;
     String id = null;
+    String mesa = null;
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		cajeroFacade = new CajerosFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         id = request.getParameter("id");
+        mesa = request.getParameter("mesa");
         switch (Puerta) {
 		case "Terminar":
 			cerrar_sesion(s, request);
@@ -44,9 +47,6 @@ public class CajeroControlador extends HttpServlet {
 		default:
 			break;
 		}
-        if(Puerta.equalsIgnoreCase("Cobrar")){
-        	
-        }
         RequestDispatcher rd = request.getRequestDispatcher(pagina);
         rd.forward(request, response);
 	}
@@ -70,6 +70,13 @@ public class CajeroControlador extends HttpServlet {
 	}
 	
 	public void Cobrar(HttpSession s, HttpServletRequest request){
+		try {
+			if(cajeroFacade.cajero.Cobrar(id,mesa)){
+				Entrar(s);
+			}
+		} catch (Exception e) {
+			System.out.println("Error al cobrar la mesa en la base de datos.");
+		}
 		
 	}
 

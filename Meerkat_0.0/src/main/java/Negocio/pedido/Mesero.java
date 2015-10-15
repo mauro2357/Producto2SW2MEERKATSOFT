@@ -21,8 +21,6 @@ public class Mesero extends Empleado {
 	public Map<Mesa, Pedido> coladepedidos;
 	public ArrayList<Cliente> clientes;
 	
-	
-
 	ProductoRepository productoRepository = new ProductoRepository();
 	MesaRepository mesaRepository = new MesaRepository();
 	ClientesRepository clienteRepository = new ClientesRepository();
@@ -102,7 +100,7 @@ public class Mesero extends Empleado {
 	public String finiquitarpedido(Pedido pedido, String cliente, String mesero, Mesa mesa, String cajero, String fecha) throws Exception {
 		ArrayList<Producto> lista_productos = pedido.getCuerpo();
 		if(lista_productos == null || lista_productos.size()<0) return "No hay productos.";
-		Pedido pedido_a_finiquitar = new Pedido(lista_productos, cliente, mesa, cajero, fecha);
+		Pedido pedido_a_finiquitar = new Pedido(lista_productos, cliente, mesa, cajero, fecha, this);
 		if(coladepedidos == null) coladepedidos = new HashMap<Mesa, Pedido>();
 		coladepedidos.put(mesa,pedido_a_finiquitar);
 		mesa.setEstado("Despachado");

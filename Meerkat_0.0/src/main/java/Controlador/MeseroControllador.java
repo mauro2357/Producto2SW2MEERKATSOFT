@@ -21,7 +21,7 @@ public class MeseroControllador extends HttpServlet {
         super();
     }
      
-    public static MeserosFacade meserosFacade = new MeserosFacade(); 
+    public MeserosFacade meserosFacade = new MeserosFacade(); 
     
     String pagina = null;
     

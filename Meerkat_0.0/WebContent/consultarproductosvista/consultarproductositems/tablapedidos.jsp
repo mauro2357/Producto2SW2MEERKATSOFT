@@ -12,7 +12,7 @@
 <body>
 	<br>
 	<div style="max-width: 100%; height:70%;">
-		<table border="1" cellpadding="1" cellspacing="0"  width="300" style="background: rgba(300, 300, 300, 0.5);">
+		<table border="1" cellpadding="1" cellspacing="0" style="background: rgba(300, 300, 300, 0.5);">
 			<tr><td>Producto</td><td>Cantidad</td><td>Precio</td></tr>
 		<%	@SuppressWarnings("unchecked")
 			ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");

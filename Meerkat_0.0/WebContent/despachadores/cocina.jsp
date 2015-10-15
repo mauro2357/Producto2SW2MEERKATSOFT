@@ -8,6 +8,11 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="../js/codigo.js"></script>
+<link rel="stylesheet" href="../Css/cssindex.css" type="text/css">
+<link rel="stylesheet" href="../Css/cssmesero.css" type="text/css">
+<link rel="stylesheet" href="../Css/csspedido.css" type="text/css">
+<link rel="stylesheet" href="../Css/estilosregistro.css" type="text/css">
+
 <script type="text/javascript">
 	$(function() {
 		var Entrar = "imprimir_pedidos_despachador"; 
@@ -23,5 +28,7 @@
 	<div id="logo" align="center">
 		<a href="http://localhost:8080/Meerkat_0.0/index.jsp"><img src="../images/logo.jpg" style="max-width: 100%; height: auto;"></a>
 	</div>
-	<div id="cuerpo" align="center"></div>
+	<center><h1><div id="titulo"><font face=meerkat size="100" color ="white">Despechador</div></h1></center>
+	<br>
+	<div id="cuerpo" align="center" class="contenedor"></div>
 </body>

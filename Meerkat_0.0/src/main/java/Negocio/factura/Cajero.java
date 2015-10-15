@@ -53,6 +53,11 @@ public class Cajero extends Empleado{
 		}
 		return null;
 	}
+	
+	public boolean Cobrar(String id, String mesa) throws Exception {
+		facturaRepository.Cobrar(id,mesa);
+		return false;
+	}
 
 	public boolean añadirpropina(int x) {
 		//se le suma x al valor de la factura.
@@ -120,6 +125,8 @@ public class Cajero extends Empleado{
 	public void setListafacturasdespachadas(ArrayList<Factura> listafacturasdespachadas) {
 		this.listafacturasdespachadas = listafacturasdespachadas;
 	}
+
+	
 	
 }
 

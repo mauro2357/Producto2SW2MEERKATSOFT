@@ -3,7 +3,6 @@
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="Negocio.factura.*" %>
 <%@ page import="java.util.*" %>
-<link rel="stylesheet" href="../cssproducto.css">
 <head>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -22,7 +21,6 @@ $(document).ready(function(){
 	else{
 		for(Map.Entry<Mesa, Factura> entry : x.entrySet()) {
     		%>
-    		<td>
     		<div class="button" align="center" id="<%out.print(entry.getKey().getId());%>" onclick="esconderhijo()" ><% out.print("Mesa " + entry.getKey().getId());
 	    		%><div class="toggle" id="productos" style="display: none;">
 	    		<%
@@ -33,10 +31,10 @@ $(document).ready(function(){
 	    		<form action="http://localhost:8080/Meerkat_0.0/caja" method="post">
 	    			<input type="submit" name="entrar" value="Cobrar">
 	    			<input type="hidden" name="id" value="<%out.print(entry.getValue().getId());%>">
+	    			<input type="hidden" name="mesa" value="<%out.print(entry.getKey().getId());%>">
 	    		</form>
 	    		</div><%
     		%></div>
-    		</td>
     		<% 
 			}
 		}
