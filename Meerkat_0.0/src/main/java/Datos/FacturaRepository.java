@@ -8,10 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import Negocio.factura.Factura;
-import Negocio.pedido.Mesa;
-import Negocio.pedido.Mesero;
-import Negocio.pedido.Pedido;
-import Negocio.pedido.Producto;
+import Negocio.pedido.*;
 
 public class FacturaRepository {
 	
@@ -100,27 +97,4 @@ public class FacturaRepository {
 	    return f;
 	}
 	
-	public ArrayList<Producto> Generar_pedido(int idu) throws Exception {
-		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "SELECT * FROM new_view";
-	    Statement st = con.createStatement();
-	    ResultSet rs = st.executeQuery(query);
-	    @SuppressWarnings("unused")
-		Mesero x = new Mesero();
-	    ProductoRepository productoRepository = new ProductoRepository();
-	    ArrayList<Producto> f = productoRepository.Consultar_producto();
-	    while (rs.next()){
-	      String id = rs.getString("Ven_id");
-	      if(Integer.parseInt(id)==idu){
-	    	  String idp = rs.getString("Pro_id");
-	    	  for(Producto producto: f){
-	    		  if(producto.getCodigo()==idp){
-	    			  f.add(producto);
-	    		  }
-	    	  }  
-	      }
-	    }
-	    st.close();
-	    return f;
-	}
 }

@@ -18,7 +18,7 @@
 	<div class="botona" onclick="consultar_totalVentas()">Total ventas</div>
 	<div class="botona" onclick="productos_masvendidos()">Productos más Vendidos</div>
 	<form action="http://localhost:8080/Meerkat_0.0/administrador" method="post">
-		<button type="submit" value="Pagar">Pagar</button> 
+		<button type="submit" value="Pagar" class="botona">Pagar</button> 
 		<input type="hidden" value="Pagarm" name="entrar">
 	</form>
 </div>

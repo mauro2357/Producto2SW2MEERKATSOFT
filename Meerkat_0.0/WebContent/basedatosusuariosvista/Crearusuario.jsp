@@ -6,9 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body background="fondo1.JPG">
-<br>
 	<div align="center">
-	
 		<form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/mesero">
 			<input type="hidden" name="entrar" value="datos_usuario">
 			<input type="text" name="id" placeholder="Cedula"><br>
@@ -22,6 +20,5 @@
 			<button type="submit" name="registrar" value="Registrar">Registrar</button>
 		</form>
 	</div>
-	<br>
 </body>
 </html>
