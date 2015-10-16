@@ -18,6 +18,6 @@ Feature: Como despachador quiero notificar al mesero que el pedido esta listo.
 		Scenario: El despachador notifica que esta listo el pedido.
 		Given El despachador notifica que esta listo el pedido.
 		When Hay mesero.
-		Then Notificar al mesero que el esta listo el pedido.
+		Then Notificar al mesero que esta listo el pedido.
 		
 		

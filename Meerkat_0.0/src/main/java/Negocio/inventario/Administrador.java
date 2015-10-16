@@ -156,7 +156,7 @@ public class Administrador extends Empleado {
 
 	public boolean Consultar_mesero() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean getMessageHayMesero() {

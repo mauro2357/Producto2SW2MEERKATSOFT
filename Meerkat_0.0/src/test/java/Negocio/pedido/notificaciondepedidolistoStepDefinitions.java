@@ -24,8 +24,8 @@ public class notificaciondepedidolistoStepDefinitions {
 		Assert.assertTrue(despachador.Recibir_pedido());
 	}
 
-	@Then("^Notificar al mesero que el esta listo el pedido.$")
-	public void Notificar_al_mesero_que_el_esta_listo_el_pedido() throws Throwable {
+	@Then("^Notificar al mesero que esta listo el pedido.$")
+	public void Notificar_al_mesero_que_esta_listo_el_pedido() throws Throwable {
 		Assert.assertTrue(despachador.Recibir_pedido()); //Código mínimo para notificar que está listo el pedido
 	}
 
@@ -42,7 +42,7 @@ public class notificaciondepedidolistoStepDefinitions {
 	
 	@When("^No hay mesero.$")
 	public void No_hay_mesero() throws Throwable {
-		Assert.assertTrue(!administrador.Consultar_mesero()); //Codigo mínimo. //Se supone que siempre hay mesero,
+		Assert.assertFalse(!(administrador.Consultar_mesero())); //Codigo mínimo. //Se supone que siempre hay mesero,
 		//por ende, dará falso. Negamos falso para simular que no hay mesero.
 	}
 	

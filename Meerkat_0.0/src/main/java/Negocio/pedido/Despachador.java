@@ -27,7 +27,6 @@ public class Despachador extends Empleado {
 	}
 
 	public boolean Recibir_pedido(){
-		
 		return true;
 	}
 	
@@ -92,7 +91,7 @@ public class Despachador extends Empleado {
 	}
 
 	public String getMessageHayMesero() {
-			return "No hay mesero";
+			return "No hay mesero.";
 		
 	}
 	
