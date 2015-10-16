@@ -19,7 +19,9 @@
 <script src="js/codigo.js"></script>
 <script type="text/javascript">
 	$(function() {
-			var Entrar = "imprimirmeseros"; 
+			var Entrar = "imprimirmeseros";
+			$.post("/Meerkat_0.0/login", {
+			});
 			$.post("/Meerkat_0.0/mesero", {
 				entrar : Entrar,
 			}, function(responseText) {

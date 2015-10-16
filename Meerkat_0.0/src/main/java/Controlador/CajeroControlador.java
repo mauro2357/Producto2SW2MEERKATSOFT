@@ -27,7 +27,7 @@ public class CajeroControlador extends HttpServlet {
     String mesa = null;
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		cajeroFacade = new CajerosFacade();
+		if(cajeroFacade==null) cajeroFacade = new CajerosFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
@@ -71,13 +71,11 @@ public class CajeroControlador extends HttpServlet {
 	
 	public void Cobrar(HttpSession s, HttpServletRequest request){
 		try {
-			if(cajeroFacade.cajero.Cobrar(id,mesa)){
-				Entrar(s);
-			}
+			System.out.println(cajeroFacade.getCajero());
+			cajeroFacade.getCajero().Cobrar(id,mesa);
 		} catch (Exception e) {
-			System.out.println("Error al cobrar la mesa en la base de datos.");
+			System.out.println("Error al cobrar la mesa e n la base de datos.");
 		}
-		
 	}
 
 }

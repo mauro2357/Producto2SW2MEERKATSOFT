@@ -30,7 +30,7 @@ public class AdministradorControlador extends HttpServlet {
     
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		administradoresFacade = new AdministradoresFacade();
+		if(administradoresFacade==null) administradoresFacade = new AdministradoresFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;

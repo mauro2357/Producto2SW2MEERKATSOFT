@@ -21,11 +21,11 @@ public class MeseroControllador extends HttpServlet {
         super();
     }
      
-    public MeserosFacade meserosFacade = new MeserosFacade(); 
-    
+    public MeserosFacade meserosFacade;
     String pagina = null;
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(meserosFacade==null) meserosFacade = new MeserosFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
@@ -81,12 +81,14 @@ public class MeseroControllador extends HttpServlet {
 	
 	public void imprimir_meseros(HttpSession s){
 		try { 
-			if(meserosFacade != null){
-        	pagina = "/consultarmeserosvista/listameseros.jsp";
-        	s.setAttribute("todos-los-meseros", meserosFacade.Consultar_meseros());
-        	}; 
+	        	pagina = "/consultarmeserosvista/listameseros.jsp";
+	        	System.out.println(meserosFacade.getMesero());
+	        	System.out.println(meserosFacade.Consultar_meseros());
+	        	s.setAttribute("todos-los-meseros", meserosFacade.Consultar_meseros());
         } 
-    	catch (Exception e) {System.out.println("Error en base de datos al imprimir meseros.");}
+    	catch (Exception e) {
+    		System.out.println("Error en base de datos al imprimir meseros.");
+    		System.out.println(e);}
 		
 	}
 	
@@ -96,9 +98,9 @@ public class MeseroControllador extends HttpServlet {
     	pagina = "/consultarproductosvista/consultarproductos.jsp"; 
 	}
 	
-	public void listar_mesas(HttpSession s){
+	public void listar_mesas(HttpSession s){ //Falta ADICIONAR productos a un PEDIDO ya INSTANCIADO
 		try {
-    		if(meserosFacade.mesero.getMesas_libres()==null) s.setAttribute("lista-mesas", meserosFacade.mesero.getMesas());
+    		if(meserosFacade.getMesero().getMesas_libres()==null) s.setAttribute("lista-mesas", meserosFacade.mesero.getMesas());
     		else s.setAttribute("lista-mesas", meserosFacade.getMesero().getMesas_libres());
     	}
     	catch (Exception e) {System.out.println("Error en base de datos al listar mesas.");}

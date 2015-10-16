@@ -24,7 +24,7 @@ public class DespachadorControlador extends HttpServlet {
     String pagina = null;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		despachadoresFacade = new DespachadoresFacade();
+		if(despachadoresFacade==null) despachadoresFacade = new DespachadoresFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
         String Puerta = null;
