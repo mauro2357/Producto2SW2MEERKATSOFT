@@ -108,8 +108,6 @@ public class Mesero extends Empleado {
 		return "Pedido enviado";
 	}
 	
-	
-
 	@Override
 	public void pagar() {
 		System.out.println("Se le debe pagar 20");
