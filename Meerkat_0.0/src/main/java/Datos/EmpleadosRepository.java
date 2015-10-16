@@ -3,6 +3,7 @@ package Datos;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import Negocio.factura.Cajero;
 import Negocio.inventario.Administrador;
@@ -50,6 +51,29 @@ public class EmpleadosRepository {
 		}
 		return ans;
 	}
-	
+
+	public void Pagar(Empleado empleado, String id, String saldo) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		String query = null;
+		Calendar x = Calendar.getInstance();
+    	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
+    	if(empleado instanceof Mesero){
+    		System.out.println("ES MESERO");
+			query = "INSERT INTO `future`.`pago_nomina` (`Mesero_id`, `Empleado_fecha`, `Empleado_valor`) VALUES ('"+id+"','"+fecha+"', '"+saldo+"');";
+		}
+		if(empleado instanceof Administrador){
+			query = "INSERT INTO `future`.`pago_nomina` (`Administrador_id`, `Empleado_fecha`, `Empleado_valor`) VALUES ('"+id+"', '"+fecha+"', '"+saldo+"');";		
+		}
+		if(empleado instanceof Despachador){
+			query = "INSERT INTO `future`.`pago_nomina` (`Despachador_id`, `Empleado_fecha`, `Empleado_valor`) VALUES ('"+id+"', '"+fecha+"', '"+saldo+"');";
+		}
+		if(empleado instanceof Cajero){
+			query = "INSERT INTO `future`.`pago_nomina` (`Cajero_id`, `Empleado_fecha`, `Empleado_valor`) VALUES ('"+id+"', '"+fecha+"', '"+saldo+"');";
+		}
+		System.out.println("query: " + query);
+		Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
 }
 

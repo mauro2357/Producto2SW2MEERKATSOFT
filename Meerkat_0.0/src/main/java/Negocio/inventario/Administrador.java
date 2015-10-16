@@ -21,10 +21,10 @@ public class Administrador extends Empleado {
 	public ArrayList<Producto> productos_mas_vendidos;
 	public String total_ventas;
 	
-	public static InventarioRepository inventarioRepository = new InventarioRepository();
-	public static ClientesRepository clientesRepository = new ClientesRepository();
-	public static GeneralesRepository generalesRepository = new GeneralesRepository();
-	public static EmpleadosRepository empleadosRepository = new EmpleadosRepository();
+	InventarioRepository inventarioRepository = new InventarioRepository();
+	ClientesRepository clientesRepository = new ClientesRepository();
+	GeneralesRepository generalesRepository = new GeneralesRepository();
+	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
 	public Administrador(String id, String nombre, String apellido, String telefono, String clave) throws Exception{
 		this.id = id;
@@ -42,8 +42,6 @@ public class Administrador extends Empleado {
 		
 	}
 	
-	
-	
 	public void Contratar_Mesero(String id, String nombre, String apellido, String telefono) throws Exception{ 
 		empleadosRepository.Registrar_mesero(id, nombre, apellido, telefono);
 	}
@@ -53,8 +51,9 @@ public class Administrador extends Empleado {
 	}
 
 	@Override
-	public void pagar() {
-		System.out.println("Se le debe pagar al administrador un millon de pesos");	
+	public void pagar() throws Exception {
+		String saldo = "100000";
+		empleadosRepository.Pagar(this,this.getId(),saldo);	
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package Negocio.pedido;
 import java.util.ArrayList;
 
 import Datos.DespachadorRepository;
+import Datos.EmpleadosRepository;
 import Datos.FacturaRepository;
 import Negocio.factura.Factura;
 
@@ -14,6 +15,7 @@ public class Despachador extends Empleado {
 	public ArrayList<Factura> listafacturassindespachar;
 	
 	FacturaRepository facturaRepository = new FacturaRepository();
+	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
 	public Despachador(String id, String nombre, String apellido, String telefono) throws Exception{
 		this.id = id;
@@ -73,9 +75,9 @@ public class Despachador extends Empleado {
 	}
 
 	@Override
-	public void pagar() {
-		System.out.println("Pagar a despachador 20 mil");
-		
+	public void pagar() throws Exception {
+		String saldo = "30000";
+		empleadosRepository.Pagar(this,this.getId(),saldo);
 	}
 
 	@Override
