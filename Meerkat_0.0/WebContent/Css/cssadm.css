@@ -1,12 +1,15 @@
 @font-face {
-    font-family: serif;  
+       
+    font-family: meerkat;  
+    src: url(Css/Gabrielle.ttf);
 }
-.f button {
+.botona {
 	width: 135px;
 	margin: 20px 0px 20px 22px;
 	height:60px;
 	font-family: meerkat;
-	font-size:large;
+	font-size:x-large;
+	text-align:center;
 	font-weight:bold;
 	color:white;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100&amp;0.7+0,0.63+100;Grey+Gloss+%231 */
@@ -24,7 +27,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e2e2e2', e
 
 
 }
-.f button:hover {
+.botona:hover {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100&amp;0.01+0,0.04+100;Grey+Gloss+%231 */
 background: -moz-linear-gradient(top,  rgba(226,226,226,0.01) 0%, rgba(219,219,219,0.03) 50%, rgba(209,209,209,0.03) 51%, rgba(254,254,254,0.04) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,0.01)), color-stop(50%,rgba(219,219,219,0.03)), color-stop(51%,rgba(209,209,209,0.03)), color-stop(100%,rgba(254,254,254,0.04))); /* Chrome,Safari4+ */
@@ -35,7 +38,7 @@ background: linear-gradient(to bottom,  rgba(226,226,226,0.01) 0%,rgba(219,219,2
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03e2e2e2', endColorstr='#0afefefe',GradientType=0 ); /* IE6-9 */
 	
 }
-.f button:active{
+.botona:active{
 /* /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100&amp;1+0,0.77+100;White+Gloss */
 background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,0.89) 50%, rgba(215,222,227,0.89) 51%, rgba(245,247,249,0.77) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,0.89)), color-stop(51%,rgba(215,222,227,0.89)), color-stop(100%,rgba(245,247,249,0.77))); /* Chrome,Safari4+ */

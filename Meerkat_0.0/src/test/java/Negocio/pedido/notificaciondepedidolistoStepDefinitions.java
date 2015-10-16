@@ -54,23 +54,7 @@ public class notificaciondepedidolistoStepDefinitions {
 
 	@Then("^Notificar al despachador que no hay mesero.$")
 	public void Notificar_al_despachador_que_no_hay_mesero() throws Throwable {
-		Assert.assertEquals("No hay mesero.", administrador.getMessageHayMesero()); //Código minimo para que no haya mesero
+		Assert.assertEquals("No hay mesero." , despachador.getMessageHayMesero()); //Código minimo para que no haya mesero
 	}
-	
-	@When("^No hay conexion a internet.$")
-	public void No_hay_conexion_a_internet() throws Throwable {
-		Assert.assertTrue(!false); //False simula que no hay conexion a internet.
-
-	}
-
-	@Then("^Notificar que no hay conexion a internet.$")
-	public void Notificar_que_no_hay_conexion_a_internet() throws Throwable {
-		Assert.assertEquals("No hay conexion a internet.", administrador.getConexionAInternet());
-	}
-
-	@When("^Hay conexion a internet.$")
-	public void Hay_conexion_a_internet() throws Throwable {
-		Assert.assertTrue(true); //El true simula que hay conexion a internet.
-	}
-	
 }
+	

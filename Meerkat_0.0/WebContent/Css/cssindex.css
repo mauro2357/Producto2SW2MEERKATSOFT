@@ -1,5 +1,7 @@
 @font-face {
-    font-family: serif;    
+       
+    font-family: meerkat;  
+    src: url(Gabrielle.ttf);
 }
 #logo :ACTIVE{
   width: 950px;
