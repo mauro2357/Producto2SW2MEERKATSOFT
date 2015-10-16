@@ -138,10 +138,11 @@ public class Administrador extends Empleado {
 		
 	}
 
-	public void contratar_despachador() {
+
 		
 		
-	}
+		
+	
 
 	public boolean Consultar_despachador() {
 		// TODO Auto-generated method stub
@@ -158,15 +159,23 @@ public class Administrador extends Empleado {
 		return false;
 	}
 
-	public Object getMessageHayMesero() {
+	public boolean getMessageHayMesero() {
 		// TODO Auto-generated method stub
-		return null;
+		return true;
 	}
 
-	public Object getConexionAInternet() {
+	public boolean getConexionAInternet() {
 		// TODO Auto-generated method stub
-		return null;
+		return true;
+		
 	}
 
+	public Object getMessageHayconexion() {
+		// TODO Auto-generated method stub
+		return null;
+			
+	}
+
+	
 	
 }

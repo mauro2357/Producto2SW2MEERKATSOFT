@@ -14,7 +14,7 @@ public class agregardespachadorStepdefinitions {
 	@Given("^El administrador quiere agregar un nuevo despachador$")
 	public void El_administrador_quiere_agregar_un_nuevo_despachador() throws Throwable {
 		administrador = new Administrador(null, null, null, null, null);
-		administrador.contratar_despachador();
+		administrador.Contratar_Despachador(null, null, null, null);
 	}
 
 	@When("^Presiona el boton nuevo despachador$")

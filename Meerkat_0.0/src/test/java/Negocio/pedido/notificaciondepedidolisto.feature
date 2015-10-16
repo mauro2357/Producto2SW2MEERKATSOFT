@@ -20,14 +20,4 @@ Feature: Como despachador quiero notificar al mesero que el pedido esta listo.
 		When Hay mesero.
 		Then Notificar al mesero que el esta listo el pedido.
 		
-		Scenario: El despachador notifica que esta listo el pedido.
-		Given El despachador notifica que esta listo el pedido.
-		When No hay conexion a internet.
-		Then Notificar que no hay conexion a internet.
-		
-		Scenario: El despachador notifica que esta listo el pedido.
-		Given El despachador notifica que esta listo el pedido.
-		When Hay conexion a internet.
-		Then Notificar al mesero que el esta listo el pedido.
-		
 		

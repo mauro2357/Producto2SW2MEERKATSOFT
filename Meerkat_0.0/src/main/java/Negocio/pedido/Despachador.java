@@ -90,5 +90,10 @@ public class Despachador extends Empleado {
 	public void setListafacturassindespachar(ArrayList<Factura> listafacturassindespachar) {
 		this.listafacturassindespachar = listafacturassindespachar;
 	}
+
+	public String getMessageHayMesero() {
+			return "No hay mesero";
+		
+	}
 	
 }
