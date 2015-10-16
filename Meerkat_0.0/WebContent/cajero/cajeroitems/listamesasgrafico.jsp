@@ -17,7 +17,7 @@ $(document).ready(function(){
 <% 
 	@SuppressWarnings("unchecked")
 	Map<Mesa,Factura> x = (Map<Mesa,Factura>) session.getAttribute("mesas-facturas");
-	if(x.size()==0 || x == null) out.println("No hay mesas con facturas");
+	if(x.size()==0 || x == null) out.println("<h1>No hay mesas con facturas</h1>");
 	else{
 		for(Map.Entry<Mesa, Factura> entry : x.entrySet()) {
     		%>

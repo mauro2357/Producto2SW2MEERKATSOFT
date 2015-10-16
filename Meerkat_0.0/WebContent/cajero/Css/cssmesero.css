@@ -1,0 +1,38 @@
+@font-face {
+       
+    font-family: meerkat;  
+    src: url(Gabrielle.ttf);
+}
+@CHARSET "ISO-8859-1";
+
+.contenedor{
+	background-color: rgba(0,0,0,0.5);
+	margin: 0 auto;
+}
+
+.boton {
+	 margin: auto;
+	 display: inline-block;
+	 background-color: rgba(255,255,255,0.5);
+	 border: 1px solid white;
+	 overflow: hidden;
+	 max-height: 300px;
+	 max-width: 300px;
+	 min-height: 30px;
+	 min-width: 100px;
+}
+
+.botona {
+	 font-family: serif;
+	 font-size: 25px;
+	 margin: 10px auto 10px 10px;
+	 display: inline-block;
+	 background-color: rgba(255,255,255,0.5);
+	 border: 1px solid white;
+	 overflow: hidden;
+	 padding: 5px;
+	 max-height: 300px;
+	 max-width: 300px;
+	 min-height: 30px;
+	 min-width: 100px;
+}

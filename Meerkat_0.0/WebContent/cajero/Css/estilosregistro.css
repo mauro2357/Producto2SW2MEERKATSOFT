@@ -1,0 +1,37 @@
+
+@font-face {
+       
+    font-family: meerkat;  
+    src: url(Gabrielle.ttf);
+}
+
+h1{
+	 font-family: serif;
+	 color:white;
+	 text-align: center;
+}
+
+input{
+	width: auto;
+	height: 40px;
+	padding: 0px 10px;
+	margin: 10px 30px;
+	color: black;
+	text-align:center;
+	border:2px solid white;
+	border-radius: 10px;
+	font-size: 30px;
+}
+
+form input{
+	width: auto;
+	height: 40px;
+	padding: 0px 10px;
+	margin: 10px 30px;
+	color: black;
+	text-align:center;
+	border:2px solid white;
+	border-radius: 10px;
+	font-size: 30px;
+}
+
