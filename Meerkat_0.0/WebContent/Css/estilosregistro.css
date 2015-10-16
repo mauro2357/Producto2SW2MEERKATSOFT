@@ -1,8 +1,9 @@
 
 @font-face {
-    font-family: serif;
+       
+    font-family: meerkat;  
+    src: url(Gabrielle.ttf);
 }
-
 
 h1{
 	 font-family: serif;

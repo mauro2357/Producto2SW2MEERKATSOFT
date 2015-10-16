@@ -1,4 +1,8 @@
-
+@font-face {
+       
+    font-family: meerkat;  
+    src: url(Gabrielle.ttf);
+}
 form button {
 	width: 135px;
 	margin: 20px 0px 20px 22px;
