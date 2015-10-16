@@ -24,6 +24,7 @@ public class Mesero extends Empleado {
 	ProductoRepository productoRepository = new ProductoRepository();
 	MesaRepository mesaRepository = new MesaRepository();
 	ClientesRepository clienteRepository = new ClientesRepository();
+	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
 	public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
 		this.id = id;
@@ -109,8 +110,9 @@ public class Mesero extends Empleado {
 	}
 	
 	@Override
-	public void pagar() {
-		System.out.println("Se le debe pagar 20");
+	public void pagar() throws Exception {
+		String saldo = "35000";
+		empleadosRepository.Pagar(this,this.getId(),saldo);
 	}
 
 	@Override

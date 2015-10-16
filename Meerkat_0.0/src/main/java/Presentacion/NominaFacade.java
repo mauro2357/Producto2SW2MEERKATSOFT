@@ -7,8 +7,8 @@ import Negocio.pedido.Empleado;
 
 public class NominaFacade {	
 	
-	public ArrayList<Empleado> empleados = new ArrayList<Empleado>(); 
-	public static EmpleadosRepository empleadosRepository = new EmpleadosRepository();
+	ArrayList<Empleado> empleados = new ArrayList<Empleado>(); 
+	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
 	public ArrayList<Empleado> Consultar_Empleados() throws Exception{
 		this.empleados = empleadosRepository.Consultar_Empleados();
@@ -16,8 +16,8 @@ public class NominaFacade {
 	}
 	
 	public void Pagar_Nomina() throws Exception{
-		if(this.empleados==null) Consultar_Empleados();
-		for(Empleado empleado: this.empleados){
+		for(Empleado empleado: Consultar_Empleados()){
+			System.out.println(empleado);
 			empleado.pagar();
 		}
 	}

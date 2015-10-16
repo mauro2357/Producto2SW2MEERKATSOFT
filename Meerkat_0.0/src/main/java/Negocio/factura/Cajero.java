@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Datos.EmpleadosRepository;
 import Datos.FacturaRepository;
 import Datos.MesaRepository;
 import Negocio.pedido.Empleado;
@@ -22,6 +23,7 @@ public class Cajero extends Empleado{
 	
 	FacturaRepository facturaRepository = new FacturaRepository();
 	MesaRepository mesaRepository = new MesaRepository();
+	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
 	public Cajero(String id, String nombre, String apellido, String clave, String telefono) throws Exception {
 		this.id = id;
@@ -65,8 +67,9 @@ public class Cajero extends Empleado{
 	}
 
 	@Override
-	public void pagar() {
-		System.out.println("Se le debe pagar al empleado 20 mil");
+	public void pagar() throws Exception {
+		String saldo = "40000";
+		empleadosRepository.Pagar(this,this.getId(),saldo);
 	}
 
 	@Override

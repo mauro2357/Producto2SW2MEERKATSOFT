@@ -5,7 +5,15 @@ select sum(Valor) Valors from (select sum(Dtv_cantidad)*Pro_valor Valor from pro
 
 INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('2015-09-11', 'En espera', '1001', '800', '2');
 
+create view lista_empleados as 
+select Me_id Lista_id, Me_Nombre Nombre from mesero UNION select Des_Id Lista_id, Des_nombre Nombre from despachador UNION select Caj_id Lista_id, Caj_nombre Nombre from cajero UNION select Ad_id Lista_id, Ad_nombre Nombre from administrador;
 
+INSERT INTO `future`.`pago_nomina` (`Empleado_id`, `Empleado_fecha`, `Empleado_valor`, `Nomina_id`) VALUES ('801', '2015-10-11', '50000', '1');
+
+ALTER TABLE `future`.`pago_nomina` CHANGE `Nomina_id` `Nomina_id` varchar(40) NOT NULL AUTO_INCREMENT;
+
+select * from pago_nomina;
+select * from lista_empleados;
 select * from insumos;
 select * from administrador;
 select * from producto;
@@ -14,7 +22,9 @@ select * from mesero;
 select * from venta;
 select * from factura;
 select * from despachador;
+select * from compras;
 select * from detalles_compras;
+select * from detalle_compra;
 select * from cajero;
 select * from mesa;
 select * from cliente;
