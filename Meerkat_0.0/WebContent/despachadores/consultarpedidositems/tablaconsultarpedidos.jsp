@@ -2,8 +2,11 @@
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="Negocio.factura.*" %>
 <%@ page import="java.util.*" %>
-
-
+<head>
+<link rel="stylesheet" href="Css/cssdespachador.css" type="text/css">
+</head>
+<body>
+<div id="tabla" >
 <table style="background: rgba(255, 255, 255, 0.8); padding: 20px" border="1"> 
 	<tr><td>Id</td><td>Mesa</td><td>Mesero</td><td>Cliente</td><td>Cajero</td><td>Productos</td><td></td></tr>
 	<% 
@@ -33,4 +36,6 @@
 				}
 			}
 		%>
+</div>		
 </table>
+</body>
