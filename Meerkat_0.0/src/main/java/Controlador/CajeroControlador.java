@@ -71,8 +71,8 @@ public class CajeroControlador extends HttpServlet {
 	
 	public void Cobrar(HttpSession s, HttpServletRequest request){
 		try {
-			System.out.println(cajeroFacade.getCajero());
 			cajeroFacade.getCajero().Cobrar(id,mesa);
+			pagina = "cajero/cajero.jsp";
 		} catch (Exception e) {
 			System.out.println("Error al cobrar la mesa e n la base de datos.");
 		}

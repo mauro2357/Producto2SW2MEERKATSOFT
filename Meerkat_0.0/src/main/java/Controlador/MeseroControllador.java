@@ -22,7 +22,7 @@ public class MeseroControllador extends HttpServlet {
     }
      
     public MeserosFacade meserosFacade;
-    String pagina = null;
+    String pagina = "/cajero/cajero.jsp";
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(meserosFacade==null) meserosFacade = new MeserosFacade();
