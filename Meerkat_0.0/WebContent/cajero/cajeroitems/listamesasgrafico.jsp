@@ -11,7 +11,7 @@ $(document).ready(function(){
     }, function () {
         $(this).children('.toggle:first').slideToggle();
     });
-  });
+ });
 </script>
 </head>
 <% 
@@ -21,18 +21,16 @@ $(document).ready(function(){
 	else{
 		for(Map.Entry<Mesa, Factura> entry : x.entrySet()) {
     		%>
-    		<div class="button" align="center" id="<%out.print(entry.getKey().getId());%>" onclick="esconderhijo()" ><% out.print("Mesa " + entry.getKey().getId());
+    		<div class="button" align="center" id="<%out.print(entry.getKey().getId());%>"><% out.print("Mesa " + entry.getKey().getId());
 	    		%><div class="toggle" id="productos" style="display: none;">
-	    		<%
-	    		for(Producto producto: entry.getValue().getPedido().getCuerpo()){
-	    			%><%out.println(producto.getNombre() + "-" + entry.getValue().getPedido().cantidades.get(producto));%><%
-	    		}
-	    		%>
-	    		<form action="http://localhost:8080/Meerkat_0.0/caja" method="post">
-	    			<input type="submit" name="entrar" value="Cobrar">
-	    			<input type="hidden" name="id" value="<%out.print(entry.getValue().getId());%>">
-	    			<input type="hidden" name="mesa" value="<%out.print(entry.getKey().getId());%>">
-	    		</form>
+		    		<table border="1"><%
+		    		for(Producto producto: entry.getValue().getPedido().getCuerpo()){
+		    			%><tr><%out.println("<td>" +producto.getNombre() + "</td><td>" + entry.getValue().getPedido().cantidades.get(producto) + "</td><td>" + producto.getValor()*entry.getValue().getPedido().cantidades.get(producto) + "</td>");%></tr><%
+		    		}
+		    		%>
+		    		<tr><td colspan="2">Total:</td><td><%out.println(entry.getValue().getPedido().getPrecio_total());%></td></tr>
+		    		</table>
+	    		<div class="boton" style="border-color: black;" onclick="devolverprecio_mesa(<%out.print(entry.getValue().getId());%>,<%out.print(entry.getKey().getId());%>)">Pagar</div>
 	    		</div><%
     		%></div>
     		<% 

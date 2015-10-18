@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div align="center">
-		<form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/administrador">
+		<form name="nuevo_usuario" method= "post" action="/Meerkat_0.0/administrador">
 			<input type="text" name="id" placeholder="ID"><br>
 			<input type="text" name="nombre" placeholder="NOMBRE"><br>
 			<input type="text" name="apellido" placeholder="APELLIDO"><br>

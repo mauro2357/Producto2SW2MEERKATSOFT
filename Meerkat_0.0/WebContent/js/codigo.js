@@ -1,4 +1,14 @@
-	
+
+	function devolverprecio_mesa(x, y){
+		var Entrar = "devolver_precio_mesa";
+		$.post("/Meerkat_0.0/caja", {
+			entrar : Entrar,
+			id : x,
+			mesa : y
+		}, function(responseText){
+			$('#cuerpodos').html(responseText)});
+	}
+
 	function abrircerrarcuerpodos(){
 		if( !($("#cuerpodos").is(':visible')) ){
 			$("#cuerpodos").toggle();

@@ -13,6 +13,7 @@ public class Pedido {
 	public Mesa mesa;
 	public String cajero;
 	public String fecha;
+	public int precio_total;
 	
 	public Pedido(){}
 	
@@ -37,9 +38,9 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 	
-
 	public void Adicionarproducto(Producto x){
-		this.cuerpo.add(x); //Recibo el producto, lo agregamos al cuerpo del pedido.
+		this.cuerpo.add(x);
+		this.precio_total += x.getValor();
 	}
 	
 	public ArrayList<Producto> getCuerpo() {
@@ -104,6 +105,14 @@ public class Pedido {
 
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
+	}
+
+	public int getPrecio_total() {
+		return precio_total;
+	}
+
+	public void setPrecio_total(int precio_total) {
+		this.precio_total = precio_total;
 	}
 	
 	

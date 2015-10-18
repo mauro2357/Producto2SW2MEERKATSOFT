@@ -6,7 +6,7 @@
 }
 
 h1{
-	 font-family: serif;
+	 font-family: meerkat;
 	 color:white;
 	 text-align: center;
 }
@@ -24,6 +24,7 @@ input{
 }
 
 form input{
+	font-family: meerkat;
 	width: auto;
 	height: 40px;
 	padding: 0px 10px;

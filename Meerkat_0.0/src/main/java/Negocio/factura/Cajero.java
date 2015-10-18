@@ -56,9 +56,17 @@ public class Cajero extends Empleado{
 		return null;
 	}
 	
+	public int Consultar_precio_mesa(String id) throws Exception {
+		Factura facturam = null;
+		for(Factura factura: listafacturasdespachadas){
+			if(factura.getId().equalsIgnoreCase(id)) facturam=factura;
+		}
+		return facturam.getPedido().getPrecio_total();
+	}
+	
 	public boolean Cobrar(String id, String mesa) throws Exception {
 		facturaRepository.Cobrar(id,mesa);
-		return false;
+		return true;
 	}
 
 	public boolean añadirpropina(int x) {
@@ -128,6 +136,8 @@ public class Cajero extends Empleado{
 	public void setListafacturasdespachadas(ArrayList<Factura> listafacturasdespachadas) {
 		this.listafacturasdespachadas = listafacturasdespachadas;
 	}
+
+	
 
 	
 	

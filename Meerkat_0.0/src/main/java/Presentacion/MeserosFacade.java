@@ -13,12 +13,14 @@ public class MeserosFacade {
 	
 	public ArrayList<Mesero> Consultar_meseros() throws Exception{
 		ArrayList<Mesero> x = productorepository.Consultar_mesero();
+		if(mesero!=null) Definir_mesero(mesero.getId());
 		this.listameseros = x;
 		return x;
 	}
 
 	public void Definir_mesero(String meseroi) {
-		if(mesero==null){
+		
+		if(mesero==null || !mesero.getId().equalsIgnoreCase(meseroi)){
         	for(Mesero mesero: listameseros){
         		if(mesero.getId().contentEquals(meseroi)) this.mesero = mesero;
         	}

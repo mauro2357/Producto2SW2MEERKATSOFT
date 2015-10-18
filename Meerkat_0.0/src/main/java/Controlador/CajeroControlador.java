@@ -41,7 +41,10 @@ public class CajeroControlador extends HttpServlet {
 		case "entrar_cajero":
 			Entrar(s);
 			break;
-		case "Cobrar":
+		case "devolver_precio_mesa":
+			Costo_Mesa(s, request);
+			break;
+		case "pagar_mesa":
 			Cobrar(s, request);
 			break;
 		default:
@@ -67,6 +70,17 @@ public class CajeroControlador extends HttpServlet {
 		}
     	pagina = "cajero/cajeroitems/listamesasgrafico.jsp";
     	s.setAttribute("mesas-facturas", cajeroFacade.getCajero().Organizar_Facturas_Mesa());
+	}
+	
+	public void Costo_Mesa(HttpSession s, HttpServletRequest request){
+		try {
+			s.setAttribute("precio",cajeroFacade.getCajero().Consultar_precio_mesa(id));
+			s.setAttribute("id", id);
+			s.setAttribute("mesa", mesa);
+			pagina = "cajero/cajeroitems/caja.jsp";
+		} catch (Exception e) { 
+			System.out.println("Error al buscar el costo de la mesa");
+		}
 	}
 	
 	public void Cobrar(HttpSession s, HttpServletRequest request){

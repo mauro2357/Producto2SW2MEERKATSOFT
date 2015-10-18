@@ -7,7 +7,7 @@
 </head>
 <body background="fondo1.JPG">
 	<div align="center">
-		<form name="nuevo_usuario" method= "post" action="http://localhost:8080/Meerkat_0.0/mesero">
+		<form name="nuevo_usuario" method= "post" action="/Meerkat_0.0/mesero">
 			<input type="hidden" name="entrar" value="datos_usuario">
 			<input type="text" name="id" placeholder="Cedula"><br>
 			<input type="text" name="nombre" placeholder="Nombre"><br>

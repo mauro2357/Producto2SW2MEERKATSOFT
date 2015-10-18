@@ -47,7 +47,7 @@
 	<div id="table1" align="center">
 	</div>
 	<div align="right">
-		<form method="post" action="http://localhost:8080/Meerkat_0.0/mesero" >
+		<form method="post" action="/Meerkat_0.0/mesero" >
 		      	<button name="entrar" type="submit" value="Cancelar">Cancelar</button>
 		      	<input name="estado" type="hidden" value="En espera">
 		      	<select name="cliente" id="selectclientes"></select>

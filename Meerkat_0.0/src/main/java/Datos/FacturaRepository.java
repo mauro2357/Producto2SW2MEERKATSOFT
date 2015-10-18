@@ -48,6 +48,7 @@ public class FacturaRepository {
 	    MesaRepository mesaRepository = new MesaRepository();
 	    ArrayList<Producto> tproductos = productoRepository.Consultar_producto(); //sI HAY ERROR ES AQUÍ
 	    ArrayList<Producto> x = null;
+	    int preciot=0;
 	    Pedido y = null;
 	    Map<Producto, Integer> z = null;
 	    String auxid = null;
@@ -63,23 +64,25 @@ public class FacturaRepository {
 		    		  y = new Pedido();
 		    		  y.cuerpo = x;
 		    		  y.cantidades = z;
+		    		  y.precio_total = preciot;
 		    		  mesam = mesaRepository.Buscar_Mesa(mesa);
 		    		  Factura fi = new Factura(auxid,mesero,cajero,mesam,y,cliente);
 				      f.add(fi);
 		    	}
+	    		preciot = 0;
 		    	x = null;
 		    	z = null;
 		    	y = null;
 		    	auxid=id;
 	    	}
 	    	if(auxid.equalsIgnoreCase(id)){ 
-		    	  if(x==null){ x = new ArrayList<Producto>(); z = new HashMap<Producto, Integer>(); }
+		    	  if(x==null){ x = new ArrayList<Producto>(); preciot=0; z = new HashMap<Producto, Integer>(); }
 	 	    	  mesero = rs.getString("Me_id"); 
 	 		      cajero = rs.getString("Caj_id"); 
 	 		      mesa = rs.getString("Mesa_id");
 	 		      cliente = rs.getString("Cli_id"); 
 	 		      for(Producto producto: tproductos){ 
-	 		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
+	 		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); preciot+=(producto.getValor()*Integer.parseInt(rs.getString("Dtv_cantidad"))); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
 	 		      } 
 	 		      auxid = id; 
 	 		      continue; 
@@ -87,6 +90,7 @@ public class FacturaRepository {
 
 	    }
 	    y = new Pedido();
+	    y.precio_total = preciot;
 	    y.cuerpo = x;
 	    y.cantidades = z;
 	    if(mesa == null) return f;
@@ -106,5 +110,6 @@ public class FacturaRepository {
 		st.executeUpdate(query);
 		st.close();
 	}
+
 	
 }
