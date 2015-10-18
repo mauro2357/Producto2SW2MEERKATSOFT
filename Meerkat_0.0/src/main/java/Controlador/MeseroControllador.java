@@ -53,6 +53,9 @@ public class MeseroControllador extends HttpServlet {
 	        case "ingresarproducto":
 	        	pagina = ingresar_producto(s, request);
 				break;
+	        case "quitarproducto":
+	        	pagina = quitar_producto(s, request);
+				break;
 	        case "listarpedidoactual":
 	        	pagina = listar_pedido_actual(s);
 				break;
@@ -137,6 +140,19 @@ public class MeseroControllador extends HttpServlet {
 		String id = request.getParameter("idp"); 
     	try { meserosFacade.getMesero().adicionarproducto(id);} 
     	catch (Exception e) {System.out.println("Error en base de datos al adicionar producto.");}
+    	s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
+    	return "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
+	}
+	
+	private String quitar_producto(HttpSession s, HttpServletRequest request){
+		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("Facade");
+		try {meserosFacade.Consultar_meseros();} 
+		catch (Exception e) {System.out.println("Error al consultar los meseros");}
+		String id = request.getParameter("idp"); 
+    	try { meserosFacade.getMesero().quitarproducto(id);} 
+    	catch (Exception e) {
+    		System.out.println("Error en base de datos al quitar producto.");
+    		System.out.println(e);}
     	s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
     	return "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
 	}

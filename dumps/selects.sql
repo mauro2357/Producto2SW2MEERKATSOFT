@@ -1,6 +1,7 @@
 create view factura as
 select * from producto NATURAL JOIN detalles_venta NATURAL JOIN venta;
 
+
 select sum(Valor) Valors from (select sum(Dtv_cantidad)*Pro_valor Valor from producto natural join Detalles_venta natural join venta group by Pro_nombre order by Dtv_cantidad asc) as A;
 
 INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('2015-09-11', 'En espera', '1001', '800', '2');
@@ -12,6 +13,11 @@ INSERT INTO `future`.`pago_nomina` (`Empleado_id`, `Empleado_fecha`, `Empleado_v
 
 ALTER TABLE `future`.`pago_nomina` CHANGE `Nomina_id` `Nomina_id` varchar(40) NOT NULL AUTO_INCREMENT;
 
+delete from pedidos_temporales where Me_id = 666 and Pro_id = "pl08";
+
+select Pt_id from pedidos_temporales where Me_id = 667 and Pro_id = "pl09" group by Pt_id;
+
+select * from pedidos_temporales;
 select * from pago_nomina;
 select * from lista_empleados;
 select * from insumos;
@@ -20,7 +26,7 @@ select * from producto;
 select * from detalles_venta;
 select * from mesero;
 select * from venta;
-select * from factura;
+select * from factura where Pro_id = "pl08" and Me_id = 666;
 select * from despachador;
 select * from compras;
 select * from detalles_compras;

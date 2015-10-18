@@ -1,4 +1,16 @@
 
+
+	function pagar_mesa(x,y){
+		var numberString = $('#Costo').text();
+		var Costo = Number(numberString.replace(/[^0-9\.]+/g,""));
+		var respuesta = (Costo-$('#Dinero').val());
+		if(respuesta<=0){
+			alert("Entra la compra");
+		}else{
+			alert("Atención! Falta dinero para completar la compra.")
+		}
+	}
+
 	function devolverprecio_mesa(x, y){
 		var Entrar = "devolver_precio_mesa";
 		$.post("/Meerkat_0.0/caja", {

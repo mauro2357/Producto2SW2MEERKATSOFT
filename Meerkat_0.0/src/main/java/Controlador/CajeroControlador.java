@@ -20,32 +20,30 @@ public class CajeroControlador extends HttpServlet {
         super();
     }
     
-    public CajerosFacade cajeroFacade; //Por ahora así
-    
-    String pagina = null;
-    String id = null;
-    String mesa = null;
-    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(cajeroFacade==null) cajeroFacade = new CajerosFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
+		if(s.getAttribute("FacadeCajero") == null){
+			CajerosFacade cajeroFacade = new CajerosFacade();
+			s.setAttribute("FacadeCajero", cajeroFacade);
+		}
         String Puerta = null;
         Puerta = request.getParameter("entrar");
-        id = request.getParameter("id");
-        mesa = request.getParameter("mesa");
+        String pagina = null;
+        String id = request.getParameter("id");
+        String mesa = request.getParameter("mesa");
         switch (Puerta) {
 		case "Terminar":
 			cerrar_sesion(s, request);
 			break;
 		case "entrar_cajero":
-			Entrar(s);
+			pagina = Entrar(s);
 			break;
 		case "devolver_precio_mesa":
-			Costo_Mesa(s, request);
+			pagina = Costo_Mesa(s, request, id, mesa);
 			break;
 		case "pagar_mesa":
-			Cobrar(s, request);
+			pagina = Cobrar(s, request, id, mesa);
 			break;
 		default:
 			break;
@@ -54,42 +52,48 @@ public class CajeroControlador extends HttpServlet {
         rd.forward(request, response);
 	}
 	
-	public void cerrar_sesion(HttpSession s, HttpServletRequest request){
-		cajeroFacade.setCajero(null);
+	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
+		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
+		cajerosFacade.setCajero(null);
 		s = request.getSession(false);
     	s.invalidate();
-    	pagina = "index.jsp";
+    	return "index.jsp";
 	}
 	
-	public void Entrar(HttpSession s){
+	public String Entrar(HttpSession s){
+		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {
-    		cajeroFacade.Consultar_cajeros();
-    		cajeroFacade.getCajero().getListafacturasdespachadas();
+			cajerosFacade.Consultar_cajeros();
+			cajerosFacade.getCajero().getListafacturasdespachadas();
 		} catch (Exception e) {
 			System.out.println("Error al organizar las facturas por mesa.");
 		}
-    	pagina = "cajero/cajeroitems/listamesasgrafico.jsp";
-    	s.setAttribute("mesas-facturas", cajeroFacade.getCajero().Organizar_Facturas_Mesa());
+    	s.setAttribute("mesas-facturas", cajerosFacade.getCajero().Organizar_Facturas_Mesa());
+    	return "cajero/cajeroitems/listamesasgrafico.jsp";
 	}
 	
-	public void Costo_Mesa(HttpSession s, HttpServletRequest request){
+	public String Costo_Mesa(HttpSession s, HttpServletRequest request, String id, String mesa){
+		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {
-			s.setAttribute("precio",cajeroFacade.getCajero().Consultar_precio_mesa(id));
+			s.setAttribute("precio",cajerosFacade.getCajero().Consultar_precio_mesa(id));
 			s.setAttribute("id", id);
 			s.setAttribute("mesa", mesa);
-			pagina = "cajero/cajeroitems/caja.jsp";
+			return "cajero/cajeroitems/caja.jsp";
 		} catch (Exception e) { 
 			System.out.println("Error al buscar el costo de la mesa");
 		}
+		return null;
 	}
 	
-	public void Cobrar(HttpSession s, HttpServletRequest request){
+	public String Cobrar(HttpSession s, HttpServletRequest request, String id, String mesa){
+		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {
-			cajeroFacade.getCajero().Cobrar(id,mesa);
-			pagina = "cajero/cajero.jsp";
+			cajerosFacade.getCajero().Cobrar(id,mesa);
+			return "cajero/cajero.jsp";
 		} catch (Exception e) {
 			System.out.println("Error al cobrar la mesa e n la base de datos.");
 		}
+		return null;
 	}
 
 }

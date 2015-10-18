@@ -25,6 +25,7 @@ public class Mesero extends Empleado {
 	MesaRepository mesaRepository = new MesaRepository();
 	ClientesRepository clienteRepository = new ClientesRepository();
 	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
+	FacturaRepository facturaRepository = new FacturaRepository();
 	
 	public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
 		this.id = id;
@@ -35,6 +36,7 @@ public class Mesero extends Empleado {
 		this.mesas = mesaRepository.Consultar_mesas(null);
 		this.mesas_libres = mesaRepository.Consultar_mesas("ocupada");
 		this.clientes = clienteRepository.Consultar_Clientes();
+		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
 	}
 
 	public Mesero() throws Exception { 
@@ -42,6 +44,7 @@ public class Mesero extends Empleado {
 		this.mesas = mesaRepository.Consultar_mesas(null);
 		this.mesas_libres = mesaRepository.Consultar_mesas("Despachado");
 		this.clientes = clienteRepository.Consultar_Clientes();
+		this.pedido_sin_asignar = null;
 	}
 
 	public void setId(String id) {this.id = id;}
@@ -80,7 +83,7 @@ public class Mesero extends Empleado {
 	public String enviar_pedido(Pedido pedido) throws Exception{
 		if(pedido==null) return "No hay productos.";
 		FacturaRepository facturarepository = new FacturaRepository();
-		facturarepository.Ingresar_pedido(pedido);
+		facturarepository.Ingresar_pedido(pedido, this.getId());
 		return "Pedido enviado";
 	}
 	
@@ -94,8 +97,14 @@ public class Mesero extends Empleado {
 	public void adicionarproducto(String id2) throws Exception {
 		if(pedido_sin_asignar==null) pedido_sin_asignar = new Pedido(); //Si no hay pedido, se crea
 		if(pedido_sin_asignar.getCuerpo() == null) pedido_sin_asignar.cuerpo = new ArrayList<Producto>(); //Si el pedido no tiene productos, se crea el vector
-		Producto encontrado = consultarproductoinvididual(id2); //Le decimos al mesero que nos busque la ubicacion en memoria del producto
-		pedido_sin_asignar.Adicionarproducto(encontrado); //Ya encontrado el producto, lo adicionamos al pedido
+		facturaRepository.Adicionar_Producto_a_Pedido_Temporal(id2,this.getId());
+		pedido_sin_asignar = facturaRepository.Pedido_temporal(this.getId());
+	}
+	
+	public void quitarproducto(String id2) throws Exception {
+		if(pedido_sin_asignar.getCuerpo().size()==0) pedido_sin_asignar.setCuerpo(null);
+		facturaRepository.Quitar_Producto_a_Pedido_Temporal(id2, this.getId(), pedido_sin_asignar);
+		pedido_sin_asignar = facturaRepository.Pedido_temporal(this.getId());
 	}
 
 	public String finiquitarpedido(Pedido pedido, String cliente, String mesero, Mesa mesa, String cajero, String fecha) throws Exception {
@@ -157,5 +166,7 @@ public class Mesero extends Empleado {
 	public void setPedido_sin_asignar(Pedido pedido_sin_asignar) {
 		this.pedido_sin_asignar = pedido_sin_asignar;
 	}
+
+	
 
 }

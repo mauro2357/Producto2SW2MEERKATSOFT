@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import Datos.FacturaRepository;
 import Negocio.factura.Factura;
-import Negocio.pedido.Pedido;
 
 public class PedidosFacade {
 	
@@ -25,10 +24,6 @@ public class PedidosFacade {
 	public int ultimopedidoid() throws Exception{
 		ArrayList<Factura> x = facturarepository.Generar_factura(null);
 		return x.size();
-	}
-	
-	public void Enviar_pedido(Pedido x) throws Exception{
-		facturarepository.Ingresar_pedido(x);
 	}
 
 	public ArrayList<Factura> getListafacturassindespachar() {

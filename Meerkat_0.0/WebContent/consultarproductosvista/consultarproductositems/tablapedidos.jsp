@@ -8,12 +8,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="js/codigo.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $('.cancelar').click(function() {
+	    	var Entrar = "quitarproducto";
+			x = this.title;
+			$.post("/Meerkat_0.0/mesero", {
+				entrar : Entrar,
+				idp : x
+			}, function(responseText) {
+				$('#table1').html(responseText);
+			});
+	    });
+ 	});
+</script>
 </head>
 <body>
 	<br>
 	<div style="max-width: 100%; height:70%;">
 		<table border="1" cellpadding="1" cellspacing="0" style="background: rgba(300, 300, 300, 0.5);">
-			<tr><td>Producto</td><td>Cantidad</td><td>Precio</td></tr>
+			<tr><td>Producto</td><td>Cantidad</td><td>Precio</td><td></td></tr>
 		<%	@SuppressWarnings("unchecked")
 			ArrayList<Producto> productos_pedido = (ArrayList<Producto>) session.getAttribute("productos-pedido");
 			if(productos_pedido==null) productos_pedido = new ArrayList<Producto>();
@@ -32,7 +47,7 @@
 				}
 				total += producto.getValor() * aux;
 				%>
-				<tr><td><%out.print(producto.getNombre());%></td><td align="right"><%out.print(aux);%></td><td><%out.print(totalindividual);%></td></tr>
+				<tr><td><%out.print(producto.getNombre());%></td><td align="right"><%out.print(aux);%></td><td><%out.print(totalindividual);%></td><td><div class="cancelar" title="<%out.print(producto.getCodigo());%>" style="cursor:pointer;">Quitar</div></td></tr>
 			<%}%>
 			<tr><td colspan="2"><%out.print("Total"); %></td><td><%out.print(total); %></td></tr>
 		</table>

@@ -1,6 +1,7 @@
 <%int precio = (Integer) session.getAttribute("precio"); %>
 <%String id = (String) session.getAttribute("id"); %>
 <%String mesa = (String) session.getAttribute("mesa"); %>
+<script src="../js/codigo.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#Dinero').change(function(){
@@ -24,8 +25,6 @@
 		<tr> <td> <h1>Entrega:</h1> </td> <td> <input type="text" id="Dinero" placeholder="0"> </td> </tr>
 		<tr> <td> <div id="Relativo"><h1>Cambio:</h1></div> </td> <td> <div id="Cambio"><h1>0</h1></div> </td> </tr>
 		<tr> <td> <h1>Propina:</h1> </td> <td> <input type="text" id="Propina" placeholder="0"> </td> </tr>
-		<tr> <td colspan="2" align="center"> <div class="button	" onclick="pagar_mesa()">Pagar</div> </td> </tr>
+		<tr> <td colspan="2" align="center"> <div class="button	" onclick="pagar_mesa(<%out.print(id);%>,<%out.print(mesa);%>)">Pagar</div> </td> </tr>
 	</table>
-	<input type="hidden" id="mesa" value="<%out.print(id);%>">
-	<input type="hidden" id="id" value="<%out.print(mesa);%>">
 </form>

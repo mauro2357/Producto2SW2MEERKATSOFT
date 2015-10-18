@@ -12,7 +12,7 @@ import Negocio.pedido.*;
 
 public class FacturaRepository {
 	
-	public void Ingresar_pedido(Pedido x) throws Exception {
+	public void Ingresar_pedido(Pedido x, String mesero) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa.getId()+"');";
 	    Statement st = con.createStatement();
@@ -35,6 +35,8 @@ public class FacturaRepository {
 			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.getCodigo()+"','"+ven_id+"','"+aux+"');";
 			st.executeUpdate(query);
 		}
+		query = "delete from pedidos_temporales where Me_id = "+mesero+";";
+		st.executeUpdate(query);
 	    st.close();
 	}
 	
@@ -110,6 +112,56 @@ public class FacturaRepository {
 		st.executeUpdate(query);
 		st.close();
 	}
+	
+	public Pedido Pedido_temporal(String mesero) throws Exception{
+		Connection con = new ConexionMySql().ObtenerConexion();
+		String query = "select * from pedidos_temporales where Me_id="+mesero+";";
+		Statement st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    Map<Producto,Integer> cantidades = new HashMap<Producto,Integer>();
+	    while(rs.next()){
+	    	String Pro_id = rs.getString("Pro_id");
+	    	ProductoRepository pR = new ProductoRepository();
+	    	Producto productoen = null;
+	    	for(Producto producto: pR.Consultar_producto()){
+	    		if(producto.getCodigo().equalsIgnoreCase(Pro_id)){
+	    			productoen = producto;
+	    			break;
+	    		}
+	    	}
+	    	if(!cantidades.containsKey(Pro_id)) cantidades.put(productoen, 1);
+	    	else cantidades.replace(productoen, cantidades.get(Pro_id)+1);
+	    }
+		Pedido pedido_temporal = new Pedido();
+		pedido_temporal.setCantidades(cantidades);
+		ArrayList<Producto> cuerpo = new ArrayList<Producto>();
+		cuerpo.addAll(cantidades.keySet());
+		pedido_temporal.setCuerpo(cuerpo);
+		st.close();
+		return pedido_temporal;
+	}
 
+	public void Adicionar_Producto_a_Pedido_Temporal(String producto, String mesero) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		String query = "INSERT INTO `future`.`pedidos_temporales` (`Me_id`, `Pro_id`) VALUES ('"+mesero+"', '"+producto+"');";
+		Statement st = con.createStatement();
+		st.executeUpdate(query);
+		st.close();
+	}
+
+	public void Quitar_Producto_a_Pedido_Temporal(String producto, String mesero, Pedido pedido_sin_asignar) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+    	String query = "select * from pedidos_temporales where Me_id="+mesero+" and Pro_id = '"+producto+"';";
+    	System.out.println(query);
+		Statement st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    while(rs.next()){
+	    	query = "delete from pedidos_temporales where Pt_id = "+rs.getString("Pt_id") +";";
+	    	System.out.println(query);
+			st.executeUpdate(query);
+			st.close();
+	    	break;
+	    }
+	}
 	
 }

@@ -39,6 +39,7 @@ public class Pedido {
 	}
 	
 	public void Adicionarproducto(Producto x){
+		
 		this.cuerpo.add(x);
 		this.precio_total += x.getValor();
 	}
