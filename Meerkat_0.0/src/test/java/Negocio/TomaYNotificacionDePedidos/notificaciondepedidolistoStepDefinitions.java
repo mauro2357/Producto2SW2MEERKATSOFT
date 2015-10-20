@@ -1,4 +1,4 @@
-package Negocio.pedido;
+package Negocio.TomaYNotificacionDePedidos;
 
 import org.junit.Assert;
 

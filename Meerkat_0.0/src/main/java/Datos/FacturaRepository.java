@@ -7,8 +7,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Negocio.TomaYNotificacionDePedidos.*;
 import Negocio.factura.Factura;
-import Negocio.pedido.*;
+import Negocio.pedido.Mesa;
+import Negocio.pedido.Pedido;
+import Negocio.pedido.Producto;
 
 public class FacturaRepository {
 	

@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Negocio.pedido.*;
+import Negocio.TomaYNotificacionDePedidos.*;
+import Negocio.pedido.Despachador;
 
 public class DespachadorRepository {
 	

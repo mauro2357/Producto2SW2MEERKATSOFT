@@ -75,8 +75,7 @@ public class Mesero extends Empleado {
 	}
 	
 	public String getMensaje() throws Exception {
-		ArrayList<Producto> x = productoRepository.Consultar_producto();
-		if(!(x.size()==0)) return "No hay productos";
+		if(this.getProductos().size()<0) return "No hay productos";
 		return "Hay productos";
 	}
 	

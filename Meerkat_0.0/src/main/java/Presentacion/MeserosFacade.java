@@ -18,15 +18,24 @@ public class MeserosFacade {
 		return x;
 	}
 
-	public void Definir_mesero(String meseroi) {
-		
+	public String Definir_mesero(String meseroi) {
 		if(mesero==null || !mesero.getId().equalsIgnoreCase(meseroi)){
         	for(Mesero mesero: listameseros){
-        		if(mesero.getId().contentEquals(meseroi)) this.mesero = mesero;
+        		if(mesero.getId().contentEquals(meseroi)){
+        			this.mesero = mesero;
+        			return null;
+        		}
         	}
+        	return "El mesero no se encuentra en la lista de meseros contratados.";
     	}
+		return null;
 	}
 
+	public String NoHayMeseros(){
+		if(this.listameseros==null || this.listameseros.size()<0) return "No hay meseros contratados.";
+		return null;
+	}
+	
 	public Mesero getMesero() {
 		return mesero;
 	}

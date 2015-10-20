@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Negocio.pedido.*;
+import Negocio.TomaYNotificacionDePedidos.*;
+import Negocio.pedido.Mesa;
+import Negocio.pedido.Pedido;
 import Presentacion.*;
 
 @WebServlet("/mesero")
