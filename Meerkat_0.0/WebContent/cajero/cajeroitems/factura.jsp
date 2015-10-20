@@ -1,3 +1,6 @@
+<
+<%Factura factura = (Factura) session.getAttribute("precio"); %>
+
 <table style="color: white; ">
 <tr><td>Factura:</td></tr>
 <tr><td>Precio:</td></tr>

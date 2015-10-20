@@ -78,6 +78,7 @@ public class Cajero extends Empleado{
 		facturaRepository.Cobrar(id,mesa);
 		FacturaPorMesa.remove(ans);
 		ans.pedido.setEstado("Finalizado");
+		ans.setCajero(this.getId());
 		return ans;
 	}
 
