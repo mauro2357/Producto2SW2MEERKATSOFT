@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Presentacion.MeserosFacade;
+
 @WebServlet("/login")
 public class LoginControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -18,8 +20,11 @@ public class LoginControlador extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		if(request.getSession() == null){ @SuppressWarnings("unused")
-		HttpSession s = request.getSession(); }
+		HttpSession s = request.getSession();
+		if(s.getAttribute("Session") == null){
+			MeserosFacade meserosFacade = new MeserosFacade();
+			s.setAttribute("Session", meserosFacade);
+		}
 	}
 }
 

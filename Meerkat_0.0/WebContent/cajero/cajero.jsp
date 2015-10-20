@@ -12,12 +12,15 @@
 <script type="text/javascript">
 
 	$(function() {
-			var Entrar = "entrar_cajero"; 
-			$.post("/Meerkat_0.0/caja", {
-				entrar : Entrar,
-			}, function(responseText) {
-				$('#cuerpo').html(responseText);
-			});			
+		if(!($("#cuerpo").is(':visible'))){
+			$("#cuerpo").toggle();
+		}
+		var Entrar = "entrar_cajero"; 
+		$.post("/Meerkat_0.0/caja", {
+			entrar : Entrar,
+		}, function(responseText) {
+			$('#cuerpo').html(responseText);
+		});			
 	});
 </script>
 </head>
@@ -29,4 +32,5 @@
 	<br>
 	<div id="cuerpo" class="contenedor"></div>
 	<div id="cuerpodos" class="contenedor" align="center"></div>
+	<div id="cuerpotres" class="contenedor" align="center"></div>
 </body>

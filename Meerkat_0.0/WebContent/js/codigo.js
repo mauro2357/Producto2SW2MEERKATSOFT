@@ -6,12 +6,28 @@
 		var respuesta = (Costo-$('#Dinero').val());
 		if(respuesta<=0){
 			alert("Entra la compra");
+			var Entrar = "pagar_mesa";
+			$.post("/Meerkat_0.0/caja", {
+				entrar : Entrar,
+				id : x,
+				mesa : y
+			}, function(responseText){
+				$('#cuerpotres').html(responseText)});
+			if( ($("#cuerpo").is(':visible')) ){
+				$("#cuerpo").toggle();
+			}
+			if( ($("#cuerpodos").is(':visible')) ){
+				$("#cuerpodos").toggle();
+			}
 		}else{
 			alert("Atención! Falta dinero para completar la compra.")
 		}
 	}
-
+	
 	function devolverprecio_mesa(x, y){
+		if((!$("#cuerpodos").is(':visible')) ){
+			$("#cuerpodos").toggle();
+		}
 		var Entrar = "devolver_precio_mesa";
 		$.post("/Meerkat_0.0/caja", {
 			entrar : Entrar,

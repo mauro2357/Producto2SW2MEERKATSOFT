@@ -32,6 +32,10 @@ public class AdministradorControlador extends HttpServlet {
 		if(administradoresFacade==null) administradoresFacade = new AdministradoresFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
+		if(s.getAttribute("FacadeAdministrador") == null){
+			MeserosFacade meserosFacade = new MeserosFacade();
+			s.setAttribute("FacadeAdministrador", meserosFacade);
+		}
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         id = request.getParameter("id");

@@ -25,8 +25,11 @@ public class DespachadorControlador extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(despachadoresFacade==null) despachadoresFacade = new DespachadoresFacade();
-		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
+		if(s.getAttribute("FacadeDespachador") == null){
+			MeserosFacade meserosFacade = new MeserosFacade();
+			s.setAttribute("FacadeDespachador", meserosFacade);
+		}
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         

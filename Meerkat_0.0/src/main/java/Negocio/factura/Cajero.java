@@ -38,6 +38,7 @@ public class Cajero extends Empleado{
 		Map<Mesa,Factura> u = new HashMap<Mesa,Factura>();
 		u.clear();
 		for(Factura factura: listafacturasdespachadas){
+			if(factura.pedido.getEstado()=="Finalizado") continue;
 			u.put(factura.getMesa(), factura);
 		}
 		FacturaPorMesa = u;
@@ -46,6 +47,14 @@ public class Cajero extends Empleado{
 
 	public Factura getFactura() {
 		return factura;
+	}
+	
+	public Factura generarfacturageneral(String id) throws Exception{
+		ArrayList<Factura> listadefacturas = facturaRepository.Generar_factura(null);
+		for(Factura factura:listadefacturas){
+			if(factura.getId().equalsIgnoreCase(id)) return factura;
+		}
+		return null;
 	}
 	
 	public Factura generarfactura(String id) throws Exception{
@@ -64,9 +73,12 @@ public class Cajero extends Empleado{
 		return facturam.getPedido().getPrecio_total();
 	}
 	
-	public boolean Cobrar(String id, String mesa) throws Exception {
+	public Factura Cobrar(String id, String mesa) throws Exception {
+		Factura ans = generarfacturageneral(id);
 		facturaRepository.Cobrar(id,mesa);
-		return true;
+		FacturaPorMesa.remove(ans);
+		ans.pedido.setEstado("Finalizado");
+		return ans;
 	}
 
 	public boolean añadirpropina(int x) {
