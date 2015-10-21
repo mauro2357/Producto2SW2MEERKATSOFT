@@ -50,6 +50,10 @@ public class Administrador extends Empleado {
 	public void Contratar_Despachador(String id, String nombre, String apellido, String telefono) throws Exception{ 
 		empleadosRepository.Registrar_despachador(id, nombre, apellido, telefono);
 	}
+	
+	public void Agregar_insumo(String id, String nombre, int valor) throws Exception{ 
+		inventarioRepository.Registrar_insumo(id, nombre, valor);
+	}
 
 	@Override
 	public void pagar() throws Exception {

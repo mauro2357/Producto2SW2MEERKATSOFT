@@ -25,4 +25,12 @@ public class InventarioRepository {
 	    st.close();
 	    return a; 
 	}	
+	
+	public void Registrar_insumo (String codigo, String nombre, int valor) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "INSERT INTO `future`.`insumos` (`Ins_id`, `Ins_nombre`, `Ins_valor`) VALUES ('"+codigo+"', '"+nombre+"');";
+	    Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
 }

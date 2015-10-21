@@ -17,7 +17,7 @@ public class AdministradoresFacade {
 		this.administrador = this.lista_administradores.get(0);
 		return lista_administradores;
 	}
-
+	
 	public Administrador getAdministrador() {
 		return administrador;
 	}

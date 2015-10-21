@@ -76,6 +76,9 @@ public class AdministradorControlador extends HttpServlet {
 	        case "datos_despachador":
 	        	Contratar_Despachador(s);
 	        	break;
+	        case "datos_insumo":
+	        	registrar_insumo(s, request);
+	        	break;
 	        default:
 				pagina = "index.jsp";
 				break;
@@ -90,6 +93,7 @@ public class AdministradorControlador extends HttpServlet {
     	s.invalidate();
     	pagina = "index.jsp";
 	}
+	
 	
 	public void Consultar_Inventario(HttpSession s){
 		try{ s.setAttribute("todos-los-insumos", administradoresFacade.getAdministrador().getLista_insumos());
@@ -132,9 +136,20 @@ public class AdministradorControlador extends HttpServlet {
 	
 	public void Contratar_Despachador(HttpSession s){
 		try {administradoresFacade.getAdministrador().Contratar_Despachador(id, nombre, apellido, telefono);
-		}catch (Exception e) {System.out.println("Error en la base de datos al crear un mesero");}
+		}catch (Exception e) {System.out.println("Error en la base de datos al crear un despachador");}
 		pagina = "index.jsp";
 	}
+	
+	private String registrar_insumo(HttpSession s, HttpServletRequest request){
+		AdministradoresFacade administradorFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
+		String id = request.getParameter("id");
+    	String nombre = request.getParameter("nombre");
+    	int valor = Integer.parseInt(request.getParameter("valor"));
+    	try{ administradorFacade.getAdministrador().Agregar_insumo(id, nombre, valor);}
+    	catch (Exception e) { System.out.println("Error en base de datos al agregar un nuevo insumo.");}   	
+    	return "index.jsp";
+	}
+	
 	
 	public void Pagar_Nomina(){
 		NominaFacade nominaFacade = new NominaFacade();

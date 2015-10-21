@@ -14,7 +14,9 @@ public class InventarioFacade {
 		InventarioRepository inventariorepository = new InventarioRepository();
 		ArrayList<Producto> x = inventariorepository.Consultar_insumos ();
 		this.listainsumos = x;
-		System.out.println("Ingreso al facade: ");
 		return x;
 	}
+	
+	
+	
 }
