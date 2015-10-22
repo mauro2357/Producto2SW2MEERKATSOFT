@@ -1,4 +1,4 @@
-package Negocio.consultas;
+package Negocio.ConsultarReportedeVentas;
 
 import org.junit.runner.RunWith;
 

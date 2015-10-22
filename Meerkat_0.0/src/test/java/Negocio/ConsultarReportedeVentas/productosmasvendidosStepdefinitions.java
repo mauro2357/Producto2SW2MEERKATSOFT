@@ -1,4 +1,4 @@
-package Negocio.consultas;
+package Negocio.ConsultarReportedeVentas;
 
 import Negocio.inventario.Administrador;
 import cucumber.api.java.en.Given;

@@ -22,8 +22,6 @@ public class consultarinventarioStepdefinitons {
 		administrador = new Administrador(null, null, null, null, null);
 		administrador.Consultar_inventario();
 		lista = inventarioFacade.Consultar_insumos();
-		
-		
 	}
 
 	@When("^Hay productos en el inventario.$")
@@ -31,11 +29,19 @@ public class consultarinventarioStepdefinitons {
 		Assert.assertTrue(lista.size()>0); 
 	}
 	
-	
-	
 	@Then("^Mostrar la lista de insumos.$")
 	public void Mostrar_la_lista_de_insumos() throws Throwable {
 		Assert.assertTrue(lista.size()>0);
+	}
+	
+	@When("^No hay productos en el inventario.$")
+	public void No_hay_productos_en_el_inventario() throws Throwable {
+		Assert.assertFalse(lista.size()>0);
+	}
+
+	@Then("^Informar que no hay productos en el inventario.$")
+	public void Informar_que_no_hay_productos_en_el_inventario() throws Throwable {
+		Assert.assertEquals("No hay Insumos", administrador.getMensaje());
 	}
 
 }

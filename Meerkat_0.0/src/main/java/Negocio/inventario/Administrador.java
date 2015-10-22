@@ -54,6 +54,10 @@ public class Administrador extends Empleado {
 	public void Agregar_insumo(String id, String nombre, int valor) throws Exception{ 
 		inventarioRepository.Registrar_insumo(id, nombre, valor);
 	}
+	
+	public String getMensaje() throws Exception {
+		 return "No hay Insumos";
+	}
 
 	@Override
 	public void pagar() throws Exception {
