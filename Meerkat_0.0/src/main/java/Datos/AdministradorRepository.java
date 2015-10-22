@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Negocio.inventario.*;
+import Negocio.ActualizarInventario.*;
+import Negocio.inventario.Administrador;
 
 public class AdministradorRepository {
 	

@@ -142,6 +142,7 @@ public class AdministradorControlador extends HttpServlet {
 	
 	private String registrar_insumo(HttpSession s, HttpServletRequest request){
 		AdministradoresFacade administradorFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
+		
 		String id = request.getParameter("id");
     	String nombre = request.getParameter("nombre");
     	int valor = Integer.parseInt(request.getParameter("valor"));

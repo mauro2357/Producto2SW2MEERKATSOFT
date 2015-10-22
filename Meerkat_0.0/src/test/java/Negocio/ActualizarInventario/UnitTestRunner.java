@@ -1,4 +1,4 @@
-package Negocio.inventario;
+package Negocio.ActualizarInventario;
 
 import org.junit.runner.RunWith;
 

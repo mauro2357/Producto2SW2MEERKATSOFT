@@ -1,4 +1,6 @@
-package Negocio.TomaYNotificacionDePedidos;
+package Negocio.TomayNotificacionPedidos;
+
+import java.util.ArrayList;
 
 import org.junit.Assert;
 
@@ -11,9 +13,11 @@ import cucumber.api.java.en.When;
 public class listadodepedidosencolaStepDefinitions {
 	
 	MeserosFacade meserosFacade = new MeserosFacade();
+	ArrayList<Pedido> x;
 	Mesero mesero;
 	Pedido pedido;
 	Despachador despachador;
+	
 	
 	@Given("^El mesero construye el pedido temporalmente.$")
 	public void El_mesero_construye_el_pedido_temporalmente() throws Throwable {

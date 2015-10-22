@@ -1,4 +1,4 @@
-package Negocio.inventario;
+package Negocio.ActualizarInventario;
 
 import java.util.ArrayList;
 
@@ -30,6 +30,8 @@ public class consultarinventarioStepdefinitons {
 	public void Hay_productos_en_el_inventario() throws Throwable {
 		Assert.assertTrue(lista.size()>0); 
 	}
+	
+	
 	
 	@Then("^Mostrar la lista de insumos.$")
 	public void Mostrar_la_lista_de_insumos() throws Throwable {

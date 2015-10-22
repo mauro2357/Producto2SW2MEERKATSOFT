@@ -1,4 +1,4 @@
-package Negocio.TomaYNotificacionDePedidos;
+package Negocio.TomayNotificacionPedidos;
 
 import org.junit.runner.RunWith;
 

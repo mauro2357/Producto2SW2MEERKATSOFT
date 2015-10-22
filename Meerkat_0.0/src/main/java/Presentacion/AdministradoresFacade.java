@@ -3,7 +3,8 @@ package Presentacion;
 import java.util.ArrayList;
 
 import Datos.*;
-import Negocio.inventario.*;
+import Negocio.ActualizarInventario.*;
+import Negocio.inventario.Administrador;
 
 public class AdministradoresFacade {
 	
