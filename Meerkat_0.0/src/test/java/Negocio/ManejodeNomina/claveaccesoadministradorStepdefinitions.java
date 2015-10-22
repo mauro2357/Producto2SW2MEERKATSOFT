@@ -1,4 +1,4 @@
-package Negocio.nomina;
+package Negocio.ManejodeNomina;
 
 import org.junit.Assert;
 

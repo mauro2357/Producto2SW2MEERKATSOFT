@@ -1,4 +1,4 @@
-package Negocio.nomina;
+package Negocio.ManejodeNomina;
 
 import org.junit.Assert;
 
@@ -7,17 +7,17 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class agregardespachadorStepdefinitions {
+public class agregarMeseroStepdefinitions {
 	
 	Administrador administrador = null;
 	
 	@Given("^El administrador quiere agregar un nuevo despachador$")
-	public void El_administrador_quiere_agregar_un_nuevo_despachador() throws Throwable {
+	public void El_administrador_quiere_agregar_un_nuevo_mesero() throws Throwable {
 		administrador = new Administrador(null, null, null, null, null);
 		administrador.Contratar_Despachador(null, null, null, null);
 	}
 
-	@When("^Presiona el boton nuevo despachador$")
+	@When("^Presiona el boton nuevo mesero$")
 	public void Presiona_el_boton_nuevo_despachador() throws Throwable {
 		
 	}
