@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `future` /*!40100 DEFAULT CHARACTER SET utf8 */;
+administradorCREATE DATABASE  IF NOT EXISTS `future` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `future`;
 -- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --

@@ -143,7 +143,7 @@ public class AdministradorControlador extends HttpServlet {
 		pagina = "index.jsp";
 	}
 	
-	private String registrar_insumo(HttpSession s, HttpServletRequest request){
+	private void registrar_insumo(HttpSession s, HttpServletRequest request){
 		System.out.println("Ingreso al metodo de registrar el insumo");
 		AdministradoresFacade administradorFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
 		try {administradorFacade.Consultar_Administradores();} 
@@ -153,7 +153,7 @@ public class AdministradorControlador extends HttpServlet {
     	int valor = Integer.parseInt(request.getParameter("valor"));
     	try{ administradorFacade.getAdministrador().Agregar_insumo(id, nombre, valor);}
     	catch (Exception e) { System.out.println("Error en base de datos al agregar un nuevo insumo.");}   	
-    	return "index.jsp";
+    	pagina = "index.jsp";
 	}
 	
 	
