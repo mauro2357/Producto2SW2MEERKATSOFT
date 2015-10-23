@@ -6,6 +6,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import Negocio.cliente.Cliente;
 import Negocio.factura.Factura;
 import Negocio.pedido.Mesa;
 import Negocio.pedido.Pedido;
@@ -83,10 +85,10 @@ public class FacturaRepository {
 	 	    	  mesero = rs.getString("Me_id"); 
 	 		      cajero = rs.getString("Caj_id"); 
 	 		      mesa = rs.getString("Mesa_id");
-	 		      cliente = rs.getString("Cli_id"); 
+	 		      cliente = rs.getString("Cli_id");
 	 		      for(Producto producto: tproductos){ 
 	 		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); preciot+=(producto.getValor()*Integer.parseInt(rs.getString("Dtv_cantidad"))); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
-	 		      } 
+	 		      }
 	 		      auxid = id; 
 	 		      continue; 
 		     } 
@@ -96,6 +98,7 @@ public class FacturaRepository {
 	    y.precio_total = preciot;
 	    y.cuerpo = x;
 	    y.cantidades = z;
+	    ingresar_puntos(cliente, preciot); // METODO PARA INGRESAR PUNTOS AL CLIENTE
 	    if(mesa == null) return f;
 	    mesam = mesaRepository.Buscar_Mesa(mesa);
 	    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);
@@ -168,6 +171,15 @@ public class FacturaRepository {
 		Connection con = new ConexionMySql().ObtenerConexion();
 		String query = "delete from pedidos_temporales where Me_id=" +id+";";
 		System.out.println(query);
+		Statement st = con.createStatement();
+		st.executeUpdate(query);
+		st.close();
+	}
+	
+	public void ingresar_puntos(String cli_id, int pro_valor ) throws Exception{
+		int puntos = pro_valor/1000;
+		Connection con = new ConexionMySql().ObtenerConexion();
+		String query = "UPDATE `future`.`cliente` SET `Cli_puntos`='"+puntos+"' WHERE `Cli_id`='"+cli_id+"';";
 		Statement st = con.createStatement();
 		st.executeUpdate(query);
 		st.close();
