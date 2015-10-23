@@ -12,6 +12,7 @@
 </head>
 <div class="contenedor">
 	<div class="botona" onclick="consultar_inventario()">Consultar inventario</div>
+	<div class="botona" onclick="ingresar_insumo()">Ingresar insumo</div>
 	<div class="botona" onclick="crear_despachador()">Crear despachador</div>
 	<div class="botona" onclick="crear_mesero()">Crear mesero</div>
 	<div class="botona" onclick="consultar_clientes()">Consultar Clientes</div>

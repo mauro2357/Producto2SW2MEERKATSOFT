@@ -33,8 +33,8 @@ public class AdministradorControlador extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
 		if(s.getAttribute("FacadeAdministrador") == null){
-			MeserosFacade meserosFacade = new MeserosFacade();
-			s.setAttribute("FacadeAdministrador", meserosFacade);
+			AdministradoresFacade administradoresFacade = new AdministradoresFacade();
+			s.setAttribute("FacadeAdministrador", administradoresFacade);
 		}
         String Puerta = null;
         Puerta = request.getParameter("entrar");
@@ -48,6 +48,9 @@ public class AdministradorControlador extends HttpServlet {
 				break;
 	        case "consultar_inventario":
 	        	Consultar_Inventario(s);
+	        	break;
+	        case "ingresar_insumo":
+	        	pagina = "consultarinventariovista/ingresarinsumo.jsp";
 	        	break;
 	        case "consultar_clientes":
 	        	Consultar_Clientes(s);
@@ -141,8 +144,10 @@ public class AdministradorControlador extends HttpServlet {
 	}
 	
 	private String registrar_insumo(HttpSession s, HttpServletRequest request){
+		System.out.println("Ingreso al metodo de registrar el insumo");
 		AdministradoresFacade administradorFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		
+		try {administradorFacade.Consultar_Administradores();} 
+		catch (Exception e) {System.out.println("Error al consultar el administrador");}
 		String id = request.getParameter("id");
     	String nombre = request.getParameter("nombre");
     	int valor = Integer.parseInt(request.getParameter("valor"));

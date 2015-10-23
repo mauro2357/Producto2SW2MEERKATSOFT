@@ -142,6 +142,16 @@
 			});	
 	}
 	
+	function ingresar_insumo(){
+		abrircerrarcuerpodos();
+		var Entrar = "ingresar_insumo";
+		$.post("/Meerkat_0.0/administrador", {
+			entrar : Entrar,			
+			}, function(responseText) {
+				$('#cuerpodos').html(responseText);
+			});
+	}
+	
 	function crear_despachador(){
 		abrircerrarcuerpodos();
 		var Entrar = "crear_despachador";

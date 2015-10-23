@@ -27,8 +27,9 @@ public class InventarioRepository {
 	}	
 	
 	public void Registrar_insumo (String codigo, String nombre, int valor) throws Exception {
+		System.out.println("Ingreso inventario repository antes de ejecutar el query");
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "INSERT INTO `future`.`insumos` (`Ins_id`, `Ins_nombre`, `Ins_valor`) VALUES ('"+codigo+"', '"+nombre+"');";
+	    String query = "INSERT INTO `future`.`insumos` (`Ins_id`, `Ins_nombre`, `Ins_valor`) VALUES ('"+codigo+"', '"+nombre+"', '"+valor+"');";
 	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
 	    st.close();
