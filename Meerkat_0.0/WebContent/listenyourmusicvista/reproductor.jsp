@@ -1,8 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.*" %>
-<%ArrayList<String> canciones = (ArrayList<String>) session.getAttribute("canciones");
-ArrayList<String> ubicacion = (ArrayList<String>) session.getAttribute("ubicacion");
-for(int i=0;i<canciones.size();++i){
-	out.println(canciones.get(i)+"-"+ubicacion.get(i)+"-");
-}%>
+
+<!DOCTYPE html> 
+
+<html> 
+<head> 
+
+    <meta charset="utf-8" > 
+ 
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> 
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+	<link rel="stylesheet" href="../Css/cssindex.css" type="text/css"> 
+</head>
+
+
+<body>
+	
+ 
+
+</body>

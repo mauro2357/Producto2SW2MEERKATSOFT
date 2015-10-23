@@ -28,6 +28,7 @@
 				$('#cuerpo').html(responseText);
 			});			
 	});
+	
 </script>
 </head>
 <body background="fondo1.JPG" id="body">
@@ -44,7 +45,7 @@
 			<button type="button" onclick="location='despachadores/cocina.jsp'"><font face="meerkat" size="5" color ="white">Despachador</button>
 			<button type="button" onclick="crear_usuario()"><font face="meerkat" size="5" color ="white">Crear Usuario</button>
 			<button type="button" onclick="location='cajero/cajero.jsp'"><font face="meerkat" size="5" color ="white">Entrar a caja</button>
-			<button type="button" onclick="location='listenyourmusicvista/musica.jsp'"><font face="meerkat" size="5" color ="white">Liste your music</button>
+			<button type="button" onclick="location='listenyourmusicvista/audioplayer.html'"><font face="meerkat" size="5" color ="white">Liste your music</button>
 			
 		</div>
 	</div>
