@@ -20,31 +20,27 @@ public class DespachadorControlador extends HttpServlet {
         super();
     }
     
-    public DespachadoresFacade despachadoresFacade; //por ahora así
-    String pagina = null;
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(despachadoresFacade==null) despachadoresFacade = new DespachadoresFacade();
 		HttpSession s = request.getSession();
 		if(s.getAttribute("FacadeDespachador") == null){
-			MeserosFacade meserosFacade = new MeserosFacade();
-			s.setAttribute("FacadeDespachador", meserosFacade);
+			DespachadoresFacade despachadoresFacade = new DespachadoresFacade();
+			s.setAttribute("FacadeDespachador", despachadoresFacade);
 		}
         String Puerta = null;
         Puerta = request.getParameter("entrar");
-        
+        String pagina = "index.jsp";
         switch (Puerta) {
 	        case "Cancelar":
-				cerrar_sesion(s, request);
+				pagina = cerrar_sesion(s, request);
 				break;
 	        case "ir_despachador":
 				pagina = "/despachadores/cocina.jsp";
 				break;
 	        case "imprimir_pedidos_despachador":
-	        	Imprimir_Pedidos_Despachador(s);
+	        	pagina = Imprimir_Pedidos_Despachador(s);
 				break;
 	        case "despachar_pedido":
-	        	Despachar_Pedido(s, request);
+	        	pagina = Despachar_Pedido(s, request);
 	        	break;
 			default:
 				pagina = "index.jsp";
@@ -54,22 +50,24 @@ public class DespachadorControlador extends HttpServlet {
         rd.forward(request, response);
 	}
 	
-	public void cerrar_sesion(HttpSession s, HttpServletRequest request){
-    	despachadoresFacade.setDespachador(null);
+	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
+		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
+		despachadoresFacade.setDespachador(null);
 		s = request.getSession(false);
     	s.invalidate();
-    	pagina = "index.jsp";
+    	return "index.jsp";
 	}
 	
-	public void Imprimir_Pedidos_Despachador(HttpSession s){
+	public String Imprimir_Pedidos_Despachador(HttpSession s){
+		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
 		try { despachadoresFacade.Consultar_despachador(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
 		s.setAttribute("pedidos_en_cola",despachadoresFacade.getDespachador().getListafacturassindespachar());
-    	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
+    	return "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
 	}
 	
-	public void Despachar_Pedido(HttpSession s, HttpServletRequest request){
+	public String Despachar_Pedido(HttpSession s, HttpServletRequest request){
+		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
 		String pedido_id = request.getParameter("pedido");
-    	
     	try { despachadoresFacade.Consultar_despachador();
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
     	
@@ -81,7 +79,7 @@ public class DespachadorControlador extends HttpServlet {
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
 		
     	s.setAttribute("pedidos_en_cola", despachadoresFacade.getDespachador().getListafacturassindespachar());
-    	pagina = "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
+    	return "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
 	}
 
 }
