@@ -1,12 +1,12 @@
-ALTER TABLE `future`.`cajero` CHANGE COLUMN `Caj_id` `Caj_id` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Caj_nombre` `Caj_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Caj_apellido` `Caj_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Caj_clave` `Caj_clave` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Caj_telefono` `Caj_telefono` VARCHAR(200) NULL  ;
+ALTER TABLE `future`.`cajero` CHANGE COLUMN `Caj_nombre` `Caj_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Caj_apellido` `Caj_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Caj_clave` `Caj_clave` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Caj_telefono` `Caj_telefono` VARCHAR(200) NULL  ;
 
-ALTER TABLE `future`.`cliente` CHANGE COLUMN `Cli_id` `Cli_id` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Cli_nombre` `Cli_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Cli_apellido` `Cli_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Cli_sexo` `Cli_sexo` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Cli_puntos` `Cli_puntos` INT(100) NOT NULL DEFAULT '0'  , CHANGE COLUMN `Cli_telefono` `Cli_telefono` VARCHAR(200) NULL  ;
+ALTER TABLE `future`.`cliente` CHANGE COLUMN `Cli_nombre` `Cli_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Cli_apellido` `Cli_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Cli_sexo` `Cli_sexo` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Cli_puntos` `Cli_puntos` INT(100) NOT NULL DEFAULT '0'  , CHANGE COLUMN `Cli_telefono` `Cli_telefono` VARCHAR(200) NULL  ;
 
-ALTER TABLE `future`.`despachador` CHANGE COLUMN `Des_Id` `Des_Id` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Des_nombre` `Des_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Des_apellido` `Des_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Des_telefono` `Des_telefono` VARCHAR(200) NULL  ;
+ALTER TABLE `future`.`despachador` CHANGE COLUMN `Des_nombre` `Des_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Des_apellido` `Des_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Des_telefono` `Des_telefono` VARCHAR(200) NULL  ;
 
-ALTER TABLE `future`.`mesero` CHANGE COLUMN `Me_id` `Me_id` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Me_Nombre` `Me_Nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Me_apellido` `Me_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Me_telefono` `Me_telefono` VARCHAR(200) NULL  ;
+ALTER TABLE `future`.`mesero` CHANGE COLUMN `Me_Nombre` `Me_Nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Me_apellido` `Me_apellido` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Me_telefono` `Me_telefono` VARCHAR(200) NULL  ;
 
-ALTER TABLE `future`.`producto` CHANGE COLUMN `Pro_id` `Pro_id` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Pro_nombre` `Pro_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Pro_valor` `Pro_valor` INT(100) NOT NULL  , CHANGE COLUMN `Pro_tipo` `Pro_tipo` VARCHAR(200) NOT NULL  ;
+ALTER TABLE `future`.`producto` CHANGE COLUMN `Pro_nombre` `Pro_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Pro_valor` `Pro_valor` INT(100) NOT NULL  , CHANGE COLUMN `Pro_tipo` `Pro_tipo` VARCHAR(200) NOT NULL  ;
 
 ALTER TABLE `future`.`detalles_compras` DROP FOREIGN KEY `detalles_compras_ibfk_1` , DROP FOREIGN KEY `detalles_compras_ibfk_2` ;
 
@@ -56,7 +56,7 @@ ALTER TABLE `future`.`detalles_venta` CHANGE COLUMN `Pro_id` `Pro_id` VARCHAR(20
 
   ON UPDATE NO ACTION;
 
-ALTER TABLE `future`.`insumos` CHANGE COLUMN `Ins_id` `Ins_id` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Ins_nombre` `Ins_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Ins_valor` `Ins_valor` INT(100) NOT NULL  ;
+ALTER TABLE `future`.`insumos` CHANGE COLUMN `Ins_nombre` `Ins_nombre` VARCHAR(200) NOT NULL  , CHANGE COLUMN `Ins_valor` `Ins_valor` INT(100) NOT NULL  ;
 
 ALTER TABLE `future`.`venta` DROP FOREIGN KEY `Relationship16` , DROP FOREIGN KEY `venta_ibfk_1` , DROP FOREIGN KEY `venta_ibfk_2` , DROP FOREIGN KEY `venta_ibfk_3` ;
 
