@@ -78,7 +78,10 @@ public class MeseroControllador extends HttpServlet {
 	
 	private String cerrar_sesion(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		meserosFacade.setMesero(null);
+		try {meserosFacade.mesero.Limpiar_pedido_temporal(meserosFacade.mesero);} 
+		catch (Exception e) {System.out.println("Error al limpiar el pedido temporal");}
+		meserosFacade = new MeserosFacade();
+		s.setAttribute("FacadeMesero", meserosFacade);
 		s = request.getSession(false);
     	s.invalidate();
     	return "index.jsp";

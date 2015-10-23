@@ -117,6 +117,10 @@ public class Mesero extends Empleado {
 		return "Pedido enviado";
 	}
 	
+	public void Limpiar_pedido_temporal(Mesero mesero) throws Exception{
+		facturaRepository.Limpiar_pedido_temporal(mesero.id);
+	}
+	
 	@Override
 	public void pagar() throws Exception {
 		String saldo = "35000";

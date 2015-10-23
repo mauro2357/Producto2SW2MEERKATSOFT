@@ -28,7 +28,7 @@
     <div id="logo" align="center">
 		<a href="/Meerkat_0.0/index.jsp"><img src="../images/logo.jpg" style="max-width: 100%; height: auto;"></a>
 	</div>
-	<center><h1><div id="titulo">Cajero</div></h1></center>
+	<div id="titulo" align="center"><h1>Cajero</h1></div>
 	<br>
 	<div id="cuerpo" class="contenedor"></div>
 	<div id="cuerpodos" class="contenedor" align="center"></div>

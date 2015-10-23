@@ -17,7 +17,7 @@
 			<div class="boton" style="background-color: rgba(0,0,0,0.5)">
 				<div class='jdg-container'>
 					<div class='jdg-item'>
-						<a href="javascript:ingresarproducto(<%out.print(i-1);%>);" id="<%out.print(i-1);%>" name="<%out.print(producto.getCodigo());%>">
+						<a href="javascript:ingresarproducto(<%out.print(i-1);%>);" id="<%out.print(i-1);%>" title="<%out.print(producto.getCodigo());%>">
 							<img src="images/<%out.print(producto.getImagen());%>"/>
 				     	</a>
 				     <p><%out.println(producto.getNombre());%>   $<%out.println(producto.getValor());%></p>

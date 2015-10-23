@@ -3,7 +3,7 @@
 <%@ page import="Negocio.factura.*" %>
 <%@ page import="java.util.*" %>
 <head>
-<link rel="stylesheet" href="Css/cssdespachador.css" type="text/css">
+
 </head>
 <body>
 <div id="tabla" >
@@ -36,6 +36,6 @@
 				}
 			}
 		%>
-</div>		
 </table>
+</div>		
 </body>

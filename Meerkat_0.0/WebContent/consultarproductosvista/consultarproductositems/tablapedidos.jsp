@@ -26,7 +26,7 @@
 </head>
 <body>
 	<br>
-	<div style="max-width: 100%; height:70%;">
+	<div style="max-width: 100%; height:70%; font-size: 40px; color: white;">
 		<table border="1" cellpadding="1" cellspacing="0" style="background: rgba(300, 300, 300, 0.5);">
 			<tr><td>Producto</td><td>Cantidad</td><td>Precio</td><td></td></tr>
 		<%	@SuppressWarnings("unchecked")
@@ -51,8 +51,6 @@
 			<%}%>
 			<tr><td colspan="2"><%out.print("Total"); %></td><td><%out.print(total); %></td></tr>
 		</table>
-		
-		
 	</div>
 </body>
 </html>

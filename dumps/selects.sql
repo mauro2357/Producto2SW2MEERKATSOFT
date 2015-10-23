@@ -16,7 +16,11 @@ ALTER TABLE `future`.`pago_nomina` CHANGE `Nomina_id` `Nomina_id` varchar(40) NO
 delete from pedidos_temporales where Me_id = 666 and Pro_id = "pl08";
 
 select Pt_id from pedidos_temporales where Me_id = 667 and Pro_id = "pl09" group by Pt_id;
+select * from pedidos_temporales where Me_id=12345 and Pro_id = 'pl07';
 
+
+
+select * from factura;
 select * from pedidos_temporales;
 select * from pago_nomina;
 select * from lista_empleados;

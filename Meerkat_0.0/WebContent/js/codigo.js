@@ -94,7 +94,7 @@
 				$('#cuerpo').html(responseText);}
 				else{alert("contrasena incorrecta");}
 			});
-		$('#titulo').text("Administrador")
+		$('#titulo').text("Administrador");
 		$('#menu').hide();
 	}
 	
@@ -113,13 +113,13 @@
 		}, function(responseText){
 			$('#cuerpo').html(responseText)
 		});
-		$('#titulo').text("Crear Usuario")
+		$('#titulo').text("Crear Usuario");
 	}
 	
 	function ingresarproducto(x){
 		var Entrar = "ingresarproducto";
 		y = document.getElementById(x);
-		x = y.name;
+		x = y.title;
 		$.post("/Meerkat_0.0/mesero", {
 			entrar : Entrar,
 			idp : x

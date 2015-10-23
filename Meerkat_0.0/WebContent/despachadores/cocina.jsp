@@ -28,7 +28,7 @@
 	<div id="logo" align="center">
 		<a href="/Meerkat_0.0/index.jsp"><img src="../images/logo.jpg" style="max-width: 100%; height: auto;"></a>
 	</div>
-	<center><h1><div id="titulo"><font face=meerkat size="100" color ="white">Despechador</div></h1></center>
+	<div id="titulo"><h1><font face=meerkat size="100" color ="white">Despachador</font></h1></div>
 	<br>
 	<div id="cuerpo" align="center" class="contenedor"></div>
 </body>

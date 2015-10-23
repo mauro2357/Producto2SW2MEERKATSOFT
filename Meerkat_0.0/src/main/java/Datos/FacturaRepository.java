@@ -153,7 +153,6 @@ public class FacturaRepository {
 	public void Quitar_Producto_a_Pedido_Temporal(String producto, String mesero, Pedido pedido_sin_asignar) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
     	String query = "select * from pedidos_temporales where Me_id="+mesero+" and Pro_id = '"+producto+"';";
-    	System.out.println(query);
 		Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    while(rs.next()){
@@ -163,6 +162,15 @@ public class FacturaRepository {
 			st.close();
 	    	break;
 	    }
+	}
+
+	public void Limpiar_pedido_temporal(String id) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		String query = "delete from pedidos_temporales where Me_id=" +id+";";
+		System.out.println(query);
+		Statement st = con.createStatement();
+		st.executeUpdate(query);
+		st.close();
 	}
 	
 }
