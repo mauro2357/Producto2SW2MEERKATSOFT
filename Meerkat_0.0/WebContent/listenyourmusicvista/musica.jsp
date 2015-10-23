@@ -14,11 +14,6 @@
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
 	<script src="../js/codigo.js"></script>
     <script type="text/javascript">
-        function cambiarlista(){
-        	var y = document.getElementById("lista1");
-			var x = y.html;
-			alert(x);
-        }
         
         $(document).ready(function () {
             $.post("/Meerkat_0.0/login", {
@@ -81,7 +76,7 @@
 
 <body background="../images/fondomusica.jpg">
 
-<div id="lista1" onchange="cambiarlista()">aqui</div>
+<div id="lista1">aqui</div>
 <div id="global" align="center">
 	<div id="jquery_jplayer_1" class="jp-jplayer"></div>
 	

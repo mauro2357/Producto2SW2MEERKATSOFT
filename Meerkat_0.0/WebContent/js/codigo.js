@@ -1,11 +1,21 @@
 	
+	function cambiarlista(){
+        	var y = document.getElementById("lista1");
+			var x = y.innerHTML;
+			var rs  = x.split(", ");
+			alert(rs);
+        }
+	
 	function actualizarlista(){
 		var Entrar = "Entrar_musica";
 		$.post("/Meerkat_0.0/Musica", {
 			entrar : Entrar,
 		}, function(responseText){
-			alert("a");
 			$('#lista1').html(responseText)});
+		var y = document.getElementById("lista1");
+		var x = y.innerHTML;
+		if(x != "aqui") cambiarlista();
+		else alert("Se cargaron las canciones");
 	}
 
 	function pagar_mesa(x,y){

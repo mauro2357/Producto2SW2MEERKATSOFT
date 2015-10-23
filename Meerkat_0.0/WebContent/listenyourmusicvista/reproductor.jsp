@@ -4,5 +4,5 @@
 <%ArrayList<String> canciones = (ArrayList<String>) session.getAttribute("canciones");
 ArrayList<String> ubicacion = (ArrayList<String>) session.getAttribute("ubicacion");
 for(int i=0;i<canciones.size();++i){
-	out.println(canciones.get(i)+"-"+ubicacion.get(i)+",");
+	out.println(canciones.get(i)+"-"+ubicacion.get(i)+"-");
 }%>
