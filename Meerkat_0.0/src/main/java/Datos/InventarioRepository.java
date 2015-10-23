@@ -27,11 +27,25 @@ public class InventarioRepository {
 	}	
 	
 	public void Registrar_insumo (String codigo, String nombre, int valor) throws Exception {
-		System.out.println("Ingreso inventario repository antes de ejecutar el query");
-		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "INSERT INTO `future`.`insumos` (`Ins_id`, `Ins_nombre`, `Ins_valor`) VALUES ('"+codigo+"', '"+nombre+"', '"+valor+"');";
-	    Statement st = con.createStatement();
-	    st.executeUpdate(query);
-	    st.close();
+		ArrayList<Producto> productos = new ArrayList<Producto>();
+		productos = Consultar_insumos();
+		String cod = null;
+		for(Producto prod : productos){
+			if(prod.getCodigo() == codigo) {
+				cod = "registrado"; 
+				break;
+			}
+		}
+		if(cod == null){
+			Connection con = new ConexionMySql().ObtenerConexion();
+		    String query = "INSERT INTO `future`.`insumos` (`Ins_id`, `Ins_nombre`, `Ins_valor`) VALUES ('"+codigo+"', '"+nombre+"', '"+valor+"');";
+		    Statement st = con.createStatement();
+		    
+		    st.executeUpdate(query);
+		    st.close();
+		}
 	}
+	
+	
+	
 }
