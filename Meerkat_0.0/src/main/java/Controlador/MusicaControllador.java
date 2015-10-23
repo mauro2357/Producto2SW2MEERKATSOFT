@@ -21,7 +21,6 @@ public class MusicaControllador extends HttpServlet {
     String pagina = "listenyourmusicvista/reproductor.jsp";
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//if(administradoresFacade==null) administradoresFacade = new AdministradoresFacade();
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
 		if(s.getAttribute("canciones") == null){
