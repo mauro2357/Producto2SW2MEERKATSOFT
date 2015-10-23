@@ -42,6 +42,9 @@ public class DespachadorControlador extends HttpServlet {
 	        case "despachar_pedido":
 	        	pagina = Despachar_Pedido(s, request);
 	        	break;
+	        case "cancelar_pedido":
+	        	pagina = Cancelar_Pedido(s, request);
+	        	break;
 			default:
 				pagina = "index.jsp";
 				break;
@@ -50,6 +53,23 @@ public class DespachadorControlador extends HttpServlet {
         rd.forward(request, response);
 	}
 	
+	private String Cancelar_Pedido(HttpSession s, HttpServletRequest request) {
+		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
+		String pedido_id = request.getParameter("pedido");
+    	try { despachadoresFacade.Consultar_despachador();
+		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
+    	
+    	try { despachadoresFacade.getDespachador().cancelar(pedido_id);
+		} catch (NumberFormatException e1) {System.out.println("Error al ingresar el id del pedido");
+		} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
+    	
+    	try { despachadoresFacade.Consultar_despachador();
+		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
+		
+    	s.setAttribute("pedidos_en_cola", despachadoresFacade.getDespachador().getListafacturassindespachar());
+    	return "/despachadores/consultarpedidositems/tablaconsultarpedidos.jsp";
+	}
+
 	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
 		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
 		despachadoresFacade.setDespachador(null);

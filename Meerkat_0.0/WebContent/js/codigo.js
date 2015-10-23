@@ -81,6 +81,15 @@
 			$('#cuerpo').html(responseText)});
 	}
 	
+	function cancelarpedido(x){
+		var Entrar = "cancelar_pedido";
+		$.post("/Meerkat_0.0/despachador", {
+			entrar : Entrar,
+			pedido : x
+		}, function(responseText){
+			$('#cuerpo').html(responseText)});
+	}
+	
 	function ir_administrador(){
 		$('#cuerpodos').hide();
 		var Entrar = "ir_administrador";

@@ -34,5 +34,15 @@ public class DespachadorRepository {
 	    st.executeUpdate(query);
 	    st.close();
 	}
+
+	public void Cancelar_pedido(int parseInt) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		Statement st = con.createStatement();
+		String query = "Delete from detalles_venta where Ven_id =" + Integer.toString(parseInt) + ";";
+		st.executeUpdate(query);
+		query = "Delete from venta where Ven_id =" + Integer.toString(parseInt) + ";";
+		st.executeUpdate(query);
+		st.close();
+	}
 	
 }

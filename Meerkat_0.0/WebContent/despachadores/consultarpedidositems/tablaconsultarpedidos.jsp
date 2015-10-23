@@ -8,7 +8,7 @@
 <body>
 <div id="tabla" >
 <table style="background: rgba(255, 255, 255, 0.8); padding: 20px" border="1"> 
-	<tr><td>Id</td><td>Mesa</td><td>Mesero</td><td>Cliente</td><td>Cajero</td><td>Productos</td><td></td></tr>
+	<tr><td>Id</td><td>Mesa</td><td>Mesero</td><td>Cliente</td><td>Cajero</td><td>Productos</td><td></td><td></td></tr>
 	<% 
 			@SuppressWarnings("unchecked")
 			ArrayList<Factura> x = (ArrayList<Factura>) session.getAttribute("pedidos_en_cola");
@@ -32,6 +32,8 @@
 					</td>
 					<td>
 					<input size="auto" name="despachar" type="submit" value="Despachar" onclick="despacharpedido(<%out.print(factura.getId());%>)"></td>
+					<td>
+					<input size="auto" name="cancelar" type="submit" value="Cancelar" onclick="cancelarpedido(<%out.print(factura.getId());%>)"></td>
 					</tr><%
 				}
 			}

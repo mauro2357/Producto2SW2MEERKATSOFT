@@ -96,5 +96,10 @@ public class Despachador extends Empleado {
 			return "No hay mesero.";
 		
 	}
+
+	public void cancelar(String pedido_id) throws NumberFormatException, Exception {
+		DespachadorRepository despachadorRepository = new DespachadorRepository();
+		despachadorRepository.Cancelar_pedido(Integer.parseInt(pedido_id));
+	}
 	
 }
