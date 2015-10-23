@@ -2,8 +2,7 @@ package Presentacion;
 
 import java.util.ArrayList;
 
-import Datos.*;
-import Negocio.ActualizarInventario.*;
+import Datos.AdministradorRepository;
 import Negocio.inventario.Administrador;
 
 public class AdministradoresFacade {

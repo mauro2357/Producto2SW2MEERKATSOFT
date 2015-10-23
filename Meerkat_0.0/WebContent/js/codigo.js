@@ -1,4 +1,12 @@
-
+	
+	function actualizarlista(){
+		var Entrar = "Entrar_musica";
+		$.post("/Meerkat_0.0/Musica", {
+			entrar : Entrar,
+		}, function(responseText){
+			alert("a");
+			$('#lista1').html(responseText)});
+	}
 
 	function pagar_mesa(x,y){
 		var numberString = $('#Costo').text();
