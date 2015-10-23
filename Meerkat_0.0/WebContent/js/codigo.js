@@ -91,11 +91,12 @@
 		},
 		function(responseText) {
 				if(responseText!=""){
-				$('#cuerpo').html(responseText);}
+				$('#cuerpo').html(responseText);
+				$('#titulo').text("Administrador");
+				$('#menu').hide();}
 				else{alert("contrasena incorrecta");}
 			});
-		$('#titulo').text("Administrador");
-		$('#menu').hide();
+		
 	}
 	
 	function ir_despachador(){

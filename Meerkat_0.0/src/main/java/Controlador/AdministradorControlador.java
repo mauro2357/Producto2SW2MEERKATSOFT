@@ -122,7 +122,7 @@ public class AdministradorControlador extends HttpServlet {
 		try { administradoresFacade.Consultar_Administradores();
 		} catch (Exception e1) { System.out.println("Error al leer los administradores desde la base de datos");}
 		String claveaux = request.getParameter("pass");
-    	if(!administradoresFacade.getAdministrador().getClave().equalsIgnoreCase(claveaux)) return "index.jsp";
+    	if(!administradoresFacade.getAdministrador().getClave().equalsIgnoreCase(claveaux)) return "null";
     	return "/consultarinventariovista/funcionesadministrador.jsp";
 	}
 	
