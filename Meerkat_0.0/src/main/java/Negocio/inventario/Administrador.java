@@ -32,11 +32,27 @@ public class Administrador extends Empleado {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
-		this.clave = clave;
-		this.lista_insumos = inventarioRepository.Consultar_insumos();
-		this.lista_clientes = clientesRepository.Consultar_Clientes();
-		this.total_ventas = generalesRepository.Consultar_totalVentas();
+		this.clave = clave; 
+	}
+	
+	public ArrayList<Producto> Productos_mas_vendidos() throws Exception{
 		this.productos_mas_vendidos = generalesRepository.Consultarproductos_masvendidos();
+		return this.productos_mas_vendidos;
+	}
+	
+	public String Consultar_total_Ventas() throws Exception{
+		this.total_ventas = generalesRepository.Consultar_totalVentas();
+		return this.total_ventas;
+	}
+	
+	public ArrayList<Producto> Consultar_Insumos() throws Exception{
+		this.lista_insumos = inventarioRepository.Consultar_insumos();
+		return this.lista_insumos;
+	}
+	
+	public ArrayList<Cliente> Consultar_Clientes() throws Exception{
+		this.lista_clientes = clientesRepository.Consultar_Clientes();
+		return this.lista_clientes;
 	}
 	
 	public void AgregarProducto() throws Exception{ 

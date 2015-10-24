@@ -103,7 +103,7 @@
 				$('#cuerpo').html(responseText);
 				$('#titulo').text("Administrador");
 				$('#menu').hide();}
-				else{alert("contrasena incorrecta");}
+				else{$('#cuerpo').html(responseText);}
 			});
 		
 	}
