@@ -2,12 +2,14 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="Negocio.factura.*" %>
+<%@ page import="Negocio.cliente.*" %>
 <%@ page import="java.util.*" %>
 
 <%Factura factura = (Factura) session.getAttribute("Factura"); %>
 
 <table style="color: white; ">
 	<tr><td>Factura:</td><td><%out.println(factura.id);%></td></tr>
+	<tr><td>Mesero:</td><td><%out.println(factura.mesero);%></td></tr>
 	<tr><td>Precio:</td><td><%out.println(factura.pedido.precio_total);%></td></tr>
 	<tr><td>
 		<table style="color: white;">

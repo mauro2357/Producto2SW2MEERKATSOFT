@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+//import Negocio.cliente.Cliente;
 import Negocio.factura.Factura;
 import Presentacion.*;
 
@@ -90,7 +91,10 @@ public class CajeroControlador extends HttpServlet {
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {
 			Factura ans = cajerosFacade.getCajero().Cobrar(id,mesa);
+			//ClientesFacade clientesFacade = new ClientesFacade();
+			//Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.getCliente());
 			s.setAttribute("Factura",ans);
+			//s.setAttribute("Cliente", cliente);
 			return "cajero/cajeroitems/factura.jsp";
 		} catch (Exception e) {
 			System.out.println("Error al cobrar la mesa e n la base de datos.");
