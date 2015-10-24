@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class ConexionMySql {
 	  
-	private Connection con;
+	private static Connection con;
 	
 	public  Connection ObtenerConexion() throws Exception {
 		    if(con!=null) return con;

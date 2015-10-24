@@ -75,7 +75,7 @@ public class Cajero extends Empleado{
 	
 	public Factura Cobrar(String id, String mesa) throws Exception {
 		Factura ans = generarfacturageneral(id);
-		facturaRepository.Cobrar(id,mesa);
+		facturaRepository.Cobrar(ans);
 		FacturaPorMesa.remove(ans);
 		ans.pedido.setEstado("Finalizado");
 		ans.setCajero(this.getId());

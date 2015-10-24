@@ -97,7 +97,6 @@ public class FacturaRepository {
 	    y.precio_total = preciot;
 	    y.cuerpo = x;
 	    y.cantidades = z;
-	    ingresar_puntos(cliente, preciot); // METODO PARA INGRESAR PUNTOS AL CLIENTE
 	    if(mesa == null) return f;
 	    mesam = mesaRepository.Buscar_Mesa(mesa);
 	    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);
@@ -106,11 +105,12 @@ public class FacturaRepository {
 	    return f;
 	}
 
-	public void Cobrar(String id, String mesa) throws Exception {
+	public void Cobrar(Factura factura) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-		String query = "UPDATE `future`.`venta` SET `Ven_estado`='Finalizado' WHERE `Ven_id`='"+id+"';";
+		String query = "UPDATE `future`.`venta` SET `Ven_estado`='Finalizado' WHERE `Ven_id`='"+factura.getId()+"';";
 		MesaRepository mesaRepository = new MesaRepository();
-		mesaRepository.Ocupar_Desocupar_Mesa(mesa, "disponible");
+		mesaRepository.Ocupar_Desocupar_Mesa(factura.getMesa().getId(), "disponible");
+		if(factura.getCliente() != null) ingresar_puntos(factura.getCliente(), factura.getPedido().getPrecio_total()); // METODO PARA INGRESAR PUNTOS AL CLIENTE
 		Statement st = con.createStatement();
 		st.executeUpdate(query);
 		st.close();
@@ -181,11 +181,14 @@ public class FacturaRepository {
 		Connection con = new ConexionMySql().ObtenerConexion();
 		String query_cliente = "select cli_puntos from cliente where cli_id = '"+cli_id+"'";
 		Statement st = con.createStatement();
-		puntos_actual = st.executeUpdate(query_cliente);
+		ResultSet rs = st.executeQuery(query_cliente);
+		rs.first();
+		puntos_actual = Integer.parseInt(rs.getString("cli_puntos"));
 		puntos += puntos_actual;
 		String query = "UPDATE `future`.`cliente` SET `Cli_puntos`='"+puntos+"' WHERE `Cli_id`='"+cli_id+"';";
 		st.executeUpdate(query);
 		st.close();
 	}
+
 	
 }

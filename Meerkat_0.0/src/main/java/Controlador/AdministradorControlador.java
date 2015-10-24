@@ -24,7 +24,6 @@ public class AdministradorControlador extends HttpServlet {
     String apellido = null;
     String telefono = null;
     
-    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		HttpSession s = request.getSession();
