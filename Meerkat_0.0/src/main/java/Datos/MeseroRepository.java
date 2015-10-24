@@ -11,7 +11,7 @@ public class MeseroRepository {
 	
 	public ArrayList<Mesero> Consultar_mesero () throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "SELECT * FROM Mesero";
+	    String query = "SELECT * FROM mesero";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Mesero> a = new ArrayList<Mesero>();
