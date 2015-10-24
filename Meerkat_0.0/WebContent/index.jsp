@@ -48,6 +48,6 @@
 			
 		</div>
 	</div>
-	<div id="cuerpodos" class="contenedor"></div>
+	<div id="cuerpodos" class="contenedor" style="color: white;"></div>
 </body>
 </html>

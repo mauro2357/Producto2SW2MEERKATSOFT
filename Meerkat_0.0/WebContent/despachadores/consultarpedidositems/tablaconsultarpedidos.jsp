@@ -13,7 +13,7 @@
 			@SuppressWarnings("unchecked")
 			ArrayList<Factura> x = (ArrayList<Factura>) session.getAttribute("pedidos_en_cola");
 			int i=1;
-			if(x == null || x.size()==0) out.println("No hay facturas");
+			if(x == null || x.size()==0) out.println("<h1>No hay facturas para despachar</h1>");
 			else{
 				for(Factura factura: x){
 					%> <tr> 
