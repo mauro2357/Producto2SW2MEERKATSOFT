@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import Negocio.cliente.Cliente;
 import Negocio.factura.Factura;
 import Negocio.pedido.Mesa;
 import Negocio.pedido.Pedido;
@@ -178,9 +177,13 @@ public class FacturaRepository {
 	
 	public void ingresar_puntos(String cli_id, int pro_valor ) throws Exception{
 		int puntos = pro_valor/1000;
+		int puntos_actual = 0;
 		Connection con = new ConexionMySql().ObtenerConexion();
-		String query = "UPDATE `future`.`cliente` SET `Cli_puntos`='"+puntos+"' WHERE `Cli_id`='"+cli_id+"';";
+		String query_cliente = "select cli_puntos from cliente where cli_id = '"+cli_id+"'";
 		Statement st = con.createStatement();
+		puntos_actual = st.executeUpdate(query_cliente);
+		puntos += puntos_actual;
+		String query = "UPDATE `future`.`cliente` SET `Cli_puntos`='"+puntos+"' WHERE `Cli_id`='"+cli_id+"';";
 		st.executeUpdate(query);
 		st.close();
 	}
