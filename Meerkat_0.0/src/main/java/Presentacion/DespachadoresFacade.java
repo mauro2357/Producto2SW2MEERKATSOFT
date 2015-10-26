@@ -11,13 +11,13 @@ public class DespachadoresFacade {
 	public ArrayList<Despachador> listadespachadores;
 	
 	public ArrayList<Despachador> Consultar_despachador() throws Exception{
-		DespachadorRepository productorepository = new DespachadorRepository();
-		ArrayList<Despachador> x = productorepository.Consultar_despachador();
+		DespachadorRepository despachadorRepository = new DespachadorRepository();
+		ArrayList<Despachador> x = despachadorRepository.Consultar_despachador();
 		this.listadespachadores = x;
 		this.despachador = this.listadespachadores.get(0);
 		return x;
 	}
-
+	
 	public Despachador getDespachador() {
 		return despachador;
 	}

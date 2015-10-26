@@ -14,14 +14,37 @@
 <link rel="stylesheet" href="../Css/estilosregistro.css" type="text/css">
 
 <script type="text/javascript">
+	
+	var num,aux=-1;
+
 	$(function() {
+		ajaxx();
+		if(aux!=num) aux=num; 
+	});
+	
+	function ajaxx(){
 		var Entrar = "imprimir_pedidos_despachador"; 
 		$.post("/Meerkat_0.0/despachador", {
 			entrar : Entrar,
 		}, function(responseText) {
 			$('#cuerpo').html(responseText);
-		});			
-	});
+		});
+		num = document.getElementById("tabla").title;
+		if(aux==-1) aux=num;
+	}
+	
+	function mensaje(){
+		if(num>aux){
+			alert("Nuevo pedido recibido!");
+			aux=num;
+		}
+	}
+	
+	setInterval(function(){
+		ajaxx(),
+		mensaje()
+	}, 5000);
+	
 </script>
 </head>
 <body background="../fondo1.JPG" id="body">

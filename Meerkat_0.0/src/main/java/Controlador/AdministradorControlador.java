@@ -92,8 +92,8 @@ public class AdministradorControlador extends HttpServlet {
 	
 	public String Consultar_Inventario(HttpSession s){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		try {administradoresFacade.Consultar_Administradores();} 
-		catch (Exception e) {System.out.println("Error al consultar el administrador");}
+		//try {administradoresFacade.Consultar_Administradores();} 
+		//catch (Exception e) {System.out.println("Error al consultar el administrador");}
 		try{ s.setAttribute("todos-los-insumos", administradoresFacade.getAdministrador().Consultar_Insumos());
 		}catch (Exception e) { 
 			System.out.println("Error en la base de datos al consultar el inventario.");
@@ -106,8 +106,8 @@ public class AdministradorControlador extends HttpServlet {
 	
 	public String Consultar_Clientes(HttpSession s){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		try {administradoresFacade.Consultar_Administradores();} 
-		catch (Exception e) {System.out.println("Error al consultar el administrador");}
+		//try {administradoresFacade.Consultar_Administradores();} 
+		//catch (Exception e) {System.out.println("Error al consultar el administrador");}
 		try{s.setAttribute("todos-los-clientes", administradoresFacade.getAdministrador().Consultar_Clientes());
 		}catch (Exception e) { 
 			System.out.println("Error en la base de datos al consultar los clientes.");
@@ -120,8 +120,8 @@ public class AdministradorControlador extends HttpServlet {
 
 	public String Consultar_Total_Ventas(HttpSession s){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		try {administradoresFacade.Consultar_Administradores();} 
-		catch (Exception e) {System.out.println("Error al consultar el administrador");}
+		//try {administradoresFacade.Consultar_Administradores();} 
+		//catch (Exception e) {System.out.println("Error al consultar el administrador");}
 		try { s.setAttribute("todas-ventas", administradoresFacade.getAdministrador().Consultar_total_Ventas());
 		}catch (Exception e){ 
 			System.out.println("Error en la base de datos al consultar el total de las ventas.");

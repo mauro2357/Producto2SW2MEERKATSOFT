@@ -61,7 +61,8 @@ public class FacturaRepository {
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	estado = rs.getString("Ven_estado");
-	    	if(estado.equalsIgnoreCase(aignorar) || estado.equalsIgnoreCase("Finalizado")) continue;
+	    	if((estado.equalsIgnoreCase(aignorar) || estado.equalsIgnoreCase("Finalizado"))) continue;
+	    	else if(aignorar.equalsIgnoreCase("Sin vender") && !estado.equalsIgnoreCase("Finalizado")) continue;
 	    	if(auxid==null) auxid=id;
 	    	if(!auxid.equalsIgnoreCase(id)){
 	    		if(y==null){

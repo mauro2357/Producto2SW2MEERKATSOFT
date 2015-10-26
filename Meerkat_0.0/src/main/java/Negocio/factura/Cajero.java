@@ -19,6 +19,7 @@ public class Cajero extends Empleado{
 	public String telefono;
 	public Factura factura;
 	public ArrayList<Factura> listafacturasdespachadas;
+	public ArrayList<Factura> listafacturasfinalizadas;
 	public Map<Mesa,Factura> FacturaPorMesa;
 	
 	FacturaRepository facturaRepository = new FacturaRepository();
@@ -32,6 +33,7 @@ public class Cajero extends Empleado{
 		this.clave = clave;
 		this.telefono = telefono;
 		this.listafacturasdespachadas = facturaRepository.Generar_factura("En espera");
+		this.listafacturasfinalizadas = facturaRepository.Generar_factura("Sin vender");
 	}
 	
 	public Map<Mesa,Factura> Organizar_Facturas_Mesa(){

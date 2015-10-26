@@ -6,12 +6,13 @@
 
 </head>
 <body>
-<div id="tabla" >
-<table style="background: rgba(255, 255, 255, 0.8); padding: 20px" border="1"> 
+<% @SuppressWarnings("unchecked")
+   ArrayList<Factura> x = (ArrayList<Factura>) session.getAttribute("pedidos_en_cola"); %>
+<div id="tabla" title="<%out.print(x.size());%>">
+<table id="tablahtml"  style="background: rgba(255, 255, 255, 0.8); padding: 20px" border="1"> 
 	<tr><td>Id</td><td>Mesa</td><td>Mesero</td><td>Cliente</td><td>Cajero</td><td>Productos</td><td></td><td></td></tr>
 	<% 
-			@SuppressWarnings("unchecked")
-			ArrayList<Factura> x = (ArrayList<Factura>) session.getAttribute("pedidos_en_cola");
+			
 			int i=1;
 			if(x == null || x.size()==0) out.println("<h1>No hay facturas para despachar</h1>");
 			else{

@@ -10,7 +10,6 @@
 <script src="../js/codigo.js"></script>
 <link rel="stylesheet" href="../Css/estilosregistro.css" type="text/css">
 <script type="text/javascript">
-
 	$(function() {
 		if(!($("#cuerpo").is(':visible'))){
 			$("#cuerpo").toggle();
