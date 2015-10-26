@@ -47,6 +47,9 @@ public class CajeroControlador extends HttpServlet {
 		case "pagar_mesa":
 			pagina = Cobrar(s, request, id, mesa);
 			break;
+		case "lista_facturas_realizadas":
+			pagina = Generar_Lista_Facturas_Realizadas(s);
+			break;
 		default:
 			break;
 		}
@@ -54,6 +57,12 @@ public class CajeroControlador extends HttpServlet {
         rd.forward(request, response);
 	}
 	
+	private String Generar_Lista_Facturas_Realizadas(HttpSession s) {
+		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
+		s.setAttribute("lista_facturas_realizadas", cajerosFacade.getCajero().listafacturasfinalizadas);
+		return "cajero/cajeroitems/listafacturas.jsp";
+	}
+
 	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		cajerosFacade.setCajero(null);

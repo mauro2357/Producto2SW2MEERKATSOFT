@@ -59,6 +59,22 @@
 		if( !($("#cuerpodos").is(':visible')) ){
 			$("#cuerpodos").toggle();
 		}
+	}
+	
+	function abrircerrarfactura(x){
+		if(document.getElementById(x).style.display=="none"){
+			document.getElementById(x).style.display="visible";
+		}else{
+			document.getElementById(x).style.display="none";
+		}
+	}
+	
+	function lista_facturas_realizadas(){
+		var Entrar = "lista_facturas_realizadas";
+		$.post("/Meerkat_0.0/caja", {
+			entrar : Entrar
+		}, function(responseText){
+			$('#cuerpotres').html(responseText)});
 	}	
 
 	function definirmesero(x){

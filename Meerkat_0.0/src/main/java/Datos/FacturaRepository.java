@@ -43,6 +43,8 @@ public class FacturaRepository {
 	}
 	
 	public ArrayList<Factura> Generar_factura(String aignorar) throws Exception {
+		String[] porpartes = {""};
+		if(aignorar!=null) porpartes = aignorar.split("/");
 		Connection con = new ConexionMySql().ObtenerConexion();
 	    String query = "SELECT * FROM factura";
 	    Statement st = con.createStatement();
@@ -50,7 +52,7 @@ public class FacturaRepository {
 	    ArrayList<Factura> f = new ArrayList<Factura>();
 	    ProductoRepository productoRepository = new ProductoRepository();
 	    MesaRepository mesaRepository = new MesaRepository();
-	    ArrayList<Producto> tproductos = productoRepository.Consultar_producto(); //sI HAY ERROR ES AQUÍ
+	    ArrayList<Producto> tproductos = productoRepository.Consultar_producto();
 	    ArrayList<Producto> x = null;
 	    int preciot=0;
 	    Pedido y = null;
@@ -61,8 +63,10 @@ public class FacturaRepository {
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	estado = rs.getString("Ven_estado");
-	    	if((estado.equalsIgnoreCase(aignorar) || estado.equalsIgnoreCase("Finalizado"))) continue;
-	    	else if(aignorar.equalsIgnoreCase("Sin vender") && !estado.equalsIgnoreCase("Finalizado")) continue;
+	    	if(porpartes.length>1){
+	    		if(estado.equalsIgnoreCase(porpartes[0]) || estado.equalsIgnoreCase(porpartes[1])) continue;
+	    	}
+	    	else if(estado.equalsIgnoreCase(aignorar) || estado.equalsIgnoreCase("Finalizado")) continue;
 	    	if(auxid==null) auxid=id;
 	    	if(!auxid.equalsIgnoreCase(id)){
 	    		if(y==null){

@@ -21,6 +21,7 @@
 			$('#cuerpo').html(responseText);
 		});			
 	});
+	
 </script>
 </head>
 <body background="fondo1.JPG" id="body">
@@ -31,5 +32,5 @@
 	<br>
 	<div id="cuerpo" class="contenedor"></div>
 	<div id="cuerpodos" class="contenedor" align="center"></div>
-	<div id="cuerpotres" class="contenedor" align="center"></div>
+	<div id="cuerpotres" class="contenedor" align="center" onclick="lista_facturas_realizadas()"><h1>Facturas Realizadas</h1></div>
 </body>

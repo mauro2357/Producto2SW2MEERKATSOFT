@@ -32,8 +32,8 @@ public class Cajero extends Empleado{
 		this.apellido = apellido;
 		this.clave = clave;
 		this.telefono = telefono;
-		this.listafacturasdespachadas = facturaRepository.Generar_factura("En espera");
-		this.listafacturasfinalizadas = facturaRepository.Generar_factura("Sin vender");
+		this.listafacturasdespachadas = facturaRepository.Generar_factura("En espera");  //Por ser la lista de despachadas, IGNORAMOS las En Espera, por defecto se ignoran las Finalizadas.
+		this.listafacturasfinalizadas = facturaRepository.Generar_factura("Despachado/En espera"); //Por ser la lista de finalizadas, Ignoramos las Despachadas y En Espera, por ser un String de dos posiciones no se ignoran las finalizadas. (.split('/'))
 	}
 	
 	public Map<Mesa,Factura> Organizar_Facturas_Mesa(){
