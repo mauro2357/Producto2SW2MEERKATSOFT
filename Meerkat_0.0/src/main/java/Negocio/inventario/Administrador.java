@@ -7,18 +7,13 @@ import Datos.EmpleadosRepository;
 import Datos.GeneralesRepository;
 import Datos.InventarioRepository;
 import Negocio.cliente.Cliente;
-import Negocio.factura.Cajero;
 import Negocio.pedido.Despachador;
 import Negocio.pedido.Empleado;
 import Negocio.pedido.Mesero;
 import Negocio.pedido.Producto;
 
 public class Administrador extends Empleado {
-	
-	public String id;
-	public String nombre;
-	public String apellido;
-	public String telefono;
+
 	public String clave;
 	public ArrayList<Producto> lista_insumos;
 	public ArrayList<Cliente> lista_clientes;
@@ -32,10 +27,7 @@ public class Administrador extends Empleado {
 	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
 	public Administrador(String id, String nombre, String apellido, String telefono, String clave) throws Exception{
-		this.id = id;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.telefono = telefono;
+		super(id, nombre, apellido, telefono);
 		this.clave = clave; 
 	}
 	
@@ -76,16 +68,17 @@ public class Administrador extends Empleado {
 		this.lista_empleados = empleadosRepository.Consultar_Empleados();
 		System.out.println("ingreso a eliminar empleados en admin");
 		for(Empleado empleado : this.lista_empleados){
-			System.out.println("empezo el for");
-			System.out.println("id del empleado: " + empleado.get_id() );
-			if(id == empleado.get_id()){
-				System.out.println("encontro la id: " + empleado.get_id() );
+			System.out.println("id del empleado: " + empleado.id);
+			System.out.println("id a buscar: " + id );
+			if(id.equalsIgnoreCase(empleado.id)){
+				System.out.println("encontro la id: ");
 		    	if(empleado instanceof Mesero){
 		    		empleadosRepository.eliminar_mesero(id);
 				}
 				if(empleado instanceof Despachador){
 					empleadosRepository.eliminar_despachador(id);
 				}
+				break;
 			}
 		}
 	}

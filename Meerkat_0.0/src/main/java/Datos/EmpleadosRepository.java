@@ -34,21 +34,18 @@ public class EmpleadosRepository {
 	public ArrayList<Empleado> Consultar_Empleados() throws Exception {
 		System.out.println("ingreso consultar todos los empleados");
 		ArrayList<Empleado> ans = new ArrayList<Empleado>();
+		ArrayList<Mesero> meseros;
+		ArrayList<Despachador> despachadores;
 		MeseroRepository mr = new MeseroRepository();
-		CajeroRepository cr = new CajeroRepository();
 		DespachadorRepository dr = new DespachadorRepository();
-		AdministradorRepository ar = new AdministradorRepository();
-		for(Mesero mesero: mr.Consultar_mesero()){
+		meseros = mr.Consultar_mesero();
+		despachadores = dr.Consultar_despachador();
+		for(Mesero mesero: meseros){
+			System.out.println("id del mesero en empleadosrepository: " + mesero.id);
 			ans.add(mesero);
 		}
-		for(Cajero cajero: cr.Consultar_cajeros()){
-			ans.add(cajero);
-		}
-		for(Despachador despachador: dr.Consultar_despachador()){
+		for(Despachador despachador: despachadores){
 			ans.add(despachador);
-		}
-		for(Administrador administrador: ar.Consultar_Administradores()){
-			ans.add(administrador);
 		}
 		System.out.println("consulto perfectamente todos los empleados");
 		return ans;

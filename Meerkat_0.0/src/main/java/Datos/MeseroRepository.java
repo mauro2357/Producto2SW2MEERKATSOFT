@@ -17,12 +17,13 @@ public class MeseroRepository {
 	    ArrayList<Mesero> a = new ArrayList<Mesero>();
 	    while (rs.next()){
 	      String id = rs.getString("Me_id");
+	      System.out.println("id de la base de datos: " + id);
 	      String nombre = rs.getString("Me_Nombre");
 	      String apellido = rs.getString("Me_apellido");
-	      String telefono = rs.getString("Me_telefono");
-	      Mesero p = new Mesero(id, nombre, apellido, telefono);
+	      Mesero p = new Mesero(id, nombre, apellido);
 	      a.add(p);     
 	    }
+	    
 	    st.close();
 	    return a; 
 	}

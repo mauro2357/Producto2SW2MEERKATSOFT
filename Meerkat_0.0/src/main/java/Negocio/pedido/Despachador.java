@@ -8,25 +8,24 @@ import Datos.FacturaRepository;
 import Negocio.factura.Factura;
 
 public class Despachador extends Empleado {
-	public String id;
-	public String nombre;
-	public String apellido;
-	public String telefono;
+
 	public ArrayList<Factura> listafacturassindespachar;
 	
 	FacturaRepository facturaRepository = new FacturaRepository();
 	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	
 	public Despachador(String id, String nombre, String apellido, String telefono) throws Exception{
+		super(id, nombre, apellido, telefono);
+		this.listafacturassindespachar = facturaRepository.Generar_factura("Despachado");
+	}
+	
+	/*public Despachador(String id, String nombre, String apellido, String telefono) throws Exception{
 		this.id = id;
 		this.nombre  = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
 		this.listafacturassindespachar = facturaRepository.Generar_factura("Despachado");
-	}
-
-	public Despachador() {
-	}
+	}*/
 
 	public boolean Recibir_pedido(){
 		return true;

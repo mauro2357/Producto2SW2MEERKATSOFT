@@ -9,10 +9,6 @@ import Negocio.cliente.Cliente;
 
 public class Mesero extends Empleado {
 	
-	public String id;
-	public String nombre;
-	public String apellido;
-	public String telefono;
 	public ArrayList<Producto> productos;
 	public ArrayList<Mesa> mesas;
 	public ArrayList<Mesa> mesas_libres;
@@ -26,8 +22,17 @@ public class Mesero extends Empleado {
 	ClientesRepository clienteRepository = new ClientesRepository();
 	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
 	FacturaRepository facturaRepository = new FacturaRepository();
+		
+	public Mesero(String id, String nombre, String apellido, String telefono) throws Exception{
+		super(id, nombre, apellido, telefono);
+		this.productos = productoRepository.Consultar_producto();
+		this.mesas = mesaRepository.Consultar_mesas(null);
+		this.mesas_libres = mesaRepository.Consultar_mesas("ocupada");
+		this.clientes = clienteRepository.Consultar_Clientes();
+		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
+	}
 	
-	public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
+	/*public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -37,9 +42,16 @@ public class Mesero extends Empleado {
 		this.mesas_libres = mesaRepository.Consultar_mesas("ocupada");
 		this.clientes = clienteRepository.Consultar_Clientes();
 		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
+	}*/
+	
+	public Mesero(String id, String nombre, String apellido) throws Exception {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
 	}
 
 	public Mesero() throws Exception { 
+		super();
 		this.productos = productoRepository.Consultar_producto();
 		this.mesas = mesaRepository.Consultar_mesas(null);
 		this.mesas_libres = mesaRepository.Consultar_mesas("Despachado");
