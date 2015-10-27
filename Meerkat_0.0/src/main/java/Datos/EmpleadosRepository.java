@@ -32,6 +32,7 @@ public class EmpleadosRepository {
 	}
 
 	public ArrayList<Empleado> Consultar_Empleados() throws Exception {
+		System.out.println("ingreso consultar todos los empleados");
 		ArrayList<Empleado> ans = new ArrayList<Empleado>();
 		MeseroRepository mr = new MeseroRepository();
 		CajeroRepository cr = new CajeroRepository();
@@ -49,6 +50,7 @@ public class EmpleadosRepository {
 		for(Administrador administrador: ar.Consultar_Administradores()){
 			ans.add(administrador);
 		}
+		System.out.println("consulto perfectamente todos los empleados");
 		return ans;
 	}
 
@@ -72,6 +74,22 @@ public class EmpleadosRepository {
 		}
 		System.out.println("query: " + query);
 		Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
+	
+	public void eliminar_mesero(String id) throws Exception{
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "DELETE FROM `future`.`mesero` WHERE `Me_id`='"+id+"';";
+	    Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
+	
+	public void eliminar_despachador(String id) throws Exception{
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "DELETE FROM `future`.`despachador` WHERE `Des_id`='"+id+"';";
+	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
 	    st.close();
 	}

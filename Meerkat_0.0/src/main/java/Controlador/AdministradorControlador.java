@@ -73,6 +73,11 @@ public class AdministradorControlador extends HttpServlet {
 	        case "datos_insumo":
 	        	pagina = registrar_insumo(s, request);
 	        	break;
+	        case "eliminar_empleado":
+	        	pagina = "nominaempleadosvista/eliminarempleado.jsp";
+	        	break;
+	        case "datos_eliminar_empleado":
+	        	pagina = datos_eliminar_empleado(s, request);
 	        default:
 				pagina = "index.jsp";
 				break;
@@ -204,6 +209,18 @@ public class AdministradorControlador extends HttpServlet {
 			return "/errores/error.jsp";
     	}   	
     	return "index.jsp";
+	}
+	
+	public String datos_eliminar_empleado(HttpSession s, HttpServletRequest request){
+		AdministradoresFacade administradorFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
+		try {administradorFacade.Consultar_Administradores();}
+		catch (Exception e) {System.out.println("Error al consultar el administrador");}
+		String id = request.getParameter("id");
+		try {administradorFacade.getAdministrador().eliminar_empleado(id);}
+		catch(Exception e) {
+			System.out.println("Error al eliminar el empleado");
+		}
+		return "index.jsp";
 	}
 	
 	public String Pagar_Nomina(){

@@ -15,6 +15,7 @@
 	<div class="botona" onclick="ingresar_insumo()">Ingresar insumo</div>
 	<div class="botona" onclick="crear_despachador()">Crear despachador</div>
 	<div class="botona" onclick="crear_mesero()">Crear mesero</div>
+	<div class="botona" onclick="eliminar_empleado()">Eliminar empleado</div>	
 	<div class="botona" onclick="consultar_clientes()">Consultar Clientes</div>
 	<div class="botona" onclick="consultar_totalVentas()">Total ventas</div>
 	<div class="botona" onclick="productos_masvendidos()">Productos más Vendidos</div>

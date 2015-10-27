@@ -198,6 +198,16 @@
 			});
 	}
 	
+	function eliminar_empleado(){
+		abrircerrarcuerpodos();
+		var Entrar = "eliminar_empleado";
+		$.post("/Meerkat_0.0/administrador", {
+			entrar : Entrar,			
+			}, function(responseText) {
+				$('#cuerpodos').html(responseText);
+			});
+	}	
+	
 	function consultar_clientes(){
 		abrircerrarcuerpodos();
 		var Entrar = "consultar_clientes";

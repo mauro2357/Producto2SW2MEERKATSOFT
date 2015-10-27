@@ -7,7 +7,10 @@ import Datos.EmpleadosRepository;
 import Datos.GeneralesRepository;
 import Datos.InventarioRepository;
 import Negocio.cliente.Cliente;
+import Negocio.factura.Cajero;
+import Negocio.pedido.Despachador;
 import Negocio.pedido.Empleado;
+import Negocio.pedido.Mesero;
 import Negocio.pedido.Producto;
 
 public class Administrador extends Empleado {
@@ -20,6 +23,7 @@ public class Administrador extends Empleado {
 	public ArrayList<Producto> lista_insumos;
 	public ArrayList<Cliente> lista_clientes;
 	public ArrayList<Producto> productos_mas_vendidos;
+	public ArrayList<Empleado> lista_empleados;
 	public String total_ventas;
 	
 	InventarioRepository inventarioRepository = new InventarioRepository();
@@ -65,6 +69,25 @@ public class Administrador extends Empleado {
 	
 	public void Contratar_Despachador(String id, String nombre, String apellido, String telefono) throws Exception{ 
 		empleadosRepository.Registrar_despachador(id, nombre, apellido, telefono);
+	}
+	
+	public void eliminar_empleado(String id) throws Exception{
+		
+		this.lista_empleados = empleadosRepository.Consultar_Empleados();
+		System.out.println("ingreso a eliminar empleados en admin");
+		for(Empleado empleado : this.lista_empleados){
+			System.out.println("empezo el for");
+			System.out.println("id del empleado: " + empleado.get_id() );
+			if(id == empleado.get_id()){
+				System.out.println("encontro la id: " + empleado.get_id() );
+		    	if(empleado instanceof Mesero){
+		    		empleadosRepository.eliminar_mesero(id);
+				}
+				if(empleado instanceof Despachador){
+					empleadosRepository.eliminar_despachador(id);
+				}
+			}
+		}
 	}
 	
 	public void Agregar_insumo(String id, String nombre, int valor) throws Exception{ 
@@ -161,12 +184,6 @@ public class Administrador extends Empleado {
 	public void Consultar_inventario() {
 		
 	}
-
-
-		
-		
-		
-	
 
 	public boolean Consultar_despachador() {
 		// TODO Auto-generated method stub
