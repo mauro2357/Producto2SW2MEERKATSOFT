@@ -21,12 +21,12 @@ public class consultagustomusicalService {
 	@GET
 	@Produces("text/plain")
 	@Path("consultargustomusical/")
-	public String consultarproductos() throws Exception { 
+	public String consultargusto() throws Exception { 
 		ClientesFacade clientesFacade = new ClientesFacade();
 		clientesFacade.Consultar_clientes();
 		ArrayList<String> x = new ArrayList<String>();
 		for(Cliente cliente: clientesFacade.listaclientes){
-			x.add(cliente.getNombre()+ cliente.getMusica());
+			x.add(cliente.getNombre() + " " + cliente.getMusica());
 			
 		}
 		return x.toString();

@@ -18,6 +18,9 @@ public class ApplicationConfig extends Application {
 		resources.add(Servicios.consultameserosService.class);
 		resources.add(Servicios.consultaTotalVentasService.class);
 		resources.add(Servicios.consultaclientesService.class);
+		resources.add(Servicios.consultagustomusicalService.class);
+		
+		
 		return resources;    
     }
 }
