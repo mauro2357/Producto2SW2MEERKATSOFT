@@ -6,7 +6,7 @@ import Datos.GeneralesRepository;
 import Negocio.pedido.Producto;
 
 public class GeneralesFacade {		
-	
+	public double totaliva;
 	public String totalventas;
 	public ArrayList<Producto> listaproductos;
 	
@@ -20,5 +20,10 @@ public class GeneralesFacade {
 	public ArrayList<Producto> Consultar_productosmasvendidos() throws Exception{ 
 		this.listaproductos = generalesRepository.Consultarproductos_masvendidos();;
 		return listaproductos;
+	}
+	
+	public double Consultar_Iva() throws Exception{
+		this.totaliva= generalesRepository.Consultar_Iva();;
+		return totaliva;
 	}
 }

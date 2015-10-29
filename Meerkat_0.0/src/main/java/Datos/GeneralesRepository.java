@@ -35,4 +35,19 @@ public class GeneralesRepository {
 	    st.close();
 	    return a; 
 	}
+	
+	public Double Consultar_Iva() throws Exception { 
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "select sum(Valor) Valors from (select sum(Dtv_cantidad)*Pro_valor Valor from producto natural join detalles_venta natural join venta where venta.Ven_estado = 'Finalizado' group by Pro_nombre order by Dtv_cantidad asc) as A;";
+	    Statement st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    String a = null;
+	    double ans=0;
+	    while (rs.next())a = rs.getString("Valors");	    
+	    st.close();
+	    ans=Double.parseDouble(a)*0.16;
+ 	    return ans; 
 }
+}	
+
+

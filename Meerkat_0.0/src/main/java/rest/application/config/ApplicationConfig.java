@@ -2,6 +2,9 @@ package rest.application.config;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
+
+import Servicios.consultaTotalivaService;
+
 import javax.ws.rs.ApplicationPath;
 
 @ApplicationPath("resources")
@@ -18,6 +21,7 @@ public class ApplicationConfig extends Application {
 		resources.add(Servicios.consultameserosService.class);
 		resources.add(Servicios.consultaTotalVentasService.class);
 		resources.add(Servicios.consultaclientesService.class);
+		resources.add(Servicios.consultaTotalivaService.class);
 		resources.add(Servicios.consultagustomusicalService.class);
 		
 		
