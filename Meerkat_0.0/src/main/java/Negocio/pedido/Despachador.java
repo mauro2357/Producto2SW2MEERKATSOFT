@@ -1,8 +1,6 @@
 package Negocio.pedido;
 
 import java.util.ArrayList;
-
-import Datos.DespachadorRepository;
 import Datos.EmpleadosRepository;
 import Datos.FacturaRepository;
 import Negocio.factura.Factura;
@@ -20,7 +18,7 @@ public class Despachador extends Empleado {
 	}
 	
 	public void despachar(String id) throws NumberFormatException, Exception{
-		DespachadorRepository despachadorRepository = new DespachadorRepository();
+		FacturaRepository despachadorRepository = new FacturaRepository();
 		despachadorRepository.Despachar_pedido(Integer.parseInt(id));
 	}
 
@@ -36,7 +34,7 @@ public class Despachador extends Empleado {
 	}
 
 	public void cancelar(String pedido_id) throws NumberFormatException, Exception {
-		DespachadorRepository despachadorRepository = new DespachadorRepository();
+		FacturaRepository despachadorRepository = new FacturaRepository();
 		despachadorRepository.Cancelar_pedido(Integer.parseInt(pedido_id));
 	}
 	

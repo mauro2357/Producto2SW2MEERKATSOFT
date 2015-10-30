@@ -14,6 +14,24 @@ import Negocio.pedido.Producto;
 
 public class FacturaRepository {
 	
+	public void Despachar_pedido(int id) throws Exception{
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "UPDATE venta SET `Ven_estado`='Despachado' WHERE `Ven_id`='"+ Integer.toString(id) +"';";
+	    Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
+
+	public void Cancelar_pedido(int parseInt) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		Statement st = con.createStatement();
+		String query = "Delete from detalles_venta where Ven_id =" + Integer.toString(parseInt) + ";";
+		st.executeUpdate(query);
+		query = "Delete from venta where Ven_id =" + Integer.toString(parseInt) + ";";
+		st.executeUpdate(query);
+		st.close();
+	}
+	
 	public void Ingresar_pedido(Pedido x, String mesero) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.id+"', '"+x.mesa.id+"');";
