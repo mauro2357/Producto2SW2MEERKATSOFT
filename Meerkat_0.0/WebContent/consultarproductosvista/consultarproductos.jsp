@@ -44,13 +44,13 @@
 	<div id="table1" align="center">
 	</div>
 	<div align="right">
-		<form method="post" action="/Meerkat_0.0/mesero" >
-		      	<button name="entrar" type="submit" value="Cancelar">Cancelar</button>
-		      	<input name="estado" type="hidden" value="En espera">
-		      	<select name="cliente" id="selectclientes"></select>
-		      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
-		      	<select name="mesa" id="selectmesas"></select>
-		      	<button name="entrar" type="submit" value="Enviar pedido" onclick="ejecutar()">Enviar</button>
+		<form method="post" action="/Meerkat_0.0/mesero" onsubmit="ValidarFormProductos()" >
+	      	<button name="entrar" type="submit" value="Cancelar">Cancelar</button>
+	      	<input name="estado" type="hidden" value="En espera">
+	      	<select name="cliente" id="selectclientes"></select>
+	      	<input name="mesero" type="hidden" value="<%out.print(request.getParameter("id")); %>">
+	      	<select name="mesa" id="selectmesas"></select>
+	      	<button name="entrar" type="submit" value="Enviar pedido">Enviar</button>
 		</form>
 	</div>
 </body>

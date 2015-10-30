@@ -6,6 +6,7 @@
 <%@ page import="java.util.*" %>
 
 <%Factura factura = (Factura) session.getAttribute("Factura"); %>
+<%Cliente cliente = (Cliente) session.getAttribute("Cliente"); %>
 
 <table style="color: white; ">
 	<tr><td>Factura:</td><td><%out.println(factura.id);%></td></tr>
@@ -23,4 +24,7 @@
 	<tr><td>Propina:</td><td><%out.println("0");%></td></tr>
 	<tr><td>Mesero:</td><td><%out.println(factura.mesero);%></td></tr>
 	<tr><td>Cajero:</td><td><%out.println(factura.cajero);%></td></tr>
+	<tr><td>Cliente:</td><td><%out.println(cliente.nombre);%></td></tr>
+	<tr><td>Puntos:</td><td><%out.println(cliente.puntos);%></td></tr>
+	<tr><td>Factura:</td><td><%out.println(factura.id);%></td></tr>
 </table>

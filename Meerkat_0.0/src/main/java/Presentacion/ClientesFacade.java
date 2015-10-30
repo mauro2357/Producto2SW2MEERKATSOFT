@@ -23,7 +23,7 @@ public class ClientesFacade {
 	public Cliente Consultar_Cliente_Particular(String cliente) throws Exception {
 		if(this.listaclientes==null) Consultar_clientes();
 		for(Cliente clientem: this.listaclientes){
-			if(clientem.getId().equalsIgnoreCase("cliente")) return clientem;
+			if(clientem.getId().equalsIgnoreCase(cliente)) return clientem;
 		}
 		return null;
 	}

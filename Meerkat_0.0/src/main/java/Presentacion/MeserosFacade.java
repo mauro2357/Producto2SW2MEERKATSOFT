@@ -13,7 +13,7 @@ public class MeserosFacade {
 	
 	public ArrayList<Mesero> Consultar_meseros() throws Exception{
 		ArrayList<Mesero> x = productorepository.Consultar_mesero();
-		if(mesero!=null) Definir_mesero(mesero.getId());
+		if(mesero!=null) Definir_mesero(mesero.id);
 		this.listameseros = x;
 		return x;
 	}

@@ -38,5 +38,14 @@ public class ClientesRepository {
 	    st.executeUpdate(query);
 	    st.close();
 	}
+
+	public void ActualizarPuntos(Cliente cliente, String puntosusados) throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+		System.out.println(cliente.puntos-Integer.parseInt(puntosusados));
+		String query = "UPDATE `future`.`cliente` SET `Cli_puntos`='"+(cliente.puntos-Integer.parseInt(puntosusados))+"' WHERE `Cli_id`='"+cliente.id+"';";
+		Statement st = con.createStatement();
+	    st.executeUpdate(query);
+	    st.close();
+	}
 	
 }

@@ -31,24 +31,6 @@ public class Mesero extends Empleado {
 		this.clientes = clienteRepository.Consultar_Clientes();
 		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
 	}
-	
-	/*public Mesero(String id, String nombre, String apellido, String telefono) throws Exception {
-		this.id = id;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.telefono = telefono;
-		this.productos = productoRepository.Consultar_producto();
-		this.mesas = mesaRepository.Consultar_mesas(null);
-		this.mesas_libres = mesaRepository.Consultar_mesas("ocupada");
-		this.clientes = clienteRepository.Consultar_Clientes();
-		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
-	}*/
-	
-	public Mesero(String id, String nombre, String apellido) throws Exception {
-		this.id = id;
-		this.nombre = nombre;
-		this.apellido = apellido;
-	}
 
 	public Mesero() throws Exception { 
 		super();
@@ -131,6 +113,11 @@ public class Mesero extends Empleado {
 	
 	public void Limpiar_pedido_temporal(Mesero mesero) throws Exception{
 		facturaRepository.Limpiar_pedido_temporal(mesero.id);
+	}
+	
+	public Pedido Generar_pedido_temporal(Mesero mesero) throws Exception{
+		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
+		return this.pedido_sin_asignar;
 	}
 	
 	@Override

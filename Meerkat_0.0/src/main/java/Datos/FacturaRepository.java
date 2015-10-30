@@ -194,6 +194,4 @@ public class FacturaRepository {
 		st.executeUpdate(query);
 		st.close();
 	}
-
-	
 }

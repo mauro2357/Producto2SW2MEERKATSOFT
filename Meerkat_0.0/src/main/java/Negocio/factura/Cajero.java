@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Datos.ClientesRepository;
 import Datos.EmpleadosRepository;
 import Datos.FacturaRepository;
 import Datos.MesaRepository;
+import Negocio.cliente.Cliente;
 import Negocio.pedido.Empleado;
 import Negocio.pedido.Mesa;
 
@@ -25,6 +27,7 @@ public class Cajero extends Empleado{
 	FacturaRepository facturaRepository = new FacturaRepository();
 	MesaRepository mesaRepository = new MesaRepository();
 	EmpleadosRepository empleadosRepository = new EmpleadosRepository();
+	ClientesRepository clientesRepository = new ClientesRepository();
 	
 	public Cajero(String id, String nombre, String apellido, String clave, String telefono) throws Exception {
 		this.id = id;
@@ -51,6 +54,12 @@ public class Cajero extends Empleado{
 		return factura;
 	}
 	
+	public void ActualizarPuntos(Cliente cliente, String puntosusados) throws Exception {
+		clientesRepository.ActualizarPuntos(cliente,puntosusados);
+		int diferencia = cliente.puntos - Integer.parseInt(puntosusados);
+		cliente.puntos = diferencia;
+	}
+	
 	public Factura generarfacturageneral(String id) throws Exception{
 		ArrayList<Factura> listadefacturas = facturaRepository.Generar_factura(null);
 		for(Factura factura:listadefacturas){
@@ -75,13 +84,12 @@ public class Cajero extends Empleado{
 		return facturam.getPedido().getPrecio_total();
 	}
 	
-	public Factura Cobrar(String id, String mesa) throws Exception {
-		Factura ans = generarfacturageneral(id);
-		facturaRepository.Cobrar(ans);
-		FacturaPorMesa.remove(ans);
-		ans.pedido.setEstado("Finalizado");
-		ans.setCajero(this.getId());
-		return ans;
+	public Factura Cobrar(Factura factura) throws Exception {
+		facturaRepository.Cobrar(factura);
+		FacturaPorMesa.remove(factura);
+		factura.pedido.setEstado("Finalizado");
+		factura.setCajero(this.getId());
+		return factura;
 	}
 
 	public boolean añadirpropina(int x) {
@@ -151,6 +159,10 @@ public class Cajero extends Empleado{
 	public void setListafacturasdespachadas(ArrayList<Factura> listafacturasdespachadas) {
 		this.listafacturasdespachadas = listafacturasdespachadas;
 	}
+
+
+
+	
 
 	
 

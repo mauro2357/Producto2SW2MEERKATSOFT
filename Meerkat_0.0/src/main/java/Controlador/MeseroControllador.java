@@ -162,10 +162,11 @@ public class MeseroControllador extends HttpServlet {
 	
 	private String listar_pedido_actual(HttpSession s){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		//try {meserosFacade.Consultar_meseros();} 
-		//catch (Exception e) {System.out.println("Error al consultar los meseros");}
-		if(meserosFacade.getMesero().pedido_sin_asignar != null) s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
-    	else s.setAttribute("productos-pedido",null);
+		try {
+			s.setAttribute("productos-pedido",meserosFacade.mesero.Generar_pedido_temporal(meserosFacade.mesero).getCuerpo());
+		} catch (Exception e) {
+			System.out.println("Error al generar el pedido temporal");
+		}
     	return "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";	
 	}
 	

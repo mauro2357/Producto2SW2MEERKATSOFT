@@ -20,7 +20,8 @@ public class MeseroRepository {
 	      System.out.println("id de la base de datos: " + id);
 	      String nombre = rs.getString("Me_Nombre");
 	      String apellido = rs.getString("Me_apellido");
-	      Mesero p = new Mesero(id, nombre, apellido);
+	      String telefono = rs.getString("Me_telefono");
+	      Mesero p = new Mesero(id, nombre, apellido, telefono);
 	      a.add(p);     
 	    }
 	    

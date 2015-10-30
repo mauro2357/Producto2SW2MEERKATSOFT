@@ -1,4 +1,22 @@
-	
+	function ValidarFormProductos(){
+		var cliente = document.getElementById("selectclientes").selectedIndex;
+		var mesa = document.getElementById("selectmesas").selectedIndex;
+		var pedido = document.getElementById("tablapedidos").rows.length;
+		if(cliente==0 || mesa==0 || pedido==2){
+			alert("Por favor, no deje de seleccionar el cliente, la mesa, o de escoger productos.")
+			return false;
+		}
+		return true;
+	}
+	function redimirpuntos(x,y,z){
+		var PuntosString = prompt("Señor@ "+z+" usted tiene: "+y+" puntos. ¿Cuántos desea redimir?", 0);
+		var numberString = $('#Costo').text();
+		var Costo = Number(numberString.replace(/[^0-9\.]+/g,""));
+		var Puntos = Number(PuntosString.replace(/[^0-9\.]+/g,""));
+		var diferencia = Costo - Puntos;
+		$('#Costo').html("<h1>" + diferencia + "</h1>");
+	}
+
 	function cambiarlista(){
         	var y = document.getElementById("lista1");
 			var x = y.innerHTML;
@@ -21,6 +39,10 @@
 	function pagar_mesa(x,y){
 		var numberString = $('#Costo').text();
 		var Costo = Number(numberString.replace(/[^0-9\.]+/g,""));
+		var numberString2 = $('#CostoGlobal').text();
+		var CostoGlobal = Number(numberString2.replace(/[^0-9\.]+/g,""));
+		var Puntosusados = CostoGlobal - Costo;
+		alert(Puntosusados);
 		var respuesta = (Costo-$('#Dinero').val());
 		if(respuesta<=0){
 			alert("Entra la compra");
@@ -28,7 +50,8 @@
 			$.post("/Meerkat_0.0/caja", {
 				entrar : Entrar,
 				id : x,
-				mesa : y
+				mesa : y,
+				puntosusados : Puntosusados
 			}, function(responseText){
 				$('#cuerpotres').html(responseText)});
 			if( ($("#cuerpo").is(':visible')) ){
@@ -152,10 +175,6 @@
 		}, function(responseText) {
 			$('#table1').html(responseText);
 		});
-	}
-	
-	function ejecutar(){
-		alert("Se ha recibido un pedido");
 	}
 	
 	function consultar_inventario(){
