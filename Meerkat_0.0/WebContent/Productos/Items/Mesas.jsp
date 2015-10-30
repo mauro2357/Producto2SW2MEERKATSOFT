@@ -2,8 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="Negocio.pedido.*" %>
 <%@ page import="java.util.*" %>
-
-
 <option>Mesa</option>
 <%
 	@SuppressWarnings("unchecked")
@@ -12,7 +10,7 @@
 	else
 	{
 		for(Mesa mesa: lista_mesas){
-			%><option><%out.print(mesa.getId());%></option><%
+			%><option><%out.print(mesa.id);%></option><%
 		}
 	}
 %>

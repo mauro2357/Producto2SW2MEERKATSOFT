@@ -24,7 +24,7 @@
 	
 </script>
 </head>
-<body background="fondo1.JPG" id="body">
+<body background="../fondo1.JPG" id="body">
     <div id="logo" align="center">
 		<a href="/Meerkat_0.0/index.jsp"><img src="../images/logo.jpg" style="max-width: 100%; height: auto;"></a>
 	</div>

@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="Negocio.cliente.*" %>
 <%@ page import="java.util.*" %>
-
 <option>Cliente</option>
 <%
 	@SuppressWarnings("unchecked")
@@ -11,7 +10,7 @@
 	else
 	{
 		for(Cliente cliente: lista_clientes){
-			%><option><%out.print(cliente.getId());%></option><%
+			%><option><%out.print(cliente.id);%></option><%
 		}
 	}
 %>

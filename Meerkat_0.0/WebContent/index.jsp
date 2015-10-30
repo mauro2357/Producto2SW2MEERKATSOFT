@@ -41,9 +41,9 @@
 		<div class='icon' align="center" id="menu">
 			<button type="button" onclick="ir_administrador()"><font face="meerkat" size="5" color ="white">Administrador</font></button>
 			<input name="pass" id="pass" type="password" value="meerkat">
-			<button type="button" onclick="location='despachadores/cocina.jsp'"><font face="meerkat" size="5" color ="white">Despachador</font></button>
+			<button type="button" onclick="location='Despachadores/Cocina.jsp'"><font face="meerkat" size="5" color ="white">Despachador</font></button>
 			<button type="button" onclick="crear_usuario()"><font face="meerkat" size="5" color ="white">Crear Usuario</font></button>
-			<button type="button" onclick="location='cajero/cajero.jsp'"><font face="meerkat" size="5" color ="white">Entrar a caja</font></button>
+			<button type="button" onclick="location='Cajero/Cajero.jsp'"><font face="meerkat" size="5" color ="white">Entrar a caja</font></button>
 			<button type="button" onclick="location='listenyourmusicvista/audioplayer.html'"><font face="meerkat" size="5" color ="white">Listen your music</font></button>
 			
 		</div>

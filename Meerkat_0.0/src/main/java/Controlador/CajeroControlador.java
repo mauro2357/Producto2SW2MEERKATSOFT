@@ -62,7 +62,7 @@ public class CajeroControlador extends HttpServlet {
 	private String Generar_Lista_Facturas_Realizadas(HttpSession s) {
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		s.setAttribute("lista_facturas_realizadas", cajerosFacade.getCajero().listafacturasfinalizadas);
-		return "cajero/cajeroitems/listafacturas.jsp";
+		return "Cajero/Items/ListaFacturas.jsp";
 	}
 
 	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
@@ -82,7 +82,7 @@ public class CajeroControlador extends HttpServlet {
 			System.out.println("Error al organizar las facturas por mesa.");
 		}
     	s.setAttribute("mesas-facturas", cajerosFacade.getCajero().Organizar_Facturas_Mesa());
-    	return "cajero/cajeroitems/listamesasgrafico.jsp";
+    	return "Cajero/Items/ListaMesas.jsp";
 	}
 	
 	public String Costo_Mesa(HttpSession s, HttpServletRequest request, String id, String mesa){
@@ -93,7 +93,7 @@ public class CajeroControlador extends HttpServlet {
 			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.getCliente());
 			s.setAttribute("Factura",ans);
 			s.setAttribute("Cliente", cliente);
-			return "cajero/cajeroitems/caja.jsp";
+			return "Cajero/Items/Caja.jsp";
 		} catch (Exception e) { 
 			System.out.println("Error al buscar el costo de la mesa");
 		}
@@ -111,7 +111,7 @@ public class CajeroControlador extends HttpServlet {
 			ans = cajerosFacade.cajero.Cobrar(ans);
 			s.setAttribute("Factura",ans);
 			s.setAttribute("Cliente", cliente);
-			return "cajero/cajeroitems/factura.jsp";
+			return "Cajero/Items/Factura.jsp";
 		} catch (Exception e) {
 			System.out.println("Error al cobrar la mesa en la base de datos.");
 		}

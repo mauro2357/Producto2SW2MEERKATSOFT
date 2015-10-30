@@ -41,7 +41,7 @@ public class AdministradorControlador extends HttpServlet {
 	        	pagina = Consultar_Inventario(s);
 	        	break;
 	        case "ingresar_insumo":
-	        	pagina = "consultarinventariovista/ingresarinsumo.jsp";
+	        	pagina = "Administradores/Inventario/IngresarInsumo.jsp";
 	        	break;
 	        case "consultar_clientes":
 	        	pagina = Consultar_Clientes(s);
@@ -56,10 +56,10 @@ public class AdministradorControlador extends HttpServlet {
 	        	pagina = Entrar(s,request);
 	        	break;
 	        case "crear_despachador":
-	        	pagina = "nominaempleadosvista/creardespachador.jsp";
+	        	pagina = "Administradores/Nomina/ContratarDespachador.jsp";
 	        	break;
 	        case "crear_mesero":
-	        	pagina = "nominaempleadosvista/crearmesero.jsp";
+	        	pagina = "Administradores/Nomina/ContratarMesero.jsp";
 	        	break;
 	        case "productos_masvendidos":
 	        	pagina = Consultar_Productos_Mas_Vendidos(s);
@@ -74,7 +74,7 @@ public class AdministradorControlador extends HttpServlet {
 	        	pagina = registrar_insumo(s, request);
 	        	break;
 	        case "eliminar_empleado":
-	        	pagina = "nominaempleadosvista/eliminarempleado.jsp";
+	        	pagina = "Administradores/Nomina/DespedirEmpleado.jsp";
 	        	break;
 	        case "datos_eliminar_empleado":
 	        	pagina = datos_eliminar_empleado(s, request);
@@ -94,49 +94,6 @@ public class AdministradorControlador extends HttpServlet {
     	return "index.jsp";
 	}
 	
-	
-	public String Consultar_Inventario(HttpSession s){
-		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		//try {administradoresFacade.Consultar_Administradores();} 
-		//catch (Exception e) {System.out.println("Error al consultar el administrador");}
-		try{ s.setAttribute("todos-los-insumos", administradoresFacade.getAdministrador().Consultar_Insumos());
-		}catch (Exception e) { 
-			System.out.println("Error en la base de datos al consultar el inventario.");
-			s.setAttribute("ubicacion", "consultarinventario");
-			s.setAttribute("error",e);
-			return "/errores/error.jsp";
-		}
-		return "/consultarinventariovista/listainventario.jsp";
-	}
-	
-	public String Consultar_Clientes(HttpSession s){
-		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		//try {administradoresFacade.Consultar_Administradores();} 
-		//catch (Exception e) {System.out.println("Error al consultar el administrador");}
-		try{s.setAttribute("todos-los-clientes", administradoresFacade.getAdministrador().Consultar_Clientes());
-		}catch (Exception e) { 
-			System.out.println("Error en la base de datos al consultar los clientes.");
-			s.setAttribute("ubicacion", "consultar_clientes");
-			s.setAttribute("error",e);
-			return "/errores/error.jsp";
-		}
-		return "/basedatosusuariosvista/listaclientes.jsp";
-	}
-
-	public String Consultar_Total_Ventas(HttpSession s){
-		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		//try {administradoresFacade.Consultar_Administradores();} 
-		//catch (Exception e) {System.out.println("Error al consultar el administrador");}
-		try { s.setAttribute("todas-ventas", administradoresFacade.getAdministrador().Consultar_total_Ventas());
-		}catch (Exception e){ 
-			System.out.println("Error en la base de datos al consultar el total de las ventas.");
-			s.setAttribute("ubicacion", "consultar_total_ventas");
-			s.setAttribute("error",e);
-			return "/errores/error.jsp";
-		}
-		return "/consultasgeneralesenlaBDvista/totalventas.jsp";
-	}
-	
 	public String Entrar(HttpSession s, HttpServletRequest request) {
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
 		try {administradoresFacade.Consultar_Administradores();} 
@@ -144,14 +101,49 @@ public class AdministradorControlador extends HttpServlet {
 			System.out.println("Error al consultar el administrador");
 			s.setAttribute("ubicacion", "entrar, consultar administradores");
 			s.setAttribute("error",e);
-			return "/errores/error.jsp";
+			return "/Errores/Error.jsp";
 		}
 		String claveaux = request.getParameter("pass");
     	if(!administradoresFacade.getAdministrador().getClave().equalsIgnoreCase(claveaux)) return "null";
-    	return "/consultarinventariovista/funcionesadministrador.jsp";
+    	return "Administradores/Administrador.jsp";
 	}
 	
+	public String Consultar_Inventario(HttpSession s){
+		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
+		try{ s.setAttribute("todos-los-insumos", administradoresFacade.getAdministrador().Consultar_Insumos());
+		}catch (Exception e) { 
+			System.out.println("Error en la base de datos al consultar el inventario.");
+			s.setAttribute("ubicacion", "consultarinventario");
+			s.setAttribute("error",e);
+			return "/Errores/Error.jsp";
+		}
+		return "Administradores/Inventario/ListaInventario.jsp";
+	}
+	
+	public String Consultar_Clientes(HttpSession s){
+		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
+		try{s.setAttribute("todos-los-clientes", administradoresFacade.getAdministrador().Consultar_Clientes());
+		}catch (Exception e) { 
+			System.out.println("Error en la base de datos al consultar los clientes.");
+			s.setAttribute("ubicacion", "consultar_clientes");
+			s.setAttribute("error",e);
+			return "/Errores/Error.jsp";
+		}
+		return "Clientes/ListaClientes.jsp";
+	}
 
+	public String Consultar_Total_Ventas(HttpSession s){
+		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
+		try { s.setAttribute("todas-ventas", administradoresFacade.getAdministrador().Consultar_total_Ventas());
+		}catch (Exception e){ 
+			System.out.println("Error en la base de datos al consultar el total de las ventas.");
+			s.setAttribute("ubicacion", "consultar_total_ventas");
+			s.setAttribute("error",e);
+			return "/Errores/Error.jsp";
+		}
+		return "Administradores/ConsultasGenerales/TotalVentas.jsp";
+	}
+	
 	public String Consultar_Productos_Mas_Vendidos(HttpSession s){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
 		try {administradoresFacade.Consultar_Administradores();} 
@@ -161,9 +153,9 @@ public class AdministradorControlador extends HttpServlet {
 			System.out.println("Error en la base de datos al consultar los productos más vendidos");
 			s.setAttribute("ubicacion", "consultar productos más vendidos");
 			s.setAttribute("error",e);
-			return "/errores/error.jsp";
+			return "/Errores/Error.jsp";
 		}
-    	return "/consultasgeneralesenlaBDvista/productosmasvendidos.jsp";
+    	return "Administradores/ConsultasGenerales/ProductosMasVendidos.jsp";
 	}
 
 	public String Contratar_Mesero(HttpSession s, String id, String nombre, String apellido, String telefono){
@@ -175,7 +167,7 @@ public class AdministradorControlador extends HttpServlet {
 			System.out.println("Error en la base de datos al crear un mesero");
 			s.setAttribute("ubicacion", "contratar mesero");
 			s.setAttribute("error",e);
-			return "/errores/error.jsp";
+			return "/Errores/Error.jsp";
 		}
 		return "index.jsp";
 	}
@@ -189,7 +181,7 @@ public class AdministradorControlador extends HttpServlet {
 			System.out.println("Error en la base de datos al crear un despachador");
 			s.setAttribute("ubicacion", "contratar despachador");
 			s.setAttribute("error",e);
-			return "/errores/error.jsp";
+			return "/Errores/Error.jsp";
 		}
 		return "index.jsp";
 	}
@@ -206,7 +198,7 @@ public class AdministradorControlador extends HttpServlet {
     		System.out.println("Error en base de datos al agregar un nuevo insumo.");
     		s.setAttribute("ubicacion", "registrar insumo");
 			s.setAttribute("error",e);
-			return "/errores/error.jsp";
+			return "/Errores/Error.jsp";
     	}   	
     	return "index.jsp";
 	}

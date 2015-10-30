@@ -63,7 +63,7 @@ public class MeseroControllador extends HttpServlet {
 	        	pagina = enviar_pedido(s, request);
 				break;
 	        case "crear_usuario":
-	        	pagina = "/basedatosusuariosvista/Crearusuario.jsp";
+	        	pagina = "/Clientes/CrearCliente.jsp";
 				break;
 	        case "datos_usuario":
 	        	pagina = registrar_usuario(s, request);
@@ -91,7 +91,7 @@ public class MeseroControllador extends HttpServlet {
 		try {
 			MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
         	s.setAttribute("todos-los-meseros", meserosFacade.Consultar_meseros());
-        	return "/consultarmeserosvista/listameseros.jsp";
+        	return "/Meseros/ListaMeseros.jsp";
         } 
     	catch (Exception e) {System.out.println("Error en base de datos al imprimir meseros.");}
 		return null;
@@ -99,20 +99,18 @@ public class MeseroControllador extends HttpServlet {
 	
 	private String definir_mesero(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		//try {meserosFacade.Consultar_meseros();} 
-		//catch (Exception e) {System.out.println("Error al consultar los meseros");}
 		String meseroi = request.getParameter("meseroi"); 
     	meserosFacade.Definir_mesero(meseroi); 
-    	return "/consultarproductosvista/consultarproductos.jsp"; 
+    	return "/Productos/Productos.jsp"; 
 	}
 	
-	private String listar_mesas(HttpSession s){ //Falta ADICIONAR productos a un PEDIDO ya INSTANCIADO
+	private String listar_mesas(HttpSession s){
 		try {
 			MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
 			meserosFacade.Consultar_meseros();
     		if(meserosFacade.getMesero().getMesas_libres()==null) s.setAttribute("lista-mesas", meserosFacade.getMesero().getMesas());
     		else s.setAttribute("lista-mesas", meserosFacade.getMesero().getMesas_libres());
-    		return "/consultarproductosvista/consultarproductositems/selectmesas.jsp"; 
+    		return "/Productos/Items/Mesas.jsp"; 
     	}
     	catch (Exception e) {System.out.println("Error en base de datos al listar mesas.");}
 		return null;
@@ -123,7 +121,7 @@ public class MeseroControllador extends HttpServlet {
 			MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
 			meserosFacade.Consultar_meseros();
 			s.setAttribute("lista-clientes", meserosFacade.getMesero().getClientes());
-			return "/consultarproductosvista/consultarproductositems/selectclientes.jsp"; } 
+			return "/Productos/Items/Clientes.jsp"; } 
     	catch (Exception e) {System.out.println("Error en base de datos al listar clientes.");}
     	return null; 
 	}
@@ -133,47 +131,36 @@ public class MeseroControllador extends HttpServlet {
 		try {meserosFacade.Consultar_meseros();} 
 		catch (Exception e) {System.out.println("Error al consultar los meseros");}
 		s.setAttribute("todos-los-productos", meserosFacade.getMesero().getProductos());
-		return "/consultarproductosvista/consultarproductositems/botonproductos.jsp";
+		return "/Productos/Items/Producto.jsp";
 	}
 	
 	private String ingresar_producto(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		//try {meserosFacade.Consultar_meseros();} 
-		//catch (Exception e) {System.out.println("Error al consultar los meseros");}
 		String id = request.getParameter("idp"); 
     	try { meserosFacade.getMesero().adicionarproducto(id);} 
     	catch (Exception e) {System.out.println("Error en base de datos al adicionar producto.");}
     	s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
-    	return "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
+    	return "/Productos/Items/Pedido.jsp";
 	}
 	
 	private String quitar_producto(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		//try {meserosFacade.Consultar_meseros();} 
-		//catch (Exception e) {System.out.println("Error al consultar los meseros");}
 		String id = request.getParameter("idp"); 
     	try { meserosFacade.getMesero().quitarproducto(id);} 
-    	catch (Exception e) {
-    		System.out.println("Error en base de datos al quitar producto.");
-    		System.out.println(e);}
+    	catch (Exception e) {System.out.println("Error en base de datos al quitar producto.");}
     	s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
-    	return "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";
+    	return "/Productos/Items/Pedido.jsp";
 	}
 	
 	private String listar_pedido_actual(HttpSession s){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		try {
-			s.setAttribute("productos-pedido",meserosFacade.mesero.Generar_pedido_temporal(meserosFacade.mesero).getCuerpo());
-		} catch (Exception e) {
-			System.out.println("Error al generar el pedido temporal");
-		}
-    	return "/consultarproductosvista/consultarproductositems/tablapedidos.jsp";	
+		try { s.setAttribute("productos-pedido",meserosFacade.mesero.Generar_pedido_temporal(meserosFacade.mesero).getCuerpo());
+		}catch (Exception e) {System.out.println("Error al generar el pedido temporal");}
+    	return "/Productos/Items/Pedido.jsp";	
 	}
 	
 	private String enviar_pedido(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		//try {meserosFacade.Consultar_meseros();} 
-		//catch (Exception e) {System.out.println("Error al consultar los meseros");}
 		String cliente = request.getParameter("cliente");
     	String mesero = meserosFacade.getMesero().getId();
     	String mesa = request.getParameter("mesa");
@@ -194,8 +181,6 @@ public class MeseroControllador extends HttpServlet {
 	
 	private String registrar_usuario(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		//try {meserosFacade.Consultar_meseros();} 
-		//catch (Exception e) {System.out.println("Error al consultar los meseros");}
 		String id = request.getParameter("id");
     	String nombre = request.getParameter("nombre");
     	String apellido = request.getParameter("apellido");

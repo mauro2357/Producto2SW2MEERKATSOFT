@@ -8,19 +8,19 @@
 <body>
 <% 
 	@SuppressWarnings("unchecked")
-	ArrayList<Producto> x = (ArrayList<Producto>) session.getAttribute("todos-los-productos");
-	if(x.size()==0 || x == null) out.println("No hay productos");
+	ArrayList<Producto> listaproductos = (ArrayList<Producto>) session.getAttribute("todos-los-productos");
+	if(listaproductos.size()==0 || listaproductos == null) out.println("No hay productos");
 	else{
 		int i=0;
-		for(Producto producto: x){
+		for(Producto producto: listaproductos){
 			%>
 			<div class="boton" style="background-color: rgba(0,0,0,0.5)">
 				<div class='jdg-container'>
 					<div class='jdg-item'>
-						<a href="javascript:ingresarproducto(<%out.print(i-1);%>);" id="<%out.print(i-1);%>" title="<%out.print(producto.getCodigo());%>">
-							<img src="images/<%out.print(producto.getImagen());%>"/>
+						<a href="javascript:ingresarproducto(<%out.print(i-1);%>);" id="<%out.print(i-1);%>" title="<%out.print(producto.codigo);%>">
+							<img src="images/<%out.print(producto.imagen);%>"/>
 				     	</a>
-				     <p><%out.println(producto.getNombre());%>   $<%out.println(producto.getValor());%></p>
+				     <p><%out.println(producto.nombre);%>   $<%out.println(producto.valor);%></p>
 					</div>
 				</div>
 			</div>
