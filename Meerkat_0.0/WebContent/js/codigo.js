@@ -21,7 +21,6 @@
         	var y = document.getElementById("lista1");
 			var x = y.innerHTML;
 			var rs  = x.split(", ");
-			alert(rs);
         }
 	
 	function actualizarlista(){
@@ -42,10 +41,9 @@
 		var numberString2 = $('#CostoGlobal').text();
 		var CostoGlobal = Number(numberString2.replace(/[^0-9\.]+/g,""));
 		var Puntosusados = CostoGlobal - Costo;
-		alert(Puntosusados);
 		var respuesta = (Costo-$('#Dinero').val());
 		if(respuesta<=0){
-			alert("Entra la compra");
+			alert("Gracias por su compra!");
 			var Entrar = "pagar_mesa";
 			$.post("/Meerkat_0.0/caja", {
 				entrar : Entrar,
