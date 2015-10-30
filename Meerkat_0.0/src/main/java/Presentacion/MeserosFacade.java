@@ -30,36 +30,5 @@ public class MeserosFacade {
     	}
 		return null;
 	}
-
-	public String NoHayMeseros(){
-		if(this.listameseros==null || this.listameseros.size()<0) return "No hay meseros contratados.";
-		return null;
-	}
-	
-	public Mesero getMesero() {
-		return mesero;
-	}
-
-	public void setMesero(Mesero mesero) {
-		this.mesero = mesero;
-	}
-
-	public static MeseroRepository getProductorepository() {
-		return productorepository;
-	}
-
-	public static void setProductorepository(MeseroRepository productorepository) {
-		MeserosFacade.productorepository = productorepository;
-	}
-
-	public ArrayList<Mesero> getListameseros() {
-		return listameseros;
-	}
-
-	public void setListameseros(ArrayList<Mesero> listameseros) {
-		this.listameseros = listameseros;
-	}
-	
-	
 	
 }

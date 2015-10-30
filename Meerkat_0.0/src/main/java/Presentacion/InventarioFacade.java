@@ -16,7 +16,4 @@ public class InventarioFacade {
 		this.listainsumos = x;
 		return x;
 	}
-	
-	
-	
 }

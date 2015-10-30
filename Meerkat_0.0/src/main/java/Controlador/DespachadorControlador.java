@@ -59,7 +59,7 @@ public class DespachadorControlador extends HttpServlet {
     	try { despachadoresFacade.Consultar_despachador();
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
     	
-    	try { despachadoresFacade.getDespachador().cancelar(pedido_id);
+    	try { despachadoresFacade.despachador.cancelar(pedido_id);
 		} catch (NumberFormatException e1) {System.out.println("Error al ingresar el id del pedido");
 		} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
     	
@@ -72,7 +72,7 @@ public class DespachadorControlador extends HttpServlet {
 
 	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
 		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
-		despachadoresFacade.setDespachador(null);
+		despachadoresFacade.despachador = null;
 		s = request.getSession(false);
     	s.invalidate();
     	return "index.jsp";
@@ -91,7 +91,7 @@ public class DespachadorControlador extends HttpServlet {
     	try { despachadoresFacade.Consultar_despachador();
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
     	
-    	try { despachadoresFacade.getDespachador().despachar(pedido_id);
+    	try { despachadoresFacade.despachador.despachar(pedido_id);
 		} catch (NumberFormatException e1) {System.out.println("Error al ingresar el id del pedido");
 		} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
     	

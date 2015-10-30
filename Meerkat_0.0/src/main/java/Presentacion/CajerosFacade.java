@@ -18,24 +18,8 @@ public class CajerosFacade {
 		return x;
 	}
 	
-	public void definir_cajero(){           //Cajero por defecto por ahora.
+	public void definir_cajero(){
 		cajero = listacajeros.get(0);
-	}
-
-	public Cajero getCajero() {
-		return cajero;
-	}
-
-	public void setCajero(Cajero cajero) {
-		this.cajero = cajero;
-	}
-
-	public ArrayList<Cajero> getListacajeros() {
-		return listacajeros;
-	}
-
-	public void setListacajeros(ArrayList<Cajero> listacajeros) {
-		this.listacajeros = listacajeros;
 	}
 	
 }

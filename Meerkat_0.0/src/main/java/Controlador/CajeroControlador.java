@@ -61,13 +61,13 @@ public class CajeroControlador extends HttpServlet {
 
 	private String Generar_Lista_Facturas_Realizadas(HttpSession s) {
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
-		s.setAttribute("lista_facturas_realizadas", cajerosFacade.getCajero().listafacturasfinalizadas);
+		s.setAttribute("lista_facturas_realizadas", cajerosFacade.cajero.listafacturasfinalizadas);
 		return "Cajero/Items/ListaFacturas.jsp";
 	}
 
 	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
-		cajerosFacade.setCajero(null);
+		cajerosFacade.cajero = null;
 		s = request.getSession(false);
     	s.invalidate();
     	return "index.jsp";
@@ -77,14 +77,14 @@ public class CajeroControlador extends HttpServlet {
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {cajerosFacade.Consultar_cajeros();} 
 		catch (Exception e) { System.out.println("Error al organizar las facturas por mesa.");}
-    	s.setAttribute("mesas-facturas", cajerosFacade.getCajero().Organizar_Facturas_Mesa());
+    	s.setAttribute("mesas-facturas", cajerosFacade.cajero.Organizar_Facturas_Mesa());
     	return "Cajero/Items/ListaMesas.jsp";
 	}
 	
 	public String Costo_Mesa(HttpSession s, HttpServletRequest request, String id, String mesa){
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {
-			Factura ans = cajerosFacade.getCajero().generarfacturageneral(id);
+			Factura ans = cajerosFacade.cajero.generarfacturageneral(id);
 			ClientesFacade clientesFacade = new ClientesFacade();
 			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.cliente);
 			s.setAttribute("Factura",ans);

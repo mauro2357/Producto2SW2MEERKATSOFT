@@ -16,20 +16,4 @@ public class AdministradoresFacade {
 		this.administrador = this.lista_administradores.get(0);
 		return lista_administradores;
 	}
-	
-	public Administrador getAdministrador() {
-		return administrador;
-	}
-
-	public void setAdministrador(Administrador administrador) {
-		this.administrador = administrador;
-	}
-
-	public ArrayList<Administrador> getLista_administradores() {
-		return lista_administradores;
-	}
-
-	public void setLista_administradores(ArrayList<Administrador> lista_administradores) {
-		this.lista_administradores = lista_administradores;
-	}
 }

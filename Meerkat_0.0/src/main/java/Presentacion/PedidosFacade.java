@@ -26,21 +26,5 @@ public class PedidosFacade {
 		return x.size();
 	}
 
-	public ArrayList<Factura> getListafacturassindespachar() {
-		return listafacturassindespachar;
-	}
-
-	public void setListafacturassindespachar(ArrayList<Factura> listafacturassindespachar) {
-		this.listafacturassindespachar = listafacturassindespachar;
-	}
-
-	public ArrayList<Factura> getListafacturasdespachadas() {
-		return listafacturasdespachadas;
-	}
-
-	public void setListafacturasdespachadas(ArrayList<Factura> listafacturasdespachadas) {
-		this.listafacturasdespachadas = listafacturasdespachadas;
-	}
-
 	
 }

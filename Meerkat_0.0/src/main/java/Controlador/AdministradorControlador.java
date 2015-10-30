@@ -88,7 +88,7 @@ public class AdministradorControlador extends HttpServlet {
 	
 	public String cerrar_sesion(HttpSession s, HttpServletRequest request){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		administradoresFacade.setAdministrador(null);
+		administradoresFacade.administrador = null;
 		s = request.getSession(false);
     	s.invalidate();
     	return "index.jsp";
@@ -104,13 +104,13 @@ public class AdministradorControlador extends HttpServlet {
 			return "/Errores/Error.jsp";
 		}
 		String claveaux = request.getParameter("pass");
-    	if(!administradoresFacade.getAdministrador().clave.equalsIgnoreCase(claveaux)) return "null";
+    	if(!administradoresFacade.administrador.clave.equalsIgnoreCase(claveaux)) return "null";
     	return "Administradores/Administrador.jsp";
 	}
 	
 	public String Consultar_Inventario(HttpSession s){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		try{ s.setAttribute("todos-los-insumos", administradoresFacade.getAdministrador().Consultar_Insumos());
+		try{ s.setAttribute("todos-los-insumos", administradoresFacade.administrador.Consultar_Insumos());
 		}catch (Exception e) { 
 			System.out.println("Error en la base de datos al consultar el inventario.");
 			s.setAttribute("ubicacion", "consultarinventario");
@@ -122,7 +122,7 @@ public class AdministradorControlador extends HttpServlet {
 	
 	public String Consultar_Clientes(HttpSession s){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		try{s.setAttribute("todos-los-clientes", administradoresFacade.getAdministrador().Consultar_Clientes());
+		try{s.setAttribute("todos-los-clientes", administradoresFacade.administrador.Consultar_Clientes());
 		}catch (Exception e) { 
 			System.out.println("Error en la base de datos al consultar los clientes.");
 			s.setAttribute("ubicacion", "consultar_clientes");
@@ -134,7 +134,7 @@ public class AdministradorControlador extends HttpServlet {
 
 	public String Consultar_Total_Ventas(HttpSession s){
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
-		try { s.setAttribute("todas-ventas", administradoresFacade.getAdministrador().Consultar_total_Ventas());
+		try { s.setAttribute("todas-ventas", administradoresFacade.administrador.Consultar_total_Ventas());
 		}catch (Exception e){ 
 			System.out.println("Error en la base de datos al consultar el total de las ventas.");
 			s.setAttribute("ubicacion", "consultar_total_ventas");
@@ -148,7 +148,7 @@ public class AdministradorControlador extends HttpServlet {
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
 		try {administradoresFacade.Consultar_Administradores();} 
 		catch (Exception e) {System.out.println("Error al consultar el administrador");}
-		try {s.setAttribute("productos-masvendidos", administradoresFacade.getAdministrador().Productos_mas_vendidos());
+		try {s.setAttribute("productos-masvendidos", administradoresFacade.administrador.Productos_mas_vendidos());
 		} catch (Exception e) {
 			System.out.println("Error en la base de datos al consultar los productos más vendidos");
 			s.setAttribute("ubicacion", "consultar productos más vendidos");
@@ -162,7 +162,7 @@ public class AdministradorControlador extends HttpServlet {
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");
 		try {administradoresFacade.Consultar_Administradores();} 
 		catch (Exception e) {System.out.println("Error al consultar el administrador");}
-		try {administradoresFacade.getAdministrador().Contratar_Mesero(id, nombre, apellido, telefono);
+		try {administradoresFacade.administrador.Contratar_Mesero(id, nombre, apellido, telefono);
 		}catch (Exception e) {
 			System.out.println("Error en la base de datos al crear un mesero");
 			s.setAttribute("ubicacion", "contratar mesero");
@@ -176,7 +176,7 @@ public class AdministradorControlador extends HttpServlet {
 		AdministradoresFacade administradoresFacade = (AdministradoresFacade) s.getAttribute("FacadeAdministrador");	
 		try {administradoresFacade.Consultar_Administradores();} 
 		catch (Exception e) {System.out.println("Error al consultar el administrador");}
-		try {administradoresFacade.getAdministrador().Contratar_Despachador(id, nombre, apellido, telefono);
+		try {administradoresFacade.administrador.Contratar_Despachador(id, nombre, apellido, telefono);
 		}catch (Exception e) {
 			System.out.println("Error en la base de datos al crear un despachador");
 			s.setAttribute("ubicacion", "contratar despachador");
@@ -193,7 +193,7 @@ public class AdministradorControlador extends HttpServlet {
 		String id = request.getParameter("id");
     	String nombre = request.getParameter("nombre");
     	int valor = Integer.parseInt(request.getParameter("valor"));
-    	try{ administradorFacade.getAdministrador().Agregar_insumo(id, nombre, valor);}
+    	try{ administradorFacade.administrador.Agregar_insumo(id, nombre, valor);}
     	catch (Exception e) { 
     		System.out.println("Error en base de datos al agregar un nuevo insumo.");
     		s.setAttribute("ubicacion", "registrar insumo");
@@ -208,7 +208,7 @@ public class AdministradorControlador extends HttpServlet {
 		try {administradorFacade.Consultar_Administradores();}
 		catch (Exception e) {System.out.println("Error al consultar el administrador");}
 		String id = request.getParameter("id");
-		try {administradorFacade.getAdministrador().eliminar_empleado(id);}
+		try {administradorFacade.administrador.eliminar_empleado(id);}
 		catch(Exception e) {
 			System.out.println("Error al eliminar el empleado");
 		}

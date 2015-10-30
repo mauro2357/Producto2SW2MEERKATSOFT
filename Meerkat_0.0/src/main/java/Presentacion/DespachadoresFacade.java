@@ -17,23 +17,4 @@ public class DespachadoresFacade {
 		this.despachador = this.listadespachadores.get(0);
 		return x;
 	}
-	
-	public Despachador getDespachador() {
-		return despachador;
-	}
-
-	public void setDespachador(Despachador despachador) {
-		this.despachador = despachador;
-	}
-
-	public ArrayList<Despachador> getListadespachadores() {
-		return listadespachadores;
-	}
-
-	public void setListadespachadores(ArrayList<Despachador> listadespachadores) {
-		this.listadespachadores = listadespachadores;
-	}
-	
-	
-
 }
