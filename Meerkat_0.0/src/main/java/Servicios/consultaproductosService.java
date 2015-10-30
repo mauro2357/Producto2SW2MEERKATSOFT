@@ -29,7 +29,7 @@ public class consultaproductosService {
 		ArrayList<Producto> y = meserosFacade.mesero.productos;
 		ArrayList<String> nombresproductos = new ArrayList<String>();
 		for(Producto producto: y){
-			nombresproductos.add(producto.getNombre());
+			nombresproductos.add(producto.nombre);
 		}
 		return nombresproductos.toString();
 	}

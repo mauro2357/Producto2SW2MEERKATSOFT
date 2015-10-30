@@ -9,7 +9,6 @@ public class AdministradoresFacade {
 	
 	public Administrador administrador;
 	public ArrayList<Administrador> lista_administradores;
-	
 	public static AdministradorRepository administradorRepository = new AdministradorRepository();
 	
 	public ArrayList<Administrador> Consultar_Administradores() throws Exception{

@@ -3,17 +3,11 @@
 <div align="center">
 	Clientes: <br>
 	<table>
-		<tr>
-			<td>
-				<%
-				@SuppressWarnings("unchecked") 		
-				ArrayList<Cliente> y1 = (ArrayList<Cliente>) session.getAttribute("todos-los-clientes");
-				for(Cliente cliente: y1){
-					out.println(cliente.getNombre() + " " + cliente.apellido + ".  Puntos Acumulados: " + cliente.getPuntos());
-					out.println("<br />");
-				}%>
-			</td>
-		</tr>
+		<%  @SuppressWarnings("unchecked") 		
+			ArrayList<Cliente> lista_clientes = (ArrayList<Cliente>) session.getAttribute("todos-los-clientes");
+			for(Cliente cliente: lista_clientes){%>
+			<tr><td><%out.print(cliente.nombre + " " + cliente.apellido);%></td><td><%out.print("Puntos Acumulados: " + cliente.puntos);%></td></tr>
+			<%}%>
 	</table>
 </div>	
 	

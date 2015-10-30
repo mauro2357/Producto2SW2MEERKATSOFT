@@ -34,6 +34,6 @@
 		<tr> <td> <div id="Relativo"><h1>Cambio:</h1></div> </td> <td> <div id="Cambio"><h1>0</h1></div> </td> </tr>
 		<tr> <td> <h1>Propina:</h1> </td> <td> <input type="text" id="Propina" placeholder="0"> </td> </tr>
 		<tr> <td colspan="2" align="center"> <div class="button	" onclick="pagar_mesa(<%out.print(factura.id);%>,<%out.print(factura.mesa.id);%>)">Pagar</div> </td> </tr>
-		<tr> <td colspan="2" align="center"> <div class="button	" onclick="redimirpuntos(<%out.print(cliente.id);%>,<%out.print(cliente.puntos);%>,<%out.print("'"+cliente.nombre+"'");%>)">Pagar</div> </td> </tr>
+		<tr> <td colspan="2" align="center"> <div class="button	" onclick="redimirpuntos(<%out.print(cliente.id);%>,<%out.print(cliente.puntos);%>,<%out.print("'"+cliente.nombre+"'");%>)">Redimir Puntos (<%out.print(cliente.puntos);%>)</div> </td> </tr>
 	</table>
 </form>

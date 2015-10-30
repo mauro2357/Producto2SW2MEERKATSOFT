@@ -104,7 +104,7 @@ public class AdministradorControlador extends HttpServlet {
 			return "/Errores/Error.jsp";
 		}
 		String claveaux = request.getParameter("pass");
-    	if(!administradoresFacade.getAdministrador().getClave().equalsIgnoreCase(claveaux)) return "null";
+    	if(!administradoresFacade.getAdministrador().clave.equalsIgnoreCase(claveaux)) return "null";
     	return "Administradores/Administrador.jsp";
 	}
 	

@@ -3,16 +3,10 @@
 <div align="center">
 	Productos más vendidos: <br>
 	<table>
-		<tr>
-			<td>
-				<%
-				@SuppressWarnings("unchecked")
-				ArrayList<Producto> y1 = (ArrayList<Producto>) session.getAttribute("productos-masvendidos");
-				for(Producto producto: y1){
-					out.println(producto.getNombre() + ".  Vendido: " + producto.getnventas() + " veces.");
-					out.println("<br />");
-				}%>
-			</td>
-		</tr>
+		<%  @SuppressWarnings("unchecked")
+			ArrayList<Producto> lista_productos = (ArrayList<Producto>) session.getAttribute("productos-masvendidos");
+			for(Producto producto: lista_productos){%>
+			<tr><td><%out.println(producto.nombre + ".  Vendido: " + producto.nventas + " veces.");%></td></tr>
+			<%}%>
 	</table>
 </div>	

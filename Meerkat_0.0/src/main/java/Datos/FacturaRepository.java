@@ -16,7 +16,7 @@ public class FacturaRepository {
 	
 	public void Ingresar_pedido(Pedido x, String mesero) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.getId()+"', '"+x.mesa.getId()+"');";
+		String query = "INSERT INTO `future`.`venta` (`Ven_fecha`, `Ven_estado`, `Cli_id`, `Me_id`, `Mesa_id`) VALUES ('"+x.fecha+"', '"+x.estado+"', '"+x.cliente+"', '"+x.mesero.id+"', '"+x.mesa.id+"');";
 	    Statement st = con.createStatement();
 	    st.executeUpdate(query);
 	    query = "Select * from venta order by ven_id desc limit 1";
@@ -25,16 +25,16 @@ public class FacturaRepository {
 	    rs.first();
 	    String ven_id = rs.getString("Ven_id");
 		ArrayList<String> visitados = new ArrayList<String>();
-		for(Producto producto: x.getCuerpo()){
-			if(visitados.contains(producto.getCodigo())) continue;
+		for(Producto producto: x.cuerpo){
+			if(visitados.contains(producto.codigo)) continue;
 			int aux=0;
-			for(Producto auxproducto: x.getCuerpo()){
-				if(producto.getCodigo().equalsIgnoreCase(auxproducto.getCodigo())){
-					visitados.add(auxproducto.getCodigo());
+			for(Producto auxproducto: x.cuerpo){
+				if(producto.codigo.equalsIgnoreCase(auxproducto.codigo)){
+					visitados.add(auxproducto.codigo);
 					aux++;
 				}
 			}
-			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.getCodigo()+"','"+ven_id+"','"+aux+"');";
+			query = "INSERT INTO detalles_venta (`Pro_id`, `Ven_id`, `Dtv_cantidad`) VALUES ('"+producto.codigo+"','"+ven_id+"','"+aux+"');";
 			st.executeUpdate(query);
 		}
 		query = "delete from pedidos_temporales where Me_id = "+mesero+";";
@@ -91,7 +91,7 @@ public class FacturaRepository {
 	 		      mesa = rs.getString("Mesa_id");
 	 		      cliente = rs.getString("Cli_id");
 	 		      for(Producto producto: tproductos){ 
-	 		    	  if(producto.getCodigo().equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); preciot+=(producto.getValor()*Integer.parseInt(rs.getString("Dtv_cantidad"))); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
+	 		    	  if(producto.codigo.equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); preciot+=(producto.valor*Integer.parseInt(rs.getString("Dtv_cantidad"))); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
 	 		      }
 	 		      auxid = id; 
 	 		      continue; 
@@ -112,10 +112,10 @@ public class FacturaRepository {
 
 	public void Cobrar(Factura factura) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-		String query = "UPDATE `future`.`venta` SET `Ven_estado`='Finalizado' WHERE `Ven_id`='"+factura.getId()+"';";
+		String query = "UPDATE `future`.`venta` SET `Ven_estado`='Finalizado' WHERE `Ven_id`='"+factura.id+"';";
 		MesaRepository mesaRepository = new MesaRepository();
-		mesaRepository.Ocupar_Desocupar_Mesa(factura.getMesa().getId(), "disponible");
-		if(factura.getCliente() != null) ingresar_puntos(factura.getCliente(), factura.getPedido().getPrecio_total()); // METODO PARA INGRESAR PUNTOS AL CLIENTE
+		mesaRepository.Ocupar_Desocupar_Mesa(factura.mesa.id, "disponible");
+		if(factura.cliente != null) ingresar_puntos(factura.cliente, factura.pedido.precio_total);
 		Statement st = con.createStatement();
 		st.executeUpdate(query);
 		st.close();
@@ -132,7 +132,7 @@ public class FacturaRepository {
 	    	ProductoRepository pR = new ProductoRepository();
 	    	Producto productoen = null;
 	    	for(Producto producto: pR.Consultar_producto()){
-	    		if(producto.getCodigo().equalsIgnoreCase(Pro_id)){
+	    		if(producto.codigo.equalsIgnoreCase(Pro_id)){
 	    			productoen = producto;
 	    			break;
 	    		}
@@ -141,10 +141,10 @@ public class FacturaRepository {
 	    	else cantidades.replace(productoen, cantidades.get(Pro_id)+1);
 	    }
 		Pedido pedido_temporal = new Pedido();
-		pedido_temporal.setCantidades(cantidades);
+		pedido_temporal.cantidades = cantidades;
 		ArrayList<Producto> cuerpo = new ArrayList<Producto>();
 		cuerpo.addAll(cantidades.keySet());
-		pedido_temporal.setCuerpo(cuerpo);
+		pedido_temporal.cuerpo = cuerpo;
 		st.close();
 		return pedido_temporal;
 	}

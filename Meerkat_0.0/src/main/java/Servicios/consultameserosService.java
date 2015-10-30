@@ -26,7 +26,7 @@ public class consultameserosService {
 		meserosFacade.Consultar_meseros();
 		ArrayList<String> nombres = new ArrayList<String>();
 		for(Mesero mesero: meserosFacade.listameseros){
-			nombres.add(mesero.getNombre());
+			nombres.add(mesero.nombre);
 		}
 		return nombres.toString();
 	}

@@ -31,7 +31,7 @@ public class InventarioRepository {
 		productos = Consultar_insumos();
 		String cod = null;
 		for(Producto prod : productos){
-			if(prod.getCodigo() == codigo) {
+			if(prod.codigo == codigo) {
 				cod = "registrado"; 
 				break;
 			}

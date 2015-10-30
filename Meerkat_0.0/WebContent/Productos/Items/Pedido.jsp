@@ -36,18 +36,18 @@
 			int total=0;
 			int totalindividual=0;
 			for(Producto producto: productos_pedido){
-				if(visitados.contains(producto.getCodigo())) continue;
+				if(visitados.contains(producto.codigo)) continue;
 				int aux=0;
 				for(Producto auxproducto: productos_pedido){
-					if(producto.getCodigo().equalsIgnoreCase(auxproducto.getCodigo())){
-						visitados.add(auxproducto.getCodigo());
+					if(producto.codigo.equalsIgnoreCase(auxproducto.codigo)){
+						visitados.add(auxproducto.codigo);
 						aux++;
 					}
-					totalindividual = producto.getValor() * aux;
+					totalindividual = producto.valor * aux;
 				}
-				total += producto.getValor() * aux;
+				total += producto.valor * aux;
 				%>
-				<tr><td><%out.print(producto.getNombre());%></td><td align="right"><%out.print(aux);%></td><td><%out.print(totalindividual);%></td><td><div class="cancelar" title="<%out.print(producto.getCodigo());%>" style="cursor:pointer;">Quitar</div></td></tr>
+				<tr><td><%out.print(producto.nombre);%></td><td align="right"><%out.print(aux);%></td><td><%out.print(totalindividual);%></td><td><div class="cancelar" title="<%out.print(producto.codigo);%>" style="cursor:pointer;">Quitar</div></td></tr>
 			<%}%>
 			<tr><td colspan="2"><%out.print("Total"); %></td><td><%out.print(total); %></td></tr>
 		</table>

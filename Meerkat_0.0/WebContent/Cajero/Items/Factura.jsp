@@ -26,5 +26,5 @@
 	<tr><td>Cajero:</td><td><%out.println(factura.cajero);%></td></tr>
 	<tr><td>Cliente:</td><td><%out.println(cliente.nombre);%></td></tr>
 	<tr><td>Puntos:</td><td><%out.println(cliente.puntos);%></td></tr>
-	<tr><td>Factura:</td><td><%out.println(factura.id);%></td></tr>
+	<tr><td>Cliente:</td><td><%out.println(cliente.id);%></td></tr>
 </table>

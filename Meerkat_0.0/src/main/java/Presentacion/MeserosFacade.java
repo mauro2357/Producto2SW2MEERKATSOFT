@@ -19,9 +19,9 @@ public class MeserosFacade {
 	}
 
 	public String Definir_mesero(String meseroi) {
-		if(mesero==null || !mesero.getId().equalsIgnoreCase(meseroi)){
+		if(mesero==null || !mesero.id.equalsIgnoreCase(meseroi)){
         	for(Mesero mesero: listameseros){
-        		if(mesero.getId().contentEquals(meseroi)){
+        		if(mesero.id.contentEquals(meseroi)){
         			this.mesero = mesero;
         			return null;
         		}

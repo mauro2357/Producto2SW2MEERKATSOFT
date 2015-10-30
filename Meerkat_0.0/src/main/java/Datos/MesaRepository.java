@@ -12,7 +12,7 @@ public class MesaRepository {
 	public Mesa Buscar_Mesa(String mesa) throws Exception{
 		Mesa mesae = null;
 		for(Mesa mesam: Consultar_mesas(null)){
-			if(mesa.equalsIgnoreCase(mesam.getId())){
+			if(mesa.equalsIgnoreCase(mesam.id)){
 				mesae=mesam;
 				break;
 			}

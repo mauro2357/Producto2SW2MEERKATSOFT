@@ -26,8 +26,7 @@ public class consultagustomusicalService {
 		clientesFacade.Consultar_clientes();
 		ArrayList<String> x = new ArrayList<String>();
 		for(Cliente cliente: clientesFacade.listaclientes){
-			x.add(cliente.getNombre() + " " + cliente.getMusica());
-			
+			x.add(cliente.nombre + " " + cliente.musica);
 		}
 		return x.toString();
 	}

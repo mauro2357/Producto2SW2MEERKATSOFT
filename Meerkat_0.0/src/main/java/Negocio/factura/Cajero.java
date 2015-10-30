@@ -43,15 +43,11 @@ public class Cajero extends Empleado{
 		Map<Mesa,Factura> u = new HashMap<Mesa,Factura>();
 		u.clear();
 		for(Factura factura: listafacturasdespachadas){
-			if(factura.pedido.getEstado()=="Finalizado") continue;
-			u.put(factura.getMesa(), factura);
+			if(factura.pedido.estado=="Finalizado") continue;
+			u.put(factura.mesa, factura);
 		}
 		FacturaPorMesa = u;
 		return u;
-	}
-
-	public Factura getFactura() {
-		return factura;
 	}
 	
 	public void ActualizarPuntos(Cliente cliente, String puntosusados) throws Exception {
@@ -63,7 +59,7 @@ public class Cajero extends Empleado{
 	public Factura generarfacturageneral(String id) throws Exception{
 		ArrayList<Factura> listadefacturas = facturaRepository.Generar_factura(null);
 		for(Factura factura:listadefacturas){
-			if(factura.getId().equalsIgnoreCase(id)) return factura;
+			if(factura.id.equalsIgnoreCase(id)) return factura;
 		}
 		return null;
 	}
@@ -71,7 +67,7 @@ public class Cajero extends Empleado{
 	public Factura generarfactura(String id) throws Exception{
 		ArrayList<Factura> listadefacturas = listafacturasdespachadas;
 		for(Factura factura:listadefacturas){
-			if(factura.getId() == id) return factura;
+			if(factura.id == id) return factura;
 		}
 		return null;
 	}
@@ -79,16 +75,16 @@ public class Cajero extends Empleado{
 	public int Consultar_precio_mesa(String id) throws Exception {
 		Factura facturam = null;
 		for(Factura factura: listafacturasdespachadas){
-			if(factura.getId().equalsIgnoreCase(id)) facturam=factura;
+			if(factura.id.equalsIgnoreCase(id)) facturam=factura;
 		}
-		return facturam.getPedido().getPrecio_total();
+		return facturam.pedido.precio_total;
 	}
 	
 	public Factura Cobrar(Factura factura) throws Exception {
 		facturaRepository.Cobrar(factura);
 		FacturaPorMesa.remove(factura);
-		factura.pedido.setEstado("Finalizado");
-		factura.setCajero(this.getId());
+		factura.pedido.estado = "Finalizado";
+		factura.cajero = this.id;
 		return factura;
 	}
 
@@ -100,7 +96,7 @@ public class Cajero extends Empleado{
 	@Override
 	public void pagar() throws Exception {
 		String saldo = "40000";
-		empleadosRepository.Pagar(this,this.getId(),saldo);
+		empleadosRepository.Pagar(this,this.id,saldo);
 	}
 
 	@Override
@@ -108,65 +104,6 @@ public class Cajero extends Empleado{
 		
 	}
 	
-	public String getId() {
-		return id;
-	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public String getClave() {
-		return clave;
-	}
-
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public void setFactura(Factura factura) {
-		this.factura = factura;
-	}
-
-	public ArrayList<Factura> getListafacturasdespachadas() {
-		return listafacturasdespachadas;
-	}
-
-	public void setListafacturasdespachadas(ArrayList<Factura> listafacturasdespachadas) {
-		this.listafacturasdespachadas = listafacturasdespachadas;
-	}
-
-
-
-	
-
-	
-
-	
-	
 }
 

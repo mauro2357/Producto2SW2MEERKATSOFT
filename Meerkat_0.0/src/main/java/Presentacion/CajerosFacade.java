@@ -11,8 +11,8 @@ public class CajerosFacade {
 	public ArrayList<Cajero> listacajeros;
 	
 	public ArrayList<Cajero> Consultar_cajeros() throws Exception{
-		CajeroRepository clientesrepository = new CajeroRepository();
-		ArrayList<Cajero> x = clientesrepository.Consultar_cajeros();
+		CajeroRepository cajeroRepository = new CajeroRepository();
+		ArrayList<Cajero> x = cajeroRepository.Consultar_cajeros();
 		this.listacajeros = x;
 		definir_cajero();
 		return x;

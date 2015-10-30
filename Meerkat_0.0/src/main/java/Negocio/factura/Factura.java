@@ -21,56 +21,6 @@ public class Factura {
 		this.cliente=cliente;
 		this.pedido=pedido;
 	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getMesero() {
-		return mesero;
-	}
-
-	public void setMesero(String mesero) {
-		this.mesero = mesero;
-	}
-
-	public String getCajero() {
-		return cajero;
-	}
-
-	public void setCajero(String cajero) {
-		this.cajero = cajero;
-	}
-
-	public Mesa getMesa() {
-		return mesa;
-	}
-
-	public void setMesa(Mesa mesa) {
-		this.mesa = mesa;
-	}
-
-	public String getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(String cliente) {
-		this.cliente = cliente;
-	}
-
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}
-	
-	
 	
 }
 

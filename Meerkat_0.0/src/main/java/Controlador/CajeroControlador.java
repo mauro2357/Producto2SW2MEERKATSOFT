@@ -75,12 +75,8 @@ public class CajeroControlador extends HttpServlet {
 	
 	public String Entrar(HttpSession s){
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
-		try {
-			cajerosFacade.Consultar_cajeros();
-			cajerosFacade.getCajero().getListafacturasdespachadas();
-		} catch (Exception e) {
-			System.out.println("Error al organizar las facturas por mesa.");
-		}
+		try {cajerosFacade.Consultar_cajeros();} 
+		catch (Exception e) { System.out.println("Error al organizar las facturas por mesa.");}
     	s.setAttribute("mesas-facturas", cajerosFacade.getCajero().Organizar_Facturas_Mesa());
     	return "Cajero/Items/ListaMesas.jsp";
 	}
@@ -90,7 +86,7 @@ public class CajeroControlador extends HttpServlet {
 		try {
 			Factura ans = cajerosFacade.getCajero().generarfacturageneral(id);
 			ClientesFacade clientesFacade = new ClientesFacade();
-			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.getCliente());
+			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.cliente);
 			s.setAttribute("Factura",ans);
 			s.setAttribute("Cliente", cliente);
 			return "Cajero/Items/Caja.jsp";

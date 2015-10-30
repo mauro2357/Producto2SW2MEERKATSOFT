@@ -26,7 +26,7 @@ public class consultaclientesService {
 		clientesFacade.Consultar_clientes();
 		ArrayList<String> nombres = new ArrayList<String>();
 		for(Cliente cliente: clientesFacade.listaclientes){
-			nombres.add(cliente.getNombre());
+			nombres.add(cliente.nombre);
 		}
 		return nombres.toString();
 	}

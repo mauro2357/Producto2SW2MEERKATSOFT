@@ -108,8 +108,8 @@ public class MeseroControllador extends HttpServlet {
 		try {
 			MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
 			meserosFacade.Consultar_meseros();
-    		if(meserosFacade.getMesero().getMesas_libres()==null) s.setAttribute("lista-mesas", meserosFacade.getMesero().getMesas());
-    		else s.setAttribute("lista-mesas", meserosFacade.getMesero().getMesas_libres());
+    		if(meserosFacade.getMesero().mesas_libres==null) s.setAttribute("lista-mesas", meserosFacade.getMesero().mesas);
+    		else s.setAttribute("lista-mesas", meserosFacade.getMesero().mesas_libres);
     		return "/Productos/Items/Mesas.jsp"; 
     	}
     	catch (Exception e) {System.out.println("Error en base de datos al listar mesas.");}
@@ -120,7 +120,7 @@ public class MeseroControllador extends HttpServlet {
 		try { 
 			MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
 			meserosFacade.Consultar_meseros();
-			s.setAttribute("lista-clientes", meserosFacade.getMesero().getClientes());
+			s.setAttribute("lista-clientes", meserosFacade.getMesero().clientes);
 			return "/Productos/Items/Clientes.jsp"; } 
     	catch (Exception e) {System.out.println("Error en base de datos al listar clientes.");}
     	return null; 
@@ -130,7 +130,7 @@ public class MeseroControllador extends HttpServlet {
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
 		try {meserosFacade.Consultar_meseros();} 
 		catch (Exception e) {System.out.println("Error al consultar los meseros");}
-		s.setAttribute("todos-los-productos", meserosFacade.getMesero().getProductos());
+		s.setAttribute("todos-los-productos", meserosFacade.getMesero().productos);
 		return "/Productos/Items/Producto.jsp";
 	}
 	
@@ -139,7 +139,7 @@ public class MeseroControllador extends HttpServlet {
 		String id = request.getParameter("idp"); 
     	try { meserosFacade.getMesero().adicionarproducto(id);} 
     	catch (Exception e) {System.out.println("Error en base de datos al adicionar producto.");}
-    	s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
+    	s.setAttribute("productos-pedido", meserosFacade.getMesero().pedido_sin_asignar.cuerpo); 
     	return "/Productos/Items/Pedido.jsp";
 	}
 	
@@ -148,13 +148,13 @@ public class MeseroControllador extends HttpServlet {
 		String id = request.getParameter("idp"); 
     	try { meserosFacade.getMesero().quitarproducto(id);} 
     	catch (Exception e) {System.out.println("Error en base de datos al quitar producto.");}
-    	s.setAttribute("productos-pedido", meserosFacade.getMesero().getPedido_sin_asignar().getCuerpo()); 
+    	s.setAttribute("productos-pedido", meserosFacade.getMesero().pedido_sin_asignar.cuerpo); 
     	return "/Productos/Items/Pedido.jsp";
 	}
 	
 	private String listar_pedido_actual(HttpSession s){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
-		try { s.setAttribute("productos-pedido",meserosFacade.mesero.Generar_pedido_temporal(meserosFacade.mesero).getCuerpo());
+		try { s.setAttribute("productos-pedido",meserosFacade.mesero.Generar_pedido_temporal(meserosFacade.mesero).cuerpo);
 		}catch (Exception e) {System.out.println("Error al generar el pedido temporal");}
     	return "/Productos/Items/Pedido.jsp";	
 	}
@@ -162,18 +162,18 @@ public class MeseroControllador extends HttpServlet {
 	private String enviar_pedido(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
 		String cliente = request.getParameter("cliente");
-    	String mesero = meserosFacade.getMesero().getId();
+    	String mesero = meserosFacade.getMesero().id;
     	String mesa = request.getParameter("mesa");
     	Mesa mesam = null;
 		try { mesam = meserosFacade.getMesero().Definir_Mesa(mesa);} 
 		catch (Exception e1) {System.out.println("Error al consultar la ubicación en memoria de la mesa");}
     	String cajero = request.getParameter("cajero");
-    	Pedido pedido = meserosFacade.getMesero().getPedido_sin_asignar();
+    	Pedido pedido = meserosFacade.getMesero().pedido_sin_asignar;
     	Calendar x = Calendar.getInstance();
     	String fecha = x.get(Calendar.YEAR)+"-"+Integer.toString(x.get(Calendar.MONTH)+1)+"-"+x.get(Calendar.DATE);
     	try { meserosFacade.getMesero().finiquitarpedido(pedido,cliente,mesero,mesam,cajero,fecha);} 
     	catch (Exception e) {System.out.println("Error en base de datos al enviar pedido.");}
-    	meserosFacade.mesero.setPedido_sin_asignar(null);
+    	meserosFacade.mesero.pedido_sin_asignar = null;
     	try { meserosFacade.getMesero().Ocupar_Mesa(mesam);
 		} catch (Exception e) {System.out.println("Error en la base de datos al ocupar la mesa"); }
     	return "/index.jsp";

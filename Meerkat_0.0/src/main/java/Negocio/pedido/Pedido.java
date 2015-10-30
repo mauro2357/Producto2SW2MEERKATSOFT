@@ -39,83 +39,8 @@ public class Pedido {
 	}
 	
 	public void Adicionarproducto(Producto x){
-		
 		this.cuerpo.add(x);
-		this.precio_total += x.getValor();
+		this.precio_total += x.valor;
 	}
-	
-	public ArrayList<Producto> getCuerpo() {
-		return this.cuerpo;
-	}
-	
-	public void setCuerpo(ArrayList<Producto> cuerpo) {
-		this.cuerpo = cuerpo;
-	}
-
-	public Map<Producto, Integer> getCantidades() {
-		return cantidades;
-	}
-
-	public void setCantidades(Map<Producto, Integer> cantidades) {
-		this.cantidades = cantidades;
-	}
-
-	public String getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(String cliente) {
-		this.cliente = cliente;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public Mesero getMesero() {
-		return mesero;
-	}
-
-	public void setMesero(Mesero mesero) {
-		this.mesero = mesero;
-	}
-
-	public Mesa getMesa() {
-		return mesa;
-	}
-
-	public void setMesa(Mesa mesa) {
-		this.mesa = mesa;
-	}
-
-	public String getCajero() {
-		return cajero;
-	}
-
-	public void setCajero(String cajero) {
-		this.cajero = cajero;
-	}
-
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
-
-	public int getPrecio_total() {
-		return precio_total;
-	}
-
-	public void setPrecio_total(int precio_total) {
-		this.precio_total = precio_total;
-	}
-	
-	
 	
 }
