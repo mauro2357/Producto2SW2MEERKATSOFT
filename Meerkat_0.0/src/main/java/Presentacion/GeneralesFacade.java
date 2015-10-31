@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import Datos.GeneralesRepository;
 import Negocio.pedido.Producto;
 
-public class GeneralesFacade {		
+public class GeneralesFacade {
+	public String numeroventas;
 	public double totaliva;
 	public String totalventas;
 	public ArrayList<Producto> listaproductos;
@@ -25,5 +26,9 @@ public class GeneralesFacade {
 	public double Consultar_Iva() throws Exception{
 		this.totaliva= generalesRepository.Consultar_Iva();;
 		return totaliva;
+	}
+	public String Consultar_ventas() throws Exception{
+		this.numeroventas= generalesRepository.Consultar_ventas();;
+		return numeroventas;
 	}
 }

@@ -17,7 +17,7 @@ public class GeneralesRepository {
 	    String a = null;
 	    while (rs.next())a = rs.getString("Valors");	    
 	    st.close();
-	    return a; 
+	    return ("El total de las ventas es:"+" " + a); 
 	}
 
 	public ArrayList<Producto> Consultarproductos_masvendidos () throws Exception { 
@@ -33,6 +33,7 @@ public class GeneralesRepository {
 	    	a.add(p);     
 	    }
 	    st.close();
+	    
 	    return a; 
 	}
 	
@@ -46,8 +47,22 @@ public class GeneralesRepository {
 	    while (rs.next())a = rs.getString("Valors");	    
 	    st.close();
 	    ans=Double.parseDouble(a)*0.16;
+	    System.out.println("El iva recaudado es:");
  	    return ans; 
 }
+
+	public String Consultar_ventas() throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "select distinct count(Ven_id) valors from venta;";
+	    Statement st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    String a = null;
+	    while (rs.next())a = rs.getString("Valors");	    
+	    st.close();
+	    return ("el numero de ventas es :"+" "+ a); 
+		
+		
+	}
 }	
 
 
