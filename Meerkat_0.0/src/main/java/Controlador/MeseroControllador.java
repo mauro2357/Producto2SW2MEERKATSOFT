@@ -67,7 +67,10 @@ public class MeseroControllador extends HttpServlet {
 				break;
 	        case "datos_usuario":
 	        	pagina = registrar_usuario(s, request);
-				break;	
+				break;
+	        case "listar_mis_pedidos":
+	        	pagina = listar_mis_pedidos(s);
+				break;
 			default:
 				pagina = "index.jsp";
 				break;
@@ -76,6 +79,8 @@ public class MeseroControllador extends HttpServlet {
         rd.forward(request, response);
 	}
 	
+	
+
 	private String cerrar_sesion(HttpSession s, HttpServletRequest request){
 		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
 		try {meserosFacade.mesero.Limpiar_pedido_temporal(meserosFacade.mesero);} 
@@ -157,6 +162,13 @@ public class MeseroControllador extends HttpServlet {
 		try { s.setAttribute("productos-pedido",meserosFacade.mesero.Generar_pedido_temporal(meserosFacade.mesero).cuerpo);
 		}catch (Exception e) {System.out.println("Error al generar el pedido temporal");}
     	return "/Productos/Items/Pedido.jsp";	
+	}
+	
+	private String listar_mis_pedidos(HttpSession s) {
+		MeserosFacade meserosFacade = (MeserosFacade) s.getAttribute("FacadeMesero");
+		try { s.setAttribute("mis_pedidos",meserosFacade.mesero.Actualizar_Mis_Pedidos());
+		}catch (Exception e) {System.out.println("Error al generar los pedidos del mesero");}
+		return "/Productos/Items/Pedidos.jsp";
 	}
 	
 	private String enviar_pedido(HttpSession s, HttpServletRequest request){

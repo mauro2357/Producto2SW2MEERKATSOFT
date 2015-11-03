@@ -11,7 +11,7 @@ public class ProductoRepository {
 	
 	public ArrayList<Producto> Consultar_producto() throws Exception { 
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "SELECT * FROM producto";
+	    String query = "select * from producto order by Pro_tipo, Pro_id;";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Producto> a = new ArrayList<Producto>();

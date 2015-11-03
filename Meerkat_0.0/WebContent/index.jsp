@@ -28,6 +28,11 @@
 			});			
 	});
 	
+	setInterval(function(){
+		ajaxx(),
+		mensaje()
+	}, 1000);
+	
 </script>
 </head>
 <body background="fondo1.JPG" id="body">

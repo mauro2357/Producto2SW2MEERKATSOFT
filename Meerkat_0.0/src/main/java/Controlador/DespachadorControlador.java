@@ -26,7 +26,7 @@ public class DespachadorControlador extends HttpServlet {
 			DespachadoresFacade despachadoresFacade = new DespachadoresFacade();
 			s.setAttribute("FacadeDespachador", despachadoresFacade);
 		}
-        String Puerta = null;
+        String Puerta = "imprimir_pedidos_despachador";
         Puerta = request.getParameter("entrar");
         String pagina = "index.jsp";
         switch (Puerta) {
@@ -56,14 +56,14 @@ public class DespachadorControlador extends HttpServlet {
 	private String Cancelar_Pedido(HttpSession s, HttpServletRequest request) {
 		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
 		String pedido_id = request.getParameter("pedido");
-    	try { despachadoresFacade.Consultar_despachador();
+    	try { despachadoresFacade.Consultar_despachadores();
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
     	
     	try { despachadoresFacade.despachador.cancelar(pedido_id);
 		} catch (NumberFormatException e1) {System.out.println("Error al ingresar el id del pedido");
 		} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
     	
-    	try { despachadoresFacade.Consultar_despachador();
+    	try { despachadoresFacade.Consultar_despachadores();
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
 		
     	s.setAttribute("pedidos_en_cola", despachadoresFacade.despachador.listafacturassindespachar);
@@ -80,7 +80,7 @@ public class DespachadorControlador extends HttpServlet {
 	
 	public String Imprimir_Pedidos_Despachador(HttpSession s){
 		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
-		try { despachadoresFacade.Consultar_despachador(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
+		try { despachadoresFacade.Consultar_despachadores(); } catch (Exception e) { System.out.println("Error al leer las facturas desde la BD.");}
 		s.setAttribute("pedidos_en_cola",despachadoresFacade.despachador.listafacturassindespachar);
     	return "/Despachadores/Items/Pedidos.jsp";
 	}
@@ -88,14 +88,14 @@ public class DespachadorControlador extends HttpServlet {
 	public String Despachar_Pedido(HttpSession s, HttpServletRequest request){
 		DespachadoresFacade despachadoresFacade = (DespachadoresFacade) s.getAttribute("FacadeDespachador");
 		String pedido_id = request.getParameter("pedido");
-    	try { despachadoresFacade.Consultar_despachador();
+    	try { despachadoresFacade.Consultar_despachadores();
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
     	
     	try { despachadoresFacade.despachador.despachar(pedido_id);
 		} catch (NumberFormatException e1) {System.out.println("Error al ingresar el id del pedido");
 		} catch (Exception e1) {System.out.println("Error al despechar el pedido en la base de datos");}
     	
-    	try { despachadoresFacade.Consultar_despachador();
+    	try { despachadoresFacade.Consultar_despachadores();
 		} catch (Exception e2) {System.out.println("Error el consultar los despachadores en la base de datos.");}
 		
     	s.setAttribute("pedidos_en_cola", despachadoresFacade.despachador.listafacturassindespachar);

@@ -1,11 +1,10 @@
 package Negocio.pedido;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import Datos.*;
 import Negocio.cliente.Cliente;
+import Negocio.factura.Factura;
 
 public class Mesero extends Empleado {
 	
@@ -13,8 +12,7 @@ public class Mesero extends Empleado {
 	public ArrayList<Mesa> mesas;
 	public ArrayList<Mesa> mesas_libres;
 	public Pedido pedido_sin_asignar;
-
-	public Map<Mesa, Pedido> coladepedidos;
+	public ArrayList<Factura> coladefacturas;
 	public ArrayList<Cliente> clientes;
 	
 	ProductoRepository productoRepository = new ProductoRepository();
@@ -30,6 +28,8 @@ public class Mesero extends Empleado {
 		this.mesas_libres = mesaRepository.Consultar_mesas("ocupada");
 		this.clientes = clienteRepository.Consultar_Clientes();
 		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
+		this.coladefacturas = Actualizar_Mis_Pedidos();
+		
 	}
 
 	public Mesero() throws Exception { 
@@ -39,6 +39,14 @@ public class Mesero extends Empleado {
 		this.mesas_libres = mesaRepository.Consultar_mesas("Despachado");
 		this.clientes = clienteRepository.Consultar_Clientes();
 		this.pedido_sin_asignar = null;
+	}
+	
+	public ArrayList<Factura> Actualizar_Mis_Pedidos() throws Exception{
+		this.coladefacturas = new ArrayList<Factura>();
+		for(Factura factura: facturaRepository.Generar_factura(null)){
+			if(factura.mesero.equalsIgnoreCase(this.id)) coladefacturas.add(factura);
+		}
+		return this.coladefacturas;
 	}
 	
 	public Mesa Definir_Mesa(String mesa){
@@ -60,8 +68,7 @@ public class Mesero extends Empleado {
 	
 	public String enviar_pedido(Pedido pedido) throws Exception{
 		if(pedido==null) return "No hay productos.";
-		FacturaRepository facturarepository = new FacturaRepository();
-		facturarepository.Ingresar_pedido(pedido, this.id);
+		facturaRepository.Ingresar_pedido(pedido, this.id);
 		return "Pedido enviado";
 	}
 	
@@ -89,8 +96,6 @@ public class Mesero extends Empleado {
 		ArrayList<Producto> lista_productos = pedido.cuerpo;
 		if(lista_productos == null || lista_productos.size()<0) return "No hay productos.";
 		Pedido pedido_a_finiquitar = new Pedido(lista_productos, cliente, mesa, cajero, fecha, this);
-		if(coladepedidos == null) coladepedidos = new HashMap<Mesa, Pedido>();
-		coladepedidos.put(mesa,pedido_a_finiquitar);
 		mesa.estado = "Despachado";
 		enviar_pedido(pedido_a_finiquitar);
 		return "Pedido enviado";

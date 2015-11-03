@@ -10,32 +10,58 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript">	
+	var num,aux=-1;
+	
 	$(function() {
-			var Entrar = "botones"; 
-			$.post("/Meerkat_0.0/mesero", {
-				entrar : Entrar,
-			}, function(responseText) {
-				$('#cuerpo1').html(responseText);
-			});
-			Entrar = "listarpedidoactual";
-			$.post("/Meerkat_0.0/mesero", {
-				entrar : Entrar,
-			}, function(responseText) {
-				$('#table1').html(responseText);
-			});
-			Entrar = "listar_mesas";
-			$.post("/Meerkat_0.0/mesero", {
-				entrar : Entrar,
-			}, function(responseText) {
-				$('#selectmesas').html(responseText);
-			});
-			Entrar = "listar_clientes";
-			$.post("/Meerkat_0.0/mesero", {
-				entrar : Entrar,
-			}, function(responseText) {
-				$('#selectclientes').html(responseText);
-			});
+		ajax();
+		if(aux!=num) aux=num; 
+	});
+	
+	function ajax() {
+		var Entrar = "botones"; 
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+		}, function(responseText) {
+			$('#cuerpo1').html(responseText);
 		});
+		Entrar = "listar_mesas";
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+		}, function(responseText) {
+			$('#selectmesas').html(responseText);
+		});
+		Entrar = "listar_clientes";
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+		}, function(responseText) {
+			$('#selectclientes').html(responseText);
+		});
+		ajaxx();
+	}
+	
+	function ajaxx(){
+		var Entrar = "listarpedidoactual";
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+		}, function(responseText) {
+			$('#table1').html(responseText);
+		});
+		Entrar = "listar_mis_pedidos";
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+		}, function(responseText) {
+			$('#cuerpo3').html(responseText);
+		});
+		num = document.getElementById("numerodedespachados").title;
+		if(aux==-1) aux=num;
+	}
+		
+	function mensaje(){
+		if(num>aux){
+			alert("Nuevo pedido listo para entregar!");
+			aux=num;
+		}
+	}
 	
 </script>
 <body>
@@ -53,5 +79,6 @@
 	      	<button name="entrar" type="submit" value="Enviar pedido">Enviar</button>
 		</form>
 	</div>
+	<div id="cuerpo3" class="Contenedor" align="center" style="border-color: white;"><h1>Mis pedidos. [<%out.print(0);%>]</h1></div>
 </body>
 </html>

@@ -18,15 +18,20 @@ delete from pedidos_temporales where Me_id = 666 and Pro_id = "pl08";
 select Pt_id from pedidos_temporales where Me_id = 667 and Pro_id = "pl09" group by Pt_id;
 select * from pedidos_temporales where Me_id=12345 and Pro_id = 'pl07';
 
+select * from pedidos_temporales;
+select * from pedidos_temporales where Me_id=12345 order by Pt_id;
+
+DELETE FROM `future`.`mesero` WHERE `Me_id`='666';
 
 
-select * from factura;
+select max(Valor), Mesero from (select sum(Pro_valor) Valor, Me_id Mesero from factura where Ven_estado='Finalizado' group by Me_id) as T;
+select * from factura order by Ven_id, Pro_id;
 select * from pedidos_temporales;
 select * from pago_nomina;
 select * from lista_empleados;
 select * from insumos;
 select * from administrador;
-select * from producto;
+select * from producto order by Pro_tipo, Pro_id;
 select * from detalles_venta;
 select * from mesero;
 select * from venta;
@@ -38,6 +43,8 @@ select * from detalle_compra;
 select * from cajero;
 select * from mesa;
 select * from cliente;
+delete from detalles_venta where Cli_id=1111;
+delete from venta where Cli_id=1111;
 delete from detalles_venta where ven_id>0;
 delete from venta where ven_id>0;
 ALTER TABLE venta AUTO_INCREMENT=1;

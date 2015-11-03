@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import Negocio.factura.Factura;
@@ -64,7 +67,7 @@ public class FacturaRepository {
 		String[] porpartes = {""};
 		if(aignorar!=null) porpartes = aignorar.split("/");
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "SELECT * FROM factura";
+	    String query = "select * from factura order by Ven_id, Pro_id;";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
@@ -75,7 +78,7 @@ public class FacturaRepository {
 	    int preciot=0;
 	    Pedido y = null;
 	    Map<Producto, Integer> z = null;
-	    String auxid = null;
+	    String auxid = null, auxestado=null;
 	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null, estado=null;
 	    Mesa mesam = null;
 	    while (rs.next()){
@@ -89,6 +92,7 @@ public class FacturaRepository {
 	    	if(!auxid.equalsIgnoreCase(id)){
 	    		if(y==null){
 		    		  y = new Pedido();
+		    		  y.estado = auxestado;
 		    		  y.cuerpo = x;
 		    		  y.cantidades = z;
 		    		  y.precio_total = preciot;
@@ -98,6 +102,7 @@ public class FacturaRepository {
 		    	}
 	    		preciot = 0;
 		    	x = null;
+		    	auxestado = null;
 		    	z = null;
 		    	y = null;
 		    	auxid=id;
@@ -108,6 +113,7 @@ public class FacturaRepository {
 	 		      cajero = rs.getString("Caj_id"); 
 	 		      mesa = rs.getString("Mesa_id");
 	 		      cliente = rs.getString("Cli_id");
+	 		      auxestado = estado;
 	 		      for(Producto producto: tproductos){ 
 	 		    	  if(producto.codigo.equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); preciot+=(producto.valor*Integer.parseInt(rs.getString("Dtv_cantidad"))); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
 	 		      }
@@ -116,14 +122,30 @@ public class FacturaRepository {
 		     } 
 
 	    }
-	    y = new Pedido();
-	    y.precio_total = preciot;
-	    y.cuerpo = x;
-	    y.cantidades = z;
-	    if(mesa == null) return f;
-	    mesam = mesaRepository.Buscar_Mesa(mesa);
-	    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);
-		f.add(fi);
+	    if(porpartes.length>1){
+    		if(auxestado.equalsIgnoreCase(porpartes[0]) || auxestado.equalsIgnoreCase(porpartes[1])){
+    			y = new Pedido();
+    		    y.estado = estado;
+    		    y.precio_total = preciot;
+    		    y.cuerpo = x;
+    		    y.cantidades = z;
+    		    if(mesa == null) return f;
+    		    mesam = mesaRepository.Buscar_Mesa(mesa);
+    		    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);
+    			f.add(fi);
+    		}
+    	}
+    	else if(auxestado!= null && !auxestado.equalsIgnoreCase(aignorar) && !auxestado.equalsIgnoreCase("Finalizado")){
+    		y = new Pedido();
+    	    y.estado = auxestado;
+    	    y.precio_total = preciot;
+    	    y.cuerpo = x;
+    	    y.cantidades = z;
+    	    if(mesa == null) return f;
+    	    mesam = mesaRepository.Buscar_Mesa(mesa);
+    	    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);
+    		f.add(fi);
+    	}
 	    st.close();
 	    return f;
 	}
@@ -141,7 +163,7 @@ public class FacturaRepository {
 	
 	public Pedido Pedido_temporal(String mesero) throws Exception{
 		Connection con = new ConexionMySql().ObtenerConexion();
-		String query = "select * from pedidos_temporales where Me_id="+mesero+";";
+		String query = "select * from pedidos_temporales where Me_id="+mesero+" order by Pt_id ASC;";
 		Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    Map<Producto,Integer> cantidades = new HashMap<Producto,Integer>();
@@ -182,7 +204,6 @@ public class FacturaRepository {
 	    ResultSet rs = st.executeQuery(query);
 	    while(rs.next()){
 	    	query = "delete from pedidos_temporales where Pt_id = "+rs.getString("Pt_id") +";";
-	    	System.out.println(query);
 			st.executeUpdate(query);
 			st.close();
 	    	break;
@@ -192,7 +213,6 @@ public class FacturaRepository {
 	public void Limpiar_pedido_temporal(String id) throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
 		String query = "delete from pedidos_temporales where Me_id=" +id+";";
-		System.out.println(query);
 		Statement st = con.createStatement();
 		st.executeUpdate(query);
 		st.close();

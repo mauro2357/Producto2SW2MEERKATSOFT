@@ -10,18 +10,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="js/codigo.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-	    $('.cancelar').click(function() {
-	    	var Entrar = "quitarproducto";
-			x = this.title;
-			$.post("/Meerkat_0.0/mesero", {
-				entrar : Entrar,
-				idp : x
-			}, function(responseText) {
-				$('#table1').html(responseText);
-			});
-	    });
- 	});
+	function quitar_producto(x){
+    	var Entrar = "quitarproducto";
+		$.post("/Meerkat_0.0/mesero", {
+			entrar : Entrar,
+			idp : x.title
+		}, function(responseText) {
+			$('#table1').html(responseText);
+		});
+	}
+	
 </script>
 </head>
 <body>
@@ -47,7 +45,7 @@
 				}
 				total += producto.valor * aux;
 				%>
-				<tr><td><%out.print(producto.nombre);%></td><td align="right"><%out.print(aux);%></td><td><%out.print(totalindividual);%></td><td><div class="cancelar" title="<%out.print(producto.codigo);%>" style="cursor:pointer;">Quitar</div></td></tr>
+				<tr><td><%out.print(producto.nombre);%></td><td align="right"><%out.print(aux);%></td><td><%out.print(totalindividual);%></td><td><div class="cancelar" id="<%out.print(producto.codigo);%>" onclick="quitar_producto(<%out.print(producto.codigo);%>)" title="<%out.print(producto.codigo);%>" style="cursor:pointer;">Quitar</div></td></tr>
 			<%}%>
 			<tr><td colspan="2"><%out.print("Total"); %></td><td><%out.print(total); %></td></tr>
 		</table>
