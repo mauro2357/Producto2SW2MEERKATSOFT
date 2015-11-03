@@ -10,7 +10,6 @@ import Datos.FacturaRepository;
 import Datos.MesaRepository;
 import Negocio.cliente.Cliente;
 import Negocio.pedido.Empleado;
-import Negocio.pedido.Mesa;
 
 public class Cajero extends Empleado{
 	
@@ -22,7 +21,7 @@ public class Cajero extends Empleado{
 	public Factura factura;
 	public ArrayList<Factura> listafacturasdespachadas;
 	public ArrayList<Factura> listafacturasfinalizadas;
-	public Map<Mesa,Factura> FacturaPorMesa;
+	public Map<String,ArrayList<Factura>> FacturaPorMesa;
 	
 	FacturaRepository facturaRepository = new FacturaRepository();
 	MesaRepository mesaRepository = new MesaRepository();
@@ -39,12 +38,17 @@ public class Cajero extends Empleado{
 		this.listafacturasfinalizadas = facturaRepository.Generar_factura("Despachado/En espera"); //Por ser la lista de finalizadas, Ignoramos las Despachadas y En Espera, por ser un String de dos posiciones no se ignoran las finalizadas. (.split('/'))
 	}
 	
-	public Map<Mesa,Factura> Organizar_Facturas_Mesa(){
-		Map<Mesa,Factura> u = new HashMap<Mesa,Factura>();
+	public Map<String,ArrayList<Factura>> Organizar_Facturas_Mesa(){
+		Map<String,ArrayList<Factura>> u = new HashMap<String,ArrayList<Factura>>();
 		u.clear();
 		for(Factura factura: listafacturasdespachadas){
 			if(factura.pedido.estado=="Finalizado") continue;
-			u.put(factura.mesa, factura);
+			if(u.containsKey(factura.mesa.id)) u.get(factura.mesa.id).add(factura);
+			else{
+				ArrayList<Factura> lista1 = new ArrayList<Factura>();
+				lista1.add(factura);
+				u.put(factura.mesa.id, lista1);
+			}
 		}
 		FacturaPorMesa = u;
 		return u;
@@ -56,12 +60,13 @@ public class Cajero extends Empleado{
 		cliente.puntos = diferencia;
 	}
 	
-	public Factura generarfacturageneral(String id) throws Exception{
+	public ArrayList<Factura> generarfacturageneral(String id) throws Exception{
 		ArrayList<Factura> listadefacturas = facturaRepository.Generar_factura(null);
+		ArrayList<Factura> respuesta = new ArrayList<Factura>();
 		for(Factura factura:listadefacturas){
-			if(factura.id.equalsIgnoreCase(id)) return factura;
+			if(factura.mesa.id.equalsIgnoreCase(id)) respuesta.add(factura);
 		}
-		return null;
+		return respuesta;
 	}
 	
 	public Factura generarfactura(String id) throws Exception{

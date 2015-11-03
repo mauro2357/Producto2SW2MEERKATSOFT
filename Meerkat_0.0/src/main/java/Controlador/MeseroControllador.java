@@ -28,7 +28,7 @@ public class MeseroControllador extends HttpServlet {
 			MeserosFacade meserosFacade = new MeserosFacade();
 			s.setAttribute("FacadeMesero", meserosFacade);
 		}
-		String Puerta = null;
+		String Puerta = "index.jsp";
         String pagina = null;
         Puerta = request.getParameter("entrar");
         switch (Puerta) {
@@ -178,7 +178,7 @@ public class MeseroControllador extends HttpServlet {
     	String mesa = request.getParameter("mesa");
     	Mesa mesam = null;
 		try { mesam = meserosFacade.mesero.Definir_Mesa(mesa);} 
-		catch (Exception e1) {System.out.println("Error al consultar la ubicación en memoria de la mesa");}
+		catch (Exception e1) {System.out.println("Error al consultar la ubicaciï¿½n en memoria de la mesa");}
     	String cajero = request.getParameter("cajero");
     	Pedido pedido = meserosFacade.mesero.pedido_sin_asignar;
     	Calendar x = Calendar.getInstance();
@@ -207,3 +207,4 @@ public class MeseroControllador extends HttpServlet {
 	}
 
 }
+

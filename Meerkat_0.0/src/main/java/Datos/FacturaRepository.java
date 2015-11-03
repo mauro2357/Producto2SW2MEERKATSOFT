@@ -183,7 +183,13 @@ public class FacturaRepository {
 		Pedido pedido_temporal = new Pedido();
 		pedido_temporal.cantidades = cantidades;
 		ArrayList<Producto> cuerpo = new ArrayList<Producto>();
-		cuerpo.addAll(cantidades.keySet());
+		List<Producto> ordenado = new ArrayList<Producto>(cantidades.keySet());
+	    Collections.sort(ordenado, new Comparator<Producto>() {
+	        public int compare(Producto o1, Producto o2) {
+	            return o1.valor - o2.valor;
+	        }
+	    });
+		cuerpo.addAll(ordenado);
 		pedido_temporal.cuerpo = cuerpo;
 		st.close();
 		return pedido_temporal;

@@ -25,7 +25,7 @@ public class Mesero extends Empleado {
 		super(id, nombre, apellido, telefono);
 		this.productos = productoRepository.Consultar_producto();
 		this.mesas = mesaRepository.Consultar_mesas(null);
-		this.mesas_libres = mesaRepository.Consultar_mesas("ocupada");
+		this.mesas_libres = mesaRepository.Consultar_mesas("ninguna");
 		this.clientes = clienteRepository.Consultar_Clientes();
 		this.pedido_sin_asignar = facturaRepository.Pedido_temporal(id);
 		this.coladefacturas = Actualizar_Mis_Pedidos();

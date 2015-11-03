@@ -1,3 +1,4 @@
+
 	function ValidarFormProductos(){
 		var cliente = document.getElementById("selectclientes").selectedIndex;
 		var mesa = document.getElementById("selectmesas").selectedIndex;
@@ -35,7 +36,7 @@
 		else alert("Se cargaron las canciones");
 	}
 
-	function pagar_mesa(x,y){
+	function pagar_mesa(y){
 		var numberString = $('#Costo').text();
 		var Costo = Number(numberString.replace(/[^0-9\.]+/g,""));
 		var numberString2 = $('#CostoGlobal').text();
@@ -47,7 +48,6 @@
 			var Entrar = "pagar_mesa";
 			$.post("/Meerkat_0.0/caja", {
 				entrar : Entrar,
-				id : x,
 				mesa : y,
 				puntosusados : Puntosusados
 			}, function(responseText){
@@ -63,14 +63,13 @@
 		}
 	}
 	
-	function devolverprecio_mesa(x, y){
+	function devolverprecio_mesa(y){
 		if((!$("#cuerpodos").is(':visible')) ){
 			$("#cuerpodos").toggle();
 		}
 		var Entrar = "devolver_precio_mesa";
 		$.post("/Meerkat_0.0/caja", {
 			entrar : Entrar,
-			id : x,
 			mesa : y
 		}, function(responseText){
 			$('#cuerpodos').html(responseText)});

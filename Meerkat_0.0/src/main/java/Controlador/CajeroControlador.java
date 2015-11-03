@@ -1,6 +1,7 @@
 package Controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,7 +34,6 @@ public class CajeroControlador extends HttpServlet {
         String Puerta = null;
         Puerta = request.getParameter("entrar");
         String pagina = null;
-        String id = request.getParameter("id");
         String mesa = request.getParameter("mesa");
         String puntosusados = request.getParameter("puntosusados");
         switch (Puerta) {
@@ -44,10 +44,10 @@ public class CajeroControlador extends HttpServlet {
 			pagina = Entrar(s);
 			break;
 		case "devolver_precio_mesa":
-			pagina = Costo_Mesa(s, request, id, mesa);
+			pagina = Costo_Mesa(s, request, mesa);
 			break;
 		case "pagar_mesa":
-			pagina = Cobrar(s, request, id, mesa, puntosusados);
+			pagina = Cobrar(s, request, mesa, puntosusados);
 			break;
 		case "lista_facturas_realizadas":
 			pagina = Generar_Lista_Facturas_Realizadas(s);
@@ -81,12 +81,12 @@ public class CajeroControlador extends HttpServlet {
     	return "Cajero/Items/ListaMesas.jsp";
 	}
 	
-	public String Costo_Mesa(HttpSession s, HttpServletRequest request, String id, String mesa){
+	public String Costo_Mesa(HttpSession s, HttpServletRequest request, String mesa){
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {
-			Factura ans = cajerosFacade.cajero.generarfacturageneral(id);
+			ArrayList<Factura> ans = cajerosFacade.cajero.generarfacturageneral(mesa);
 			ClientesFacade clientesFacade = new ClientesFacade();
-			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.cliente);
+			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.get(0).cliente);
 			s.setAttribute("Factura",ans);
 			s.setAttribute("Cliente", cliente);
 			return "Cajero/Items/Caja.jsp";
@@ -96,15 +96,26 @@ public class CajeroControlador extends HttpServlet {
 		return null;
 	}
 	
-	public String Cobrar(HttpSession s, HttpServletRequest request, String id, String mesa, String puntosusados){
+	public String Cobrar(HttpSession s, HttpServletRequest request, String mesa, String puntosusados){
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
 		try {
 			ClientesFacade clientesFacade = new ClientesFacade();
-			Factura ans = cajerosFacade.cajero.generarfacturageneral(id);
-			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.cliente);
+			ArrayList<Factura> ans = cajerosFacade.cajero.generarfacturageneral(mesa);
+			Cliente cliente = clientesFacade.Consultar_Cliente_Particular(ans.get(0).cliente);
 			cajerosFacade.cajero.ActualizarPuntos(cliente, puntosusados);
-			ans.pedido.precio_total-=Integer.parseInt(puntosusados);
-			ans = cajerosFacade.cajero.Cobrar(ans);
+			for(Factura factura: ans){
+				if(Integer.parseInt(puntosusados)==0) break;
+				if(factura.pedido.precio_total<Integer.parseInt(puntosusados)){
+					puntosusados = Integer.toString(Integer.parseInt(puntosusados)-factura.pedido.precio_total);
+					factura.pedido.precio_total=0;
+				}
+				else {
+					factura.pedido.precio_total-=Integer.parseInt(puntosusados);
+					puntosusados="0";
+				}
+			}
+			for(Factura factura: ans) factura = cajerosFacade.cajero.Cobrar(factura);
+			cliente = clientesFacade.Consultar_Cliente_Particular(ans.get(0).cliente);
 			s.setAttribute("Factura",ans);
 			s.setAttribute("Cliente", cliente);
 			return "Cajero/Items/Factura.jsp";

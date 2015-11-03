@@ -47,7 +47,9 @@ public class MusicaControllador extends HttpServlet {
 	}
 	
 	private void entrar_musica(HttpSession s) {
+		@SuppressWarnings("unchecked")
 		ArrayList<String> canciones = (ArrayList<String>) s.getAttribute("canciones");
+		@SuppressWarnings("unchecked")
 		ArrayList<String> ubicacion = (ArrayList<String>) s.getAttribute("ubicacion");
 		canciones.add("Tu amor");
 		ubicacion.add("../pistas/tuamor.mp3");
