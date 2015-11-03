@@ -63,6 +63,30 @@ public class GeneralesRepository {
 		
 		
 	}
+	public String Consultar_insumos() throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "SELECT * FROM valors insumos;";
+	    Statement st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    String a = null;
+	    while (rs.next())a = rs.getString("Valors");	    
+	    st.close();
+	    return ("insumos:"+" "+ a); 
+		
+		
+	}
+	public String Consultar_mejormesero() throws Exception {
+		Connection con = new ConexionMySql().ObtenerConexion();
+	    String query = "select  Mesero from valors (select sum(Pro_valor) Valor, Me_nombre Mesero from factura natural join mesero where Ven_estado='Finalizado' group by Me_id) as T;";
+	    Statement st = con.createStatement();
+	    ResultSet rs = st.executeQuery(query);
+	    String a = null;
+	    while (rs.next())a = rs.getString("Valors");	    
+	    st.close();
+	    return ("Mejor Mesero"+" "+ a); 
+		
+		
+	}
 }	
 
 
