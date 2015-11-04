@@ -1,11 +1,14 @@
 package Servicios;
 
+import java.util.ArrayList;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import Negocio.pedido.Producto;
 import Presentacion.GeneralesFacade;
 
 @Path("consultainsumos")
@@ -17,7 +20,7 @@ public class consultainsumosService {
 	@GET
 	@Produces("text/plain")
 	@Path("consultarinsumos/")
-	public String consultarinsumos() throws Exception { 
+	public ArrayList<Producto> consultarinsumos() throws Exception { 
 		GeneralesFacade generalesFacade = new GeneralesFacade();
 		return generalesFacade.Consultar_insumos();
 	}

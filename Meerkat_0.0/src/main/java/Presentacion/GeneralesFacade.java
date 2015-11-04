@@ -3,17 +3,19 @@ package Presentacion;
 import java.util.ArrayList;
 
 import Datos.GeneralesRepository;
+import Datos.InventarioRepository;
 import Negocio.pedido.Producto;
 
 public class GeneralesFacade {
 	public String numeroventas;
 	public String mejormesero;
-	public String listainsumos;
+	public ArrayList<Producto> listainsumos;
 	public double totaliva;
 	public String totalventas;
 	public ArrayList<Producto> listaproductos;
 	
 	GeneralesRepository generalesRepository = new GeneralesRepository();
+	InventarioRepository inventarioRepository = new InventarioRepository();
 	
 	public String Consultar_totalventas() throws Exception{
 		this.totalventas = generalesRepository.Consultar_totalVentas();;
@@ -33,8 +35,8 @@ public class GeneralesFacade {
 		this.numeroventas= generalesRepository.Consultar_ventas();
 		return numeroventas;
 	}
-	public String Consultar_insumos() throws Exception{
-		this.listainsumos= generalesRepository.Consultar_insumos();;
+	public ArrayList<Producto> Consultar_insumos() throws Exception{
+		this.listainsumos= inventarioRepository.Consultar_insumos();;
 		return listainsumos;
 	}
 	public String Consultar_mejormesero() throws Exception{
