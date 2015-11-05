@@ -34,11 +34,7 @@ public class GeneralesFacade {
 	public String Consultar_ventas() throws Exception{
 		this.numeroventas= generalesRepository.Consultar_ventas();
 		return numeroventas;
-	}
-	public ArrayList<Producto> Consultar_insumos() throws Exception{
-		this.listainsumos= inventarioRepository.Consultar_insumos();;
-		return listainsumos;
-	}
+		}
 	public String Consultar_mejormesero() throws Exception{
 		this.mejormesero= generalesRepository.Consultar_mejormesero();
 		return mejormesero;

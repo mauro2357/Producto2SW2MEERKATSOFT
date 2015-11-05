@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 
 import Negocio.pedido.Producto;
 import Presentacion.GeneralesFacade;
+import Presentacion.InventarioFacade;
 
 @Path("consultainsumos")
 @Produces("text/plain")
@@ -21,8 +22,8 @@ public class consultainsumosService {
 	@Produces("text/plain")
 	@Path("consultarinsumos/")
 	public ArrayList<Producto> consultarinsumos() throws Exception { 
-		GeneralesFacade generalesFacade = new GeneralesFacade();
-		return generalesFacade.Consultar_insumos();
+		InventarioFacade inventarioFacade = new InventarioFacade();
+		return inventarioFacade.listainsumos;
 	}
 
 	@PUT
