@@ -24,7 +24,7 @@ public class ApplicationConfig extends Application {
 		resources.add(Servicios.consultadespachadorService.class);
 		resources.add(Servicios.consultanumeroventasService.class);
 		resources.add(Servicios.consultamejormeseroService.class);
-		resources.add(Servicios.consultainsumosService.class);
+		resources.add(Servicios.consultamasvendidoService.class);
 		return resources;    
     }
 }

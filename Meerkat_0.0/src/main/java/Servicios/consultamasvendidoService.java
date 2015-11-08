@@ -1,6 +1,6 @@
 package Servicios;
 
-import java.util.ArrayList;
+
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -8,22 +8,22 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import Negocio.pedido.Producto;
-import Presentacion.GeneralesFacade;
-import Presentacion.InventarioFacade;
 
-@Path("consultainsumos")
+import Presentacion.GeneralesFacade;
+
+
+@Path("consultamasvendido")
 @Produces("text/plain")
-public class consultainsumosService {
-    public consultainsumosService() {
+public class consultamasvendidoService {
+    public consultamasvendidoService() {
     }
 
 	@GET
 	@Produces("text/plain")
-	@Path("consultarinsumos/")
-	public ArrayList<Producto> consultarinsumos() throws Exception { 
-		InventarioFacade inventarioFacade = new InventarioFacade();
-		return inventarioFacade.listainsumos;
+	@Path("consultarmasvendido/")
+	public String consultarmasvendido() throws Exception { 
+		GeneralesFacade inventarioFacade = new GeneralesFacade();
+		return inventarioFacade.Consultar_productomasvendido();
 	}
 
 	@PUT

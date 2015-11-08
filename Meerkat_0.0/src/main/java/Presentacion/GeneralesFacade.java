@@ -9,7 +9,7 @@ import Negocio.pedido.Producto;
 public class GeneralesFacade {
 	public String numeroventas;
 	public String mejormesero;
-	public ArrayList<Producto> listainsumos;
+	public String masvendido;
 	public double totaliva;
 	public String totalventas;
 	public ArrayList<Producto> listaproductos;
@@ -39,4 +39,9 @@ public class GeneralesFacade {
 		this.mejormesero= generalesRepository.Consultar_mejormesero();
 		return mejormesero;
 	}
+	public String Consultar_productomasvendido() throws Exception{ 
+		this.masvendido = generalesRepository.Consultarproductomasvendido();;
+		return masvendido;
+	}
+	
 }
