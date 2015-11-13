@@ -67,7 +67,7 @@ public class FacturaRepository {
 		String[] porpartes = {""};
 		if(aignorar!=null) porpartes = aignorar.split("/");
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "select * from factura order by Ven_id, Pro_id;";
+	    String query = "select * from factura order by Ven_id, Pro_id, Dtv_cantidad ASC;";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    ArrayList<Factura> f = new ArrayList<Factura>();
