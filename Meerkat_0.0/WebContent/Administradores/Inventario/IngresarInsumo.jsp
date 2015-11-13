@@ -21,6 +21,7 @@
 			<input type="text" name="id" placeholder="ID"><br>
 			<input type="text" name="nombre" placeholder="NOMBRE"><br>
 			<input type="text" name="valor" placeholder="VALOR"><br>
+			<input type="text" name="cantidad" placeholder="CANTIDAD"><br>
 			<input type="hidden" name="entrar" value="datos_insumo">
 			<input type="submit" name="registrar" value="Registrar insumo">
 		</form>

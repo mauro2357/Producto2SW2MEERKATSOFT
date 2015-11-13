@@ -193,6 +193,7 @@ public class AdministradorControlador extends HttpServlet {
 		String id = request.getParameter("id");
     	String nombre = request.getParameter("nombre");
     	int valor = Integer.parseInt(request.getParameter("valor"));
+    	int cantidad = Integer.parseInt(request.getParameter("cantidad"));
     	try{ administradorFacade.administrador.Agregar_insumo(id, nombre, valor);}
     	catch (Exception e) { 
     		System.out.println("Error en base de datos al agregar un nuevo insumo.");
