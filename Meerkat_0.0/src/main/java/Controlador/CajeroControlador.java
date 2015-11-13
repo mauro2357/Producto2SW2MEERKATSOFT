@@ -61,6 +61,11 @@ public class CajeroControlador extends HttpServlet {
 
 	private String Generar_Lista_Facturas_Realizadas(HttpSession s) {
 		CajerosFacade cajerosFacade = (CajerosFacade) s.getAttribute("FacadeCajero");
+		try {
+			cajerosFacade.Consultar_cajeros();
+		} catch (Exception e) {
+			System.out.println("Error al generar la lista de facturas");
+		}
 		s.setAttribute("lista_facturas_realizadas", cajerosFacade.cajero.listafacturasfinalizadas);
 		return "Cajero/Items/ListaFacturas.jsp";
 	}

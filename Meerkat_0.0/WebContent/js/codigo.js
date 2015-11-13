@@ -83,18 +83,23 @@
 	
 	function abrircerrarfactura(x){
 		if(document.getElementById(x).style.display=="none"){
-			document.getElementById(x).style.display="visible";
+			document.getElementById(x).style.display="inline";
 		}else{
 			document.getElementById(x).style.display="none";
 		}
 	}
 	
+	var lista = 0;
+	
 	function lista_facturas_realizadas(){
-		var Entrar = "lista_facturas_realizadas";
-		$.post("/Meerkat_0.0/caja", {
-			entrar : Entrar
-		}, function(responseText){
-			$('#cuerpotres').html(responseText)});
+		if(lista==0){
+			var Entrar = "lista_facturas_realizadas";
+			$.post("/Meerkat_0.0/caja", {
+				entrar : Entrar
+			}, function(responseText){
+				$('#cuerpotres').html(responseText)});
+			lista++;
+		}
 	}	
 
 	function definirmesero(x){

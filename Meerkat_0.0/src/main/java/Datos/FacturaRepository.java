@@ -79,12 +79,13 @@ public class FacturaRepository {
 	    Pedido y = null;
 	    Map<Producto, Integer> z = null;
 	    String auxid = null, auxestado=null;
-	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null, estado=null;
+	    String mesero=null, cajero=null, mesa=null, cliente=null,id=null, estado=null, fecha=null;
 	    Mesa mesam = null;
 	    while (rs.next()){
 	    	id=rs.getString("Ven_id");
 	    	estado = rs.getString("Ven_estado");
 	    	if(porpartes.length>1){
+	    		auxestado = estado; //Puede que en la web no sirva.
 	    		if(estado.equalsIgnoreCase(porpartes[0]) || estado.equalsIgnoreCase(porpartes[1])) continue;
 	    	}
 	    	else if(estado.equalsIgnoreCase(aignorar) || estado.equalsIgnoreCase("Finalizado")) continue;
@@ -96,6 +97,7 @@ public class FacturaRepository {
 		    		  y.cuerpo = x;
 		    		  y.cantidades = z;
 		    		  y.precio_total = preciot;
+		    		  y.fecha = fecha;
 		    		  mesam = mesaRepository.Buscar_Mesa(mesa);
 		    		  Factura fi = new Factura(auxid,mesero,cajero,mesam,y,cliente);
 				      f.add(fi);
@@ -113,6 +115,7 @@ public class FacturaRepository {
 	 		      cajero = rs.getString("Caj_id"); 
 	 		      mesa = rs.getString("Mesa_id");
 	 		      cliente = rs.getString("Cli_id");
+	 		      fecha = rs.getString("Ven_fecha");
 	 		      auxestado = estado;
 	 		      for(Producto producto: tproductos){ 
 	 		    	  if(producto.codigo.equalsIgnoreCase(rs.getString("Pro_id"))){ x.add(producto); preciot+=(producto.valor*Integer.parseInt(rs.getString("Dtv_cantidad"))); z.put(producto, Integer.parseInt(rs.getString("Dtv_cantidad"))); break;} 
@@ -123,12 +126,13 @@ public class FacturaRepository {
 
 	    }
 	    if(porpartes.length>1){
-    		if(auxestado.equalsIgnoreCase(porpartes[0]) || auxestado.equalsIgnoreCase(porpartes[1])){
+    		if(auxestado.equalsIgnoreCase("Finalizado") || auxestado.equalsIgnoreCase(porpartes[0]) || auxestado.equalsIgnoreCase(porpartes[1])){
     			y = new Pedido();
     		    y.estado = estado;
     		    y.precio_total = preciot;
     		    y.cuerpo = x;
     		    y.cantidades = z;
+    		    y.fecha = fecha;
     		    if(mesa == null) return f;
     		    mesam = mesaRepository.Buscar_Mesa(mesa);
     		    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);
@@ -141,6 +145,7 @@ public class FacturaRepository {
     	    y.precio_total = preciot;
     	    y.cuerpo = x;
     	    y.cantidades = z;
+    	    y.fecha = fecha;
     	    if(mesa == null) return f;
     	    mesam = mesaRepository.Buscar_Mesa(mesa);
     	    Factura fi = new Factura(auxid,mesero, cajero,mesam,y,cliente);

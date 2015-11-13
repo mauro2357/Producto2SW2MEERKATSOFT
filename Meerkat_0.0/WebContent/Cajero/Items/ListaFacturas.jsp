@@ -8,8 +8,8 @@
 ArrayList<Factura> lista_factura = (ArrayList<Factura>) session.getAttribute("lista_facturas_realizadas");
 for(Factura factura: lista_factura){
 	%>
-	<div onclick="abrircerrarfactura(<%out.print(factura.id + "0000");%>)"><%out.println(factura.id);%>
-		<div id="<%out.print(factura.id + "0000");%>">
+	<div style="color: white;" onclick="abrircerrarfactura(<%out.print(factura.id + "0000");%>)"><%out.println("Id " + factura.id + " Cliente: "  + factura.cliente + " Fecha:" + factura.pedido.fecha);%>
+		<div id="<%out.print(factura.id + "0000");%>" style="display: none;" >
 			<table style="color: white; ">
 				<tr><td>Factura:</td><td><%out.println(factura.id);%></td></tr>
 				<tr><td>Mesero:</td><td><%out.println(factura.mesero);%></td></tr>

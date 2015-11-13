@@ -79,11 +79,12 @@ public class GeneralesRepository {
 
 	public String Consultarproductomasvendido() throws Exception {
 		Connection con = new ConexionMySql().ObtenerConexion();
-	    String query = "select (Pro_nombre),sum(Dtv_cantidad)cantidad from venta natural join producto natural join detalles_venta where Ven_estado ='finalizado'group by Pro_nombre having sum(Dtv_cantidad) =(select max(x.maximo)from (select Pro_nombre, sum(Dtv_cantidad)maximo from producto natural join detalles_venta natural join venta where Ven_estado ='finalizado'group by Pro_nombre)x);";
+	    String query = "SELECT Pro_nombre,SUM(Dtv_cantidad) Cantidad FROM (factura NATURAL JOIN producto) GROUP BY Pro_id ORDER BY Cantidad DESC LIMIT 1";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    String a = null;
-	    while (rs.next())a = rs.getString("Pro_nombre");	    
+	    rs.first();
+	    rs.getString("Pro_nombre");	    
 	    st.close();
 	    return ("el Producto mas vendido es :"+" "+ a); 
 		// TODO Auto-generated method stub

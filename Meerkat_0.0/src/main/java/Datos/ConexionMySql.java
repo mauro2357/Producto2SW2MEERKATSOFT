@@ -14,9 +14,9 @@ public class ConexionMySql {
 		    String user = "root";
 		    String password = "root";
 			
-//			String connection = "jdbc:mysql://mysql6480-future.j.facilcloud.com/future";
+//			String connection = "jdbc:mysql://mysql6949-futures.j.facilcloud.com/future";
 //		    String user = "root";
-//		    String password = "HZRmib24331";
+//		    String password = "QPRvmv37673";
 		    Class.forName(driver);
 		    con = DriverManager.getConnection(connection, user, password);
 		    return con;
