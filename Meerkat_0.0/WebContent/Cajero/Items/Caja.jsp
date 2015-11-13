@@ -5,7 +5,10 @@
 <%@ page import="Negocio.cliente.*" %>
 <%@ page import="java.util.*" %>
 
-<%ArrayList<Factura> facturas = (ArrayList<Factura>) session.getAttribute("Factura"); %>
+
+<%
+@SuppressWarnings("unchecked")
+ArrayList<Factura> facturas = (ArrayList<Factura>) session.getAttribute("Factura"); %>
 <%Cliente cliente = (Cliente) session.getAttribute("Cliente"); %>
 <script src="../js/codigo.js"></script>
 <script type="text/javascript">

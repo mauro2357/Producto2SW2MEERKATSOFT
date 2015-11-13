@@ -5,7 +5,9 @@
 <%@ page import="Negocio.cliente.*" %>
 <%@ page import="java.util.*" %>
 
-<%ArrayList<Factura> facturas = (ArrayList<Factura>) session.getAttribute("Factura"); %>
+<%
+@SuppressWarnings("unchecked")
+ArrayList<Factura> facturas = (ArrayList<Factura>) session.getAttribute("Factura"); %>
 <%Cliente cliente = (Cliente) session.getAttribute("Cliente"); %>
 <%int preciototal=0;%>
 <table style="color: white; ">

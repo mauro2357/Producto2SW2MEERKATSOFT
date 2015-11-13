@@ -24,49 +24,49 @@
             }, [
                 {
                     title: "TU AMOR ME HACE BIEN",
-                    mp3: "pistas/Tu Amor Me Hace Bien.mp3",
+                    mp3: "../pistas/Tu Amor Me Hace Bien.mp3",
                 },
                 {
                     title: "EL APACHURRAO",
-                    mp3: "pistas/apachurrado.mp3",
+                    mp3: "../pistas/apachurrado.mp3",
                 },
 				{
                     title: "AHORA LLORAS POR MI",
-                    mp3: "pistas/Ahora Lloras Por Mi.mp3",
+                    mp3: "../pistas/Ahora Lloras Por Mi.mp3",
                 },
                 {
                     title: "AY VAMOS!",
-                    mp3:"pistas/J. Balvin - Ay Vamos.mp3",
+                    mp3:"../pistas/J. Balvin - Ay Vamos.mp3",
                 },
 
 				{
                     title: "LIMONCITO CON RON",
-                    mp3: "pistas/limoncito con ron.mp3",
+                    mp3: "../pistas/limoncito con ron.mp3",
                 },
 
 				{
                     title: "ES MERENGUE NO ES MERENGUE",
-                    mp3: "pistas/es merengue no es merengue.mp3",
+                    mp3: "../pistas/es merengue no es merengue.mp3",
                 },
                 {
                     title: "COMO LO HIZO",
-                    mp3: "pistas/como lo hizo.mp3",
+                    mp3: "../pistas/como lo hizo.mp3",
                 },
                 {
                     title: "RECUERDOS DE UN AMOR",
-                    mp3: "pistas/recuerdos de un amor.mp3",
+                    mp3: "../pistas/recuerdos de un amor.mp3",
                 },
                 {
                     title: "AMARTE MAS NO PUDE",
-                    mp3: "pistas/Amarte Más No Pude.mp3",
+                    mp3: "../pistas/Amarte Más No Pude.mp3",
                 },
                     {
                     title: "EL DIARIO DE UN CRUDO",
-                    mp3: "pistas/el diario de un crudo.mp3",
+                    mp3: "../pistas/el diario de un crudo.mp3",
                 },
                 {
                     title: "NO PUEDO OLVIDARLA",
-                    mp3: "pistas/No Puedo Olvidarla.mp3",
+                    mp3: "../pistas/No Puedo Olvidarla.mp3",
                 }
 
              ], {
