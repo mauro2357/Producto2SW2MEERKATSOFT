@@ -2,59 +2,61 @@ package Negocio.TomayNotificacionPedidos;
 
 import org.junit.Assert;
 
-import Negocio.inventario.Administrador;
+import Negocio.factura.Factura;
 import Negocio.pedido.Despachador;
+import Presentacion.DespachadoresFacade;
+import Presentacion.MeserosFacade;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class notificaciondepedidolistoStepDefinitions {
 	
-	Despachador despachador = null;
-	Administrador administrador = null;
+	DespachadoresFacade despachadoresFacade = new DespachadoresFacade();
+	MeserosFacade meserosFacade = new MeserosFacade();
+	Despachador despachador;
+	Factura factura;
 	
 	@Given("^El despachador notifica que esta listo el pedido.$")
 	public void El_despachador_notifica_que_esta_listo_el_pedido() throws Throwable {
-		despachador = new Despachador();
-		administrador = new Administrador(null, null, null, null, null);
+		despachador = despachadoresFacade.Consultar_despachadores().get(0);
+		factura = despachador.listafacturassindespachar.get(0);
+		
 	}
 
 	@When("^Hay un pedido en cola.$")
 	public void Hay_un_pedido_en_cola() throws Throwable {
-		Assert.assertTrue(despachador.Recibir_pedido());
+		Assert.assertTrue(despachador.listafacturassindespachar.size()>0);
 	}
 
 	@Then("^Notificar al mesero que esta listo el pedido.$")
 	public void Notificar_al_mesero_que_esta_listo_el_pedido() throws Throwable {
-		Assert.assertTrue(despachador.Recibir_pedido()); //Código mínimo para notificar que está listo el pedido
+		despachador.despachar(factura.id);
 	}
 
 	@When("^No hay pedido en cola.$")
 	public void No_hay_pedido_en_cola() throws Throwable {
-		//Assert.assertTrue(!despachador.recibir_pedido());
-		Assert.assertTrue(despachador.Recibir_pedido()); //Codigo minimo* Pues HAY un pedido. Se coloca true haciendo PARECER que no hay pedido
+		Assert.assertFalse(!(despachador.listafacturassindespachar.size()>0)); 
 	}
 
 	@Then("^Notificar al despachador que no hay pedido en cola.$")
 	public void Notificar_al_despachador_que_no_hay_pedido_en_cola() throws Throwable { //Código mínimo que avisa que se despachó el pedido.
-		Assert.assertEquals("Pedido despachado.", despachador.Notificar_pedido());
+		Assert.assertFalse(!(despachador.listafacturassindespachar.size()>0));
 	}
 	
 	@When("^No hay mesero.$")
 	public void No_hay_mesero() throws Throwable {
-		Assert.assertFalse(!(administrador.Consultar_mesero())); //Codigo mínimo. //Se supone que siempre hay mesero,
-		//por ende, dará falso. Negamos falso para simular que no hay mesero.
+		Assert.assertFalse(!(meserosFacade.Consultar_meseros().size()>0));
 	}
 	
 	@When("^Hay mesero.$")
 	public void Hay_mesero() throws Throwable {
-		Assert.assertTrue(administrador.Consultar_mesero()); //Codigo mínimo. //Se supone que siempre hay mesero.
-		//Colocamos true, para simular que hay mesero.
+		Assert.assertTrue((meserosFacade.Consultar_meseros().size()>0));
 	}
 
 	@Then("^Notificar al despachador que no hay mesero.$")
 	public void Notificar_al_despachador_que_no_hay_mesero() throws Throwable {
-		Assert.assertEquals("No hay mesero." , despachador.getMessageHayMesero()); //Código minimo para que no haya mesero
+		Assert.assertFalse(!(meserosFacade.Consultar_meseros().size()>0));
 	}
 }
 	

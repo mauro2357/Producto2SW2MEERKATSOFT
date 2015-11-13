@@ -18,7 +18,7 @@ public class listadodeproductosparameseroStepDefinitions {
 	@Given("^El mesero va a consultar los productos.$")
 	public void El_mesero_va_a_consultar_los_productos() throws Throwable {
 		mesero = new Mesero();
-		x = mesero.getProductos();
+		x = mesero.productos;
 	}
 
 	@When("^No hay productos.$")
@@ -28,7 +28,7 @@ public class listadodeproductosparameseroStepDefinitions {
 
 	@Then("^Notificar que no hay productos para vender.$")
 	public void Notificar_que_no_hay_productos_para_vender() throws Throwable {
-		Assert.assertEquals("Hay productos",mesero.getMensaje());
+		Assert.assertTrue(!(x.size()<0));
 	}
 
 	@When("^Hay productos.$")
@@ -38,7 +38,7 @@ public class listadodeproductosparameseroStepDefinitions {
 
 	@Then("^Notificar que productos hay para vender.$")
 	public void Notificar_que_productos_hay_para_vender() throws Throwable {
-		Assert.assertEquals("Hay productos",mesero.getMensaje());
+		Assert.assertTrue((x.size()>0));
 	}
 	
 }

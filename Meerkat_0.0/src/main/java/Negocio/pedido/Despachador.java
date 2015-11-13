@@ -17,6 +17,10 @@ public class Despachador extends Empleado {
 		this.listafacturassindespachar = facturaRepository.Generar_factura("Despachado");
 	}
 	
+	public Despachador() throws Exception {
+		this.listafacturassindespachar = facturaRepository.Generar_factura("Despachado");
+	}
+
 	public void despachar(String id) throws NumberFormatException, Exception{
 		FacturaRepository despachadorRepository = new FacturaRepository();
 		despachadorRepository.Despachar_pedido(Integer.parseInt(id));

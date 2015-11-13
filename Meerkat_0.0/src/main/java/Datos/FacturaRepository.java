@@ -168,7 +168,7 @@ public class FacturaRepository {
 	
 	public Pedido Pedido_temporal(String mesero) throws Exception{
 		Connection con = new ConexionMySql().ObtenerConexion();
-		String query = "select * from pedidos_temporales where Me_id="+mesero+" order by Pt_id ASC;";
+		String query = "select * from pedidos_temporales where Me_id="+mesero+" order by Pt_id, Pro_id ASC;";
 		Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
 	    Map<Producto,Integer> cantidades = new HashMap<Producto,Integer>();

@@ -31,7 +31,7 @@ public class SeleccionarMeseroStepDefinitions {
 
 	@Then("^Notificar que no hay meseros contratados.$")
 	public void Notificar_que_no_hay_meseros_contratados() throws Throwable {
-		Assert.assertTrue(meserosFacade.NoHayMeseros()!="No hay meseros contratados.");
+		Assert.assertTrue(!(meserosFacade.Consultar_meseros()==null));
 	}
 
 	@When("^Hay meseros contratados$")
@@ -47,39 +47,39 @@ public class SeleccionarMeseroStepDefinitions {
 	@Given("^El mesero se define como mesero actual.$")
 	public void El_mesero_se_define_como_mesero_actual() throws Throwable {
 		mesero = new Mesero();
-		mesero.setId("800");
+		mesero.id = "800";
 	}
 
 	@When("^El mesero no se encuentra en la lista de meseros contratados.$")
 	public void El_mesero_no_se_encuentra_en_la_lista_de_meseros_contratados() throws Throwable {
-		String id = mesero.getId();
+		String id = mesero.id;
 		this.mesero = null;
 		x = meserosFacade.Consultar_meseros();
 		for(Mesero mesero: x){
-			if(id.equalsIgnoreCase(mesero.getId())) this.mesero = mesero;
+			if(id.equalsIgnoreCase(mesero.id)) this.mesero = mesero;
 		}
 		Assert.assertTrue(this.mesero!=null);
 	}
 
 	@Then("^Notificar que el mesero no se encuentra en la lista de meseros contratados.$")
 	public void Notificar_que_el_mesero_no_se_encuentra_en_la_lista_de_meseros_contratados() throws Throwable {
-		Assert.assertTrue(meserosFacade.Definir_mesero(this.mesero.getId()) != "El mesero no se encuentra en la lista de meseros contratados.");
+		Assert.assertTrue(meserosFacade.Definir_mesero(this.mesero.id) != "El mesero no se encuentra en la lista de meseros contratados.");
 	}
 
 	@When("^El mesero se encuentra en la lista de meseros contratados.$")
 	public void El_mesero_se_encuentra_en_la_lista_de_meseros_contratados() throws Throwable {
-		String id = mesero.getId();
+		String id = mesero.id;
 		this.mesero = null;
 		x = meserosFacade.Consultar_meseros();
 		for(Mesero mesero: x){
-			if(id.equalsIgnoreCase(mesero.getId())) this.mesero = mesero;
+			if(id.equalsIgnoreCase(mesero.id)) this.mesero = mesero;
 		}
 		Assert.assertTrue(this.mesero!=null);
 	}
 
 	@Then("^Definir mesero como mesero actual.$")
 	public void Definir_mesero_como_mesero_actual() throws Throwable {
-		Assert.assertEquals(meserosFacade.Definir_mesero(this.mesero.getId()), null);
+		Assert.assertEquals(meserosFacade.Definir_mesero(this.mesero.id), null);
 	}
 
 	
