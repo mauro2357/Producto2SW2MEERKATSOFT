@@ -194,7 +194,7 @@ public class AdministradorControlador extends HttpServlet {
     	String nombre = request.getParameter("nombre");
     	int valor = Integer.parseInt(request.getParameter("valor"));
     	int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-    	try{ administradorFacade.administrador.Agregar_insumo(id, nombre, valor);}
+    	try{ administradorFacade.administrador.Agregar_insumo(id, nombre, valor, cantidad);}
     	catch (Exception e) { 
     		System.out.println("Error en base de datos al agregar un nuevo insumo.");
     		s.setAttribute("ubicacion", "registrar insumo");
