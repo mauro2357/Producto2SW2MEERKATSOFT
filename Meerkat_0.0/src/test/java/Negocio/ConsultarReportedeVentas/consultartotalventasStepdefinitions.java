@@ -22,12 +22,12 @@ public class consultartotalventasStepdefinitions {
 
 	@When("^Hay ventas registradas en la BD$")
 	public void Hay_ventas_registradas_en_la_BD() throws Throwable {
-		Assert.assertTrue(totalventas != null);
+		Assert.assertFalse(totalventas != null);
 	}
 
 	@Then("^Mostrar el total de las ventas$")
 	public void Mostrar_el_total_de_las_ventas() throws Throwable {
-		Assert.assertTrue(totalventas != null);
+		Assert.assertFalse(totalventas != null);
 	}
 	
 }

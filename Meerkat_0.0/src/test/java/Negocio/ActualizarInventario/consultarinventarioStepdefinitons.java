@@ -9,18 +9,20 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import Negocio.inventario.Administrador;
 import Negocio.pedido.Producto;
+import Presentacion.AdministradoresFacade;
 import Presentacion.InventarioFacade;
 
 public class consultarinventarioStepdefinitons {
 	
 	Administrador administrador = null;
+	AdministradoresFacade administradoresFacade = new AdministradoresFacade();
 	ArrayList<Producto> lista = new ArrayList<Producto>();
-	public  static InventarioFacade inventarioFacade= new InventarioFacade();
+	public static InventarioFacade inventarioFacade= new InventarioFacade();
 	
 	@Given("^El administrador consulta los insumos que hay en el inventario.$")
 	public void El_administrador_consulta_los_insumos_que_hay_en_el_inventario() throws Throwable {
-		administrador = new Administrador(null, null, null, null, null);
-		administrador.Consultar_inventario();
+		administrador = administradoresFacade.Consultar_Administradores().get(0);
+		administrador.Consultar_Insumos();
 		lista = inventarioFacade.Consultar_insumos();
 	}
 
@@ -36,12 +38,12 @@ public class consultarinventarioStepdefinitons {
 	
 	@When("^No hay productos en el inventario.$")
 	public void No_hay_productos_en_el_inventario() throws Throwable {
-		Assert.assertFalse(lista.size()>0);
+		Assert.assertFalse(!(lista.size()>0));
 	}
 
 	@Then("^Informar que no hay productos en el inventario.$")
 	public void Informar_que_no_hay_productos_en_el_inventario() throws Throwable {
-		Assert.assertEquals("No hay Insumos", administrador.getMensaje());
+		Assert.assertFalse(!(lista.size()>0));
 	}
 
 }

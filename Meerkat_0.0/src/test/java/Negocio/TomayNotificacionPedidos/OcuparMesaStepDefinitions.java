@@ -6,40 +6,42 @@ import java.util.ArrayList;
 import org.junit.Assert;
 
 import Negocio.pedido.*;
-import Presentacion.MesasFacade;
 import Presentacion.MeserosFacade;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+import cucumber.api.java.en.*;
 
 public class OcuparMesaStepDefinitions {
 	
 	MeserosFacade meserosFacade = new MeserosFacade();
-	MesasFacade mesasFacade = new MesasFacade();
 	Mesero mesero;
-	Mesa mesa;
-	Pedido pedido;
+	Pedido pedido=null;
 	
-	@Given("^El mesero ocupara una mesa.$")
-	public void El_mesero_ocupara_una_mesa() throws Throwable {
-		mesero = meserosFacade.listameseros.get(0);
-		mesa = mesasFacade.Buscar_Mesa("1");
+	@Given("^El mesero agregua un producto al pedido.$")
+	public void El_mesero_agregua_un_producto_al_pedido() throws Throwable {
+		meserosFacade.Consultar_meseros();
+		meserosFacade.Definir_mesero("800");
+		mesero = meserosFacade.mesero;
+	}
+
+	@When("^No hay pedido.$")
+	public void No_hay_pedido() throws Throwable {
+		Assert.assertTrue(pedido==null);
+	}
+
+	@Then("^Se crea el pedido.$")
+	public void Se_crea_el_pedido() throws Throwable {
 		pedido = new Pedido();
-		ArrayList<Producto> cuerpo = new ArrayList<Producto>();
-		pedido.cuerpo = cuerpo;
 	}
 
-	@Then("^Ocuparla.$")
-	public void Ocuparla() throws Throwable {
-		mesero.Ocupar_Mesa(mesa);
+	@When("^Hay pedido.$")
+	public void Hay_pedido() throws Throwable {
+		Assert.assertTrue(!(pedido!=null));
 	}
 
-	@Then("^Notificar que no existe la mesa.$")
-	public void Notificar_que_no_existe_la_mesa() throws Throwable {
-		Assert.assertTrue(mesasFacade.Buscar_Mesa("1")!=null);
-	}
-
-	@Then("^Notificar que el pedido no tiene productos.$")
-	public void Notificar_que_el_pedido_no_tiene_productos() throws Throwable {
-		Assert.assertFalse(!(pedido.cuerpo.size()>0));
+	@Then("^Agregar producto al pedido.$")
+	public void Agregar_producto_al_pedido() throws Throwable {
+		pedido = new Pedido();
+		pedido.cuerpo = new ArrayList<Producto>();
+		Producto producto = mesero.consultarproductoinvididual("li01");
+		pedido.cuerpo.add(producto);
 	}
 }

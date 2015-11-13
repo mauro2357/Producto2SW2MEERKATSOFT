@@ -1,24 +1,24 @@
-Feature: Como mesero ocupar una mesa.
+Feature: Como mesero agrego un producto al pedido.
 		
-		Scenario: El mesero ocupara una mesa.
-		Given El mesero ocupara una mesa.
-		When La mesa existe.
-		Then Ocuparla.
+		Scenario: El mesero agrega un producto al pedido.
+		Given El mesero agregua un producto al pedido.
+		When No hay pedido.
+		Then Se crea el pedido.
 		
-		Scenario: El mesero ocupara una mesa.
-		Given El mesero ocupara una mesa.
-		When La mesa no existe.
-		Then Notificar que no existe la mesa.
+		Scenario: El mesero agrega un producto al pedido.
+		Given El mesero agregua un producto al pedido.
+		When Hay pedido.
+		Then Agregar producto al pedido.
 		
-		Scenario: El mesero ocupara una mesa.
-		Given El mesero ocupara una mesa.
-		When No hay productos en el pedido.
-		Then Notificar que el pedido no tiene productos.
-		
-		Scenario: El mesero ocupara una mesa.
-		Given El mesero ocupara una mesa.
+		Scenario: El mesero agrega un producto al pedido.
+		Given El mesero agregua un producto al pedido.
 		When Hay productos en el pedido.
-		Then Ocuparla.
+		Then Agregar producto al pedido.
+		
+		Scenario: El mesero agrega un producto al pedido.
+		Given El mesero agregua un producto al pedido.
+		When No hay productos en el pedido.
+		Then Agregar producto al pedido.
 		
 		
 		

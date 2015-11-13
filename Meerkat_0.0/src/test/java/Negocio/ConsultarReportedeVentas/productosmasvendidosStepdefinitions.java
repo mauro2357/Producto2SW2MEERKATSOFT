@@ -3,8 +3,6 @@ package Negocio.ConsultarReportedeVentas;
 import java.util.ArrayList;
 
 import org.junit.Assert;
-
-import Negocio.inventario.Administrador;
 import Negocio.pedido.Producto;
 import Presentacion.GeneralesFacade;
 import cucumber.api.java.en.Given;
