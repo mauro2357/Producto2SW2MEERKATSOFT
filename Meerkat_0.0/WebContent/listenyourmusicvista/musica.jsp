@@ -24,49 +24,49 @@
             }, [
                 {
                     title: "TU AMOR ME HACE BIEN",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/RmwSWYralB9YC1ZS5S1Wh6BUkViAH0y69mCFG8oqtyY7gRzJFlAXIuLlfxz02uds/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/lmzKV5F7Udhrr7xFz6A4nx6tMxR2nmjWKf2U7LQArgRuIH2fNVtJHrCx0bcyvWMP/file",
                 },
                 {
                     title: "EL APACHURRAO",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/HZLVw6Pp5poHLndar7otNbar5SosDQcHsRi3Cons8NfnohtBkmENb5pEAWHi9Z6w/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/F0XRNgw8b39BMhXxguUIBZ1J9nP0vncridxChVZcOltXTknmDc1b3uwujjobySpG/file",
                 },
 				{
                     title: "AHORA LLORAS POR MI",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/7BgGsR8Qv0boUjBZ4yyCfdK9X2Yr3VoouVGBTSeiDRVQeg3zY5685txoA8pOE9ep/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/KEEm0Esu0yEfeE8sVcGh4GJXAB6Q22X100pbod7Z1uLnLoa4FL48y5RSJNYMmN30/file",
                 },
                 {
                     title: "AY VAMOS!",
-                    mp3:"https://dl.dropboxusercontent.com/content_link/JCijINlGU8xkBbbhwzKGTj5TOW6VnN6MpSZZJGZw80ptC7aengpBaZKSPeWXf32J/files",
+                    mp3:"https://dl.dropboxusercontent.com/content_link/fD87IkyFJfLN0RxS3lXyVeOp4psn9Zfh5ZN06wUVSdmbVvuDOttP1sSAZH3PHOyD/file",
                 },
 
 				{
                     title: "LIMONCITO CON RON",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/KYSNzF3cFgPZ5XanaZVmftwrS0wTs8Dp1ROkvrReItB0G2WHEWoybmxUHFo3VBIq/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/35taRpKEitKpl3CSPx1gIBcvKbG7YPVQI1vpePev8bwPe0nvky5N8A4uoFgtbAJM/file",
                 },
 
 				{
                     title: "ES MERENGUE NO ES MERENGUE",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/hIphx8tfSyBnnmpLbq0ruXWQHaKhOCEp3M0wqBYtWrj8kRYizWCCEnwd3IdWvv7p/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/OhhxPI64EsGXz8jl9lqcIN4QzQdlDXlSLZ2UGH7ZRrfnPXX10mcMlicBjd8rcsk1/file",
                 },
                 {
                     title: "COMO LO HIZO",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/oIvKRsoPsdJzICw2JOBs5pPRpHIR68v4wfQQmgLYFaBpAGsHaRtUTlSAyYERAO28/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/YlcbbL1LkKXXzNNlwJKHEdEsMNlKY5YyPavwbSgvRB7HLM9aQAQ2ab7QwD8tiSRg/file",
                 },
                 {
                     title: "RECUERDOS DE UN AMOR",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/M2EXrzCfOOkSOGfG5ARhTVP5g5o1JReCxCeXMbZtc3niihU4Q3natAkUiq6ZrZ6b/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/CchehcxzMgaSEd565HeebgqQnTgaK9jjXj0ZeyYLdALJ17TrLrVjY5bL9NbkJjze/file",
                 },
                 {
-                    title: "PROPUESTA INDECENTE",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/PkRz6o5F9iPWDljABWk8mYdWH7XYKqiytdekpLedOXpT4iIQEkLAaKGbbt0FcfGY/file",
+                    title: "AMARTE MAS NO PUDE",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/i6uEI8LdZnjNNSX3BKim3zTU26jkwKjcfdSyjwqZJ2hszAlUWxUzbcBxvWrr421Y/file",
                 },
                     {
                     title: "EL DIARIO DE UN CRUDO",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/8Kzy2aYGoLU5le7wHK4Xm4DpQ9jDnpfi9iPhn4GFsyQPPIAczp13LeiRyljZPcJE/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/LdHiiHWKbNIDnTEMGCmmJ7bySBeywJHrDZp8ij64U0ufxYHBzUSZMxVaqHEWHbk1/file",
                 },
                 {
                     title: "NO PUEDO OLVIDARLA",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/MbQdn8cBJtXQlh3upBTSf3rUmvyMY2Ur0WewHVm0I4ooYtOXZck0tvhsWs3SQwZc/file",
+                    mp3: "https://dl.dropboxusercontent.com/content_link/Vd2EmL8BwR1VIOT0X0wKhA1npUxL83GqWKCo8eTSIzz5Ym8N4RYRac3u0Bf9do8R/file",
                 }
 
              ], {

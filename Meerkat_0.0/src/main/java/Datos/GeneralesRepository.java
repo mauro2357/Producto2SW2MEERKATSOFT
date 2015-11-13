@@ -82,9 +82,8 @@ public class GeneralesRepository {
 	    String query = "SELECT Pro_nombre,SUM(Dtv_cantidad) Cantidad FROM (factura NATURAL JOIN producto) GROUP BY Pro_id ORDER BY Cantidad DESC LIMIT 1";
 	    Statement st = con.createStatement();
 	    ResultSet rs = st.executeQuery(query);
-	    String a = null;
 	    rs.first();
-	    rs.getString("Pro_nombre");	    
+	    String a =rs.getString("Pro_nombre");	    
 	    st.close();
 	    return ("el Producto mas vendido es :"+" "+ a); 
 		// TODO Auto-generated method stub
