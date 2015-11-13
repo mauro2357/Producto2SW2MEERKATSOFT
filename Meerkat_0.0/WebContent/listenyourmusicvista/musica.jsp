@@ -24,49 +24,49 @@
             }, [
                 {
                     title: "TU AMOR ME HACE BIEN",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/lmzKV5F7Udhrr7xFz6A4nx6tMxR2nmjWKf2U7LQArgRuIH2fNVtJHrCx0bcyvWMP/file",
+                    mp3: "pistas/Tu Amor Me Hace Bien.mp3",
                 },
                 {
                     title: "EL APACHURRAO",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/F0XRNgw8b39BMhXxguUIBZ1J9nP0vncridxChVZcOltXTknmDc1b3uwujjobySpG/file",
+                    mp3: "pistas/apachurrado.mp3",
                 },
 				{
                     title: "AHORA LLORAS POR MI",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/KEEm0Esu0yEfeE8sVcGh4GJXAB6Q22X100pbod7Z1uLnLoa4FL48y5RSJNYMmN30/file",
+                    mp3: "pistas/Ahora Lloras Por Mi.mp3",
                 },
                 {
                     title: "AY VAMOS!",
-                    mp3:"https://dl.dropboxusercontent.com/content_link/fD87IkyFJfLN0RxS3lXyVeOp4psn9Zfh5ZN06wUVSdmbVvuDOttP1sSAZH3PHOyD/file",
+                    mp3:"pistas/J. Balvin - Ay Vamos.mp3",
                 },
 
 				{
                     title: "LIMONCITO CON RON",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/35taRpKEitKpl3CSPx1gIBcvKbG7YPVQI1vpePev8bwPe0nvky5N8A4uoFgtbAJM/file",
+                    mp3: "pistas/limoncito con ron.mp3",
                 },
 
 				{
                     title: "ES MERENGUE NO ES MERENGUE",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/OhhxPI64EsGXz8jl9lqcIN4QzQdlDXlSLZ2UGH7ZRrfnPXX10mcMlicBjd8rcsk1/file",
+                    mp3: "pistas/es merengue no es merengue.mp3",
                 },
                 {
                     title: "COMO LO HIZO",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/YlcbbL1LkKXXzNNlwJKHEdEsMNlKY5YyPavwbSgvRB7HLM9aQAQ2ab7QwD8tiSRg/file",
+                    mp3: "pistas/como lo hizo.mp3",
                 },
                 {
                     title: "RECUERDOS DE UN AMOR",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/CchehcxzMgaSEd565HeebgqQnTgaK9jjXj0ZeyYLdALJ17TrLrVjY5bL9NbkJjze/file",
+                    mp3: "pistas/recuerdos de un amor.mp3",
                 },
                 {
                     title: "AMARTE MAS NO PUDE",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/i6uEI8LdZnjNNSX3BKim3zTU26jkwKjcfdSyjwqZJ2hszAlUWxUzbcBxvWrr421Y/file",
+                    mp3: "pistas/Amarte Más No Pude.mp3",
                 },
                     {
                     title: "EL DIARIO DE UN CRUDO",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/LdHiiHWKbNIDnTEMGCmmJ7bySBeywJHrDZp8ij64U0ufxYHBzUSZMxVaqHEWHbk1/file",
+                    mp3: "pistas/el diario de un crudo.mp3",
                 },
                 {
                     title: "NO PUEDO OLVIDARLA",
-                    mp3: "https://dl.dropboxusercontent.com/content_link/Vd2EmL8BwR1VIOT0X0wKhA1npUxL83GqWKCo8eTSIzz5Ym8N4RYRac3u0Bf9do8R/file",
+                    mp3: "pistas/No Puedo Olvidarla.mp3",
                 }
 
              ], {
